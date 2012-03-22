@@ -1,0 +1,4 @@
+This project contains all of the configuration files I use for all of my Unix-
+based logins.  When these files are moved to their appropriate places (where
+applicable), my standard scripts and settings will be set on that computer,
+such as important environment variables, terminal aliases, and scripts.

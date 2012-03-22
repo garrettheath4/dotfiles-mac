@@ -1,0 +1,1 @@
+ps -u root -u $USER -o "pid= command=" | awk "/$1/ && !/awk/ && !/getpid/ {print \$1}"

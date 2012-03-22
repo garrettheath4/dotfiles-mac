@@ -1,0 +1,2 @@
+id=$(ps -u root -u $USER -o "pid= command=" | awk "/$1/ && !/awk/ && !/setnice/ {print \$1}")
+sudo renice $2 $id

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+PERIOD_SECS="1"
+
+OLD=""
+NEW=`$*`
+echo "$NEW"
+
+while [ 0 ]; do
+	if [ "$OLD" != "$NEW" ]; then
+		clear
+		date
+		echo "$NEW"
+	fi
+	OLD="$NEW"
+	NEW=`$*`
+	sleep "$PERIOD_SECS"
+done

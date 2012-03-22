@@ -1,0 +1,1 @@
+ps -u root -u $USER -o "nice= command=" | awk "/$1/ && !/awk/ && !/getnice/ {print \$1}"
