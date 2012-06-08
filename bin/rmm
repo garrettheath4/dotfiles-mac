@@ -1,0 +1,7 @@
+#!/bin/sh
+while [ -n "$*" ]
+do
+	#Move each argument file to the current user's trash
+	mv -i "$1" ~/.Trash/
+	shift
+done
