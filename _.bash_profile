@@ -1,10 +1,3 @@
-# Fink Environment
-test -r /sw/bin/init.sh && . /sw/bin/init.sh
-
-# Subversion Environment Variables
-export SVN_EDITOR=vim
-export SVN_REPOS="file:///Users/Garrett/svn/"
-
 # User aliases
 alias gcc='gcc -Wall --pedantic'
 
@@ -28,11 +21,21 @@ alias sshvceg='~/aws/VCEG-Wiki_SSH.sh'
 ##
 
 # MacPorts Installer addition on 2012-06-18_at_08:57:16: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+if [ -d /opt/local/bin -a -d /opt/local/sbin ]; then
+	export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+fi
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # Add user bin and sbin folders to PATH
-export PATH="$PATH":~/bin:~/sbin
+if [ -d ~/bin ]; then
+	export PATH="$PATH":~/bin
+fi
 
-# Roku SDK (add 'biftool' to PATH)
-export PATH="$PATH":/Users/Garrett/src/RokuSDK_v41/utilities/mac/bin
+if [ -d ~/sbin ]; then
+	export PATH="$PATH":~/sbin
+fi
+
+# Add Roku SDK to PATH (for 'biftool')
+if [ -d ~/src/RokuSDK_v41/utilities/mac/bin ]; then
+	export PATH="$PATH":~/src/RokuSDK_v41/utilities/mac/bin
+fi
