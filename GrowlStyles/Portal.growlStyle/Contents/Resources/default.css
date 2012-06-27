@@ -1,0 +1,400 @@
+/*----------------------------------------------
+	Engage theme for Growl
+	
+	Author:		Will Blackmore
+				www.engageinteractive.co.uk
+
+	Licensed under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License.
+	To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send
+	a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+----------------------------------------------*/
+
+body, html {
+	padding: 0;
+	margin: 0;
+	text-rendering: optimizeLegibility;
+	font-family: 'arial narrow', Arial;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/*-------------------------------
+
+	TOP LEVEL CONTAINER
+
+-------------------------------*/
+
+#growl {
+	width: 590px;
+	padding: 20px 0;
+	-webkit-perspective: 1200;
+	-webkit-animation: growl 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) .78s 1 normal both;
+}
+
+
+/* ANIMATION */
+
+@-webkit-keyframes growl {
+
+	from {
+		-webkit-perspective-origin: 150px 50%;
+	}
+	
+	to {
+		-webkit-perspective-origin: 480px 50%;
+	}
+	
+}
+
+/*-------------------------------
+
+	THREE D CONTAINER
+
+-------------------------------*/
+
+#threedee {
+	position: relative;
+	width: 350px;
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation: threedee 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) .78s 1 normal both;
+}
+
+
+/* ANIMATION */
+
+@-webkit-keyframes threedee {
+
+	0% {
+		left: 0;
+		opacity: 0;
+		-webkit-transform: scale(.1);
+	}
+	
+	38% {
+		opacity: 1;
+		left: 171px;
+		-webkit-transform: scale(1) rotateY(0deg);
+	}
+	
+	100% {
+		left: 171px;
+		-webkit-transform: rotateY(-90deg);
+	}
+	
+}
+
+
+/*-------------------------------
+
+	CONTENT CONTAINER
+
+-------------------------------*/
+
+#content {
+	position: relative;
+	z-index: 1;
+	width: 350px;
+	min-height: 100px;
+	box-shadow: inset 0 0 20px rgba(122,125,128,.4), 0 0 14px rgba(0,0,0,.24);
+	background: url(grunge.png) 0 0 no-repeat,
+				url(grunge.png) 250px 0 no-repeat,
+				url(grunge.png) 100px 50px no-repeat,
+				url(grunge.png) 50px 150px no-repeat,
+				#f9f9f9 url(grid.png);
+	text-shadow: 1px 1px #FFF;
+	
+	-webkit-transform: rotateY(90deg);
+	-webkit-transition: all 1s ease-in-out;
+	-webkit-backface-visibility: hidden;
+}
+
+#content:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%; right: -60px;
+	width: 55px;
+	height: 100%;
+	max-height: 147px;
+	margin-top: -50%;
+	background: url(logo.png) 0 50% no-repeat;
+	background-size: auto 100%;
+}
+
+.edge {
+	position: absolute;
+	top: 0; left: 0;
+	background: #000;
+}
+
+.edge.right {
+	width: 4px;
+	height: 100%;
+	-webkit-transform: translate3d(171px,0,-175px);
+}
+
+.edge.left {
+	width: 4px;
+	height: 100%;
+	-webkit-transform: translate3d(171px,0,175px);
+}
+
+.edge.back {
+	width: 350px;
+	height: 100%;
+	-webkit-transform: rotateY(-90deg) translate3d(0,0,4px);
+}
+
+
+/*---------------------
+
+	CONTENT
+
+*/
+
+#icon {
+	position: absolute;
+	top: 10px; right: 10px;
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+}
+
+#icon img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#title {
+	padding: 16px 118px 0 18px;
+	font-weight: bold;
+	font-size: 25px;
+	color: #222;
+}
+
+#text {
+	padding: 10px 118px 16px 18px;
+	font-size: 16px;
+	line-height: 22px;
+	color: #444;
+}
+
+
+/*-------------------------------
+
+	ARM
+
+-------------------------------*/
+
+#arm {
+	position: absolute;
+	top: 50%;
+	z-index: 0;
+	height: 76px;
+	margin-top: -38px;
+	-webkit-transform: translate3d(0,0,10);
+}
+
+#arm > span {
+	display: block;
+	position: absolute;
+	top: 0;
+	height: 76px;
+	background-image: url(sprite.png);
+}
+
+
+/*---------------------
+
+	PIVOT
+
+---------------------*/
+
+.pivot {
+	left: -30px;
+	z-index: 3;
+	width: 76px;
+	-webkit-animation: pivot .8s cubic-bezier(.770, 0, 0.175, 1) 0 1 normal both;
+}
+
+
+/* ANIMATION */
+
+@-webkit-keyframes pivot {
+
+	from {
+		left: -76px;
+	}
+	
+	to {
+		left: -30px;
+	}
+	
+}
+
+
+/*---------------------
+
+	PRIORITY
+
+---------------------*/
+
+.pivot span {
+	display: block;
+	position: relative;
+	width: 76px;
+	height: 76px;
+	-webkit-animation: priority 1s cubic-bezier(.770, 0, 0.175, 1) 0 1 normal both;
+	-webkit-transform: rotate(-180deg);
+}
+
+.pivot i {
+	display: block;
+	position: absolute;
+	top: 50%; left: 50%;
+	width: 10px;
+	height: 10px;
+	margin: -6px 0 0 6px;
+	border: solid 1px #049cd5;
+	border-radius: 6px;
+	box-shadow: 0 0 4px rgba(133,199,255,.75);
+	background: #00baff;
+}
+
+.pivot .verylow {
+	border-color: #efefef;
+	background: #FFF;
+	box-shadow: 0 0 4px rgba(255,255,255,.75);
+}
+
+.pivot .moderate {
+	border-color: #a5d1ff;
+	background: #aed8ff;
+	box-shadow: 0 0 4px rgba(133,199,255,.55);
+}
+
+.pivot .normal {
+	border-color: #049cd5;
+	background: #00baff;
+	box-shadow: 0 0 4px rgba(133,199,255,.75);
+}
+
+.pivot .high {
+	border-color: #ff8d02;
+	background: #ffa800;
+	box-shadow: 0 0 4px rgba(155,1729,54,.75);
+}
+
+.pivot .emergency {
+	border-color: #d50404;
+	background: #ff0000;
+	box-shadow: 0 0 4px rgba(155,133,233,.75);
+}
+
+
+/* ANIMATION */
+
+@-webkit-keyframes priority {
+
+	from {
+		-webkit-transform: rotate(-180deg);
+	}
+	
+	to {
+		-webkit-transform: rotate(0deg);
+	}
+
+}
+
+
+/*---------------------
+
+	ARM SECTION 1
+
+---------------------*/
+
+.arm_1 {
+	left: -63px;
+	z-index: 2;
+	width: 63px;
+	background-position: -76px 0;
+	-webkit-animation: arm_1 .8s cubic-bezier(.770, 0, 0.175, 1) .2s 1 normal both;
+}
+
+
+/* ANIMATION */
+
+@-webkit-keyframes arm_1 {
+
+	from {
+		left: -63px;
+	}
+	
+	to {
+		left: 22px;
+	}
+
+}
+
+
+/*---------------------
+
+	ARM SECTION 2
+
+---------------------*/
+
+.arm_2 {
+	left: -103px;
+	z-index: 1;
+	width: 103px;
+	background-position: -149px 0;
+	-webkit-animation: arm_2 .8s cubic-bezier(.770, 0, 0.175, 1) .4s 1 normal both;
+}
+
+
+/* ANIMATION */
+
+@-webkit-keyframes arm_2 {
+
+	from {
+		left: -103px;
+	}
+	
+	to {
+		left: 65px;
+	}
+
+}
+
+
+/*---------------------
+
+	ARM SECTION 3
+
+---------------------*/
+
+.arm_3 {
+	left: -219px;
+	z-index: 0;
+	width: 219px;
+	background-position: -257px 0;
+	-webkit-animation: arm_3 1s cubic-bezier(.770, 0, 0.175, 1) .3s 1 normal both;
+	
+}
+
+
+/* ANIMATION */
+
+@-webkit-keyframes arm_3 {
+
+	from {
+		left: -220px;
+	}
+	
+	to {
+		left: 135px;
+	}
+
+}

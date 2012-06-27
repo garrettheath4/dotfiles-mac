@@ -45,3 +45,16 @@ for nd in $NORMALDIRS; do
 		echo "Warning: $nd does not exist"
 	fi
 done
+
+# Install GrowlStyles
+GROWL_FOLDER=~/Library/Application\ Support/Growl/Plugins
+GROWLS="`ls -1 GrowlStyles/`"
+mkdir -pv -m 755 "$GROWL_FOLDER"
+for grr in $GROWLS; do
+	if [ ! -e "$GROWL_FOLDER/$grr" ]; then
+		# Growl style not installed, so install it
+		cp -r "GrowlStyles/$grr" "$GROWL_FOLDER/"
+	else
+		echo "Note: Growl Style \"$grr\" already installed"
+	fi
+done
