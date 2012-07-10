@@ -1,5 +1,7 @@
 #!/bin/sh
 
+EXPORTS="`pwd`"
+
 HIDDENFILES='.bash_profile
 .gitconfig
 .vimrc'
@@ -13,7 +15,7 @@ sbin'
 for hf in $HIDDENFILES; do
 	if [ -f "_$hf" ]; then
 		if [ ! -e ~/"$hf" ]; then
-			ln -s "_$hf" ~/"$hf"
+			ln -sv "_$hf" ~/"$hf"
 		else
 			echo "Warning:" ~/"$hf already exists"
 		fi
@@ -25,7 +27,7 @@ done
 for hd in $HIDDENDIRS; do
 	if [ -d "_$hd" ]; then
 		if [ ! -e ~/"$hd" ]; then
-			ln -s "_$hd" ~/"$hd"
+			ln -sv "_$hd" ~/"$hd"
 		else
 			echo "Warning:" ~/"$hd/ already exists"
 		fi
@@ -37,7 +39,7 @@ done
 for nd in $NORMALDIRS; do
 	if [ -d "$nd" ]; then
 		if [ ! -e ~/"$nd" ]; then
-			ln -s "$nd" ~/"$nd"
+			ln -sv "$nd" ~/"$nd"
 		else
 			echo "Warning:" ~/"$nd/ already exists"
 		fi
@@ -58,3 +60,10 @@ for grr in $GROWLS; do
 		echo "Note: Growl Style \"$grr\" already installed"
 	fi
 done
+
+# Install Mail ActOn Rules
+MAILON_FOLDER=~/Library/Mail/Indev
+if [ -d "$MAILON_FOLDER" ]; then
+	mv -fv "$MAILON_FOLDER" "$MAILON_FOLDER".backup
+fi
+ln -sv "$EXPORTS/MailActOn/" "$MAILON_FOLDER"
