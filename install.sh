@@ -15,7 +15,7 @@ sbin'
 for hf in $HIDDENFILES; do
 	if [ -f "_$hf" ]; then
 		if [ ! -e ~/"$hf" ]; then
-			ln -sv "_$hf" ~/"$hf"
+			ln -sv "$EXPORTS/_$hf" ~/"$hf"
 		else
 			echo "Warning:" ~/"$hf already exists"
 		fi
@@ -27,7 +27,7 @@ done
 for hd in $HIDDENDIRS; do
 	if [ -d "_$hd" ]; then
 		if [ ! -e ~/"$hd" ]; then
-			ln -sv "_$hd" ~/"$hd"
+			ln -sv "$EXPORTS/_$hd" ~/"$hd"
 		else
 			echo "Warning:" ~/"$hd/ already exists"
 		fi
@@ -39,7 +39,7 @@ done
 for nd in $NORMALDIRS; do
 	if [ -d "$nd" ]; then
 		if [ ! -e ~/"$nd" ]; then
-			ln -sv "$nd" ~/"$nd"
+			ln -sv "$EXPORTS/$nd" ~/"$nd"
 		else
 			echo "Warning:" ~/"$nd/ already exists"
 		fi
@@ -60,6 +60,16 @@ for grr in $GROWLS; do
 		echo "Note: Growl Style \"$grr\" already installed"
 	fi
 done
+
+# Prompt to install Mail ActOn
+read -p "Install Mail ActOn now? (y/n) [y]: " confirmacton
+if [ "$confirmacton" != n ]; then
+	pbcopy < "$EXPORTS/MailActOn/license-key.txt"
+	echo "Mail ActOn Name: Garrett Koller"
+	echo "Mail ActOn Key:  MAO-001-AHN2-J1GJ-FBTS-J4F7-BAP9"
+	echo "   (The license key has been copied to the clipboard.)"
+	open "$EXPORTS/MailActOn/Website.webloc"
+fi
 
 # Install Mail ActOn Rules
 MAILON_FOLDER=~/Library/Mail/Indev
