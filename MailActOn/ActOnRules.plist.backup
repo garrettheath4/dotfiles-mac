@@ -521,8 +521,6 @@
 				<integer>3</integer>
 				<key>keyLabel</key>
 				<string>f</string>
-				<key>optionKey</key>
-				<true/>
 			</dict>
 			<key>Active</key>
 			<string>1</string>
@@ -538,7 +536,7 @@
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>47d8c8fd-b303-4d0e-8a74-984efae0e0e1</string>
+					<string>31dfcdff-e9f3-4849-acf8-81d0ea4ce244</string>
 					<key>Expression</key>
 					<string>0</string>
 					<key>Header</key>
@@ -548,7 +546,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>cb94a975-b2e3-4209-b3d1-58ac85c7c159</string>
+					<string>d9d706ec-aa75-4a34-afd9-fc6af55b45ba</string>
 					<key>Expression</key>
 					<string>1</string>
 					<key>Header</key>
@@ -558,7 +556,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>7002ef84-66e8-4e22-876f-6028ae43f943</string>
+					<string>9d77c143-08d9-4d1b-9497-be26b667bebc</string>
 					<key>Expression</key>
 					<string>2</string>
 					<key>Header</key>
@@ -568,7 +566,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>4551b4c4-9412-436e-aa56-5c22e7e594a8</string>
+					<string>15d85cc6-6f4d-41e2-967f-90a355f89c67</string>
 					<key>Expression</key>
 					<string>3</string>
 					<key>Header</key>
@@ -578,7 +576,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>8561bca8-b01e-4181-91cd-0da93ffbd65f</string>
+					<string>042add1a-82cc-4ea8-83fd-206c5b6781db</string>
 					<key>Expression</key>
 					<string>4</string>
 					<key>Header</key>
@@ -588,7 +586,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>42b3bc55-3725-479a-b37f-00c8fc76b085</string>
+					<string>1c569815-5291-423c-8d8d-f7050f3cfaf5</string>
 					<key>Expression</key>
 					<string>5</string>
 					<key>Header</key>
@@ -598,7 +596,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>514935ff-d690-4464-be6b-9ad05380433f</string>
+					<string>93fa321d-c11e-415f-afb0-54e42f51d42a</string>
 					<key>Expression</key>
 					<string>6</string>
 					<key>Header</key>
@@ -1933,6 +1931,64 @@
 			<string>F401BADC-7ED6-4EC0-A31C-CD8B3E3DDF1B</string>
 			<key>RuleName</key>
 			<string>Archive (W&amp;L)</string>
+			<key>ShouldCopyMessage</key>
+			<string>NO</string>
+			<key>ShouldTransferMessage</key>
+			<string>YES</string>
+			<key>TimeStamp</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>ActOnKeyStroke</key>
+			<dict>
+				<key>keyCode</key>
+				<integer>0</integer>
+				<key>keyLabel</key>
+				<string>a</string>
+			</dict>
+			<key>Active</key>
+			<string>1</string>
+			<key>ActiveSyncState</key>
+			<string>1</string>
+			<key>AllCriteriaMustBeSatisfied</key>
+			<string>NO</string>
+			<key>AutoResponseType</key>
+			<integer>0</integer>
+			<key>CopyToMailbox</key>
+			<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com/Archive.mbox</string>
+			<key>CopyToMailboxURL</key>
+			<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/Archive</string>
+			<key>Criteria</key>
+			<array>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>c693060d-42e2-4185-9e2f-81d845e79a52</string>
+					<key>Expression</key>
+					<string>imap://garrettheath4@mail.mac.com/INBOX</string>
+					<key>Header</key>
+					<string>MessageIsInMailbox</string>
+					<key>Qualifier</key>
+					<string>DoesNotContain</string>
+				</dict>
+			</array>
+			<key>Deletes</key>
+			<string>NO</string>
+			<key>HighlightTextUsingColor</key>
+			<string>NO</string>
+			<key>Mailbox</key>
+			<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com/Archive.mbox</string>
+			<key>MailboxURL</key>
+			<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/Archive</string>
+			<key>MarkFlagged</key>
+			<string>NO</string>
+			<key>MarkRead</key>
+			<string>YES</string>
+			<key>NotifyUser</key>
+			<string>NO</string>
+			<key>RuleId</key>
+			<string>CB8B2838-5F82-4C70-AA68-F6F14D198298</string>
+			<key>RuleName</key>
+			<string>Copy of Archive (W&amp;L)</string>
 			<key>ShouldCopyMessage</key>
 			<string>NO</string>
 			<key>ShouldTransferMessage</key>

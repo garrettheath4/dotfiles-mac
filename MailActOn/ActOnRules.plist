@@ -1939,6 +1939,64 @@
 			<integer>0</integer>
 		</dict>
 		<dict>
+			<key>ActOnKeyStroke</key>
+			<dict>
+				<key>keyCode</key>
+				<integer>0</integer>
+				<key>keyLabel</key>
+				<string>a</string>
+			</dict>
+			<key>Active</key>
+			<string>1</string>
+			<key>ActiveSyncState</key>
+			<string>1</string>
+			<key>AllCriteriaMustBeSatisfied</key>
+			<string>NO</string>
+			<key>AutoResponseType</key>
+			<integer>0</integer>
+			<key>CopyToMailbox</key>
+			<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com/Archive.mbox</string>
+			<key>CopyToMailboxURL</key>
+			<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/Archive</string>
+			<key>Criteria</key>
+			<array>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>ea6bbc56-fe91-42ec-89a1-a54812856554</string>
+					<key>Expression</key>
+					<string>imap://garrettheath4@mail.mac.com/INBOX</string>
+					<key>Header</key>
+					<string>MessageIsInMailbox</string>
+					<key>Qualifier</key>
+					<string>DoesNotContain</string>
+				</dict>
+			</array>
+			<key>Deletes</key>
+			<string>NO</string>
+			<key>HighlightTextUsingColor</key>
+			<string>NO</string>
+			<key>Mailbox</key>
+			<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com/Archive.mbox</string>
+			<key>MailboxURL</key>
+			<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/Archive</string>
+			<key>MarkFlagged</key>
+			<string>NO</string>
+			<key>MarkRead</key>
+			<string>YES</string>
+			<key>NotifyUser</key>
+			<string>NO</string>
+			<key>RuleId</key>
+			<string>CB8B2838-5F82-4C70-AA68-F6F14D198298</string>
+			<key>RuleName</key>
+			<string>Archive (iCloud)</string>
+			<key>ShouldCopyMessage</key>
+			<string>NO</string>
+			<key>ShouldTransferMessage</key>
+			<string>YES</string>
+			<key>TimeStamp</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
 			<key>Active</key>
 			<string>1</string>
 			<key>ActiveSyncState</key>
@@ -2046,6 +2104,6 @@
 		</dict>
 	</array>
 	<key>version</key>
-	<integer>173</integer>
+	<integer>174</integer>
 </dict>
 </plist>
