@@ -1,4 +1,7 @@
 #!/bin/sh
+# Script to install major programs and Applications on a Mac account
+# Most things in this script (unless they're very minor) should run with
+# a prompted confirmation from the user to install each item
 
 EXPORTS="`pwd`"
 

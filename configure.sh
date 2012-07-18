@@ -1,4 +1,7 @@
 #!/bin/sh
+# Script to configure a Mac account with preferred settings
+# This script may also install minor programs but everything in this script
+# should run to completion without any prompts, sudo or otherwise
 
 EXPORTS="`pwd`"
 
