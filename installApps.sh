@@ -5,9 +5,24 @@
 
 EXPORTS="`pwd`"
 
+# Variable: Has the spreadsheet with the list of licenses been opened yet?
+#   Values: 'YES' or 'NO'
+LicensePage="https://docs.google.com/spreadsheet/ccc?key=0AkNyR8-zKS20dEpiRHJXWXNrYVV6VnRmRjk2VnN6X2c"
+OpenedLicenses="NO"
+
+ShowLicenses () {
+	if [ "$OpenedLicenses" == "NO" ]; then
+		open "$LicensePage"
+		OpenedLicenses="YES"
+	fi
+}
+
 # Add fractals to Pictures folder
-if [ -d "$EXPORTS/Fractals-2560x1600" ]; then
-	ln -is "$EXPORTS/Fractals-2560x1600" ~/Pictures/
+read -p "Add fractals to Pictures folder? (y/n) [y]: " confirmfrac
+if [ "$confirmfrac" != "n" ]; then
+	if [ -d "$EXPORTS/Fractals-2560x1600" ]; then
+		ln -is "$EXPORTS/Fractals-2560x1600" ~/Pictures/
+	fi
 fi
 
 # Install special sound effects
@@ -28,15 +43,24 @@ fi
 # Prompt to install Mail ActOn
 read -p "Install Mail ActOn now? (y/n) [y]: " confirmacton
 if [ "$confirmacton" != "n" ]; then
-	pbcopy < "$EXPORTS/MailActOn/license-key.txt"
-	echo "Mail ActOn Name: Garrett Koller"
-	echo "Mail ActOn Key:  MAO-001-AHN2-J1GJ-FBTS-J4F7-BAP9"
-	echo "   (The license key has been copied to the clipboard.)"
-	open "$EXPORTS/MailActOn/Website.webloc"
+	ShowLicenses
+	open "http://www.indev.ca/MailActOn.html"
 fi
 
 # Prompt to install TotalTerminal
 read -p "Install TotalTerminal now? (y/n) [y]: " confirmtterm
 if [ "$confirmtterm" != "n" ]; then
 	open "http://totalterminal.binaryage.com/"
+fi
+
+# Prompt to install Growl
+read -p "Install Growl now? (y/n) [y]: " confirmgrowl
+if [ "$confirmvoice" ]; then
+	open "http://itunes.apple.com/us/app/growl/id467939042"
+fi
+
+# Prompt to install GrowlVoice
+read -p "Install GrowlVoice now? (y/n) [y]: " confirmvoice
+if [ "$confirmvoice" ]; then
+	open "http://itunes.apple.com/us/app/growlvoice-google-voice-client/id413146256"
 fi
