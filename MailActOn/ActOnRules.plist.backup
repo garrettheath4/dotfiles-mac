@@ -820,7 +820,7 @@
 					<key>Expression</key>
 					<string>SigEp</string>
 					<key>GroupId</key>
-					<string>7FE3BB4A-E75B-45E6-82CD-DC77BA8F77DF:ABGroup</string>
+					<string>8A44865D-0A83-4B91-B16B-CC28735674E2:ABGroup</string>
 					<key>GroupName</key>
 					<string>SigEp</string>
 					<key>Header</key>
@@ -1962,7 +1962,7 @@
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>c693060d-42e2-4185-9e2f-81d845e79a52</string>
+					<string>ea6bbc56-fe91-42ec-89a1-a54812856554</string>
 					<key>Expression</key>
 					<string>imap://garrettheath4@mail.mac.com/INBOX</string>
 					<key>Header</key>
@@ -1988,7 +1988,7 @@
 			<key>RuleId</key>
 			<string>CB8B2838-5F82-4C70-AA68-F6F14D198298</string>
 			<key>RuleName</key>
-			<string>Copy of Archive (W&amp;L)</string>
+			<string>Archive (iCloud)</string>
 			<key>ShouldCopyMessage</key>
 			<string>NO</string>
 			<key>ShouldTransferMessage</key>
@@ -2104,6 +2104,6 @@
 		</dict>
 	</array>
 	<key>version</key>
-	<integer>173</integer>
+	<integer>174</integer>
 </dict>
 </plist>

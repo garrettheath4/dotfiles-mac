@@ -34,3 +34,9 @@ if [ "$confirmacton" != "n" ]; then
 	echo "   (The license key has been copied to the clipboard.)"
 	open "$EXPORTS/MailActOn/Website.webloc"
 fi
+
+# Prompt to install TotalTerminal
+read -p "Install TotalTerminal now? (y/n) [y]: " confirmtterm
+if [ "$confirmtterm" != "n" ]; then
+	open "http://totalterminal.binaryage.com/"
+fi

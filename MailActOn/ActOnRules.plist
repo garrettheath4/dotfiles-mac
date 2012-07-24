@@ -536,73 +536,9 @@
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>31dfcdff-e9f3-4849-acf8-81d0ea4ce244</string>
-					<key>Expression</key>
-					<string>0</string>
+					<string>8f15fd93-8b57-4b0b-91a7-895915c346fb</string>
 					<key>Header</key>
-					<string>FlaggedStatus</string>
-					<key>Qualifier</key>
-					<string>IsEqualTo</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>d9d706ec-aa75-4a34-afd9-fc6af55b45ba</string>
-					<key>Expression</key>
-					<string>1</string>
-					<key>Header</key>
-					<string>FlaggedStatus</string>
-					<key>Qualifier</key>
-					<string>IsEqualTo</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>9d77c143-08d9-4d1b-9497-be26b667bebc</string>
-					<key>Expression</key>
-					<string>2</string>
-					<key>Header</key>
-					<string>FlaggedStatus</string>
-					<key>Qualifier</key>
-					<string>IsEqualTo</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>15d85cc6-6f4d-41e2-967f-90a355f89c67</string>
-					<key>Expression</key>
-					<string>3</string>
-					<key>Header</key>
-					<string>FlaggedStatus</string>
-					<key>Qualifier</key>
-					<string>IsEqualTo</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>042add1a-82cc-4ea8-83fd-206c5b6781db</string>
-					<key>Expression</key>
-					<string>4</string>
-					<key>Header</key>
-					<string>FlaggedStatus</string>
-					<key>Qualifier</key>
-					<string>IsEqualTo</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>1c569815-5291-423c-8d8d-f7050f3cfaf5</string>
-					<key>Expression</key>
-					<string>5</string>
-					<key>Header</key>
-					<string>FlaggedStatus</string>
-					<key>Qualifier</key>
-					<string>IsEqualTo</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>93fa321d-c11e-415f-afb0-54e42f51d42a</string>
-					<key>Expression</key>
-					<string>6</string>
-					<key>Header</key>
-					<string>FlaggedStatus</string>
-					<key>Qualifier</key>
-					<string>IsEqualTo</string>
+					<string>AnyMessage</string>
 				</dict>
 			</array>
 			<key>Deletes</key>
@@ -820,7 +756,7 @@
 					<key>Expression</key>
 					<string>SigEp</string>
 					<key>GroupId</key>
-					<string>7FE3BB4A-E75B-45E6-82CD-DC77BA8F77DF:ABGroup</string>
+					<string>8A44865D-0A83-4B91-B16B-CC28735674E2:ABGroup</string>
 					<key>GroupName</key>
 					<string>SigEp</string>
 					<key>Header</key>
@@ -2104,6 +2040,6 @@
 		</dict>
 	</array>
 	<key>version</key>
-	<integer>174</integer>
+	<integer>175</integer>
 </dict>
 </plist>
