@@ -17,17 +17,40 @@ ShowLicenses () {
 	fi
 }
 
-# Add fractals to Pictures folder
-read -p "Add fractals to Pictures folder? (y/n) [y]: " confirmfrac
-if [ "$confirmfrac" != "n" ]; then
-	if [ -d "$EXPORTS/Fractals-2560x1600" ]; then
-		ln -is "$EXPORTS/Fractals-2560x1600" ~/Pictures/
+ConfirmInstall () {
+	# Usage: ConfirmInstall DescriptionString
+	# Returns: 0 for YES
+	# (as $?): 1 for NO
+	read -p "Install $1 now? (y/n) [y]: " confirminstall
+	if [ "$confirminstall" != "n" ]; then
+		# Return YES
+		return 0
+	else
+		# Return NO
+		return 1
 	fi
+}
+
+LuckySearch () {
+	# Usage: LuckySearch SearchString
+	# Action: Performs an I'm Feeling Lucky Google search of SearchString
+	GIFL="http://www.google.com/search?q=%s&btnI=Im+Feeling+Lucky"
+	URL=`echo "$GIFL" | sed -e "s/%s/$1/" | sed -e 's/ /+/g'`
+	echo "Opening $URL"
+	open "$URL"
+}
+
+#
+# FILES
+#
+
+# Add fractals to Pictures folder
+if [ ConfirmInstall "fractals to Pictures folder" ]; then
+	ln -is "$EXPORTS/Fractals-2560x1600" ~/Pictures/
 fi
 
 # Install special sound effects
-read -p "Install \"Robot Blip\" sound now? (y/n) [y]: " confirmsound
-if [ "$confirmsound" != "n" ]; then
+if [ ConfirmInstall "\"Robot Blip\" sound" ]; then
 	echo "Adding \"Robot Blip\" to system sounds..."
 	if [ -e "$EXPORTS/Sounds/Robot Blip.aiff" ]; then
 		sudo cp "$EXPORTS/Sounds/Robot Blip.aiff" /System/Library/Sounds/
@@ -40,27 +63,52 @@ if [ "$confirmsound" != "n" ]; then
 	fi
 fi
 
+
+#
+# Google Chrome (install before opening later web pages)
+#
+
+if [ ConfirmInstall "Google Chrome" ]; then
+	LuckySearch "install google chrome for mac site:google.com"
+fi
+
+
+#
+# TOOLS
+#
+
 # Prompt to install Mail ActOn
-read -p "Install Mail ActOn now? (y/n) [y]: " confirmacton
-if [ "$confirmacton" != "n" ]; then
+if [ ConfirmInstall "Mail ActOn" ]; then
 	ShowLicenses
-	open "http://www.indev.ca/MailActOn.html"
+	LuckySearch "Indev Mail ActOn for Mac"
 fi
 
 # Prompt to install TotalTerminal
-read -p "Install TotalTerminal now? (y/n) [y]: " confirmtterm
-if [ "$confirmtterm" != "n" ]; then
-	open "http://totalterminal.binaryage.com/"
+if [ ConfirmInstall "TotalTerminal" ]; then
+	LuckySearch "totalterminal for mac"
 fi
 
 # Prompt to install Growl
-read -p "Install Growl now? (y/n) [y]: " confirmgrowl
-if [ "$confirmvoice" ]; then
-	open "http://itunes.apple.com/us/app/growl/id467939042"
+if [ ConfirmInstall "Growl" ]; then
+	open "macappstore://itunes.apple.com/us/app/growl/id467939042"
 fi
 
 # Prompt to install GrowlVoice
-read -p "Install GrowlVoice now? (y/n) [y]: " confirmvoice
-if [ "$confirmvoice" ]; then
-	open "http://itunes.apple.com/us/app/growlvoice-google-voice-client/id413146256"
+if [ ConfirmInstall "GrowlVoice" ]; then
+	open "macappstore://itunes.apple.com/us/app/growlvoice-google-voice-client/id413146256"
+fi
+
+# Prompt to install HardwareGrowler
+if [ ConfirmInstall "HardwareGrowler" ]; then
+	open "macappstore://itunes.apple.com/us/app/hardwaregrowler/id475260933"
+fi
+
+
+#
+# APPS
+#
+
+# Prompt to install MacVim
+if [ ConfirmInstall "MacVim" ]; then
+	LuckySearch "macvim for mac"
 fi
