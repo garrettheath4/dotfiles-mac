@@ -21,8 +21,7 @@ ConfirmInstall () {
 	# Usage: ConfirmInstall DescriptionString InstalledAppName
 	# Returns: 0 for YES
 	# (as $?): 1 for NO
-	if [ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" \
-		&& ! -e "$2" ]; then
+	if [[ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" && ! -e "$2" ]]; then
 		read -p "Install $1 now? (y/n) [y]: " confirminstall
 		if [ "$confirminstall" != "n" ]; then
 			# Return YES
@@ -31,6 +30,9 @@ ConfirmInstall () {
 			# Return NO
 			return 1
 		fi
+	else
+		# Return NO
+		return 1
 	fi
 }
 
@@ -48,14 +50,13 @@ LuckySearch () {
 #
 
 # Add fractals to Pictures folder
-if [ ConfirmInstall "fractals to Pictures folder" \
-		~/Pictures/Fractals-2560x1600 ]; then
+if ConfirmInstall "fractals to Pictures folder" ~/Pictures/Fractals-2560x1600; then
 	ln -is "$EXPORTS/Fractals-2560x1600" ~/Pictures/
 fi
 
 # Install special sound effects
-if [ ConfirmInstall "\"Robot Blip\" sound" \
-		'/System/Library/Sounds/Robot Blip.aiff' ]; then
+if ConfirmInstall "\"Robot Blip\" sound" \
+		'/System/Library/Sounds/Robot Blip.aiff'; then
 	echo "Adding \"Robot Blip\" to system sounds..."
 	if [ -e "$EXPORTS/Sounds/Robot Blip.aiff" ]; then
 		sudo cp "$EXPORTS/Sounds/Robot Blip.aiff" \
@@ -74,7 +75,7 @@ fi
 # Google Chrome (install before opening later web pages)
 #
 
-if [ ConfirmInstall "Google Chrome" ]; then
+if ConfirmInstall "Google Chrome"; then
 	LuckySearch "install google chrome for mac site:google.com"
 fi
 
@@ -84,35 +85,36 @@ fi
 #
 
 # Prompt to install XScreenSaver
-if [ ConfirmInstall "XScreenSaver" ]; then
+if ConfirmInstall 'XScreenSaver'; then
+	echo "Installing XScreenSaver"
 	LuckySearch "XScreenSaver for macos x download"
 fi
 
 # Prompt to install Mail ActOn
-if [ ConfirmInstall "Mail ActOn" \
-		"/Users/Garrett/Library/Mail/Bundles/MailActOn.mailbundle" \
-		]; then
+if ConfirmInstall "Mail ActOn" \
+		"/Users/Garrett/Library/Mail/Bundles/MailActOn.mailbundle"
+		then
 	ShowLicenses
 	LuckySearch "Indev Mail ActOn for Mac"
 fi
 
 # Prompt to install TotalTerminal
-if [ ConfirmInstall "TotalTerminal" ]; then
+if ConfirmInstall "TotalTerminal"; then
 	LuckySearch "totalterminal for mac"
 fi
 
 # Prompt to install Growl
-if [ ConfirmInstall "Growl" ]; then
+if ConfirmInstall "Growl"; then
 	open "macappstore://itunes.apple.com/us/app/growl/id467939042"
 fi
 
 # Prompt to install GrowlVoice
-if [ ConfirmInstall "GrowlVoice" ]; then
+if ConfirmInstall "GrowlVoice"; then
 	open "macappstore://itunes.apple.com/us/app/growlvoice-google-voice-client/id413146256"
 fi
 
 # Prompt to install HardwareGrowler
-if [ ConfirmInstall "HardwareGrowler" ]; then
+if ConfirmInstall "HardwareGrowler"; then
 	open "macappstore://itunes.apple.com/us/app/hardwaregrowler/id475260933"
 fi
 
@@ -122,16 +124,16 @@ fi
 #
 
 # Prompt to install MacVim
-if [ ConfirmInstall "MacVim" "Vim" ]; then
+if ConfirmInstall "MacVim" "Vim"; then
 	LuckySearch "macvim for mac"
 fi
 
 # Prompt to install Things for Mac
-if [ ConfirmInstall "Things for Mac" "Things" ]; then
+if ConfirmInstall "Things for Mac" "Things"; then
 	LuckySearch "Things for Mac cultured code"
 fi
 
 # Prompt to install Spotify
-if [ ConfirmInstall "Spotify" ]; then
+if ConfirmInstall "Spotify"; then
 	LuckySearch "spotify for mac"
 fi
