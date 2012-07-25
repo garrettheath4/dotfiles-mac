@@ -44,6 +44,7 @@ map Q gq
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
+  set guioptions-=T
   color koehler
   syntax on
   hi Error guifg=Yellow guibg=Red ctermfg=8 ctermbg=1
