@@ -18,16 +18,19 @@ ShowLicenses () {
 }
 
 ConfirmInstall () {
-	# Usage: ConfirmInstall DescriptionString
+	# Usage: ConfirmInstall DescriptionString InstalledAppName
 	# Returns: 0 for YES
 	# (as $?): 1 for NO
-	read -p "Install $1 now? (y/n) [y]: " confirminstall
-	if [ "$confirminstall" != "n" ]; then
-		# Return YES
-		return 0
-	else
-		# Return NO
-		return 1
+	if [ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" \
+		&& ! -e "$2" ]; then
+		read -p "Install $1 now? (y/n) [y]: " confirminstall
+		if [ "$confirminstall" != "n" ]; then
+			# Return YES
+			return 0
+		else
+			# Return NO
+			return 1
+		fi
 	fi
 }
 
@@ -45,15 +48,18 @@ LuckySearch () {
 #
 
 # Add fractals to Pictures folder
-if [ ConfirmInstall "fractals to Pictures folder" ]; then
+if [ ConfirmInstall "fractals to Pictures folder" \
+		~/Pictures/Fractals-2560x1600 ]; then
 	ln -is "$EXPORTS/Fractals-2560x1600" ~/Pictures/
 fi
 
 # Install special sound effects
-if [ ConfirmInstall "\"Robot Blip\" sound" ]; then
+if [ ConfirmInstall "\"Robot Blip\" sound" \
+		'/System/Library/Sounds/Robot Blip.aiff' ]; then
 	echo "Adding \"Robot Blip\" to system sounds..."
 	if [ -e "$EXPORTS/Sounds/Robot Blip.aiff" ]; then
-		sudo cp "$EXPORTS/Sounds/Robot Blip.aiff" /System/Library/Sounds/
+		sudo cp "$EXPORTS/Sounds/Robot Blip.aiff" \
+			/System/Library/Sounds/
 		if [ "$?" != 0 ]; then
 			echo "Warning: Error in installing Robot Blip."
 			echo "         Perhaps you don't have sudo permissions?"
@@ -77,8 +83,15 @@ fi
 # TOOLS
 #
 
+# Prompt to install XScreenSaver
+if [ ConfirmInstall "XScreenSaver" ]; then
+	LuckySearch "XScreenSaver for macos x download"
+fi
+
 # Prompt to install Mail ActOn
-if [ ConfirmInstall "Mail ActOn" ]; then
+if [ ConfirmInstall "Mail ActOn" \
+		"/Users/Garrett/Library/Mail/Bundles/MailActOn.mailbundle" \
+		]; then
 	ShowLicenses
 	LuckySearch "Indev Mail ActOn for Mac"
 fi
@@ -109,6 +122,16 @@ fi
 #
 
 # Prompt to install MacVim
-if [ ConfirmInstall "MacVim" ]; then
+if [ ConfirmInstall "MacVim" "Vim" ]; then
 	LuckySearch "macvim for mac"
+fi
+
+# Prompt to install Things for Mac
+if [ ConfirmInstall "Things for Mac" "Things" ]; then
+	LuckySearch "Things for Mac cultured code"
+fi
+
+# Prompt to install Spotify
+if [ ConfirmInstall "Spotify" ]; then
+	LuckySearch "spotify for mac"
 fi
