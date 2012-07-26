@@ -118,6 +118,16 @@ if ConfirmInstall "HardwareGrowler"; then
 	open "macappstore://itunes.apple.com/us/app/hardwaregrowler/id475260933"
 fi
 
+# Prompt to install Xcode
+if ConfirmInstall "Xcode"; then
+	open "macappstore://itunes.apple.com/us/app/xcode/id497799835"
+fi
+
+# Prompt to install Google Drive
+if ConfirmInstall "Google Drive"; then
+	LuckySearch "google drive for mac download site:google.com"
+fi
+
 
 #
 # APPS
@@ -136,4 +146,44 @@ fi
 # Prompt to install Spotify
 if ConfirmInstall "Spotify"; then
 	LuckySearch "spotify for mac"
+fi
+
+# Prompt to install Skype
+if ConfirmInstall "Skype"; then
+	LuckySearch "skype for mac site:skype.com"
+fi
+
+# Prompt to install GitHub for Mac
+if ConfirmInstall "GitHub for Mac" "GitHub"; then
+	LuckySearch "github for mac site:github.com"
+fi
+
+# Prompt to install HandBrake
+if ConfirmInstall "HandBrake"; then
+	LuckySearch "handbrake for mac"
+fi
+
+
+#
+# GAMES
+#
+
+# Prompt to install Steam
+if ConfirmInstall "Steam"; then
+	LuckySearch "steam for mac download site:steampowered.com"
+fi
+
+# Prompt to install StarCraft II
+if ConfirmInstall "StarCraft II" "StarCraft II/StarCraft II"; then
+	open "https://us.battle.net/account/management/download/"
+fi
+
+# Prompt to install Minecraft
+if ConfirmInstall "Minecraft"; then
+	LuckySearch "minecraft for mac download"
+fi
+
+# Prompt to install Battle for Wesnoth
+if ConfirmInstall "Battle for Wesnoth" "Wesnoth"; then
+	LuckySearch "battle for wesnoth for mac"
 fi
