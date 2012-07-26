@@ -125,7 +125,7 @@ fi
 
 # Prompt to install Google Drive
 if ConfirmInstall "Google Drive"; then
-	LuckySearch "google drive for mac download site:google.com"
+	open "http://tools.google.com/dlpage/drive"
 fi
 
 
