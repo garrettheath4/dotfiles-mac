@@ -84,9 +84,13 @@ fi
 # TOOLS
 #
 
+# Prompt to install LastPass extension for Google Chrome
+if ConfirmInstall 'LastPass for Google Chrome'; then
+	LuckySearch "lastpass mac chrome download"
+fi
+
 # Prompt to install XScreenSaver
 if ConfirmInstall 'XScreenSaver'; then
-	echo "Installing XScreenSaver"
 	LuckySearch "XScreenSaver for macos x download"
 fi
 
