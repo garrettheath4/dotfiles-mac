@@ -30,19 +30,11 @@
 					<key>AccountURL</key>
 					<string>imap://garrettheath4@imap.gmail.com/</string>
 					<key>CriterionUniqueId</key>
-					<string>345251d4-d364-4476-a35a-496dd131484a</string>
+					<string>a3021e27-8293-4975-9a07-acaf592e7329</string>
 					<key>Expression</key>
 					<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com</string>
 					<key>Header</key>
 					<string>Account</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>9a226f52-b110-4dcd-af89-d1930c7162d0</string>
-					<key>Expression</key>
-					<string>order</string>
-					<key>Header</key>
-					<string>Body</string>
 				</dict>
 			</array>
 			<key>Deletes</key>
@@ -96,19 +88,11 @@
 					<key>AccountURL</key>
 					<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/</string>
 					<key>CriterionUniqueId</key>
-					<string>6d746d98-4cdb-4e68-a961-1ed370353adc</string>
+					<string>f3993d52-6fa2-485a-be30-443a041f8d53</string>
 					<key>Expression</key>
 					<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com</string>
 					<key>Header</key>
 					<string>Account</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>99302599-a2ca-4b5e-b6a4-4345a70bcb99</string>
-					<key>Expression</key>
-					<string>order</string>
-					<key>Header</key>
-					<string>Body</string>
 				</dict>
 			</array>
 			<key>Deletes</key>
@@ -162,7 +146,7 @@
 					<key>AccountURL</key>
 					<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/</string>
 					<key>CriterionUniqueId</key>
-					<string>2878dc7f-76e5-422e-bff8-7c2711b0cbfe</string>
+					<string>f2bad559-a8b4-4c47-bff7-e1e38dd52128</string>
 					<key>Expression</key>
 					<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com</string>
 					<key>Header</key>
@@ -220,7 +204,7 @@
 					<key>AccountURL</key>
 					<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/</string>
 					<key>CriterionUniqueId</key>
-					<string>53fc25f9-adaa-4f59-be43-3a54ef98ce6e</string>
+					<string>6cb01058-5d0f-45da-bd95-564dc3bd07cf</string>
 					<key>Expression</key>
 					<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com</string>
 					<key>Header</key>
@@ -278,7 +262,7 @@
 					<key>AccountURL</key>
 					<string>imap://garrettheath4@imap.gmail.com/</string>
 					<key>CriterionUniqueId</key>
-					<string>fb2185de-bed9-4527-8073-97e09f8de076</string>
+					<string>56b3b74c-8cf3-48ee-acd9-d18e8b8f1b7a</string>
 					<key>Expression</key>
 					<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com</string>
 					<key>Header</key>
@@ -588,7 +572,7 @@
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>be5f7526-611b-4409-a598-e2be96262e61</string>
+					<string>b2ffb072-8872-4273-9836-d768bcff859b</string>
 					<key>Expression</key>
 					<string>stoughj@wlu.edu</string>
 					<key>Header</key>
@@ -596,7 +580,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>ba9018e4-c4f2-4b8a-8300-cf6d8ee624f6</string>
+					<string>5574e094-9a8d-40b8-a229-288caa2a8a7e</string>
 					<key>Expression</key>
 					<string>stough@gmail.com</string>
 					<key>Header</key>
@@ -604,7 +588,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>c04f24b8-4a66-4a53-9dd9-b863e7aeb623</string>
+					<string>dfb3ce6e-c3e8-4330-ac8d-43b6418e36c6</string>
 					<key>Expression</key>
 					<string>LevyS@wlu.edu</string>
 					<key>Header</key>
@@ -612,7 +596,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>c029cb45-d61b-4eab-8cbc-c759d320966b</string>
+					<string>07c3d0c8-071c-4319-8ef1-2957137b98a2</string>
 					<key>Expression</key>
 					<string>lambertk@wlu.edu</string>
 					<key>Header</key>
@@ -620,7 +604,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>4148ebca-d10a-4d0b-a065-397b333a2bc5</string>
+					<string>6421bf4c-0827-4448-b4e6-7c2aa4fa19b4</string>
 					<key>Expression</key>
 					<string>KolmanB@wlu.edu</string>
 					<key>Header</key>
@@ -628,7 +612,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>fe5904b2-3850-4a53-b067-08277eab9e0f</string>
+					<string>0b9ed678-3384-4a56-bf9f-74b466ecda8f</string>
 					<key>Expression</key>
 					<string>HorowitzS@wlu.edu</string>
 					<key>Header</key>
@@ -636,7 +620,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>c84fa358-c4d0-42a5-9ceb-afc5b5520145</string>
+					<string>3c54b9da-5191-4879-89ed-cd30f2725e4a</string>
 					<key>Expression</key>
 					<string>harderb12@mail.wlu.edu</string>
 					<key>Header</key>
@@ -644,7 +628,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>60a19d9c-1664-4b33-b0fb-d01d37a22a1d</string>
+					<string>c41a86d7-d7a9-4d47-a1cc-3c1334cac8f9</string>
 					<key>Expression</key>
 					<string>FinchC@wlu.edu</string>
 					<key>Header</key>
@@ -652,7 +636,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>0929c879-0751-4f0d-8a8c-38415782f1b3</string>
+					<string>ff1fb4c7-0929-4d46-a70f-efe519bf2b51</string>
 					<key>Expression</key>
 					<string>watanabes@wlu.edu</string>
 					<key>Header</key>
@@ -660,7 +644,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>2e322a78-30e3-46f0-b699-a47ca074c02a</string>
+					<string>d002df6b-94f1-41dc-aaf6-9039179061bc</string>
 					<key>Expression</key>
 					<string>CrowleyK@wlu.edu</string>
 					<key>Header</key>
@@ -668,7 +652,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>43b9a0b3-3b52-43bd-955c-a3483cc5c176</string>
+					<string>d3741a5b-2720-4fbc-a12d-a3de8443e912</string>
 					<key>Expression</key>
 					<string>CampbellG@wlu.edu</string>
 					<key>Header</key>
@@ -676,7 +660,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>36573455-16a6-4d69-9ab1-aecdf780ed76</string>
+					<string>911722e2-dc14-4dbc-8347-83778bd5cc88</string>
 					<key>Expression</key>
 					<string>sprenkles@wlu.edu</string>
 					<key>Header</key>
@@ -684,7 +668,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>d2c4a05b-3cd7-460a-8d02-142d5e1764ae</string>
+					<string>2c8f1633-570b-4c0b-ad7b-265529f47f71</string>
 					<key>Expression</key>
 					<string>lubint@wlu.edu</string>
 					<key>Header</key>
@@ -692,7 +676,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>35975406-c7ee-4dfe-afb0-afc504f10fb3</string>
+					<string>01f523cc-0820-4189-9b3f-c5c4e4c9bf9b</string>
 					<key>Expression</key>
 					<string>@sakai.wlu.edu</string>
 					<key>Header</key>
@@ -723,8 +707,6 @@
 			<string>NO</string>
 			<key>ShouldTransferMessage</key>
 			<string>YES</string>
-			<key>StopEvaluatingRules</key>
-			<string>YES</string>
 			<key>TimeStamp</key>
 			<integer>0</integer>
 		</dict>
@@ -752,11 +734,11 @@
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>3613746c-0ba3-41a7-a3cc-6df59a1a98c8</string>
+					<string>390d541e-2a53-4590-b5d9-cc91f8a61b66</string>
 					<key>Expression</key>
 					<string>SigEp</string>
 					<key>GroupId</key>
-					<string>8A44865D-0A83-4B91-B16B-CC28735674E2:ABGroup</string>
+					<string>7FE3BB4A-E75B-45E6-82CD-DC77BA8F77DF:ABGroup</string>
 					<key>GroupName</key>
 					<string>SigEp</string>
 					<key>Header</key>
@@ -764,7 +746,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>5573ff05-6f50-4d37-8759-5e2aea5b789a</string>
+					<string>d3d4baca-2407-4ad9-995d-7f0e3fe3bc41</string>
 					<key>Expression</key>
 					<string>SigEpBrothers@mail.wlu.edu</string>
 					<key>Header</key>
@@ -772,7 +754,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>98aaf061-7398-4e21-9f41-648eed5afaed</string>
+					<string>4f527aa1-a403-4d27-9613-ce068b1baed9</string>
 					<key>Expression</key>
 					<string>SigEp@mail.wlu.edu</string>
 					<key>Header</key>
@@ -780,7 +762,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>8a2baabf-fca0-4b77-913b-d78e24159c1d</string>
+					<string>13823792-6fa9-43cd-aa3c-4051ef482909</string>
 					<key>Expression</key>
 					<string>SigEpBrothers@mail.wlu.edu</string>
 					<key>Header</key>
@@ -788,7 +770,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>f79a4ad1-5a58-475c-acd7-39a2405faaad</string>
+					<string>de149f3a-fbf7-4cf6-82fc-ac21c8c9757e</string>
 					<key>Expression</key>
 					<string>gillerans11@mail.wlu.edu</string>
 					<key>Header</key>
@@ -796,7 +778,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>8b75530e-235c-4c7e-bcd4-d9ed3b462a7f</string>
+					<string>349dfea0-3ab4-4628-ac8d-a852984b01a2</string>
 					<key>Expression</key>
 					<string>matareses11@mail.wlu.edu</string>
 					<key>Header</key>
@@ -804,7 +786,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>d75404f7-226d-4689-b710-5817e2cf14fb</string>
+					<string>a9113291-6769-486f-98eb-1dc3f998cf1f</string>
 					<key>Expression</key>
 					<string>bobkovach@embarqmail.com</string>
 					<key>Header</key>
@@ -812,7 +794,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>8ce540f6-b574-4118-ad7b-7946772c6a0b</string>
+					<string>a6442978-d13f-4e8b-86f5-f5272b7e95dc</string>
 					<key>Expression</key>
 					<string>gibsonbg@me.com</string>
 					<key>Header</key>
@@ -820,7 +802,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>1f400087-125d-4dab-a7d6-2e92e576010d</string>
+					<string>39da2e82-d9c6-4efc-86d6-d30487aaef60</string>
 					<key>Expression</key>
 					<string>hjamar@gmail.com</string>
 					<key>Header</key>
@@ -828,7 +810,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>6a03777b-529c-479c-b1e2-9243723a97f1</string>
+					<string>ee833f38-7ea8-4c7a-ba79-eef6cba5f763</string>
 					<key>Expression</key>
 					<string>SigmaPhiEpsilon</string>
 					<key>Header</key>
@@ -836,7 +818,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>37a951ca-6402-4573-b0c2-3acb3ef8d4d0</string>
+					<string>4245fbd3-6626-4d8f-97ab-33db95fd0270</string>
 					<key>Expression</key>
 					<string>Kelly@swisherdavis.com</string>
 					<key>Header</key>
@@ -844,7 +826,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>bd295dad-fa60-47ed-a3a5-e0cae5973908</string>
+					<string>84881f4f-883a-4300-98fd-014b56732e9c</string>
 					<key>Expression</key>
 					<string>@sigep.net</string>
 					<key>Header</key>
@@ -875,8 +857,6 @@
 			<string>NO</string>
 			<key>ShouldTransferMessage</key>
 			<string>YES</string>
-			<key>StopEvaluatingRules</key>
-			<string>YES</string>
 			<key>TimeStamp</key>
 			<integer>0</integer>
 		</dict>
@@ -893,7 +873,7 @@
 			<key>ActiveSyncState</key>
 			<string>1</string>
 			<key>AllCriteriaMustBeSatisfied</key>
-			<string>YES</string>
+			<string>NO</string>
 			<key>AutoResponseType</key>
 			<integer>0</integer>
 			<key>CopyToMailbox</key>
@@ -904,17 +884,15 @@
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>21af3607-87ab-42fe-9412-8985c7e010cf</string>
+					<string>a70858bc-8006-479c-8418-df8a537db89b</string>
 					<key>Expression</key>
-					<string>cancer.org</string>
+					<string>hrc@hrc.org</string>
 					<key>Header</key>
 					<string>From</string>
-					<key>Qualifier</key>
-					<string>EndsWith</string>
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>39acbc45-1f92-42d5-ac6b-071072a8c045</string>
+					<string>5ce10be2-f3d9-4d65-bda5-350ee724ebee</string>
 					<key>Expression</key>
 					<string>wlushakespeare@gmail.com</string>
 					<key>Header</key>
@@ -922,49 +900,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>69c1d3ee-8f2c-4223-b6eb-690e408289f1</string>
-					<key>Expression</key>
-					<string>spencerc11@mail.wlu.edu</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>f8829855-185c-4070-bc94-9a6b391c2958</string>
-					<key>Expression</key>
-					<string>csyeager@gmail.com</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>8c4823d4-71be-463f-b9e9-f7832ee0173c</string>
-					<key>Expression</key>
-					<string>noreply@msites.com</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>788de38b-c424-433d-aead-5a95ff90df90</string>
-					<key>Expression</key>
-					<string>vestalr13@mail.wlu.edu</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>5c654956-a295-40bb-b583-4fc7c8494305</string>
-					<key>Expression</key>
-					<string>VAcycling:</string>
-					<key>Header</key>
-					<string>Subject</string>
-					<key>Qualifier</key>
-					<string>BeginsWith</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>f4d1599f-0b0f-4600-943e-df2d861ec240</string>
+					<string>4930b57f-d8f8-4f11-a75e-9882e11d5f9f</string>
 					<key>Expression</key>
 					<string>KLuder@wlu.edu</string>
 					<key>Header</key>
@@ -972,7 +908,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>a724c7ef-d940-4cb7-8fb2-f258bdec6d0e</string>
+					<string>07d1769c-b1b5-4eb1-b388-d0266f872401</string>
 					<key>Expression</key>
 					<string>kevinmarkwatkins@gmail.com</string>
 					<key>Header</key>
@@ -980,39 +916,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>7132c5b8-37da-490c-9ef4-104b187586c1</string>
-					<key>Expression</key>
-					<string>hoslerd12@mail.wlu.edu</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>6d486c0b-0237-42ff-ae0d-ea567cbf1f36</string>
-					<key>Expression</key>
-					<string>no-reply@hootsuite.com</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>4625887f-7dbd-4ffa-be5f-9a617505e4ff</string>
-					<key>Expression</key>
-					<string>hartmanrm12@mail.wlu.edu</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>8604c55c-fa63-4cad-84e1-91e154bed8dc</string>
-					<key>Expression</key>
-					<string>LDunlap@wlu.edu</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>ffd0e8b2-3422-44c0-9361-40666804f2b8</string>
+					<string>96619be2-09e2-4830-b4d2-89b5e8bcd357</string>
 					<key>Expression</key>
 					<string>JDick@wlu.edu</string>
 					<key>Header</key>
@@ -1020,57 +924,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>0b42853a-74fc-4ab1-a3db-50249957c311</string>
-					<key>Expression</key>
-					<string>mcgoverns13@mail.wlu.edu</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>d62a9cc5-d45a-4314-8252-6e0ae4babb13</string>
-					<key>Expression</key>
-					<string>Deb@citconsult.com</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>2d55cb58-0fcb-4bd3-88b4-cd98819641d0</string>
-					<key>Expression</key>
-					<string>@teamtraveller.com</string>
-					<key>Header</key>
-					<string>From</string>
-					<key>Qualifier</key>
-					<string>EndsWith</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>8ea9faa2-f3e1-4ccd-82a8-6e5c63e3288c</string>
-					<key>Expression</key>
-					<string>dabaur1@gmail.com</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>9c7ea7a2-5a63-48e7-b040-272fe5593c93</string>
-					<key>Expression</key>
-					<string>no-reply@wordpress.com</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>d150a7c1-3fd2-4c91-aa3d-f9a8ac39f7ee</string>
-					<key>Expression</key>
-					<string>frazionator@yahoo.com</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>4d9527e7-4290-414f-8dd3-7204030734ec</string>
+					<string>1dcdc56e-9d10-487a-ab43-2dbb3ce6ebbd</string>
 					<key>Expression</key>
 					<string>whitley@wishingworksinc.com</string>
 					<key>Header</key>
@@ -1078,31 +932,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>eee21099-4086-4930-a61f-1fca689f0c06</string>
-					<key>Expression</key>
-					<string>suminskib14@mail.wlu.edu</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>d76d54e0-553d-4f6e-afc0-4970c5b102ab</string>
-					<key>Expression</key>
-					<string>tillandera14@mail.wlu.edu</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>32c6969b-a50d-425b-a086-1267e733920e</string>
-					<key>Expression</key>
-					<string>warnere14@mail.wlu.edu</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>c79a6247-202c-4c43-8952-6dd2f6778dfd</string>
+					<string>f9e8e269-1ae3-403c-bcd1-06c17329b859</string>
 					<key>Expression</key>
 					<string>TFutrell@wlu.edu</string>
 					<key>Header</key>
@@ -1110,15 +940,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>4605b569-c912-489a-ace3-cd2d72e47df0</string>
-					<key>Expression</key>
-					<string>derbym14@mail.wlu.edu</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>239c4863-eea0-4ec1-9454-ffea192c81b8</string>
+					<string>9c9925b9-32f5-4257-81d9-b6517960678e</string>
 					<key>Expression</key>
 					<string>JKaufman@wlu.edu</string>
 					<key>Header</key>
@@ -1126,7 +948,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>b4eede63-8fdf-4a2e-9ce2-55336294e1d0</string>
+					<string>cb665dd3-8203-4156-a0c8-020b8b83c220</string>
 					<key>Expression</key>
 					<string>pastorlyndonsayers@gmail.com</string>
 					<key>Header</key>
@@ -1134,43 +956,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>9b391bd9-7500-44c0-ad2d-b90a12981de9</string>
-					<key>Expression</key>
-					<string>vpwoods@embarqmail.com</string>
-					<key>Header</key>
-					<string>From</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>c462556f-72c4-4334-a4fb-7e4cf1413012</string>
-					<key>Expression</key>
-					<string>@HQ.ACM.ORG</string>
-					<key>Header</key>
-					<string>From</string>
-					<key>Qualifier</key>
-					<string>EndsWith</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>a414cf64-51e0-4ba4-867a-ca940606e0cb</string>
-					<key>Expression</key>
-					<string>VCEgala@mail.wlu.edu</string>
-					<key>Header</key>
-					<string>To</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>30b333cf-368b-49c7-8118-ab41ea7ca80d</string>
-					<key>Expression</key>
-					<string>@hrc.org</string>
-					<key>Header</key>
-					<string>From</string>
-					<key>Qualifier</key>
-					<string>EndsWith</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>c7119cd5-d243-4fb4-a2a6-2e3ddd4b7d18</string>
+					<string>ee1665b3-5134-4a59-97cf-cd42c3dd0bd6</string>
 					<key>Expression</key>
 					<string>@mnunited.org</string>
 					<key>Header</key>
@@ -1180,17 +966,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>db830fc1-4e34-4c76-88b3-6b387610ec09</string>
-					<key>Expression</key>
-					<string>@nationaleatingdisorders.org</string>
-					<key>Header</key>
-					<string>From</string>
-					<key>Qualifier</key>
-					<string>EndsWith</string>
-				</dict>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>82bdf6d3-c30f-410e-a0cc-12aca75f6c1f</string>
+					<string>cc9e1291-d3a2-47eb-92ab-df517ecbf39a</string>
 					<key>Expression</key>
 					<string>boinc@cs.rpi.edu</string>
 					<key>Header</key>
@@ -1229,8 +1005,6 @@
 			<string>NO</string>
 			<key>ShouldTransferMessage</key>
 			<string>NO</string>
-			<key>StopEvaluatingRules</key>
-			<string>YES</string>
 			<key>TimeStamp</key>
 			<integer>0</integer>
 		</dict>
@@ -1258,7 +1032,7 @@
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>a674b55a-3a10-4701-9a42-d1f20c8bc974</string>
+					<string>da269c16-59ed-40ee-8c2a-e6a235391741</string>
 					<key>Expression</key>
 					<string>JWhite@wlu.edu</string>
 					<key>Header</key>
@@ -1266,7 +1040,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>94091911-4a87-47ee-b4c6-de214226654e</string>
+					<string>3d8802de-8efe-4993-b759-0f28657a2efc</string>
 					<key>Expression</key>
 					<string>jwrhodes@wlu.edu</string>
 					<key>Header</key>
@@ -1274,7 +1048,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>c08621d4-749a-42fd-912a-096feb2282e0</string>
+					<string>bbee9743-4ccc-4efd-b4f3-1a9318e7600e</string>
 					<key>Expression</key>
 					<string>registrar@wlu.edu</string>
 					<key>Header</key>
@@ -1282,7 +1056,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>6356bbd6-e2cb-4b6a-8d96-364a6d209e33</string>
+					<string>eda5de35-c42b-4f04-baeb-b5deba4c82d7</string>
 					<key>Expression</key>
 					<string>waadmin@wlu.edu</string>
 					<key>Header</key>
@@ -1290,9 +1064,17 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>e4634829-09c0-47de-84aa-919d8c9e798a</string>
+					<string>40ea18f3-54d4-4957-864a-89f3d932201c</string>
 					<key>Expression</key>
 					<string>KPhillips@wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>cbb43379-6fcb-4f19-8ad9-f38ec6ba29f7</string>
+					<key>Expression</key>
+					<string>jwhite@wlu.edu</string>
 					<key>Header</key>
 					<string>From</string>
 				</dict>
@@ -1327,8 +1109,6 @@
 			<string>NO</string>
 			<key>ShouldTransferMessage</key>
 			<string>NO</string>
-			<key>StopEvaluatingRules</key>
-			<string>YES</string>
 			<key>TimeStamp</key>
 			<integer>0</integer>
 		</dict>
@@ -1352,7 +1132,7 @@
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>2a42f05b-cb1d-451c-a4b9-aeb46da1916f</string>
+					<string>7f1c94ff-1a4c-4d8d-8471-3e0d5bd0bca7</string>
 					<key>Expression</key>
 					<string>rgk662@hotmail.com</string>
 					<key>Header</key>
@@ -1360,7 +1140,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>5aea7208-929e-469b-8162-92bb520ba17e</string>
+					<string>9c62ea08-fd15-48bc-9ec3-51b648aa9351</string>
 					<key>Expression</key>
 					<string>rgk662@att.net</string>
 					<key>Header</key>
@@ -1368,7 +1148,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>ee2e47ac-1c9e-474d-92e9-f32e6998a0c0</string>
+					<string>c9292bcb-3043-4527-9d82-ab52219f881c</string>
 					<key>Expression</key>
 					<string>cakolle@emory.edu</string>
 					<key>Header</key>
@@ -1376,7 +1156,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>c9397a41-2bd1-4389-bcb6-174b197f30b6</string>
+					<string>2f009134-326f-43ff-92bd-62608f91d3bc</string>
 					<key>Expression</key>
 					<string>allison.baca@verizon.net</string>
 					<key>Header</key>
@@ -1438,7 +1218,7 @@
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>e0d8ef17-a334-4c55-88dc-fe1e36641aa4</string>
+					<string>35bece8b-aa61-42af-93e9-e8e150c5a98b</string>
 					<key>Expression</key>
 					<string>Postmaster{no-reply}@wlu.edu</string>
 					<key>Header</key>
@@ -1448,7 +1228,7 @@
 					<key>AccountURL</key>
 					<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/</string>
 					<key>CriterionUniqueId</key>
-					<string>15263d67-7bf6-409d-acce-080ce8bf1aef</string>
+					<string>3fd01e62-d2e5-4aa0-8eb3-52e8ce1d3d2b</string>
 					<key>Expression</key>
 					<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com</string>
 					<key>Header</key>
@@ -1456,7 +1236,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>cc10c267-40c9-495b-8b94-f2b730a1140a</string>
+					<string>2769518a-69b6-49a2-89fd-e4335bc56cab</string>
 					<key>Expression</key>
 					<string>Campus Notice</string>
 					<key>Header</key>
@@ -1516,7 +1296,7 @@
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>81c27d78-0e08-4696-8d98-2d79821e9431</string>
+					<string>89a2ae5e-9a46-49e8-a32c-b6296bfe173f</string>
 					<key>Expression</key>
 					<string>@postmaster.twitter.com</string>
 					<key>Header</key>
@@ -1526,7 +1306,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>9ccda88d-df27-46a8-9cca-37d1f3507e7e</string>
+					<string>25271cf5-676d-427d-8660-9e9457db944c</string>
 					<key>Expression</key>
 					<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/Inbox</string>
 					<key>Header</key>
@@ -1557,8 +1337,6 @@
 			<string>NO</string>
 			<key>ShouldTransferMessage</key>
 			<string>YES</string>
-			<key>StopEvaluatingRules</key>
-			<string>YES</string>
 			<key>TimeStamp</key>
 			<integer>0</integer>
 		</dict>
@@ -1588,7 +1366,7 @@
 					<key>AccountURL</key>
 					<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/</string>
 					<key>CriterionUniqueId</key>
-					<string>141468e5-d266-4cce-b440-d56b6abc7899</string>
+					<string>8369475b-e8cb-4be7-9261-01049c1851a4</string>
 					<key>Expression</key>
 					<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com</string>
 					<key>Header</key>
@@ -1596,7 +1374,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>0a0bee37-4d40-4035-be74-c8aa680d9b00</string>
+					<string>194ba2a6-573d-4de6-8eaf-d15a19b059ec</string>
 					<key>Expression</key>
 					<string>helpdesk@wlu.edu</string>
 					<key>Header</key>
@@ -1643,6 +1421,80 @@
 			<key>ActiveSyncState</key>
 			<string>1</string>
 			<key>AllCriteriaMustBeSatisfied</key>
+			<string>NO</string>
+			<key>AutoResponseType</key>
+			<integer>0</integer>
+			<key>CopyToMailbox</key>
+			<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com/Receipts.mbox</string>
+			<key>CopyToMailboxURL</key>
+			<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/Receipts</string>
+			<key>Criteria</key>
+			<array>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>07fe4b83-39c0-42de-b1b6-51075e3626aa</string>
+					<key>Expression</key>
+					<string>tickets@amtrak.com</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>a05ea13b-63a7-47a6-bfcc-70179ef5827e</string>
+					<key>Expression</key>
+					<string>eTickets@amtrak.com</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+			</array>
+			<key>Deletes</key>
+			<string>NO</string>
+			<key>HighlightTextUsingColor</key>
+			<string>NO</string>
+			<key>MAOApplyRuleTargetMessages</key>
+			<array>
+				<integer>1</integer>
+				<integer>1</integer>
+			</array>
+			<key>MAORulesToApplyUUIDs</key>
+			<array>
+				<string>DA40563F-946D-4CC7-B602-57B2BFCD83EE</string>
+				<string>BAA89BF0-97A5-4E69-BBC2-F682B82E6BED</string>
+			</array>
+			<key>Mailbox</key>
+			<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com/Receipts.mbox</string>
+			<key>MailboxURL</key>
+			<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/Receipts</string>
+			<key>MarkFlagged</key>
+			<string>NO</string>
+			<key>MarkRead</key>
+			<string>YES</string>
+			<key>NotifyUser</key>
+			<string>NO</string>
+			<key>RuleId</key>
+			<string>1AB34CB8-1236-41D8-A4BF-149EFB0B752B</string>
+			<key>RuleName</key>
+			<string>Auto Archive Receipts</string>
+			<key>ShouldCopyMessage</key>
+			<string>NO</string>
+			<key>ShouldTransferMessage</key>
+			<string>NO</string>
+			<key>TimeStamp</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>ActOnKeyStroke</key>
+			<dict>
+				<key>keyCode</key>
+				<integer>0</integer>
+				<key>keyLabel</key>
+				<string>a</string>
+			</dict>
+			<key>Active</key>
+			<string>1</string>
+			<key>ActiveSyncState</key>
+			<string>1</string>
+			<key>AllCriteriaMustBeSatisfied</key>
 			<string>YES</string>
 			<key>AutoResponseType</key>
 			<integer>0</integer>
@@ -1656,7 +1508,7 @@
 					<key>AccountURL</key>
 					<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/</string>
 					<key>CriterionUniqueId</key>
-					<string>32d38ce7-2440-4425-ab51-8b2eba2d1729</string>
+					<string>2ed37130-7399-4fec-87c6-60681fc69cc1</string>
 					<key>Expression</key>
 					<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com</string>
 					<key>Header</key>
@@ -1664,7 +1516,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>150df983-bb58-4930-be5e-15961c7351e2</string>
+					<string>311022df-289b-4553-a597-5535c96664b7</string>
 					<key>Expression</key>
 					<string>cdeacon@wlu.edu</string>
 					<key>Header</key>
@@ -1672,7 +1524,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>7c64a608-df8f-4387-a763-060a4255cf2b</string>
+					<string>8bf3ab51-9cea-47ed-85de-39a7d912e1c2</string>
 					<key>Expression</key>
 					<string>Payroll Advice</string>
 					<key>Header</key>
@@ -1697,62 +1549,6 @@
 			<string>445ED6A1-09D2-40F8-BCCD-70E919E54485</string>
 			<key>RuleName</key>
 			<string>Auto Arvhive Payroll Advice</string>
-			<key>ShouldCopyMessage</key>
-			<string>NO</string>
-			<key>ShouldTransferMessage</key>
-			<string>YES</string>
-			<key>StopEvaluatingRules</key>
-			<string>YES</string>
-			<key>TimeStamp</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>ActOnKeyStroke</key>
-			<dict>
-				<key>keyCode</key>
-				<integer>0</integer>
-				<key>keyLabel</key>
-				<string>a</string>
-			</dict>
-			<key>Active</key>
-			<string>1</string>
-			<key>ActiveSyncState</key>
-			<string>1</string>
-			<key>AllCriteriaMustBeSatisfied</key>
-			<string>YES</string>
-			<key>AutoResponseType</key>
-			<integer>0</integer>
-			<key>CopyToMailboxURL</key>
-			<string>local:///Archived%20RSS</string>
-			<key>Criteria</key>
-			<array>
-				<dict>
-					<key>CriterionUniqueId</key>
-					<string>38b76be1-5c4d-4865-9461-dba539c1d9bd</string>
-					<key>Expression</key>
-					<string>1</string>
-					<key>Header</key>
-					<string>MessageType</string>
-					<key>Qualifier</key>
-					<string>IsEqualTo</string>
-				</dict>
-			</array>
-			<key>Deletes</key>
-			<string>NO</string>
-			<key>HighlightTextUsingColor</key>
-			<string>NO</string>
-			<key>MailboxURL</key>
-			<string>local:///Archived%20RSS</string>
-			<key>MarkFlagged</key>
-			<string>NO</string>
-			<key>MarkRead</key>
-			<string>YES</string>
-			<key>NotifyUser</key>
-			<string>NO</string>
-			<key>RuleId</key>
-			<string>147AC71F-F1F1-4094-94CD-916D3B9FDDEA</string>
-			<key>RuleName</key>
-			<string>Archive RSS</string>
 			<key>ShouldCopyMessage</key>
 			<string>NO</string>
 			<key>ShouldTransferMessage</key>
@@ -1893,14 +1689,14 @@
 			<key>AutoResponseType</key>
 			<integer>0</integer>
 			<key>CopyToMailbox</key>
-			<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com/Archive.mbox</string>
+			<string>~/Library/Mail/V2/AosIMAP-garrettheath4/Archive.mbox</string>
 			<key>CopyToMailboxURL</key>
-			<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/Archive</string>
+			<string>imap://garrettheath4@mail.mac.com/Archive</string>
 			<key>Criteria</key>
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>ea6bbc56-fe91-42ec-89a1-a54812856554</string>
+					<string>376a8a44-9a7d-4833-8659-5efa4f231f26</string>
 					<key>Expression</key>
 					<string>imap://garrettheath4@mail.mac.com/INBOX</string>
 					<key>Header</key>
@@ -1914,9 +1710,9 @@
 			<key>HighlightTextUsingColor</key>
 			<string>NO</string>
 			<key>Mailbox</key>
-			<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com/Archive.mbox</string>
+			<string>~/Library/Mail/V2/AosIMAP-garrettheath4/Archive.mbox</string>
 			<key>MailboxURL</key>
-			<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/Archive</string>
+			<string>imap://garrettheath4@mail.mac.com/Archive</string>
 			<key>MarkFlagged</key>
 			<string>NO</string>
 			<key>MarkRead</key>
@@ -1953,7 +1749,7 @@
 					<key>AccountURL</key>
 					<string>ews://kollerg14%40mail.wlu.edu@ch1prd0102.outlook.com/</string>
 					<key>CriterionUniqueId</key>
-					<string>54833a3a-4725-483f-bee3-e3aed035911d</string>
+					<string>6a2fa6d2-8a72-4551-90b8-870bb2ab34b6</string>
 					<key>Expression</key>
 					<string>~/Library/Mail/V2/EWS-kollerg14@mail.wlu.edu@ch1prd0102.outlook.com</string>
 					<key>Header</key>
@@ -1982,8 +1778,6 @@
 			<string>NO</string>
 			<key>ShouldTransferMessage</key>
 			<string>YES</string>
-			<key>StopEvaluatingRules</key>
-			<string>YES</string>
 			<key>TimeStamp</key>
 			<integer>0</integer>
 		</dict>
@@ -2006,7 +1800,7 @@
 					<key>AccountURL</key>
 					<string>imap://garrettheath4@imap.gmail.com/</string>
 					<key>CriterionUniqueId</key>
-					<string>93f5dc03-793a-491d-9486-7655f82fa53d</string>
+					<string>dabb576f-9f53-4f8f-bf2d-10a093e43a69</string>
 					<key>Expression</key>
 					<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com</string>
 					<key>Header</key>
@@ -2035,13 +1829,11 @@
 			<string>NO</string>
 			<key>ShouldTransferMessage</key>
 			<string>YES</string>
-			<key>StopEvaluatingRules</key>
-			<string>YES</string>
 			<key>TimeStamp</key>
 			<integer>0</integer>
 		</dict>
 	</array>
 	<key>version</key>
-	<integer>178</integer>
+	<integer>226</integer>
 </dict>
 </plist>
