@@ -20,8 +20,6 @@
 			<string>NO</string>
 			<key>AutoResponseType</key>
 			<integer>0</integer>
-			<key>CopyToMailbox</key>
-			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Receipts.mbox</string>
 			<key>CopyToMailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Receipts</string>
 			<key>Criteria</key>
@@ -41,8 +39,6 @@
 			<string>NO</string>
 			<key>HighlightTextUsingColor</key>
 			<string>NO</string>
-			<key>Mailbox</key>
-			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Receipts.mbox</string>
 			<key>MailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Receipts</string>
 			<key>MarkFlagged</key>
@@ -252,8 +248,6 @@
 			<string>NO</string>
 			<key>AutoResponseType</key>
 			<integer>0</integer>
-			<key>CopyToMailbox</key>
-			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Organizations.mbox</string>
 			<key>CopyToMailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Organizations</string>
 			<key>Criteria</key>
@@ -273,8 +267,6 @@
 			<string>NO</string>
 			<key>HighlightTextUsingColor</key>
 			<string>NO</string>
-			<key>Mailbox</key>
-			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Organizations.mbox</string>
 			<key>MailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Organizations</string>
 			<key>MarkFlagged</key>
@@ -1572,8 +1564,6 @@
 			<string>NO</string>
 			<key>AutoResponseType</key>
 			<integer>0</integer>
-			<key>CopyToMailbox</key>
-			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/[Gmail].mbox/All Mail.mbox</string>
 			<key>CopyToMailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/%5BGmail%5D/All%20Mail</string>
 			<key>Criteria</key>
@@ -1593,8 +1583,6 @@
 			<string>NO</string>
 			<key>HighlightTextUsingColor</key>
 			<string>NO</string>
-			<key>Mailbox</key>
-			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/[Gmail].mbox/All Mail.mbox</string>
 			<key>MailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/%5BGmail%5D/All%20Mail</string>
 			<key>MarkFlagged</key>
@@ -1790,8 +1778,6 @@
 			<string>NO</string>
 			<key>AutoResponseType</key>
 			<integer>0</integer>
-			<key>CopyToMailbox</key>
-			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Personal.mbox</string>
 			<key>CopyToMailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Personal</string>
 			<key>Criteria</key>
@@ -1811,8 +1797,6 @@
 			<string>NO</string>
 			<key>HighlightTextUsingColor</key>
 			<string>NO</string>
-			<key>Mailbox</key>
-			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Personal.mbox</string>
 			<key>MailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Personal</string>
 			<key>MarkFlagged</key>
