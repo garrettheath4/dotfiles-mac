@@ -20,6 +20,8 @@
 			<string>NO</string>
 			<key>AutoResponseType</key>
 			<integer>0</integer>
+			<key>CopyToMailbox</key>
+			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Receipts.mbox</string>
 			<key>CopyToMailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Receipts</string>
 			<key>Criteria</key>
@@ -39,6 +41,8 @@
 			<string>NO</string>
 			<key>HighlightTextUsingColor</key>
 			<string>NO</string>
+			<key>Mailbox</key>
+			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Receipts.mbox</string>
 			<key>MailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Receipts</string>
 			<key>MarkFlagged</key>
@@ -248,6 +252,8 @@
 			<string>NO</string>
 			<key>AutoResponseType</key>
 			<integer>0</integer>
+			<key>CopyToMailbox</key>
+			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Organizations.mbox</string>
 			<key>CopyToMailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Organizations</string>
 			<key>Criteria</key>
@@ -267,6 +273,8 @@
 			<string>NO</string>
 			<key>HighlightTextUsingColor</key>
 			<string>NO</string>
+			<key>Mailbox</key>
+			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Organizations.mbox</string>
 			<key>MailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Organizations</string>
 			<key>MarkFlagged</key>
@@ -726,7 +734,7 @@
 			<array>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>390d541e-2a53-4590-b5d9-cc91f8a61b66</string>
+					<string>afcddd1f-1cd4-47f3-a23c-0104b69cfbaa</string>
 					<key>Expression</key>
 					<string>SigEp</string>
 					<key>GroupId</key>
@@ -738,7 +746,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>d3d4baca-2407-4ad9-995d-7f0e3fe3bc41</string>
+					<string>ca3d2d6c-2f2d-40d1-b551-67e7a1fdf0ef</string>
 					<key>Expression</key>
 					<string>SigEpBrothers@mail.wlu.edu</string>
 					<key>Header</key>
@@ -746,7 +754,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>4f527aa1-a403-4d27-9613-ce068b1baed9</string>
+					<string>c89e168f-fa1e-4bb6-a12c-55ab12419235</string>
 					<key>Expression</key>
 					<string>SigEp@mail.wlu.edu</string>
 					<key>Header</key>
@@ -754,7 +762,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>13823792-6fa9-43cd-aa3c-4051ef482909</string>
+					<string>7b047e13-7905-4678-9f50-db08c7aefff8</string>
 					<key>Expression</key>
 					<string>SigEpBrothers@mail.wlu.edu</string>
 					<key>Header</key>
@@ -762,7 +770,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>de149f3a-fbf7-4cf6-82fc-ac21c8c9757e</string>
+					<string>491af8d6-d7e7-400a-8a88-b08642b1c4f8</string>
 					<key>Expression</key>
 					<string>gillerans11@mail.wlu.edu</string>
 					<key>Header</key>
@@ -770,7 +778,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>349dfea0-3ab4-4628-ac8d-a852984b01a2</string>
+					<string>f297a42e-27d3-4b02-aff3-cffd293864f1</string>
 					<key>Expression</key>
 					<string>matareses11@mail.wlu.edu</string>
 					<key>Header</key>
@@ -778,7 +786,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>a9113291-6769-486f-98eb-1dc3f998cf1f</string>
+					<string>a81111a4-3036-4c5d-8d00-0b383b314099</string>
 					<key>Expression</key>
 					<string>bobkovach@embarqmail.com</string>
 					<key>Header</key>
@@ -786,7 +794,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>a6442978-d13f-4e8b-86f5-f5272b7e95dc</string>
+					<string>b5514b74-c238-458c-a242-ceebc372b5cf</string>
 					<key>Expression</key>
 					<string>gibsonbg@me.com</string>
 					<key>Header</key>
@@ -794,7 +802,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>39da2e82-d9c6-4efc-86d6-d30487aaef60</string>
+					<string>79e46bc1-40d6-45ab-9c92-24e2560d15d8</string>
 					<key>Expression</key>
 					<string>hjamar@gmail.com</string>
 					<key>Header</key>
@@ -802,7 +810,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>ee833f38-7ea8-4c7a-ba79-eef6cba5f763</string>
+					<string>301062dc-4174-4d97-ac07-6e1c9e4f9263</string>
 					<key>Expression</key>
 					<string>SigmaPhiEpsilon</string>
 					<key>Header</key>
@@ -810,7 +818,7 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>4245fbd3-6626-4d8f-97ab-33db95fd0270</string>
+					<string>6015b5f5-1abd-43f7-8612-82fa103f05b2</string>
 					<key>Expression</key>
 					<string>Kelly@swisherdavis.com</string>
 					<key>Header</key>
@@ -818,13 +826,125 @@
 				</dict>
 				<dict>
 					<key>CriterionUniqueId</key>
-					<string>84881f4f-883a-4300-98fd-014b56732e9c</string>
+					<string>61151e93-69c4-437a-b9dc-5a01e61c753b</string>
 					<key>Expression</key>
 					<string>@sigep.net</string>
 					<key>Header</key>
 					<string>From</string>
 					<key>Qualifier</key>
 					<string>EndsWith</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>7020c8f1-01de-4b94-93d5-86b8b04f069f</string>
+					<key>Expression</key>
+					<string>bacaa14@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>5f48963a-9ab0-4f7f-8361-85f21a2bb78e</string>
+					<key>Expression</key>
+					<string>seredinskia14@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>abe3e47e-6f28-4310-b25d-3dc8418cada4</string>
+					<key>Expression</key>
+					<string>trand14@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>2f035140-776f-4da5-86cb-bc72d52d749c</string>
+					<key>Expression</key>
+					<string>bocciod14@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>4720c704-91bd-4d01-b10c-4646012e9f01</string>
+					<key>Expression</key>
+					<string>quijadad15@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>e0c52bba-6100-44bb-9977-967ef35f5482</string>
+					<key>Expression</key>
+					<string>kollerg14@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>283a55b6-4e47-4832-84fd-c9d164e60827</string>
+					<key>Expression</key>
+					<string>mannj14@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>200bf2bd-5c56-4306-96d4-882846ca95c1</string>
+					<key>Expression</key>
+					<string>barenoj13@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>55a06925-f8c5-4eb2-80e2-fbb4c5e343e7</string>
+					<key>Expression</key>
+					<string>fletcher13@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>d6ab15a4-3569-4885-9e3a-397cd1d2e760</string>
+					<key>Expression</key>
+					<string>trumpk14@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>20af6833-ed6b-4480-a319-1cf609f08a73</string>
+					<key>Expression</key>
+					<string>chapnickm13@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>409f0067-9cf3-490c-a636-f9d76ed50890</string>
+					<key>Expression</key>
+					<string>bronsteinm15@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>0083d34b-2b82-41e2-bb50-21f295479967</string>
+					<key>Expression</key>
+					<string>reisingern13@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
+				</dict>
+				<dict>
+					<key>CriterionUniqueId</key>
+					<string>e0a46e82-37c3-420c-a032-b4bc1ac16bc9</string>
+					<key>Expression</key>
+					<string>fishert15@mail.wlu.edu</string>
+					<key>Header</key>
+					<string>From</string>
 				</dict>
 			</array>
 			<key>Deletes</key>
@@ -848,6 +968,8 @@
 			<key>ShouldCopyMessage</key>
 			<string>NO</string>
 			<key>ShouldTransferMessage</key>
+			<string>YES</string>
+			<key>StopEvaluatingRules</key>
 			<string>YES</string>
 			<key>TimeStamp</key>
 			<integer>0</integer>
@@ -1564,6 +1686,8 @@
 			<string>NO</string>
 			<key>AutoResponseType</key>
 			<integer>0</integer>
+			<key>CopyToMailbox</key>
+			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/[Gmail].mbox/All Mail.mbox</string>
 			<key>CopyToMailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/%5BGmail%5D/All%20Mail</string>
 			<key>Criteria</key>
@@ -1583,6 +1707,8 @@
 			<string>NO</string>
 			<key>HighlightTextUsingColor</key>
 			<string>NO</string>
+			<key>Mailbox</key>
+			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/[Gmail].mbox/All Mail.mbox</string>
 			<key>MailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/%5BGmail%5D/All%20Mail</string>
 			<key>MarkFlagged</key>
@@ -1778,6 +1904,8 @@
 			<string>NO</string>
 			<key>AutoResponseType</key>
 			<integer>0</integer>
+			<key>CopyToMailbox</key>
+			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Personal.mbox</string>
 			<key>CopyToMailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Personal</string>
 			<key>Criteria</key>
@@ -1797,6 +1925,8 @@
 			<string>NO</string>
 			<key>HighlightTextUsingColor</key>
 			<string>NO</string>
+			<key>Mailbox</key>
+			<string>~/Library/Mail/V2/IMAP-garrettheath4@imap.gmail.com/Personal.mbox</string>
 			<key>MailboxURL</key>
 			<string>imap://garrettheath4@imap.gmail.com/Personal</string>
 			<key>MarkFlagged</key>
@@ -1818,6 +1948,6 @@
 		</dict>
 	</array>
 	<key>version</key>
-	<integer>226</integer>
+	<integer>228</integer>
 </dict>
 </plist>
