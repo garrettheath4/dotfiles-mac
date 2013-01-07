@@ -65,7 +65,7 @@ for grr in $GROWLS; do
 done
 
 # Install Mail ActOn Rules
-MAILON_FOLDER=~/Library/Mail/Indev
+MAILON_FOLDER=~/Library/Mail/Bundles/MailActOn.mailbundle/Contents/MacOS
 if [ -d "$MAILON_FOLDER" -a ! -d "$MAILON_FOLDER".backup ]; then
 	mv -fv "$MAILON_FOLDER" "$MAILON_FOLDER".backup
 fi
