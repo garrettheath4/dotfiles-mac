@@ -13,10 +13,11 @@ alias lss="ls -haGl"
 alias top="top -u -R -s 2 -stats user,pid,command,cpu,time,state,th,csw,ports,vsize"
 alias reverse="tail -r"
 
-alias preview="/Applications/Preview.app/Contents/MacOS/Preview"
+alias preview="open -a Preview"
 
 alias sshcondor='ssh koller@condor.cs.wlu.edu'
-alias sshstu='ssh kollerg@condor.cs.wlu.edu'
+alias sshstujohn='ssh kollerg@condor.cs.wlu.edu'
+alias sshstu='ssh kollerg@perl.cs.wlu.edu'
 alias hbar='ssh kollerg@hbar.wlu.edu'
 alias ousc='ssh sc11222@sooner.oscer.ou.edu'
 alias ouossm='ssh ossm1@sooner.oscer.ou.edu'
