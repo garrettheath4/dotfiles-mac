@@ -1,3 +1,5 @@
 [user]
 	name = Garrett Heath Koller
 	email = garrettheath4@gmail.com
+[push]
+	default = matching
