@@ -12,6 +12,7 @@ alias ls="ls -G"
 alias lss="ls -haGl"
 alias top="top -u -R -s 2 -stats user,pid,command,cpu,time,state,th,csw,ports,vsize"
 alias reverse="tail -r"
+alias gp='git pull; git push'
 
 alias preview="open -a Preview"
 
