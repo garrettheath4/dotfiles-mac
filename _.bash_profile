@@ -16,6 +16,7 @@ alias gp='git pull; git push'
 
 alias preview="open -a Preview"
 
+#  SSH shortcuts
 alias sshcondor='ssh koller@condor.cs.wlu.edu'
 alias sshstujohn='ssh kollerg@condor.cs.wlu.edu'
 alias sshstu='ssh kollerg@perl.cs.wlu.edu'
@@ -23,6 +24,10 @@ alias hbar='ssh kollerg@hbar.wlu.edu'
 alias ousc='ssh sc11222@sooner.oscer.ou.edu'
 alias ouossm='ssh ossm1@sooner.oscer.ou.edu'
 alias sshvceg='~/aws/VCEG-Wiki_SSH.sh'
+
+#  cd shortcuts
+alias cds='cd /Users/Garrett/Google\ Drive/School/'
+alias cdi='cd /Users/Garrett/Google\ Drive/School/ImgProc/'
 
 # Add user bin and sbin folders to PATH
 if [ -d ~/bin ]; then
