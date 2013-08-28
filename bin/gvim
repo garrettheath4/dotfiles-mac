@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ -d "/Applications/Vim.app" ]; then
-	/Applications/Vim.app/Contents/MacOS/Vim -g $*
+	/Applications/Vim.app/Contents/MacOS/Vim -g "$*"
 else
 	if [ -d "/Applications/MacVim.app" ]; then
-		/Applications/MacVim.app/Contents/MacOS/Vim -g $*
+		/Applications/MacVim.app/Contents/MacOS/Vim -g "$*"
 	fi
 fi
