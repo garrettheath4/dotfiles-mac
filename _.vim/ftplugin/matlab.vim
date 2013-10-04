@@ -32,3 +32,13 @@ let b:undo_ftplugin = "setlocal suffixesadd< suffixes< "
       \ . "| unlet! b:match_words"
 
 let &cpo = s:save_cpo
+
+" Added by Garrett Heath Koller
+set ts=5
+set sw=5
+set sta
+set sts=5
+set sr
+set et
+set ai
+set si
