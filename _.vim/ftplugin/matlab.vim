@@ -34,10 +34,10 @@ let b:undo_ftplugin = "setlocal suffixesadd< suffixes< "
 let &cpo = s:save_cpo
 
 " Added by Garrett Heath Koller
-set ts=5
-set sw=5
+set ts=4
+set sw=4
 set sta
-set sts=5
+set sts=4
 set sr
 set et
 set ai
