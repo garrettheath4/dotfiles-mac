@@ -1,7 +1,6 @@
 set ts=5
 set softtabstop=5
 set sw=5
-set et
 set ai
 set si
 set sta
