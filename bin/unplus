@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ "$#" -lt 1 ]
+then
+	echo "Usage: unplus.sh [file1] <file2> ..."
+	echo "This script removes the plus signs in filenames, such as for"
+	echo "files that were downloaded from the internet."
+	exit 1
+fi
+for f in "$@"
+do
+	mv "$f" "${f//+/ }"
+done
