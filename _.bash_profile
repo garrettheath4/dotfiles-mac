@@ -31,7 +31,6 @@ alias sshvceg='~/aws/VCEG-Wiki_SSH.sh'
 
 #  cd shortcuts
 alias cds='cd /Users/Garrett/Google\ Drive/School/'
-alias cdi='cd /Users/Garrett/Google\ Drive/School/ImgProc/'
 
 # Add user bin and sbin folders to PATH
 if [ -d ~/bin ]; then
