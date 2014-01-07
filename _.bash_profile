@@ -12,13 +12,10 @@ alias ls="ls -G"
 alias lss="ls -haGl"
 alias top="top -u -R -s 2 -stats user,pid,command,cpu,time,state,th,csw,ports,vsize"
 alias reverse="tail -r"
-alias gp='git pull; git push'
-alias ggp='git pull; git push'
-alias ggs='git status'
-alias gga='git add'
-alias ggc='git commit -m'
+alias incognito="unset HISTFILE"
 
-alias preview="open -a Preview"
+#  cd shortcuts
+alias cds='cd /Users/Garrett/Google\ Drive/School/'
 
 #  SSH shortcuts
 alias sshcondor='ssh koller@condor.cs.wlu.edu'
@@ -29,8 +26,15 @@ alias ousc='ssh sc11222@sooner.oscer.ou.edu'
 alias ouossm='ssh ossm1@sooner.oscer.ou.edu'
 alias sshvceg='~/aws/VCEG-Wiki_SSH.sh'
 
-#  cd shortcuts
-alias cds='cd /Users/Garrett/Google\ Drive/School/'
+#  Git shortcuts
+alias gp='git pull; git push'
+alias ggp='git pull; git push'
+alias ggs='git status'
+alias gga='git add'
+alias ggc='git commit -m'
+
+#  GUI app shortcuts
+alias preview="open -a Preview"
 
 # Add user bin and sbin folders to PATH
 if [ -d ~/bin ]; then
