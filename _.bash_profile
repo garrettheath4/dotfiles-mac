@@ -18,8 +18,8 @@ alias incognito="unset HISTFILE"
 alias cds='cd /Users/Garrett/Google\ Drive/School/'
 
 #  SSH shortcuts
-alias sshcondor='ssh koller@condor.cs.wlu.edu'
-alias sshstujohn='ssh kollerg@condor.cs.wlu.edu'
+alias sshcondor='ssh kollerg@condor.cs.wlu.edu'
+alias sshstujohn='ssh kollerg@john.cs.wlu.edu'
 alias sshstu='ssh kollerg@perl.cs.wlu.edu'
 alias hbar='ssh kollerg@hbar.wlu.edu'
 alias ousc='ssh sc11222@sooner.oscer.ou.edu'
