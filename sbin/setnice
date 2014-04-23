@@ -1,2 +1,10 @@
-id=$(ps -u root -u $USER -o "pid= command=" | awk "/$1/ && !/awk/ && !/setnice/ {print \$1}")
-sudo renice $2 $id
+#!/bin/sh
+
+if [[ "$#" -lt 2 ]]
+then
+	echo "usage: $0 <process_name> <new_nice_value>"
+else
+	id=$(ps -u root -u $USER -o "pid= command=" | awk "/$1/ && !/awk/ && !/setnice/ {print \$1}")
+	sudo renice $2 $id
+fi
+
