@@ -1,0 +1,13 @@
+#!/bin/sh
+
+sudo chown :admin /usr/local/bin
+sudo chmod g+w /usr/local/bin
+
+sudo chown :admin /usr/local/share
+sudo chmod g+w /usr/local/share
+
+sudo chown :admin /usr/local/share/man
+sudo chmod g+w /usr/local/share/man
+
+sudo chown :admin /usr/local/share/man/man1
+sudo chmod g+w /usr/local/share/man/man1
