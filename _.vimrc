@@ -88,6 +88,14 @@ endif " has("autocmd")
 " g:netrw_sort_sequence = [\/]$,\<core\%(\.\d\+\)\=\>,\.c$,\.cpp$,\.h$,\.txt$,\.in$,\.out$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
 
 
+" ai=Auto Indent, si=Smart Indent, ci=C code indent, pi=Preserve Indent
+set ts=5
+set sw=5
+set ai
+set si
+set ci
+set pi
+" is=Incremental Search
 set is
 set so=2
 set ru
