@@ -15,6 +15,8 @@ Plugin 'VundleVim/Vundle.vim'
 " List Vundle plugin packages here
 Plugin 'derekwyatt/vim-scala'
 Plugin 'tpope/vim-fugitive'
+Plugin 'othree/xml.vim'
+Plugin 'elzr/vim-json'
 
 " All of your Plugins must be added before the following line
 call vundle#end()             " required
