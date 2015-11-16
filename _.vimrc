@@ -18,6 +18,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'othree/xml.vim'
 Plugin 'elzr/vim-json'
 
+if has("mac")
+  " List Mac-specific Vundle plugin packages here
+  Plugin 'darfink/vim-plist'
+endif
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -139,7 +145,8 @@ set ru
 set ex
 set backspace=2
 set nu
-set noml
+set ml
+set mls=3
 if has("gui_running")
   set acd
 " else
