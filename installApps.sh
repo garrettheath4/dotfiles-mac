@@ -7,7 +7,7 @@ EXPORTS="`pwd`"
 
 # Variable: Has the spreadsheet with the list of licenses been opened yet?
 #   Values: 'YES' or 'NO'
-LicensePage="https://docs.google.com/spreadsheet/ccc?key=0AkNyR8-zKS20dEpiRHJXWXNrYVV6VnRmRjk2VnN6X2c"
+LicensePage="https://docs.google.com/spreadsheets/d/14pl7ljKn8bf8rZZgHrU56zbQFePMpGCLUH0U3UQRTVI/edit#gid=0"
 OpenedLicenses="NO"
 
 ShowLicenses () {
