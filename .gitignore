@@ -1,7 +1,5 @@
 _.vim/.netrwhist
 _.vim/bundle/*
-!_.vim/bundle/Vundle.vim
-!_.vim/bundle/Vundle.vim/*
 _.idlerc/recent-files.lst
 bin/steam
 .DS_Store

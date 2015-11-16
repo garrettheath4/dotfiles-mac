@@ -51,6 +51,11 @@ for nd in $NORMALDIRS; do
 	fi
 done
 
+# Install Vundle Vim package manager
+mkdir -p "$EXPORTS/_.vim/bundle"
+git clone https://github.com/VundleVim/Vundle.vim.git "$EXPORTS/_.vim/bundle/Vundle.vim"
+vim +PluginInstall +qall
+
 # Install GrowlStyles
 GROWL_FOLDER=~/Library/Application\ Support/Growl/Plugins
 GROWLS="`ls -1 GrowlStyles/`"
