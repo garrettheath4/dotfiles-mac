@@ -13,6 +13,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " List Vundle plugin packages here
+Plugin 'godlygeek/tabular'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'tpope/vim-fugitive'
 Plugin 'othree/xml.vim'
