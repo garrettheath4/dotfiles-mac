@@ -2,6 +2,7 @@ _.vim/.netrwhist
 _.vim/bundle/*
 _.idlerc/recent-files.lst
 bin/steam
+bin/fiddler
 .DS_Store
 *~
 *.swp
