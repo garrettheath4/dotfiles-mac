@@ -26,6 +26,8 @@ alias ggc='git commit -m'
 
 #  GUI app shortcuts
 alias preview="open -a Preview"
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 
 # Add user bin and sbin folders to PATH
 if [ -d "~/bin" ]; then
