@@ -18,6 +18,8 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'tpope/vim-fugitive'
 Plugin 'othree/xml.vim'
 Plugin 'elzr/vim-json'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 if has("mac")
   " List Mac-specific Vundle plugin packages here
