@@ -23,6 +23,7 @@ alias ggp='git pull; if [[ $? -eq 0 ]]; then git push; fi'
 alias ggs='git status'
 alias gga='git add'
 alias ggc='git commit -m'
+alias ggl='git log --pretty=oneline --abbrev-commit'
 
 #  GUI app shortcuts
 alias preview="open -a Preview"
