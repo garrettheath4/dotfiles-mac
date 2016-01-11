@@ -3,7 +3,7 @@
 # Most things in this script (unless they're very minor) should run with
 # a prompted confirmation from the user to install each item
 
-EXPORTS="`pwd`"
+REPO="`pwd`"
 
 # Variable: Has the spreadsheet with the list of licenses been opened yet?
 #   Values: 'YES' or 'NO'
@@ -51,15 +51,15 @@ LuckySearch () {
 
 # Add fractals to Pictures folder
 if ConfirmInstall "fractals to Pictures folder" ~/Pictures/Fractals-2560x1600; then
-	ln -is "$EXPORTS/Fractals-2560x1600" ~/Pictures/
+	ln -is "$REPO/Fractals-2560x1600" ~/Pictures/
 fi
 
 # Install special sound effects
 if ConfirmInstall "\"Robot Blip\" sound" \
 		'/System/Library/Sounds/Robot Blip.aiff'; then
 	echo "Adding \"Robot Blip\" to system sounds..."
-	if [ -e "$EXPORTS/Sounds/Robot Blip.aiff" ]; then
-		sudo cp "$EXPORTS/Sounds/Robot Blip.aiff" \
+	if [ -e "$REPO/Sounds/Robot Blip.aiff" ]; then
+		sudo cp "$REPO/Sounds/Robot Blip.aiff" \
 			/System/Library/Sounds/
 		if [ "$?" != 0 ]; then
 			echo "Warning: Error in installing Robot Blip."

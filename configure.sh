@@ -3,7 +3,7 @@
 # This script may also install minor programs but everything in this script
 # should run to completion without any prompts, sudo or otherwise
 
-EXPORTS="`pwd`"
+REPO="`pwd`"
 
 HIDDENFILES='.bash_profile
 .git-completion.bash
@@ -19,7 +19,7 @@ sbin'
 for hf in $HIDDENFILES; do
 	if [ -f "_$hf" ]; then
 		if [ ! -e ~/"$hf" ]; then
-			ln -sv "$EXPORTS/_$hf" ~/"$hf"
+			ln -sv "$REPO/_$hf" ~/"$hf"
 		else
 			echo "Warning:" ~/"$hf already exists"
 		fi
@@ -31,7 +31,7 @@ done
 for hd in $HIDDENDIRS; do
 	if [ -d "_$hd" ]; then
 		if [ ! -e ~/"$hd" ]; then
-			ln -sv "$EXPORTS/_$hd" ~/"$hd"
+			ln -sv "$REPO/_$hd" ~/"$hd"
 		else
 			echo "Warning:" ~/"$hd/ already exists"
 		fi
@@ -43,7 +43,7 @@ done
 for nd in $NORMALDIRS; do
 	if [ -d "$nd" ]; then
 		if [ ! -e ~/"$nd" ]; then
-			ln -sv "$EXPORTS/$nd" ~/"$nd"
+			ln -sv "$REPO/$nd" ~/"$nd"
 		else
 			echo "Warning:" ~/"$nd/ already exists"
 		fi
@@ -53,8 +53,8 @@ for nd in $NORMALDIRS; do
 done
 
 # Install Vundle Vim package manager
-mkdir -p "$EXPORTS/_.vim/bundle"
-git clone https://github.com/VundleVim/Vundle.vim.git "$EXPORTS/_.vim/bundle/Vundle.vim"
+mkdir -p "$REPO/_.vim/bundle"
+git clone https://github.com/VundleVim/Vundle.vim.git "$REPO/_.vim/bundle/Vundle.vim"
 vim +PluginInstall +qall
 
 # Install GrowlStyles
@@ -75,4 +75,4 @@ MAILON_FOLDER=~/Library/Mail/Bundles/MailActOn.mailbundle/Contents/MacOS
 if [ -d "$MAILON_FOLDER" -a ! -d "$MAILON_FOLDER".backup ]; then
 	mv -fv "$MAILON_FOLDER" "$MAILON_FOLDER".backup
 fi
-ln -Ffhsv "$EXPORTS/MailActOn" "$MAILON_FOLDER"
+ln -Ffhsv "$REPO/MailActOn" "$MAILON_FOLDER"
