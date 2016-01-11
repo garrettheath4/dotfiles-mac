@@ -1,7 +1,5 @@
 # Source local definitions
-if [ -f ~/.bash_profile.local -a -x ~/.bash_profile.local ]; then
-	. ~/.bash_profile.local
-fi
+test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && . $_
 
 # User aliases
 alias gcc='gcc -Wall --pedantic'
@@ -24,6 +22,8 @@ alias ggs='git status'
 alias gga='git add'
 alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
+
+test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . $_
 
 #  GUI app shortcuts
 alias preview="open -a Preview"

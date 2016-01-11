@@ -6,6 +6,7 @@
 EXPORTS="`pwd`"
 
 HIDDENFILES='.bash_profile
+.git-completion.bash
 .gitconfig
 .vimrc'
 
