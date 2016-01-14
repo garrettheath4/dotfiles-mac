@@ -9,7 +9,8 @@ HIDDENFILES='.bash_profile
 .git-completion.bash
 .gitconfig
 .vimrc
-.tmux.conf'
+.tmux.conf
+.tmux-osx.conf'
 
 HIDDENDIRS='.idlerc
 .vim'
@@ -77,3 +78,7 @@ if [ -d "$MAILON_FOLDER" -a ! -d "$MAILON_FOLDER".backup ]; then
 	mv -fv "$MAILON_FOLDER" "$MAILON_FOLDER".backup
 fi
 ln -Ffhsv "$REPO/MailActOn" "$MAILON_FOLDER"
+
+if [ "$(uname)" = "Darwin" ]; then
+	echo "NOTE: Install Homebrew and use it to install reattach-to-user-namespace to get tmux copy/paste and app launching functionality to work properly"
+fi
