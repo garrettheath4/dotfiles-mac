@@ -3,3 +3,5 @@
 	email = garrettheath4@gmail.com
 [push]
 	default = matching
+[core]
+	editor = /usr/bin/vim

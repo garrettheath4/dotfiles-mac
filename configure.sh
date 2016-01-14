@@ -8,7 +8,8 @@ REPO="`pwd`"
 HIDDENFILES='.bash_profile
 .git-completion.bash
 .gitconfig
-.vimrc'
+.vimrc
+.tmux.conf'
 
 HIDDENDIRS='.idlerc
 .vim'
