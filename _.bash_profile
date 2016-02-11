@@ -1,5 +1,15 @@
 # Source local definitions
+# I recommend putting a custom command prompt in .bash_profile.local
+# like: export PS1="\u@\h:\W$(tput sgr0) \$ "
 test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && . $_
+
+# Add background color to command prompt
+# Bash Prompt Customization: https://wiki.archlinux.org/index.php/Bash/Prompt_customization
+# Terminal Codes intro: http://wiki.bash-hackers.org/scripting/terminalcodes
+BLUE="$(tput setab 4)"
+RESET="$(tput sgr0)"
+export PS1="${BLUE}${PS1}${RESET}"
+export PS2="${BLUE}${PS2}${RESET}"
 
 # User aliases
 alias gcc='gcc -Wall --pedantic'
