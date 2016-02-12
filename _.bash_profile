@@ -4,10 +4,12 @@
 test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && . $_
 
 # Add background color to command prompt
+# (the \[ and \] in BLUE and RESET indicate that those characters are
+# unprintable and to not include them in the string width counting)
 # Bash Prompt Customization: https://wiki.archlinux.org/index.php/Bash/Prompt_customization
 # Terminal Codes intro: http://wiki.bash-hackers.org/scripting/terminalcodes
-BLUE="$(tput setab 4)"
-RESET="$(tput sgr0)"
+BLUE="\[$(tput setab 4)\]"
+RESET="\[$(tput sgr0)\]"
 export PS1="${BLUE}${PS1}${RESET}"
 export PS2="${BLUE}${PS2}${RESET}"
 
