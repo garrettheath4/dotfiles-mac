@@ -152,7 +152,6 @@ set ml
 set mls=3
 if has("gui_running")
   set acd
-" else
-  " set lines=40
-  " set co=84
+  set lines=75
+  set co=85
 endif
