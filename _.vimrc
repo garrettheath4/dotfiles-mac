@@ -150,7 +150,7 @@ set backspace=2
 set nu
 set ml
 set mls=3
-if has("gui_running")
+if has("gui_running") && !exists("mvim")
   set acd
   set lines=75
   set co=85

@@ -10,16 +10,43 @@ centerXoffsetRight=21
 centerYoffsetUp=200
 vimexec=/Applications/MacVim.app/Contents/MacOS/Vim
 
-command_exists () {
+command_exists() {
 	type "$1" &> /dev/null;
 }
 
+resolutionToPosX() {
+	resX="$(echo $1 | sed -n -e 's/\([0-9]*\) x \([0-9]*\)/\1/p')"
+	posX="$(echo $resX/2-$widthChars*8/2+$centerXoffsetRight | bc)"
+	echo "$posX"
+}
+
+resolutionToPosY() {
+	resY="$(echo $1 | sed -n -e 's/\([0-9]*\) x \([0-9]*\)/\2/p')"
+	posY="$(echo $resY/2-$heightChars*15/2-$centerYoffsetUp | bc)"
+	echo "$posY"
+}
+
+centerWithMoom=false
 if command_exists system_profiler; then
 	resolution="$(system_profiler SPDisplaysDataType | sed -n -e 's/^.*Resolution: \([0-9]* x [0-9]*\).*/\1/p' | tail -n1)"
-	resX="$(echo $resolution | sed -n -e 's/\([0-9]*\) x \([0-9]*\)/\1/p')"
-	resY="$(echo $resolution | sed -n -e 's/\([0-9]*\) x \([0-9]*\)/\2/p')"
-	posX="$(echo $resX/2-$widthChars*8/2+$centerXoffsetRight | bc)"
-	posY="$(echo $resY/2-$heightChars*15/2-$centerYoffsetUp | bc)"
+	case "$resolution" in
+		'1920 x 1080')
+			echo "Detected $resolution resolution"
+			posX=741
+			posY=236
+			;;
+		'2880 x 1800')
+			echo "Detected $resolution resolution"
+			posX=501
+			posY=191
+			;;
+		*)
+			echo "Unable to detect resolution; calculating automatically"
+			posX=`resolutionToPosX "$resolution"`
+			posY=`resolutionToPosY "$resolution"`
+			centerWithMoom=true
+			;;
+	esac
 fi
 
 if ! command_exists "$vimexec"; then
@@ -27,9 +54,12 @@ if ! command_exists "$vimexec"; then
 	vimexec=vim
 fi
 
-"$vimexec" -g "+set co=$widthChars" "+set lines=$heightChars" "+winpos $posX $posY"
+echo '"$vimexec" -g --cmd "let mvim=1" "+setlocal co=$widthChars" "+setlocal lines=$heightChars" "+winpos $posX $posY"'
+"$vimexec" -g --cmd "let mvim=1" "+setlocal co=$widthChars" "+setlocal lines=$heightChars" "+winpos $posX $posY"
 
-# To use Moom to center window instead of manually calculating it
-# with system_profiler, use this instead:
-#  sleep 0.4
-#  osascript -e 'tell application "Moom" to center frontmost window'
+if command_exists "/Applications/Moom.app/Contents/MacOS/Moom" && $centerWithMoom; then
+	# To use Moom to center window (in addition to or instead of manually
+	# calculating it with system_profiler), use this:
+	sleep 0.6
+	osascript -e 'tell application "Moom" to center frontmost window'
+fi
