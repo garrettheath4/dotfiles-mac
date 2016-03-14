@@ -1,5 +1,5 @@
 #!/bin/bash
-# Run this script to launch a "mini vim" window
+# Run this script to launch a "mini Vim" window
 # to quickly paste text into Vim for manipulation
 
 widthChars=60
