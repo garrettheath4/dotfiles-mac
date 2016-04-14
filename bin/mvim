@@ -55,7 +55,7 @@ if ! command_exists "$vimexec"; then
 fi
 
 echo '"$vimexec" -g --cmd "let mvim=1" "+setlocal co=$widthChars" "+setlocal lines=$heightChars" "+winpos $posX $posY"'
-"$vimexec" -g --cmd "let mvim=1" "+setlocal co=$widthChars" "+setlocal lines=$heightChars" "+winpos $posX $posY"
+"$vimexec" -g --cmd "let mvim=1" "+setlocal co=$widthChars" "+setlocal lines=$heightChars" "+winpos $posX $posY" "+setlocal nowrap"
 
 if command_exists "/Applications/Moom.app/Contents/MacOS/Moom" && $centerWithMoom; then
 	# To use Moom to center window (in addition to or instead of manually
