@@ -29,8 +29,10 @@ alias ousc='ssh sc11222@sooner.oscer.ou.edu'
 alias ouossm='ssh ossm1@sooner.oscer.ou.edu'
 
 #  Git shortcuts
-alias ggp='git pull; if [[ $? -eq 0 ]]; then git push; fi'
+alias ggp='git pull && git push'
+alias ggb='git branch'
 alias ggs='git status'
+alias ggd='git diff'
 alias gga='git add'
 alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
