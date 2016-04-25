@@ -23,6 +23,7 @@ alias lss="ls -haGl"
 alias top="top -u -R -s 2 -stats user,pid,command,cpu,time,state,th,csw,ports,vsize"
 alias reverse="tail -r"
 alias incognito="unset HISTFILE"
+alias reload="source ~/.bash_profile"
 
 #  SSH shortcuts
 alias ousc='ssh sc11222@sooner.oscer.ou.edu'
@@ -41,8 +42,12 @@ test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . $_
 
 #  GUI app shortcuts
 alias preview="open -a Preview"
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+
+vim_exec=/Applications/MacVim.app/Contents/MacOS/Vim
+if [ -f "$vim_exec" -a -x "$vim_exec" ]; then
+	alias vim="$vim_exec"
+	alias gvim="$vim_exec -g"
+fi
 
 # Add user bin and sbin folders to PATH
 if [ -d "~/bin" ]; then
