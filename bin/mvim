@@ -2,9 +2,9 @@
 # Run this script to launch a "mini Vim" window
 # to quickly paste text into Vim for manipulation
 
-widthChars=60
+widthChars=80
 heightChars=10
-posX=741
+posX=671
 posY=236
 centerXoffsetRight=21
 centerYoffsetUp=200
@@ -32,7 +32,7 @@ if command_exists system_profiler; then
 	case "$resolution" in
 		'1920 x 1080')
 			echo "Detected $resolution resolution"
-			posX=741
+			posX=671
 			posY=236
 			;;
 		'2880 x 1800')
