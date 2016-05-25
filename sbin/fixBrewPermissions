@@ -1,5 +1,8 @@
 #!/bin/sh
 
+sudo chown root:admin /usr/local
+sudo chmod g+w /usr/local
+
 sudo chown gkoller:admin /usr/local/bin
 sudo chmod g+w /usr/local/bin
 
