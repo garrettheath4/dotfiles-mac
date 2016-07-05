@@ -44,9 +44,12 @@ test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . $_
 alias preview="open -a Preview"
 
 vim_exec=/Applications/MacVim.app/Contents/MacOS/Vim
-if [ -f "$vim_exec" -a -x "$vim_exec" ]; then
+if [ -x "$vim_exec" ]; then
 	alias vim="$vim_exec"
 	alias gvim="$vim_exec -g"
+	alias vimro="$vim_exec -M"
+else
+	alias vimro="vim -M"
 fi
 
 # Add user bin and sbin folders to PATH
