@@ -1,7 +1,7 @@
 # Source local definitions
 # I recommend putting a custom command prompt in .bash_profile.local
 # like: export PS1="\u@\h:\W$(tput sgr0) \$ "
-test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && . $_
+test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && source $_
 
 # Add background color to command prompt
 # (the \[ and \] in BLUE and RESET indicate that those characters are
@@ -38,7 +38,7 @@ alias gga='git add'
 alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
 
-test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . $_
+test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && source $_
 
 #  GUI app shortcuts
 alias preview="open -a Preview"
