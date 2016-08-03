@@ -26,10 +26,6 @@ alias reverse="tail -r"
 alias incognito="unset HISTFILE"
 alias reload="source ~/.bash_profile"
 
-#  SSH shortcuts
-alias ousc='ssh sc11222@sooner.oscer.ou.edu'
-alias ouossm='ssh ossm1@sooner.oscer.ou.edu'
-
 #  Git shortcuts
 alias ggp='git pull && git push'
 alias ggb='git branch'
