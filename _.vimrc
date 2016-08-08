@@ -13,12 +13,22 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " List Vundle plugin packages here
+
+" tabular: #MakeTextTablesPrettyAgain
 Plugin 'godlygeek/tabular'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'tpope/vim-fugitive'
-Plugin 'othree/xml.vim'
+" vim-json: #MakeJsonPrettyAgain
 Plugin 'elzr/vim-json'
+" xml.vim: #MakeXmlPrettyAgain
+Plugin 'othree/xml.vim'
+" AnsiEsc.vim: #MakeANSIEscapeSequencesPrettyAgain
+Plugin 'AnsiEsc.vim'
+" Coding language-specific plugins: vim-scala
+Plugin 'derekwyatt/vim-scala'
+" vim-fugitive: Git wrapper
+Plugin 'tpope/vim-fugitive'
+" nerdtree: Vim file browser
 Plugin 'scrooloose/nerdtree'
+" nerdtree-git-plugin: Git plugin for nerdtree (requires nerdtree obviously)
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 if has("mac")
