@@ -75,6 +75,8 @@ else
 	let g:syntastic_error_symbol = "!>"
 	let g:syntastic_warning_symbol = "~>"
 endif
+" Check the syntax with Syntastic using the shortcut <leader>c (usually \c)
+nmap <leader>c :SyntasticCheck<CR>
 
 " General Vim configurations
 
@@ -166,6 +168,6 @@ set ml
 set mls=3
 if has("gui_running") && !exists("mvim")
   set acd
-  set lines=75
+  set lines=76
   set co=85
 endif
