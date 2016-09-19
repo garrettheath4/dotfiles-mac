@@ -66,3 +66,9 @@ if [ -d "/Library/Frameworks/Python.framework/Versions/3.5/bin" ]; then
 	PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 	export PATH
 fi
+
+# Automatically start Tmux session if this is an iTerm2 window with the Hotkey profile
+if [ "$ITERM_PROFILE" = "Hotkey" -a -z "${TMUX+defined}" ]; then
+	tmux has-session 2>/dev/null && tmux attach || tmux
+fi
+
