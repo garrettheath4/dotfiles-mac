@@ -67,8 +67,38 @@ if [ -d "/Library/Frameworks/Python.framework/Versions/3.5/bin" ]; then
 	export PATH
 fi
 
-# Automatically start Tmux session if this is an iTerm2 window with the Hotkey profile
-if [ "$ITERM_PROFILE" = "Hotkey" -a -z "${TMUX+defined}" ]; then
-	tmux has-session 2>/dev/null && tmux attach || tmux
+# Tmux-specific commands (only run if Tmux is installed)
+if which tmux >/dev/null 2>&1; then
+	# Automatically start Tmux session if this is an iTerm2 window with the Hotkey profile
+	if [ "$ITERM_PROFILE" = "Hotkey" -a -z "${TMUX+defined}" ]; then
+		tmux has-session 2>/dev/null && tmux attach || tmux
+	fi
+
+	# If this is a TMUX session, automatically run some commands
+	if [ -n "${TMUX}" ]; then
+		# TMUX_PANE=%0
+		if [ "$TMUX_PANE" = '%0' ]; then
+			tmux rename-window 'Local'
+		fi
+
+		# From article: https://blog.no-panic.at/2015/04/21/set-tmux-pane-title-on-ssh-connections/
+		# Source Gist:  https://gist.github.com/florianbeer/ee02c149a7e25f643491
+		ssh() {
+			if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
+				echo 'This is a Tmux session, so renaming window to match SSH session'
+				windowName="$(echo $* | cut -d . -f 1)"
+				case "$windowName" in
+					drlvapiapp01) windowName='Test_API'; ;;
+					prlvapiapp01) windowName='PROD_API'; ;;
+				esac
+				tmux rename-window "$windowName"
+				command ssh "$@"
+				#tmux set-window-option automatic-rename "on" 1>/dev/null
+			else
+				echo "WARNING: Cannot rename the Tmux session because this is not a Tmux session.  This ssh() funcion shouldn't be defined.  Check your .bash_profile" 1>&2
+				command ssh "$@"
+			fi
+		}
+	fi
 fi
 
