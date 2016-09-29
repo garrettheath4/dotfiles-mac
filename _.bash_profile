@@ -87,6 +87,7 @@ if which tmux >/dev/null 2>&1; then
 			if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
 				echo 'This is a Tmux session, so renaming window to match SSH session'
 				windowName="$(echo $* | cut -d . -f 1)"
+				#TODO: Break this known-server substitution into an optional .server_list.local definition file
 				case "$windowName" in
 					drlvapiapp01) windowName='Test_API'; ;;
 					prlvapiapp01) windowName='PROD_API'; ;;
