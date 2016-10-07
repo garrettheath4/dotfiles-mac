@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Run this script to launch a "mini Vim" window
 # to quickly paste text into Vim for manipulation
 
@@ -15,14 +15,14 @@ command_exists() {
 }
 
 resolutionToPosX() {
-	resX="$(echo $1 | sed -n -e 's/\([0-9]*\) x \([0-9]*\)/\1/p')"
-	posX="$(echo $resX/2-$widthChars*8/2+$centerXoffsetRight | bc)"
+	resX="$(echo "$1" | sed -n -e 's/\([0-9]*\) x \([0-9]*\)/\1/p')"
+	posX="$(echo "$resX/2-$widthChars*8/2+$centerXoffsetRight" | bc)"
 	echo "$posX"
 }
 
 resolutionToPosY() {
-	resY="$(echo $1 | sed -n -e 's/\([0-9]*\) x \([0-9]*\)/\2/p')"
-	posY="$(echo $resY/2-$heightChars*15/2-$centerYoffsetUp | bc)"
+	resY="$(echo "$1" | sed -n -e 's/\([0-9]*\) x \([0-9]*\)/\2/p')"
+	posY="$(echo "$resY/2-$heightChars*15/2-$centerYoffsetUp" | bc)"
 	echo "$posY"
 }
 
@@ -42,8 +42,8 @@ if command_exists system_profiler; then
 			;;
 		*)
 			echo "Unable to detect resolution; calculating automatically"
-			posX=`resolutionToPosX "$resolution"`
-			posY=`resolutionToPosY "$resolution"`
+			posX=$(resolutionToPosX "$resolution")
+			posY=$(resolutionToPosY "$resolution")
 			centerWithMoom=true
 			;;
 	esac
@@ -54,7 +54,7 @@ if ! command_exists "$vimexec"; then
 	vimexec=vim
 fi
 
-echo '"$vimexec" -g --cmd "let mvim=1" "+setlocal co=$widthChars" "+setlocal lines=$heightChars" "+winpos $posX $posY"'
+echo "$vimexec" -g --cmd "let mvim=1" "+setlocal co=$widthChars" "+setlocal lines=$heightChars" "+winpos $posX $posY"
 "$vimexec" -g --cmd "let mvim=1" "+setlocal co=$widthChars" "+setlocal lines=$heightChars" "+winpos $posX $posY" "+setlocal nowrap"
 
 if command_exists "/Applications/Moom.app/Contents/MacOS/Moom" && $centerWithMoom; then
@@ -63,3 +63,4 @@ if command_exists "/Applications/Moom.app/Contents/MacOS/Moom" && $centerWithMoo
 	sleep 0.6
 	osascript -e 'tell application "Moom" to center frontmost window'
 fi
+

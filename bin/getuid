@@ -1,5 +1,5 @@
-#!/bin/sh
-
+#!/usr/bin/env bash
 # Prints the UID of the given process name(s).
 
 ps -eo uid,args | grep "$@" | grep -v "$0\|grep" | awk '{print $1}'
+

@@ -1,10 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 if [ $# -ne 2 ]; then
 	echo "Usage: $0 <targets.txt> <command>"
 	exit
 fi
 
-for host in `cat $1`; do
-	ssh $host "$2"
-done
+while read -r -u 8 host; do
+	# shellcheck disable=SC2029
+	ssh "$host" "$2"
+done 8<"$1"
+

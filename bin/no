@@ -1,2 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 echo "Ooops!  We're not in the land of QWERTY anymore."
+

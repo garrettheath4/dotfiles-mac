@@ -1,18 +1,19 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 PERIOD_SECS="1"
 
 OLD=""
-NEW=`$*`
+NEW=$("$@")
 echo "$NEW"
 
-while [ 0 ]; do
+while true; do
 	if [ "$OLD" != "$NEW" ]; then
-		clear
+		#clear
 		date
 		echo "$NEW"
 	fi
 	OLD="$NEW"
-	NEW=`$*`
+	NEW=$("$@")
 	sleep "$PERIOD_SECS"
 done
+

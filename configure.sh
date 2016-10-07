@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Script to configure a Mac account with preferred settings
 # This script may also install minor programs but everything in this script
 # should run to completion without any prompts, sudo or otherwise
 
-REPO="`pwd`"
+REPO="$(pwd)"
 
 HIDDENFILES='.bash_profile
 .git-completion.bash
@@ -60,9 +60,13 @@ git clone https://github.com/VundleVim/Vundle.vim.git "$REPO/_.vim/bundle/Vundle
 vim +PluginInstall +qall
 
 # Install GrowlStyles
-GROWL_FOLDER=~/Library/Application\ Support/Growl/Plugins
-GROWLS="`ls -1 GrowlStyles/`"
+GROWL_FOLDER="$HOME/Library/Application Support/Growl"
+# shellcheck disable=SC2174
 mkdir -pv -m 755 "$GROWL_FOLDER"
+GROWL_PLUGINS="$GROWL_FOLDER/Plugins"
+# shellcheck disable=SC2174
+mkdir -pv -m 755 "$GROWL_PLUGINS"
+GROWLS="$(ls -1 GrowlStyles/)"
 for grr in $GROWLS; do
 	if [ ! -e "$GROWL_FOLDER/$grr" ]; then
 		# Growl style not installed, so install it
@@ -74,7 +78,7 @@ done
 
 # Install Mail ActOn Rules
 MAILON_FOLDER=~/Library/Mail/Bundles/MailActOn.mailbundle/Contents/MacOS
-if [ -d "$MAILON_FOLDER" -a ! -d "$MAILON_FOLDER".backup ]; then
+if [ -d "$MAILON_FOLDER" ] && [ ! -d "$MAILON_FOLDER".backup ]; then
 	mv -fv "$MAILON_FOLDER" "$MAILON_FOLDER".backup
 fi
 ln -Ffhsv "$REPO/MailActOn" "$MAILON_FOLDER"

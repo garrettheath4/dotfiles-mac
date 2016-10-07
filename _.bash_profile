@@ -1,7 +1,9 @@
 # Source local definitions
 # I recommend putting a custom command prompt in .bash_profile.local
 # like: export PS1="\u@\h:\W$(tput sgr0) \$ "
-test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && source $_
+# shellcheck disable=SC1091
+# shellcheck source=../.bash_profile.local
+test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && . "$_"
 
 # Add background color to command prompt
 # (the \[ and \] in BLUE and RESET indicate that those characters are
@@ -37,27 +39,32 @@ alias gga='git add'
 alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
 
-test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && source $_
+# shellcheck disable=SC1091
+# shellcheck source=../.git-completion.bash
+test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . "$_"
 
 #  GUI app shortcuts
 alias preview="open -a Preview"
 
 vim_exec=/Applications/MacVim.app/Contents/MacOS/Vim
 if [ -x "$vim_exec" ]; then
+	# shellcheck disable=SC2139
 	alias vim="$vim_exec"
+	# shellcheck disable=SC2139
 	alias gvim="$vim_exec -g"
+	# shellcheck disable=SC2139
 	alias vimro="$vim_exec -M"
 else
 	alias vimro="vim -M"
 fi
 
 # Add user bin and sbin folders to PATH
-if [ -d "~/bin" ]; then
-	export PATH="$PATH":"~/bin"
+if [ -d "$HOME/bin" ]; then
+	export PATH="$PATH:$HOME/bin"
 fi
 
-if [ -d "~/sbin" ]; then
-	export PATH="$PATH":"~/sbin"
+if [ -d "$HOME/sbin" ]; then
+	export PATH="$PATH:$HOME/sbin"
 fi
 
 # Setting PATH for Python 3.5
@@ -70,8 +77,12 @@ fi
 # Tmux-specific commands (only run if Tmux is installed)
 if which tmux >/dev/null 2>&1; then
 	# Automatically start Tmux session if this is an iTerm2 window with the Hotkey profile
-	if [ "$ITERM_PROFILE" = "Hotkey" -a -z "${TMUX+defined}" ]; then
-		tmux has-session 2>/dev/null && tmux attach || tmux
+	if [ "$ITERM_PROFILE" = "Hotkey" ] && [ -z "${TMUX+defined}" ]; then
+		if (tmux has-session 2>/dev/null); then
+			tmux attach
+		else
+			tmux
+		fi
 	fi
 
 	# If this is a TMUX session, automatically run some commands
@@ -84,21 +95,25 @@ if which tmux >/dev/null 2>&1; then
 		# From article: https://blog.no-panic.at/2015/04/21/set-tmux-pane-title-on-ssh-connections/
 		# Source Gist:  https://gist.github.com/florianbeer/ee02c149a7e25f643491
 		ssh() {
-			if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
-				echo 'This is a Tmux session, so renaming window to match SSH session'
-				windowName="$(echo $* | cut -d . -f 1)"
-				#TODO: Break this known-server substitution into an optional .server_list.local definition file
-				case "$windowName" in
-					drlvapiapp01) windowName='Test_API'; ;;
-					prlvapiapp01) windowName='PROD_API'; ;;
-				esac
-				tmux rename-window "$windowName"
-				command ssh "$@"
-				#tmux set-window-option automatic-rename "on" 1>/dev/null
+			if [ "$(ps -p "$(ps -p $$ -o ppid=)" -o comm=)" = "tmux" ]; then
+				if [ "$(tmux display-message -p '#W')" = "bash" ]; then
+					# Tmux window doesn't have a custom name already, so proceed with auto-rename
+					echo 'Renaming Tmux window to match SSH session'
+					windowName="$(echo "$1" | cut -d . -f 1)"
+					#TODO: Break this known-server substitution into an optional .server_list.local definition file
+					case "$windowName" in
+						drlvapiapp01) windowName='Test_API'; ;;
+						prlvapiapp01) windowName='PROD_API'; ;;
+					esac
+					tmux rename-window "$windowName"
+					#tmux set-window-option automatic-rename "on" 1>/dev/null
+				else
+					: # Tmux window has a custom name already, so don't rename it
+				fi
 			else
 				echo "WARNING: Cannot rename the Tmux session because this is not a Tmux session.  This ssh() funcion shouldn't be defined.  Check your .bash_profile" 1>&2
-				command ssh "$@"
 			fi
+			command ssh "$@"
 		}
 	fi
 fi

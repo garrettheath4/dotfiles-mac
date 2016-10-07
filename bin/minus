@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 if [ "$#" -ne 2 ]; then
 	echo "Usage: minus AllLinesFile LinesToFilterFile"
@@ -6,3 +6,4 @@ if [ "$#" -ne 2 ]; then
 fi
 
 grep -vf "$2" "$1"
+

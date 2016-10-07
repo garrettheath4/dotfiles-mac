@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Script to install major programs and Applications on a Mac account
 # Most things in this script (unless they're very minor) should run with
 # a prompted confirmation from the user to install each item
 
-REPO="`pwd`"
+REPO="$(pwd)"
 
 # Variable: Has the spreadsheet with the list of licenses been opened yet?
 #   Values: 'YES' or 'NO'
@@ -22,14 +22,8 @@ ConfirmInstall () {
 	# Returns: 0 for YES
 	# (as $?): 1 for NO
 	if [[ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" && ! -e "$2" ]]; then
-		read -p "Install $1 now? (y/n) [y]: " confirminstall
-		if [ "$confirminstall" != "n" ]; then
-			# Return YES
-			return 0
-		else
-			# Return NO
-			return 1
-		fi
+		read -r -p "Install $1 now? (y/n) [y]: " confirminstall
+		[ "$confirminstall" != "n" ]
 	else
 		# Return NO
 		return 1
@@ -40,7 +34,7 @@ LuckySearch () {
 	# Usage: LuckySearch SearchString
 	# Action: Performs an I'm Feeling Lucky Google search of SearchString
 	GIFL="http://www.google.com/search?q=%s&btnI=Im+Feeling+Lucky"
-	URL=`echo "$GIFL" | sed -e "s/%s/$1/" | sed -e 's/ /+/g'`
+	URL=$(echo "$GIFL" | sed -e "s/%s/$1/" | sed -e 's/ /+/g')
 	echo "Opening $URL"
 	open "$URL"
 }

@@ -1,2 +1,4 @@
-#!/bin/sh
-find / 2>/dev/null | grep $@
+#!/usr/bin/env bash
+
+find / 2>/dev/null | grep "$@"
+

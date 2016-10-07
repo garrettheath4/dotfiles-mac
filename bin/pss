@@ -1,2 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 ps aux | grep "$@" | grep -v "grep\|$0"
+

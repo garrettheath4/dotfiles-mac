@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 if [ -d "/Applications/Vim.app" ]; then
 	/Applications/Vim.app/Contents/MacOS/Vim -g "$*"
@@ -7,3 +7,4 @@ else
 		/Applications/MacVim.app/Contents/MacOS/Vim -g "$*"
 	fi
 fi
+
