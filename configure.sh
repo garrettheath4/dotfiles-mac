@@ -9,6 +9,7 @@ HIDDENFILES='.bash_profile
 .git-completion.bash
 .gitconfig
 .vimrc
+.ideavimrc
 .tmux.conf
 .tmux-osx.conf'
 
