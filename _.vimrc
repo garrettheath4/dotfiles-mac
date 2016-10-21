@@ -164,6 +164,12 @@ set ru
 set ex
 set backspace=2
 set nu
+set list  " show <Tab> as ^I and end-of-line as $
+set listchars=tab:>-,trail:~,extends:>,precedes:<
+" Set color of eol, extends, and precedes to black (visible only when editing line)
+highlight NonText    ctermfg=0 guifg=Black
+" Set color of nbsp, tab, and trail to gray
+highlight SpecialKey ctermfg=8 guifg=DarkGray
 set ml
 set mls=3
 if has("gui_running") && !exists("mvim")
