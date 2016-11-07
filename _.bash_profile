@@ -98,9 +98,10 @@ if which tmux >/dev/null 2>&1; then
 			if [ "$(ps -p "$(ps -p $$ -o ppid=)" -o comm=)" = "tmux" ]; then
 				if [ "$(tmux display-message -p '#W')" = "bash" ]; then
 					# Tmux window doesn't have a custom name already, so proceed with auto-rename
-					echo 'Renaming Tmux window to match SSH session'
+					#TODO: Make this text gray
+					echo 'Renaming Tmux window to match SSH session' 1>&2
 					windowName="$(echo "$1" | cut -d . -f 1)"
-					#TODO: Break this known-server substitution into an optional .server_list.local definition file
+					#TODO: Break this known-server substitution into an optional .ssh_server_names.local definition file
 					case "$windowName" in
 						drlvapiapp01) windowName='Test_API'; ;;
 						prlvapiapp01) windowName='PROD_API'; ;;
@@ -117,4 +118,24 @@ if which tmux >/dev/null 2>&1; then
 		}
 	fi
 fi
+
+cd_tmux() {
+	# Usage: cd_tmux <DirToChangeTo> <NewTmuxWindowName>
+	if [ "$#" -lt 2 ]; then
+		echo 'Usage: cd_tmux <DirToChangeTo> <NewTmuxWindowName>'
+		exit 1
+	fi
+	NewDir="$1"
+	shift
+	# Remaining arg(s) is new window name
+	WindowName="$*"
+	if which tmux >/dev/null 2>&1 && [ "$(ps -p "$(ps -p $$ -o ppid=)" -o comm=)" = "tmux" ] && [ "$(tmux display-message -p '#W')" = "bash" ]; then
+		# Tmux is installed && this is a running Tmux session && the Tmux window has the default (non-custom) name
+		#TODO: Make this text gray
+		echo 'Renaming Tmux window to match current directory' 1>&2
+		tmux rename-window "$WindowName"
+	fi
+	# shellcheck disable=SC2164
+	cd "$NewDir"
+}
 
