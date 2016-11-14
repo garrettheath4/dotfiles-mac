@@ -137,5 +137,6 @@ cd_tmux() {
 	fi
 	# shellcheck disable=SC2164
 	cd "$NewDir"
+	pwd
 }
 
