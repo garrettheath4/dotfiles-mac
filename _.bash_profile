@@ -6,14 +6,14 @@
 test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && . "$_"
 
 # Add background color to command prompt
-# (the \[ and \] in BLUE and RESET indicate that those characters are
+# (the \[ and \] in BlueBgPS and ResetColorsPS indicate that those characters are
 # unprintable and to not include them in the string width counting)
 # Bash Prompt Customization: https://wiki.archlinux.org/index.php/Bash/Prompt_customization
 # Terminal Codes intro: http://wiki.bash-hackers.org/scripting/terminalcodes
-BLUE="\[$(tput setab 4)\]"
-RESET="\[$(tput sgr0)\]"
-export PS1="${BLUE}${PS1}${RESET}"
-export PS2="${BLUE}${PS2}${RESET}"
+BlueBgPS="\[$(tput setab 4)\]"
+ResetColorsPS="\[$(tput sgr0)\]"
+export PS1="${BlueBgPS}${PS1}${ResetColorsPS}"
+export PS2="${BlueBgPS}${PS2}${ResetColorsPS}"
 
 # User aliases
 alias gcc='gcc -Wall --pedantic'
@@ -98,8 +98,9 @@ if which tmux >/dev/null 2>&1; then
 			if [ "$(ps -p "$(ps -p $$ -o ppid=)" -o comm=)" = "tmux" ]; then
 				if [ "$(tmux display-message -p '#W')" = "bash" ]; then
 					# Tmux window doesn't have a custom name already, so proceed with auto-rename
-					#TODO: Make this text gray
-					echo 'Renaming Tmux window to match SSH session' 1>&2
+					GrayTxt="$(tput setaf 0)"
+					ResetColors="$(tput sgr0)"
+					echo "${GrayTxt}Renaming Tmux window to match SSH session${ResetColors}" 1>&2
 					windowName="$(echo "$1" | cut -d . -f 1)"
 					#TODO: Break this known-server substitution into an optional .ssh_server_names.local definition file
 					case "$windowName" in
@@ -131,8 +132,9 @@ cd_tmux() {
 	WindowName="$*"
 	if which tmux >/dev/null 2>&1 && [ "$(ps -p "$(ps -p $$ -o ppid=)" -o comm=)" = "tmux" ] && [ "$(tmux display-message -p '#W')" = "bash" ]; then
 		# Tmux is installed && this is a running Tmux session && the Tmux window has the default (non-custom) name
-		#TODO: Make this text gray
-		echo 'Renaming Tmux window to match current directory' 1>&2
+		GrayTxt="$(tput setaf 0)"
+		ResetColors="$(tput sgr0)"
+		echo "${GrayTxt}Renaming Tmux window to match current directory${ResetColors}" 1>&2
 		tmux rename-window "$WindowName"
 	fi
 	# shellcheck disable=SC2164
