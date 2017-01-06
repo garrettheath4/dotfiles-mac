@@ -176,6 +176,6 @@ set ml
 set mls=3
 if has("gui_running") && !exists("mvim")
   set acd
-  set lines=76
+  set lines=85
   set co=85
 endif
