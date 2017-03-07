@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ "$#" -lt 2 ]; then
+	echo "Usage: $(basename "$0") <host> <port>"
+	exit 1
+fi
+
+(echo >/dev/tcp/"$1"/"$2" </dev/null) >/dev/null 2>&1 && echo "Port is open" || echo "ERROR: Port is NOT open"
+
