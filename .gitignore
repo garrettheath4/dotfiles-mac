@@ -1,9 +1,20 @@
+# OS X files
+.DS_Store
+
+# Vim files
+*~
+*.swp
+
+# Vim plugin files
 _.vim/.netrwhist
 _.vim/bundle/*
+!_.vim/bundle/Vundle.vim
+
+# Python IDLE files
 _.idlerc/recent-files.lst
+
+# Homebrew files
 bin/steam
 bin/uplay
 bin/fiddler
-.DS_Store
-*~
-*.swp
+
