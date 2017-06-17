@@ -53,9 +53,9 @@ if ConfirmInstall "\"Robot Blip\" sound" \
 		'/System/Library/Sounds/Robot Blip.aiff'; then
 	echo "Adding \"Robot Blip\" to system sounds..."
 	if [ -e "$REPO/Sounds/Robot Blip.aiff" ]; then
-		sudo cp "$REPO/Sounds/Robot Blip.aiff" \
-			/System/Library/Sounds/
-		if [ "$?" != 0 ]; then
+		if ( sudo cp "$REPO/Sounds/Robot Blip.aiff" /System/Library/Sounds/ ); then
+			:
+		else
 			echo "Warning: Error in installing Robot Blip."
 			echo "         Perhaps you don't have sudo permissions?"
 		fi
@@ -86,14 +86,6 @@ fi
 # Prompt to install XScreenSaver
 if ConfirmInstall 'XScreenSaver'; then
 	LuckySearch "XScreenSaver for macos x download"
-fi
-
-# Prompt to install Mail ActOn
-if ConfirmInstall "Mail ActOn" \
-		"/Users/Garrett/Library/Mail/Bundles/MailActOn.mailbundle"
-		then
-	ShowLicenses
-	LuckySearch "Indev Mail ActOn for Mac"
 fi
 
 # Prompt to install TotalTerminal

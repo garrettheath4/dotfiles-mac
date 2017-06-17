@@ -78,13 +78,6 @@ for grr in $GROWLS; do
 	fi
 done
 
-# Install Mail ActOn Rules
-MAILON_FOLDER=~/Library/Mail/Bundles/MailActOn.mailbundle/Contents/MacOS
-if [ -d "$MAILON_FOLDER" ] && [ ! -d "$MAILON_FOLDER".backup ]; then
-	mv -fv "$MAILON_FOLDER" "$MAILON_FOLDER".backup
-fi
-ln -Ffhsv "$DOTFILES/MailActOn" "$MAILON_FOLDER"
-
 if [ "$(uname)" = "Darwin" ]; then
 	echo "NOTE: Install Homebrew and use it to install reattach-to-user-namespace to get tmux copy/paste and app launching functionality to work properly"
 fi
