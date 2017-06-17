@@ -3,6 +3,7 @@
 # This script may also install minor programs but everything in this script
 # should run to completion without any prompts, sudo or otherwise
 
+# Source directory one-liner (below) from https://stackoverflow.com/a/246128
 DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 HIDDENFILES='.bash_profile
