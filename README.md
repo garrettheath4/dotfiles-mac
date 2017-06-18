@@ -8,7 +8,7 @@ Installation
 To install this project:
 
 ```
-git clone https://github.com/garrettheath4/dotfiles-mac.git ~/dotfiles`
+git clone https://github.com/garrettheath4/dotfiles-mac.git ~/dotfiles
 cd ~/dotfiles
 ./configure.sh
 ./installApps.sh
