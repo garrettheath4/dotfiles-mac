@@ -3,7 +3,7 @@
 # like: export PS1="\u@\h:\W$(tput sgr0) \$ "
 # shellcheck disable=SC1091
 # shellcheck source=../.bash_profile.local
-test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && . "$_"
+test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && source "$_"
 
 # Add background color to command prompt
 # (the \[ and \] in BlueBgPS and ResetColorsPS indicate that those characters are
@@ -14,6 +14,14 @@ BlueBgPS="\[$(tput setab 4)\]"
 ResetColorsPS="\[$(tput sgr0)\]"
 export PS1="${BlueBgPS}${PS1}${ResetColorsPS}"
 export PS2="${BlueBgPS}${PS2}${ResetColorsPS}"
+
+# shellcheck disable=SC1091
+# shellcheck source=../.git-completion.bash
+test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && source "$_"
+
+# Enable Bash completion scripts from Homebrew installs if Homebrew and Homebrew:bash-completion are installed
+# bash-completion can be installed with: brew install bash-completion
+(which brew >/dev/null 2>&1) && test -f $(brew --prefix)/etc/bash_completion && source "$_"
 
 # User aliases
 alias gcc='gcc -Wall --pedantic'
@@ -38,10 +46,6 @@ alias ggd='git diff'
 alias gga='git add'
 alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
-
-# shellcheck disable=SC1091
-# shellcheck source=../.git-completion.bash
-test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . "$_"
 
 #  GUI app shortcuts
 alias preview="open -a Preview"
@@ -101,8 +105,8 @@ if which tmux >/dev/null 2>&1; then
 					GrayTxt="$(tput setaf 0)"
 					ResetColors="$(tput sgr0)"
 					echo "${GrayTxt}Renaming Tmux window to match SSH session${ResetColors}" 1>&2
-					windowName="$(echo "$1" | cut -d . -f 1)"
-					#TODO: Break this known-server substitution into an optional .ssh_server_names.local definition file
+					windowName=$(echo "$1" | cut -d '.' -f 1)
+					#TODO: Extract this known-server substitution into an optional .ssh_server_names.local definition file
 					case "$windowName" in
 						drlvapiapp01) windowName='Test_API'; ;;
 						prlvapiapp01) windowName='PROD_API'; ;;
