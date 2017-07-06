@@ -81,7 +81,7 @@ fi
 # Tmux-specific commands (only run if Tmux is installed)
 if which tmux >/dev/null 2>&1; then
 	# Automatically start Tmux session if this is an iTerm2 window with the Hotkey profile
-	if [ "$ITERM_PROFILE" = "Hotkey" ] && [ -z "${TMUX+defined}" ]; then
+	if [ "$ITERM_PROFILE" = "Hotkey" -o "$ITERM_PROFILE" = "Hotkey Top" ] && [ -z "${TMUX+defined}" ]; then
 		if (tmux has-session 2>/dev/null); then
 			tmux attach
 		else
