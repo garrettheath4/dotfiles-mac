@@ -61,24 +61,3 @@ mkdir -p "$DOTFILES/_.vim/bundle"
 git clone https://github.com/VundleVim/Vundle.vim.git "$DOTFILES/_.vim/bundle/Vundle.vim"
 vim +PluginInstall +qall
 
-# Install GrowlStyles
-GROWL_FOLDER="$HOME/Library/Application Support/Growl"
-# shellcheck disable=SC2174
-mkdir -pv -m 755 "$GROWL_FOLDER"
-GROWL_PLUGINS="$GROWL_FOLDER/Plugins"
-# shellcheck disable=SC2174
-mkdir -pv -m 755 "$GROWL_PLUGINS"
-GROWLS="$(ls -1 GrowlStyles/)"
-for grr in $GROWLS; do
-	if [ ! -e "$GROWL_FOLDER/$grr" ]; then
-		# Growl style not installed, so install it
-		cp -r "GrowlStyles/$grr" "$GROWL_FOLDER/"
-	else
-		echo "Note: Growl Style \"$grr\" already installed"
-	fi
-done
-
-if [ "$(uname)" = "Darwin" ]; then
-	echo "NOTE: Install Homebrew and use it to install reattach-to-user-namespace to get tmux copy/paste and app launching functionality to work properly"
-fi
-
