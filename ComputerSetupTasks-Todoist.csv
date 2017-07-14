@@ -31,6 +31,8 @@ task,Load preferences from GD Backups folder,4,3,Garrett (5042555),,,en,America/
 ,,,,,,,,
 task,Terminal dotfiles [Run _git clone https://github.com/garrettheath4/dotfiles-mac.git ~/dotfiles_ ],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Tmux [Run _brew install tmux_ ],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Terminal developer tools (through Xcode?),4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,InSync [Run _brew cask install insync_ or https://www.insynchq.com/downloads/mac (download)],4,2,Garrett (5042555),,,en,America/New_York
@@ -42,8 +44,6 @@ task,Work,4,3,Garrett (5042555),,,en,America/New_York
 task,Moom [Run _brew cask install moom_ or https://manytricks.com/moom/ (download)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,BetterTouchTool [Run _brew cask install bettertouchtool_ or https://www.boastr.net/downloads/ (download)],4,2,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,MacVim [Run _brew cask install macvim_ or http://macvim-dev.github.io/macvim/ (download)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Todoist [https://itunes.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12&ign-mpt=uo%3D4 (Mac App Store)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -59,6 +59,16 @@ task,School,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Evernote [https://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12 (Mac App Store)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,TogglDesktop [Run _brew cask install toggldesktop_ ],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,MacVim [Run _brew cask install macvim_ or http://macvim-dev.github.io/macvim/ (download)],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,MacDown [Run _brew cask install macdown_ ],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Alfred [Run _brew cask install alfred_ or https://www.alfredapp.com/ (download)],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,TG Pro [Run _brew cask install tg-pro_ add use license hash from LastPass],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Spotify [Run _brew cask install spotify_ or https://www.spotify.com/us/download/mac/ (download)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,High quality streaming,4,3,Garrett (5042555),,,en,America/New_York
@@ -69,7 +79,7 @@ task,Add Music folder from Google Drive,4,3,Garrett (5042555),,,en,America/New_Y
 ,,,,,,,,
 task,Goofy (Facebook Messenger) [Run _brew cask install goofy_ or http://www.goofyapp.com/ (download)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Alfred [Run _brew cask install alfred_ or https://www.alfredapp.com/ (download)],4,2,Garrett (5042555),,,en,America/New_York
+task,Steam [Run _brew cask install steam_ ],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Set up game save sync locations (GD Games folder),4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -80,4 +90,6 @@ task,Papers Please,4,3,Garrett (5042555),,,en,America/New_York
 task,Osmos,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Lumino City,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Tunnelblick [Run _brew cask install tunnelblick_ ],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
