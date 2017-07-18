@@ -13,8 +13,9 @@ _.vim/bundle/*
 # Python IDLE files
 _.idlerc/recent-files.lst
 
-# Homebrew files
+# App launcher files for Homebrew and Wine
 bin/steam
 bin/uplay
 bin/fiddler
+bin/spaceengineers
 
