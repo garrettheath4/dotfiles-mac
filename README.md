@@ -10,6 +10,8 @@ To install this project:
 ```
 git clone https://github.com/garrettheath4/dotfiles-mac.git ~/dotfiles
 cd ~/dotfiles
+git submodule init
+git submodule update
 ./configure.sh
 ./installApps.sh
 ```

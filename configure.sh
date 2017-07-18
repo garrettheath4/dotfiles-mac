@@ -57,7 +57,7 @@ for nd in $NORMALDIRS; do
 done
 
 # Install Vundle Vim package manager
-mkdir -p "$DOTFILES/_.vim/bundle"
-git clone https://github.com/VundleVim/Vundle.vim.git "$DOTFILES/_.vim/bundle/Vundle.vim"
+git submodule init
+git submodule update
 vim +PluginInstall +qall
 
