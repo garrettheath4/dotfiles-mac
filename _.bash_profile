@@ -3,7 +3,7 @@
 # like: export PS1="\u@\h:\W$(tput sgr0) \$ "
 # shellcheck disable=SC1091
 # shellcheck source=../.bash_profile.local
-test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && source "$_"
+test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && . "$_"
 
 # Add background color to command prompt
 # (the \[ and \] in BlueBgPS and ResetColorsPS indicate that those characters are
@@ -17,11 +17,11 @@ export PS2="${BlueBgPS}${PS2}${ResetColorsPS}"
 
 # shellcheck disable=SC1091
 # shellcheck source=../.git-completion.bash
-test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && source "$_"
+test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . "$_"
 
 # Enable Bash completion scripts from Homebrew installs if Homebrew and Homebrew:bash-completion are installed
 # bash-completion can be installed with: brew install bash-completion
-(which brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_completion" && source "$_"
+(which brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_completion" && . "$_"
 
 # User aliases
 alias gcc='gcc -Wall --pedantic'
