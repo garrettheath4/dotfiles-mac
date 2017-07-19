@@ -21,7 +21,7 @@ test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && source "$_"
 
 # Enable Bash completion scripts from Homebrew installs if Homebrew and Homebrew:bash-completion are installed
 # bash-completion can be installed with: brew install bash-completion
-(which brew >/dev/null 2>&1) && test -f $(brew --prefix)/etc/bash_completion && source "$_"
+(which brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_completion" && source "$_"
 
 # User aliases
 alias gcc='gcc -Wall --pedantic'
@@ -81,7 +81,7 @@ fi
 # Tmux-specific commands (only run if Tmux is installed)
 if which tmux >/dev/null 2>&1; then
 	# Automatically start Tmux session if this is an iTerm2 window with the Hotkey profile
-	if [ "$ITERM_PROFILE" = "Hotkey" -o "$ITERM_PROFILE" = "Hotkey Window" ] && [ -z "${TMUX+defined}" ]; then
+	if [ "$ITERM_PROFILE" = "Hotkey" ] || [ "$ITERM_PROFILE" = "Hotkey Window" ] && [ -z "${TMUX+defined}" ]; then
 		if (tmux has-session 2>/dev/null); then
 			tmux attach
 		else
