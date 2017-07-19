@@ -56,7 +56,6 @@ for nd in $NORMALDIRS; do
 done
 
 # Install Vundle Vim package manager
-git submodule init
-git submodule update
+git submodule init && git submodule update
 vim +PluginInstall +qall
 
