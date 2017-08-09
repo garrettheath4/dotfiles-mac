@@ -59,3 +59,9 @@ done
 git submodule init && git submodule update
 vim +PluginInstall +qall
 
+# Configure Git
+git config --global push.default simple
+git config --global diff.tool vimdiff
+echo 'Be sure to run the following commands to finish configuring Git:'
+echo '  git config --global user.name  "Garrett Heath Koller"'
+echo '  git config --global user.email "garrettheath4@gmail.com"'
