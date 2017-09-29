@@ -5,5 +5,12 @@ if [ "$#" -lt 2 ]; then
 	exit 1
 fi
 
+# Print command for easy copying
+echo '(echo >/dev/tcp/'"$1"'/'"$2"' </dev/null) >/dev/null 2>&1 && echo "Port is open" || echo "ERROR: Port is NOT open"'
+
+# Tee up output by prepending ->
+echo -n ' -> '
+
+# Run command
 (echo >/dev/tcp/"$1"/"$2" </dev/null) >/dev/null 2>&1 && echo "Port is open" || echo "ERROR: Port is NOT open"
 
