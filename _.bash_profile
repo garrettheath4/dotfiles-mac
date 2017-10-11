@@ -63,11 +63,11 @@ else
 fi
 
 # Add user bin and sbin folders to PATH
-if [ -d "$HOME/bin" ]; then
+if [ -d "$HOME/bin" ] && [[ $PATH != *$HOME/bin* ]]; then
 	export PATH="$PATH:$HOME/bin"
 fi
 
-if [ -d "$HOME/sbin" ]; then
+if [ -d "$HOME/sbin" ] && [[ $PATH != *$HOME/sbin* ]]; then
 	export PATH="$PATH:$HOME/sbin"
 fi
 
