@@ -1,16 +1,30 @@
 #!/usr/bin/env bash
 
+if [ "$#" -ge 1 ]; then
+	test_host="$1"
+	host_command='host '"$test_host"
+	if ! host_command_out=$(eval "$host_command"); then
+		echo "$host_command"
+		echo -n ' => '
+		echo "$host_command_out"
+	fi
+fi
+
 if [ "$#" -lt 2 ]; then
 	echo "Usage: $(basename "$0") <host> <port>"
 	exit 1
 fi
 
-# Print command for easy copying
-echo '(echo >/dev/tcp/'"$1"'/'"$2"' </dev/null) >/dev/null 2>&1 && echo "Port is open" || echo "ERROR: Port is NOT open"'
+#test_host="$1"
+test_port="$2"
+test_command='(echo >/dev/tcp/'"$test_host"'/'"$test_port"' </dev/null) >/dev/null 2>&1 && echo "Port is open" || echo "ERROR: Port is NOT open"'
 
-# Tee up output by prepending ->
-echo -n ' -> '
+# Print command for easy copying
+echo "$test_command"
+
+# Tee up output by prepending =>
+echo -n ' => '
 
 # Run command
-(echo >/dev/tcp/"$1"/"$2" </dev/null) >/dev/null 2>&1 && echo "Port is open" || echo "ERROR: Port is NOT open"
+eval "$test_command"
 
