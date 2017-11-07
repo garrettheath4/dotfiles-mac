@@ -1,19 +1,189 @@
 ﻿TYPE,CONTENT,PRIORITY,INDENT,AUTHOR,RESPONSIBLE,DATE,DATE_LANG,TIMEZONE
-task,Install and configure apps,4,1,Garrett (5042555),,today,en,America/New_York
+task,Install and configure apps on new MBP,2,1,Garrett (5042555),,today,en,America/New_York
 ,,,,,,,,
 task,macOS,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Hot corners,4,3,Garrett (5042555),,,en,America/New_York
+task,General Settings,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,iCloud Accounts,4,3,Garrett (5042555),,,en,America/New_York
+task,Check _Use dark menu bar and Dock_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Unlock with Apple Watch,4,3,Garrett (5042555),,,en,America/New_York
+task,Sidebar icon size: _Small_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Don’t go to sleep when plugged in,4,3,Garrett (5042555),,,en,America/New_York
+task,Recent items: _5_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Enhanced dictation (download for offline),4,3,Garrett (5042555),,,en,America/New_York
+task,Mission Control Settings,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,HAL 9000 screensaver [https://drive.google.com/drive/folders/0B0NyR8-zKS20UVlnZmZlaldfbXM?usp=sharing (Download)],4,3,Garrett (5042555),,,en,America/New_York
+task,Uncheck _Automatically rearrange Spaces based on most recent use_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,"Uncheck _When switching to an application, switch to a Space with open windows for the application_",4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Hot corners,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Bottom-Left: _Start Screen Saver_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Others: _Disable Screen Saver_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Security & Privacy Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Require password _5 seconds_ after sleep or screen saver begins,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Allow your Apple Watch to unlock your Mac_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Notifications Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,iMessages,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show notifications on lock screen_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show message preview_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Goofy (FB Messenger),4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show notifications on lock screen_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Displays Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Toggle _Scaled: More Space_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show mirroring options in the menu bar_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Energy Saver: Check _Prevent computer from sleeping automatically when the display is off_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Keyboard Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Adjust keyboard brightness in low light_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Turn keyboard backlight off after _30 secs_ of inactivity,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Modifier Keys: Caps Lock is _Control_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Text Settings,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Capitalize words automatically_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Add period with double-space_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Shortcuts,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Turn Do Not Disturb On/Off: _Control+Esc_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check all _Mission Control_ shortcuts,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Show Spotlight search: _Option+Cmd+Space_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show Finder search window_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Dictation: Check _Use Enhanced Dictation_ (download for offline),4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Trackpad Settings: Set Click level to _Firm_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Sound Settings: Check _Play feedback when volume is changed_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Internet Accounts,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,iCloud,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,iCloud Drive,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Photos: Options: !!Uncheck!! all,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Contacts,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Calendars,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Reminders,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Safari,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Notes,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Keychain,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Find My Mac,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Gmail,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Contacts,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Calendars,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,W&L: Contacts,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Facebook: Calendars !!only!!,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,App Store Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Install macOS updates_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Install system data files and security updates_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Sharing Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Set _Computer Name_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Remote Login (SSH)_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Only these users: _Garrett_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Users & Groups Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Login Items,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,BitBar,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,BetterTouchTool,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Insync,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Moom,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Alfred 3,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Login Options: Show fast user switching menu as: _Icon_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Finder Preferences,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Desktop icons: Snap to grid,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,View Options,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,!!Sort!! by _name_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Show Library Folder,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Set as Defaults,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Preferences: Sidebar,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Remove _Recents_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Remove _iCloud Drive_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Remove _Documents_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Remove _Remote Disc_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Remove _computer_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Remove _Recent Tags_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,1: Personal (Insync folder for personal Google Drive),4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,2: Work (Insync folder for work Google Drive),4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,3: AirDrop,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,4: Applications,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,5: Home,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,6: Downloads,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,7: Desktop,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,8: IdeaProjects (IDE workspace),4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,HAL 9000 screensaver (in Google Drive _Backup_ folder),4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Generated backgrounds (my Bash script),4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -21,53 +191,139 @@ task,Google Chrome,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Personal profile,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Disable Chrome Password Sync,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Log in to LastPass,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,YubiKey naming scheme: <computer> <OS type> <OS version name> <browser program> <browser profile> <date>,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,More Options: Identities: _Filtered_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Log in to Evernote Web Clipper,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Work profile,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Homebrew (install via terminal) [https://brew.sh/ (Link)],4,2,Garrett (5042555),,,en,America/New_York
+task,Disable Chrome Password Sync,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,iTerm2 [Run _brew cask install iterm2_ or https://www.iterm2.com/downloads.html (download)],4,2,Garrett (5042555),,,en,America/New_York
+task,Log in to LastPass,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Load preferences from GD Backups folder,4,3,Garrett (5042555),,,en,America/New_York
+task,YubiKey naming scheme: <computer> <OS type> <OS version name> <browser program> <browser profile> <date>,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Terminal dotfiles [Run _git clone https://github.com/garrettheath4/dotfiles-mac.git ~/dotfiles_ ],4,2,Garrett (5042555),,,en,America/New_York
+task,More Options: Identities: _work_,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Tmux [Run _brew install tmux_ ],4,2,Garrett (5042555),,,en,America/New_York
+task,Log in to Evernote Web Clipper,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Terminal developer tools (through Xcode?),4,2,Garrett (5042555),,,en,America/New_York
+task,Enable Toggl Button integrations,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,InSync [Run _brew cask install insync_ or https://www.insynchq.com/downloads/mac (download)],4,2,Garrett (5042555),,,en,America/New_York
+task,All _*.google.com_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,_todoist.com_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,_jira.datawarehousellc.com_ (Jira),4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Todoist [https://itunes.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12&ign-mpt=uo%3D4 (Mac App Store)],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,InSync [https://www.insynchq.com/downloads/mac (Download)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Personal,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Work,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,KeepingYouAwake [https://github.com/newmarcel/KeepingYouAwake/releases/latest (Download)],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Default Activation Duration: _5 hours_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Deactivate when battery capacity is below _20%_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Homebrew (install via terminal) [https://brew.sh/ (Link)],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,iTerm2 [Run _brew cask install iterm2_ or https://www.iterm2.com/downloads.html (download)],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Load preferences from Google Drive _Backups_ folder,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Terminal developer tools (just try running _git_ in Terminal),4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Terminal dotfiles [Run _git clone https://github.com/garrettheath4/dotfiles-mac.git ~/dotfiles_ ],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Tmux [Run _brew install tmux_ ],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Moom [Run _brew cask install moom_ or https://manytricks.com/moom/ (download)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,BetterTouchTool [Run _brew cask install bettertouchtool_ or https://www.boastr.net/downloads/ (download)],4,2,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Todoist [https://itunes.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12&ign-mpt=uo%3D4 (Mac App Store)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Airmail 3 [https://itunes.apple.com/us/app/airmail-3/id918858936?mt=12 (Mac App Store)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Import accounts from iCloud sync,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Gmail,4,3,Garrett (5042555),,,en,America/New_York
+task,Gmail,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Work,4,3,Garrett (5042555),,,en,America/New_York
+task,Work,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,School,4,3,Garrett (5042555),,,en,America/New_York
+task,School,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Open Links in Background_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Change _Dock + Status Menu_ to just _Dock_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Mark as Read: _Manually_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Composing Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Default Sender: _Ask_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Sending Delay: _15 sec_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Appearance Settings: Theme: _Pro Slim_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Services Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Calendar: _Disable_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Google Drive: _Link Google Drive_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Todoist: _Login_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Evernote: _Link Evernote_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Advanced: Detect in messages: _Links_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Evernote [https://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12 (Mac App Store)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,TogglDesktop [Run _brew cask install toggldesktop_ ],4,2,Garrett (5042555),,,en,America/New_York
+task,TogglDesktop [Run _brew cask install toggl_ ],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Show timer on menu bar_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Show project on menu bar_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show dock icon_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Reminder Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Remind to track time: _20 minutes_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Reminder start time: _10:00_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Reminder end time: _17:00_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Sat_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Sun_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,MacVim [Run _brew cask install macvim_ or http://macvim-dev.github.io/macvim/ (download)],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Check for updates (when MacVim launches)_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,After last window closes: _Quit MacVim_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,MacDown [Run _brew cask install macdown_ ],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Alfred [Run _brew cask install alfred_ or https://www.alfredapp.com/ (download)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,TG Pro [Run _brew cask install tg-pro_ add use license hash from LastPass],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,BitBar [Run _brew cask install bitbar_ ],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Set plugins directory to _~/dotfiles/BitBarScripts_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Spotify [Run _brew cask install spotify_ or https://www.spotify.com/us/download/mac/ (download)],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -92,4 +348,6 @@ task,Osmos,4,3,Garrett (5042555),,,en,America/New_York
 task,Lumino City,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Tunnelblick [Run _brew cask install tunnelblick_ ],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Install home VPN configuration,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
