@@ -301,6 +301,8 @@ task,"Move to Edges: Global Hotkey + _W, A, S, or D_",4,4,Garrett (5042555),,,en
 ,,,,,,,,
 task,Updates: Check _Check for updates automatically_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,BetterTouchTool: Manage Presets: Import from _dotfiles/BetterTouchTool_ folder,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Airmail 3,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Import accounts from iCloud sync,4,3,Garrett (5042555),,,en,America/New_York
