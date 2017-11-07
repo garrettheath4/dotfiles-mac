@@ -7,13 +7,13 @@ REPO="$(pwd)"
 
 # Variable: Has the spreadsheet with the list of licenses been opened yet?
 #   Values: 'YES' or 'NO'
-LicensePage="https://docs.google.com/spreadsheets/d/14pl7ljKn8bf8rZZgHrU56zbQFePMpGCLUH0U3UQRTVI/edit#gid=0"
-OpenedLicenses="NO"
+LicensePage='https://docs.google.com/spreadsheets/d/14pl7ljKn8bf8rZZgHrU56zbQFePMpGCLUH0U3UQRTVI/edit#gid=0'
+OpenedLicenses='NO'
 
 ShowLicenses () {
-	if [ "$OpenedLicenses" == "NO" ]; then
+	if [ "$OpenedLicenses" == 'NO' ]; then
 		open "$LicensePage"
-		OpenedLicenses="YES"
+		OpenedLicenses='YES'
 	fi
 }
 
@@ -23,7 +23,7 @@ ConfirmInstall () {
 	# (as $?): 1 for NO
 	if [[ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" && ! -e "$2" ]]; then
 		read -r -p "Install $1 now? (y/n) [y]: " confirminstall
-		[ "$confirminstall" != "n" ]
+		[ "$confirminstall" != 'n' ]
 	else
 		# Return NO
 		return 1
@@ -33,10 +33,20 @@ ConfirmInstall () {
 LuckySearch () {
 	# Usage: LuckySearch SearchString
 	# Action: Performs an I'm Feeling Lucky Google search of SearchString
-	GIFL="http://www.google.com/search?q=%s&btnI=Im+Feeling+Lucky"
+	GIFL='http://www.google.com/search?q=%s&btnI=Im+Feeling+Lucky'
 	URL=$(echo "$GIFL" | sed -e "s/%s/$1/" | sed -e 's/ /+/g')
 	echo "Opening $URL"
 	open "$URL"
+}
+
+OpenAppLinkAndPrompt () {
+	# Usage OpenAppLinkAndPrompt Evernote 'macappstore://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
+	AppName="$1"
+	LinkToOpen="$2"
+	if [ -n "$LinkToOpen" ]; then
+		open "$LinkToOpen"
+	fi
+	read -r -p "Press Enter after $AppName is installed to continue..."
 }
 
 #
@@ -44,7 +54,7 @@ LuckySearch () {
 #
 
 # Add fractals to Pictures folder
-if ConfirmInstall "fractals to Pictures folder" ~/Pictures/Fractals-2560x1600; then
+if ConfirmInstall 'fractals to Pictures folder' ~/Pictures/Fractals-2560x1600; then
 	ln -is "$REPO/Fractals-2560x1600" ~/Pictures/
 fi
 
@@ -53,10 +63,8 @@ if ConfirmInstall "\"Robot Blip\" sound" \
 		'/System/Library/Sounds/Robot Blip.aiff'; then
 	echo "Adding \"Robot Blip\" to system sounds..."
 	if [ -e "$REPO/Sounds/Robot Blip.aiff" ]; then
-		if ( sudo cp "$REPO/Sounds/Robot Blip.aiff" /System/Library/Sounds/ ); then
-			:
-		else
-			echo "Warning: Error in installing Robot Blip."
+		if ! ( sudo cp "$REPO/Sounds/Robot Blip.aiff" /System/Library/Sounds/ ); then
+			echo 'Warning: Error in installing Robot Blip.'
 			echo "         Perhaps you don't have sudo permissions?"
 		fi
 	else
@@ -66,11 +74,37 @@ fi
 
 
 #
-# Google Chrome (install before opening later web pages)
+# Git (needed first to install Homebrew and its apps in this script)
 #
 
-if ConfirmInstall "Google Chrome"; then
-	LuckySearch "install google chrome for mac site:google.com"
+if ! which git; then
+	git
+	# macOS should prompt you to install the Developer Tools which includes Git
+	OpenAppLinkAndPrompt 'Git'
+fi
+
+if ! git --version; then
+	echo 'Warning: It appears that Git was not installed. You may need to install it yourself from Xcode.'
+	exit 1
+fi
+
+
+#
+# Homebrew (needed to install other tools and apps in this script)
+#
+
+if ! brew --version; then
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+brew update
+
+#
+# Google Chrome (install before opening web pages in this script)
+#
+
+if ConfirmInstall 'Google Chrome'; then
+	brew cask install google-chrome
 fi
 
 
@@ -78,44 +112,16 @@ fi
 # TOOLS
 #
 
-# Prompt to install LastPass extension for Google Chrome
-if ConfirmInstall 'LastPass for Google Chrome'; then
-	LuckySearch "lastpass mac chrome download"
+# LastPass extensions
+LastPassInstallerApp='/usr/local/Caskroom/lastpass/latest/LastPass Installer.app'
+if ConfirmInstall 'LastPass Universal Mac Installer' "$LastPassInstallerApp"; then
+	brew cask install lastpass
+	OpenAppLinkAndPrompt 'LastPass' "$LastPassInstallerApp"
 fi
 
-# Prompt to install XScreenSaver
-if ConfirmInstall 'XScreenSaver'; then
-	LuckySearch "XScreenSaver for macos x download"
-fi
-
-# Prompt to install TotalTerminal
-if ConfirmInstall "TotalTerminal"; then
-	LuckySearch "totalterminal for mac"
-fi
-
-# Prompt to install Growl
-if ConfirmInstall "Growl"; then
-	open "macappstore://itunes.apple.com/us/app/growl/id467939042"
-fi
-
-# Prompt to install GrowlVoice
-if ConfirmInstall "GrowlVoice"; then
-	open "macappstore://itunes.apple.com/us/app/growlvoice-google-voice-client/id413146256"
-fi
-
-# Prompt to install HardwareGrowler
-if ConfirmInstall "HardwareGrowler"; then
-	open "macappstore://itunes.apple.com/us/app/hardwaregrowler/id475260933"
-fi
-
-# Prompt to install Xcode
-if ConfirmInstall "Xcode"; then
-	open "macappstore://itunes.apple.com/us/app/xcode/id497799835"
-fi
-
-# Prompt to install Google Drive
-if ConfirmInstall "Google Drive"; then
-	open "http://tools.google.com/dlpage/drive"
+# Tmux
+if ! tmux -V; then
+	brew install tmux
 fi
 
 
@@ -123,57 +129,90 @@ fi
 # APPS
 #
 
-# Prompt to install MacVim
-if ConfirmInstall "MacVim" "Vim"; then
-	LuckySearch "macvim for mac"
+if ConfirmInstall 'Insync'; then
+	brew cask install insync
 fi
 
-# Prompt to install Things for Mac
-if ConfirmInstall "Things for Mac" "Things"; then
-	LuckySearch "Things for Mac cultured code"
+if ConfirmInstall 'Todoist'; then
+	OpenAppLinkAndPrompt 'Todoist' \
+		'macappstore://itunes.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12'
 fi
 
-# Prompt to install Spotify
-if ConfirmInstall "Spotify"; then
-	LuckySearch "spotify for mac"
+if ConfirmInstall 'KeepingYouAwake'; then
+	brew cask install keepingyouawake
 fi
 
-# Prompt to install Skype
-if ConfirmInstall "Skype"; then
-	LuckySearch "skype for mac site:skype.com"
+if ConfirmInstall 'iTerm2' 'iTerm'; then
+	brew cask install iterm2
 fi
 
-# Prompt to install GitHub for Mac
-if ConfirmInstall "GitHub for Mac" "GitHub"; then
-	LuckySearch "github for mac site:github.com"
+if ConfirmInstall 'Moom'; then
+	brew cask install moom
 fi
 
-# Prompt to install HandBrake
-if ConfirmInstall "HandBrake"; then
-	LuckySearch "handbrake for mac"
+if ConfirmInstall 'BetterTouchTool'; then
+	brew cask install bettertouchtool
 fi
 
+if ConfirmInstall 'Airmail 3'; then
+	OpenAppLinkAndPrompt 'Airmail 3' \
+		'macappstore://itunes.apple.com/us/app/airmail-3/id918858936?mt=12'
+fi
+
+if ConfirmInstall 'Evernote'; then
+	OpenAppLinkAndPrompt 'Evernote' \
+		'macappstore://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
+fi
+
+if ConfirmInstall 'TogglDesktop'; then
+	brew cask install toggl
+fi
+
+if ConfirmInstall 'MacVim'; then
+	brew cask install macvim
+fi
+
+if ConfirmInstall 'MacDown'; then
+	brew cask install macdown
+fi
+
+if ConfirmInstall 'Alfred 3'; then
+	brew cask install alfred
+fi
+
+if ConfirmInstall 'TG Pro'; then
+	brew cask install tg-pro
+fi
+
+if ConfirmInstall 'BitBar'; then
+	brew cask install bitbar
+fi
+
+if ConfirmInstall 'Spotify'; then
+	brew cask install spotify
+fi
+
+if ConfirmInstall 'Goofy'; then
+	brew cask install goofy
+fi
+
+if ConfirmInstall '1Keyboard'; then
+	OpenAppLinkAndPrompt '1Keyboard' 'macappstore://itunes.apple.com/us/app/1keyboard/id766939888?mt=12'
+fi
+
+if ConfirmInstall 'Tunnelblick'; then
+	brew cask install tunnelblick
+fi
 
 #
 # GAMES
 #
 
-# Prompt to install Steam
-if ConfirmInstall "Steam"; then
-	LuckySearch "steam for mac download site:steampowered.com"
+if ConfirmInstall 'Steam'; then
+	brew cask install steam
 fi
 
-# Prompt to install StarCraft II
-if ConfirmInstall "StarCraft II" "StarCraft II/StarCraft II"; then
-	open "https://us.battle.net/account/management/download/"
+if ConfirmInstall 'Minecraft'; then
+	LuckySearch 'minecraft for mac download'
 fi
 
-# Prompt to install Minecraft
-if ConfirmInstall "Minecraft"; then
-	LuckySearch "minecraft for mac download"
-fi
-
-# Prompt to install Battle for Wesnoth
-if ConfirmInstall "Battle for Wesnoth" "Wesnoth"; then
-	LuckySearch "battle for wesnoth for mac"
-fi

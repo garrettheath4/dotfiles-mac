@@ -29,6 +29,16 @@ task,Require password _5 seconds_ after sleep or screen saver begins,4,4,Garrett
 ,,,,,,,,
 task,Check _Allow your Apple Watch to unlock your Mac_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Privacy: Accessibility,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,BetterTouchTool,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Google Chrome,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Moom,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Steam,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Notifications Settings,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,iMessages,4,4,Garrett (5042555),,,en,America/New_York
@@ -153,7 +163,7 @@ task,Show Library Folder,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Set as Defaults,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Preferences: Sidebar,4,4,Garrett (5042555),,,en,America/New_York
+task,Sidebar,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Remove _Recents_,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -186,6 +196,10 @@ task,8: IdeaProjects (IDE workspace),4,5,Garrett (5042555),,,en,America/New_York
 task,HAL 9000 screensaver (in Google Drive _Backup_ folder),4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Generated backgrounds (my Bash script),4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Terminal dotfiles [Run _git clone https://github.com/garrettheath4/dotfiles-mac.git (https://github.com/garrettheath4/dotfiles-mac.git) (garrettheath4/dotfiles-mac) ~/dotfiles_ ],4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Run _installApps.sh_ script in dotfiles to install apps,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Google Chrome,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -221,37 +235,69 @@ task,_todoist.com_,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,_jira.datawarehousellc.com_ (Jira),4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Todoist [https://itunes.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12&ign-mpt=uo%3D4 (Mac App Store)],4,2,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,InSync [https://www.insynchq.com/downloads/mac (Download)],4,2,Garrett (5042555),,,en,America/New_York
+task,InSync,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Personal,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Work,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,KeepingYouAwake [https://github.com/newmarcel/KeepingYouAwake/releases/latest (Download)],4,2,Garrett (5042555),,,en,America/New_York
+task,KeepingYouAwake,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Default Activation Duration: _5 hours_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Deactivate when battery capacity is below _20%_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Homebrew (install via terminal) [https://brew.sh/ (Link)],4,2,Garrett (5042555),,,en,America/New_York
+task,iTerm2: Load preferences from Google Drive _Backups_ folder,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,iTerm2 [Run _brew cask install iterm2_ or https://www.iterm2.com/downloads.html (download)],4,2,Garrett (5042555),,,en,America/New_York
+task,Moom,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Load preferences from Google Drive _Backups_ folder,4,3,Garrett (5042555),,,en,America/New_York
+task,Activate using license file in Google Drive _Backups/Licenses_ folder,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Terminal developer tools (just try running _git_ in Terminal),4,2,Garrett (5042555),,,en,America/New_York
+task,Run as _faceless_ application,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Terminal dotfiles [Run _git clone https://github.com/garrettheath4/dotfiles-mac.git ~/dotfiles_ ],4,2,Garrett (5042555),,,en,America/New_York
+task,Uncheck _Show preferences on launch_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Tmux [Run _brew install tmux_ ],4,2,Garrett (5042555),,,en,America/New_York
+task,Mouse Settings,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Moom [Run _brew cask install moom_ or https://manytricks.com/moom/ (download)],4,2,Garrett (5042555),,,en,America/New_York
+task,Enable _hexagon_ grid with _6_ x _4_ cells,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,BetterTouchTool [Run _brew cask install bettertouchtool_ or https://www.boastr.net/downloads/ (download)],4,2,Garrett (5042555),,,en,America/New_York
+task,Check _Enable access to custom controls_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Airmail 3 [https://itunes.apple.com/us/app/airmail-3/id918858936?mt=12 (Mac App Store)],4,2,Garrett (5042555),,,en,America/New_York
+task,Check _Show on hover_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Bring moomed windows to the front automatically_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Keyboard Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Trigger keyboard control with hot key: _Control+Shift+`_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Show cheat sheet_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Repeat to toggle grid_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Arrow keys with Command held: _Move to Other Display_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Return: _n/a_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Space: _Center (Actual Screen Center)_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Tab: _Move & Zoom to Full Screen_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Custom Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Arrange Windows: _Switching to 1 display_ or _Control+Shift+1_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Arrange Windows: _Switching to 2 displays_ or _Control+Shift+2_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Move & Zoom: Left half of screen with _Control+Shift+A_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Move & Zoom: Right half of screen with _Control+Shift+D_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,"Move to Edges: Global Hotkey + _W, A, S, or D_",4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Updates: Check _Check for updates automatically_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Airmail 3,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Import accounts from iCloud sync,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -287,9 +333,7 @@ task,Evernote: _Link Evernote_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Advanced: Detect in messages: _Links_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Evernote [https://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12 (Mac App Store)],4,2,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,TogglDesktop [Run _brew cask install toggl_ ],4,2,Garrett (5042555),,,en,America/New_York
+task,TogglDesktop,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Check _Show timer on menu bar_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -309,33 +353,23 @@ task,Uncheck _Sat_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Uncheck _Sun_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,MacVim [Run _brew cask install macvim_ or http://macvim-dev.github.io/macvim/ (download)],4,2,Garrett (5042555),,,en,America/New_York
+task,MacVim,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Check _Check for updates (when MacVim launches)_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,After last window closes: _Quit MacVim_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,MacDown [Run _brew cask install macdown_ ],4,2,Garrett (5042555),,,en,America/New_York
+task,TG Pro: Use license key from LastPass,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Alfred [Run _brew cask install alfred_ or https://www.alfredapp.com/ (download)],4,2,Garrett (5042555),,,en,America/New_York
+task,BitBar: Set plugins directory to _~/dotfiles/BitBarScripts_,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,TG Pro [Run _brew cask install tg-pro_ add use license hash from LastPass],4,2,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,BitBar [Run _brew cask install bitbar_ ],4,2,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Set plugins directory to _~/dotfiles/BitBarScripts_,4,3,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Spotify [Run _brew cask install spotify_ or https://www.spotify.com/us/download/mac/ (download)],4,2,Garrett (5042555),,,en,America/New_York
+task,Spotify,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,High quality streaming,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Download playlists,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Add Music folder from Google Drive,4,3,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Goofy (Facebook Messenger) [Run _brew cask install goofy_ or http://www.goofyapp.com/ (download)],4,2,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Steam [Run _brew cask install steam_ ],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Set up game save sync locations (GD Games folder),4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -347,7 +381,5 @@ task,Osmos,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Lumino City,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Tunnelblick [Run _brew cask install tunnelblick_ ],4,2,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Install home VPN configuration,4,3,Garrett (5042555),,,en,America/New_York
+task,Tunnelblick: Install home VPN configuration,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
