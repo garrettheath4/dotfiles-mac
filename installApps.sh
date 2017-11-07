@@ -59,16 +59,14 @@ if ConfirmInstall 'fractals to Pictures folder' ~/Pictures/Fractals-2560x1600; t
 fi
 
 # Install special sound effects
-if ConfirmInstall "\"Robot Blip\" sound" \
-		'/System/Library/Sounds/Robot Blip.aiff'; then
-	echo "Adding \"Robot Blip\" to system sounds..."
+if ConfirmInstall "\"Robot Blip\" sound" ~/Library/Sounds/'Robot Blip.aiff'; then
+	echo "Adding \"Robot Blip\" to user sounds..."
 	if [ -e "$REPO/Sounds/Robot Blip.aiff" ]; then
-		if ! ( sudo cp "$REPO/Sounds/Robot Blip.aiff" /System/Library/Sounds/ ); then
-			echo 'Warning: Error in installing Robot Blip.'
-			echo "         Perhaps you don't have sudo permissions?"
+		if ! ( cp "$REPO/Sounds/Robot Blip.aiff" ~/Library/Sounds/ ); then
+			echo 'Warning: Error in installing Robot Blip to user profile.'
 		fi
 	else
-		echo "Warning: Unable to find \"Robot Blip.aiff\"."
+		echo "Warning: Unable to find \"Robot Blip.aiff\" in dotfiles repo."
 	fi
 fi
 
