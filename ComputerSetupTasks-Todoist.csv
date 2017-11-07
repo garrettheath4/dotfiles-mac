@@ -363,6 +363,14 @@ task,Check _Check for updates (when MacVim launches)_,4,3,Garrett (5042555),,,en
 ,,,,,,,,
 task,After last window closes: _Quit MacVim_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Alfred,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Hotkey: _Command+Space_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Where are you: _United States_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Appearance: _Alfred macOS Dark_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,TG Pro: Use license key from LastPass,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,BitBar: Set plugins directory to _~/dotfiles/BitBarScripts_,4,2,Garrett (5042555),,,en,America/New_York

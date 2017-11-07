@@ -30,15 +30,6 @@ ConfirmInstall () {
 	fi
 }
 
-LuckySearch () {
-	# Usage: LuckySearch SearchString
-	# Action: Performs an I'm Feeling Lucky Google search of SearchString
-	GIFL='http://www.google.com/search?q=%s&btnI=Im+Feeling+Lucky'
-	URL=$(echo "$GIFL" | sed -e "s/%s/$1/" | sed -e 's/ /+/g')
-	echo "Opening $URL"
-	open "$URL"
-}
-
 OpenAppLinkAndPrompt () {
 	# Usage OpenAppLinkAndPrompt Evernote 'macappstore://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
 	AppName="$1"
@@ -216,6 +207,6 @@ if ConfirmInstall 'Steam'; then
 fi
 
 if ConfirmInstall 'Minecraft'; then
-	LuckySearch 'minecraft for mac download'
+	brew cask install minecraft
 fi
 
