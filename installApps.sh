@@ -143,6 +143,11 @@ if ConfirmInstall 'KeepingYouAwake'; then
 fi
 
 if ConfirmInstall 'iTerm2' 'iTerm'; then
+	iTermPrefsFilename='com.googlecode.iterm2.plist'
+	# Initialize iTerm with stored preferences if not already in local Library
+	if [ ! -e ~/Library/Preferences/"$iTermPrefsFilename" ] && [ -e "$iTermPrefsFilename" ]; then
+		cp "$iTermPrefsFilename" ~/Library/Preferences/"$iTermPrefsFilename"
+	fi
 	brew cask install iterm2
 fi
 

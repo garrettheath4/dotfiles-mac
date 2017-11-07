@@ -247,7 +247,11 @@ task,Default Activation Duration: _5 hours_,4,3,Garrett (5042555),,,en,America/N
 ,,,,,,,,
 task,Deactivate when battery capacity is below _20%_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,iTerm2: Load preferences from Google Drive _Backups_ folder,4,2,Garrett (5042555),,,en,America/New_York
+task,iTerm2,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Copy preferences file from _~/dotfiles/iTerm/com.googlecode.iterm2.plist_ to _~/Library/Preferences/com.googlecode.iterm2.plist_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Load _Homebrew_ color scheme from Google Drive _Backups/iTerm/…Color-Schemes…/schemes/Homebrew.itermcolors_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Moom,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
