@@ -84,7 +84,7 @@ fi
 #
 
 if ! (which git >/dev/null); then
-	git
+	xcode-select --install
 	# macOS should prompt you to install the Developer Tools which includes Git
 	OpenAppLinkAndPrompt 'Git'
 fi
