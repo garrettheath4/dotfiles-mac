@@ -169,17 +169,7 @@ task,Set as Defaults,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Sidebar,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Remove _Recents_,4,5,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Remove _iCloud Drive_,4,5,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Remove _Documents_,4,5,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Remove _Remote Disc_,4,5,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Remove _computer_,4,5,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Remove _Recent Tags_,4,5,Garrett (5042555),,,en,America/New_York
+task,"Remove _Recents_, _iCloud Drive_, _Documents_, _Remote Disc_, _computer_, and _Recent Tags_",4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,1: Personal (Insync folder for personal Google Drive),4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -357,9 +347,7 @@ task,Reminder start time: _10:00_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Reminder end time: _17:00_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Uncheck _Sat_,4,4,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Uncheck _Sun_,4,4,Garrett (5042555),,,en,America/New_York
+task,Uncheck _Sat_ and _Sun_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,MacVim,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -375,7 +363,15 @@ task,Where are you: _United States_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Appearance: _Alfred macOS Dark_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,TG Pro: Use license key from LastPass,4,2,Garrett (5042555),,,en,America/New_York
+task,TG Pro,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Use license key from LastPass,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Update Frequency: _~3s_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,"MenuBar: _Highest, Average CPU_, and _Average RPM_ using _shorter titles_",4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Fan: Auto Boost Rules based on [https://docs.google.com/spreadsheets/d/1xS2cyAgw2n3J3kfsrzPrlRPTrbyopBzqoEkXQxW9lDc/edit?pli=1#gid=369680853 (this spreadsheet)],4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,BitBar: Set plugins directory to _~/dotfiles/BitBarScripts_,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
