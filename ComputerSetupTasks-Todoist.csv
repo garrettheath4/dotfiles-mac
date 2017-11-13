@@ -55,7 +55,13 @@ task,Uncheck _Show in Notification Center_,4,5,Garrett (5042555),,,en,America/Ne
 ,,,,,,,,
 task,Goofy: Uncheck _Show notifications on lock screen_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Add _Quick Calendar_ widget to Notification Center,4,4,Garrett (5042555),,,en,America/New_York
+task,Notification Center widgets,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Quick Calendar,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Deliveries,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Todoist,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Displays Settings,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
