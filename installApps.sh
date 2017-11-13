@@ -198,6 +198,10 @@ if ConfirmInstall 'Tunnelblick'; then
 	brew cask install tunnelblick
 fi
 
+if ConfirmInstall 'IntelliJ IDEA CE'; then
+	brew cask install intellij-idea-ce
+fi
+
 #
 # GAMES
 #
