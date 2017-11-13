@@ -47,9 +47,13 @@ task,Uncheck _Show notifications on lock screen_,4,5,Garrett (5042555),,,en,Amer
 ,,,,,,,,
 task,Uncheck _Show message preview_,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Goofy (FB Messenger),4,4,Garrett (5042555),,,en,America/New_York
+task,Insync,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Uncheck _Show notifications on lock screen_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show in Notification Center_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Goofy: Uncheck _Show notifications on lock screen_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Displays Settings,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -227,13 +231,11 @@ task,More Options: Identities: _work_,4,5,Garrett (5042555),,,en,America/New_Yor
 ,,,,,,,,
 task,Log in to Evernote Web Clipper,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Enable Toggl Button integrations,4,4,Garrett (5042555),,,en,America/New_York
+task,Toggl Button,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,All _*.google.com_,4,5,Garrett (5042555),,,en,America/New_York
+task,Uncheck _Remind me to track_,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,_todoist.com_,4,5,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,_jira.datawarehousellc.com_ (Jira),4,5,Garrett (5042555),,,en,America/New_York
+task,"Enable integrations: _*.google.com_, _todoist.com_, and _jira.datawarehousellc.com_",4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,InSync,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
