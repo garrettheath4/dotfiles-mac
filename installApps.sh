@@ -182,10 +182,6 @@ if ConfirmInstall 'BitBar'; then
 	brew cask install bitbar
 fi
 
-if ConfirmInstall 'Spotify'; then
-	brew cask install spotify
-fi
-
 if ConfirmInstall 'Goofy'; then
 	brew cask install goofy
 fi
@@ -194,13 +190,70 @@ if ConfirmInstall '1Keyboard'; then
 	OpenAppLinkAndPrompt '1Keyboard' 'macappstore://itunes.apple.com/us/app/1keyboard/id766939888?mt=12'
 fi
 
+if ConfirmInstall 'Quick Calendar'; then
+	OpenAppLinkAndPrompt 'Quick Calendar (app download) ' 'macappstore://itunes.apple.com/us/app/quick-calendar/id1004514425?mt=12'
+	OpenAppLinkAndPrompt 'Quick Calendar (post-download)' '/Applications/Quick Calendar.app'
+fi
+
 if ConfirmInstall 'Tunnelblick'; then
 	brew cask install tunnelblick
 fi
 
+if ConfirmInstall 'BackupLoupe'; then
+	brew cask install backuploupe
+fi
+
+if ConfirmInstall 'Deliveries'; then
+	OpenAppLinkAndPrompt 'Deliveries' 'macappstore://itunes.apple.com/us/app/deliveries-a-package-tracker/id924726344?mt=12'
+fi
+
+if ConfirmInstall 'AirServer'; then
+	brew cask install airserver
+fi
+
+
+#
+# MEDIA TOOLS
+#
+
+if ConfirmInstall 'Spotify'; then
+	brew cask install spotify
+fi
+
+if ConfirmInstall 'Sonos'; then
+	brew tap caskroom/drivers
+	brew cask install sonos
+fi
+
+if ConfirmInstall 'GIMP'; then
+	brew cask install gimp
+fi
+
+if ConfirmInstall 'VLC'; then
+	brew cask install vlc
+fi
+
+if ConfirmInstall '4K Video Downloader'; then
+	brew cask install 4k-video-downloader
+fi
+
+
+#
+# DEVELOPER TOOLS
+#
+
 if ConfirmInstall 'IntelliJ IDEA CE'; then
 	brew cask install intellij-idea-ce
 fi
+
+if ConfirmInstall 'TeX'; then
+	brew cask install mactex
+fi
+
+if ConfirmInstall 'Etcher'; then
+	brew cask install etcher
+fi
+
 
 #
 # GAMES
