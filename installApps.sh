@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Script to install major programs and Applications on a Mac account
+# Script to install major programs and Applications on a Mac account.
 # Most things in this script (unless they're very minor) should run with
-# a prompted confirmation from the user to install each item
+# a prompted confirmation from the user to install each item.
 
 REPO="$(pwd)"
 
@@ -18,15 +18,32 @@ ShowLicenses () {
 }
 
 ConfirmInstall () {
-	# Usage: ConfirmInstall DescriptionString InstalledAppName
-	# Returns: 0 for YES
-	# (as $?): 1 for NO
+	if [ "$#" -lt 1 ]; then
+		echo 'Usage: ConfirmInstall <DescriptionString> [InstalledAppName]'
+		echo 'Returns: 0 for YES or 1 for NO'
+		return 255
+	fi
 	if [[ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" && ! -e "$2" ]]; then
 		read -r -p "Install $1 now? (y/n) [y]: " confirminstall
 		[ "$confirminstall" != 'n' ]
 	else
 		# Return NO
 		return 1
+	fi
+}
+
+ConfirmInstallBrewCask () {
+	if [ "$#" -lt 1 ]; then
+		echo 'Usage: ConfirmInstallBrewCask <AppToCheck> [CaskToInstall]'
+		return 255
+	fi
+	AppToCheck="$1"
+	CaskToInstall="${AppToCheck// /-}"
+	if [ "$#" -ge 2 ]; then
+		CaskToInstall="$2"
+	fi
+	if ConfirmInstall "$AppToCheck"; then
+		brew cask install "$CaskToInstall"
 	fi
 }
 
@@ -66,7 +83,7 @@ fi
 # Git (needed first to install Homebrew and its apps in this script)
 #
 
-if ! which git; then
+if ! (which git >/dev/null); then
 	git
 	# macOS should prompt you to install the Developer Tools which includes Git
 	OpenAppLinkAndPrompt 'Git'
@@ -88,13 +105,12 @@ fi
 
 brew update
 
+
 #
 # Google Chrome (install before opening web pages in this script)
 #
 
-if ConfirmInstall 'Google Chrome'; then
-	brew cask install google-chrome
-fi
+ConfirmInstallBrewCask 'Google Chrome'
 
 
 #
@@ -118,18 +134,14 @@ fi
 # APPS
 #
 
-if ConfirmInstall 'Insync'; then
-	brew cask install insync
-fi
+ConfirmInstallBrewCask 'Insync'
 
 if ConfirmInstall 'Todoist'; then
 	OpenAppLinkAndPrompt 'Todoist' \
 		'macappstore://itunes.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12'
 fi
 
-if ConfirmInstall 'KeepingYouAwake'; then
-	brew cask install keepingyouawake
-fi
+ConfirmInstallBrewCask 'KeepingYouAwake'
 
 if ConfirmInstall 'iTerm2' 'iTerm'; then
 	iTermPrefsFilename='com.googlecode.iterm2.plist'
@@ -140,13 +152,8 @@ if ConfirmInstall 'iTerm2' 'iTerm'; then
 	brew cask install iterm2
 fi
 
-if ConfirmInstall 'Moom'; then
-	brew cask install moom
-fi
-
-if ConfirmInstall 'BetterTouchTool'; then
-	brew cask install bettertouchtool
-fi
+ConfirmInstallBrewCask 'Moom'
+ConfirmInstallBrewCask 'BetterTouchTool'
 
 if ConfirmInstall 'Airmail 3'; then
 	OpenAppLinkAndPrompt 'Airmail 3' \
@@ -158,33 +165,13 @@ if ConfirmInstall 'Evernote'; then
 		'macappstore://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
 fi
 
-if ConfirmInstall 'TogglDesktop'; then
-	brew cask install toggl
-fi
-
-if ConfirmInstall 'MacVim'; then
-	brew cask install macvim
-fi
-
-if ConfirmInstall 'MacDown'; then
-	brew cask install macdown
-fi
-
-if ConfirmInstall 'Alfred 3'; then
-	brew cask install alfred
-fi
-
-if ConfirmInstall 'TG Pro'; then
-	brew cask install tg-pro
-fi
-
-if ConfirmInstall 'BitBar'; then
-	brew cask install bitbar
-fi
-
-if ConfirmInstall 'Goofy'; then
-	brew cask install goofy
-fi
+ConfirmInstallBrewCask 'TogglDesktop' 'toggl'
+ConfirmInstallBrewCask 'MacVim'
+ConfirmInstallBrewCask 'MacDown'
+ConfirmInstallBrewCask 'Alfred 3' 'alfred'
+ConfirmInstallBrewCask 'TG Pro'
+ConfirmInstallBrewCask 'BitBar'
+ConfirmInstallBrewCask 'Goofy'
 
 if ConfirmInstall '1Keyboard'; then
 	OpenAppLinkAndPrompt '1Keyboard' 'macappstore://itunes.apple.com/us/app/1keyboard/id766939888?mt=12'
@@ -195,75 +182,50 @@ if ConfirmInstall 'Quick Calendar'; then
 	OpenAppLinkAndPrompt 'Quick Calendar (post-download)' '/Applications/Quick Calendar.app'
 fi
 
-if ConfirmInstall 'Tunnelblick'; then
-	brew cask install tunnelblick
-fi
-
-if ConfirmInstall 'BackupLoupe'; then
-	brew cask install backuploupe
-fi
+ConfirmInstallBrewCask 'Tunnelblick'
+ConfirmInstallBrewCask 'BackupLoupe'
 
 if ConfirmInstall 'Deliveries'; then
-	OpenAppLinkAndPrompt 'Deliveries' 'macappstore://itunes.apple.com/us/app/deliveries-a-package-tracker/id924726344?mt=12'
+	OpenAppLinkAndPrompt 'Deliveries' \
+		'macappstore://itunes.apple.com/us/app/deliveries-a-package-tracker/id924726344?mt=12'
 fi
 
-if ConfirmInstall 'AirServer'; then
-	brew cask install airserver
-fi
+ConfirmInstallBrewCask 'AirServer'
 
 
 #
 # MEDIA TOOLS
 #
 
-if ConfirmInstall 'Spotify'; then
-	brew cask install spotify
-fi
+ConfirmInstallBrewCask 'Spotify'
 
 if ConfirmInstall 'Sonos'; then
 	brew tap caskroom/drivers
 	brew cask install sonos
 fi
 
-if ConfirmInstall 'GIMP'; then
-	brew cask install gimp
-fi
-
-if ConfirmInstall 'VLC'; then
-	brew cask install vlc
-fi
-
-if ConfirmInstall '4K Video Downloader'; then
-	brew cask install 4k-video-downloader
-fi
+ConfirmInstallBrewCask 'GIMP'
+ConfirmInstallBrewCask 'VLC'
+ConfirmInstallBrewCask '4K Video Downloader'
 
 
 #
 # DEVELOPER TOOLS
 #
 
-if ConfirmInstall 'IntelliJ IDEA CE'; then
-	brew cask install intellij-idea-ce
+ConfirmInstallBrewCask 'IntelliJ IDEA CE'
+
+if ConfirmInstall 'LaTeX' '/Applications/TeX'; then
+	brew cask install 'mactex'
 fi
 
-if ConfirmInstall 'TeX'; then
-	brew cask install mactex
-fi
-
-if ConfirmInstall 'Etcher'; then
-	brew cask install etcher
-fi
+ConfirmInstallBrewCask 'Etcher'
 
 
 #
 # GAMES
 #
 
-if ConfirmInstall 'Steam'; then
-	brew cask install steam
-fi
-
-if ConfirmInstall 'Minecraft'; then
-	brew cask install minecraft
-fi
+ConfirmInstallBrewCask 'Steam'
+ConfirmInstallBrewCask 'Minecraft'
 
