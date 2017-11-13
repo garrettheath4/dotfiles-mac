@@ -91,7 +91,7 @@ task,Dictation: Check _Use Enhanced Dictation_ (download for offline),4,4,Garret
 ,,,,,,,,
 task,Trackpad Settings: Set Click level to _Firm_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Sound Settings: Check _Play feedback when volume is changed_,4,3,Garrett (5042555),,,en,America/New_York
+task,Sound Settings: Check _Play feedback when volume is changed_ and _Show volume in menu bar_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Internet Accounts,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -125,19 +125,13 @@ task,W&L: Contacts,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Facebook: Calendars !!only!!,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,App Store Settings,4,3,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Uncheck _Install macOS updates_,4,4,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Uncheck _Install system data files and security updates_,4,4,Garrett (5042555),,,en,America/New_York
+task,App Store Settings: Uncheck _Install macOS updates_ and _Install system data files and security updates_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Sharing Settings,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Set _Computer Name_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Check _Remote Login (SSH)_,4,4,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Only these users: _Garrett_,4,5,Garrett (5042555),,,en,America/New_York
+task,Check _Remote Login (SSH)_ but only for these users: _Garrett_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Users & Groups Settings,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -159,13 +153,7 @@ task,Finder Preferences,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Desktop icons: Snap to grid,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,View Options,4,4,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,!!Sort!! by _name_,4,5,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Show Library Folder,4,5,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Set as Defaults,4,5,Garrett (5042555),,,en,America/New_York
+task,"View Options: !!Sort!! by _name_, Show Library Folder, and Set as Defaults",4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Sidebar,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -323,11 +311,7 @@ task,Services Settings,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Calendar: _Disable_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Google Drive: _Link Google Drive_,4,4,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Todoist: _Login_,4,4,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
-task,Evernote: _Link Evernote_,4,4,Garrett (5042555),,,en,America/New_York
+task,"Link _Google Drive, Todoist,_ and _Evernote_",4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Advanced: Detect in messages: _Links_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
