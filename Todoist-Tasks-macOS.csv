@@ -1,0 +1,187 @@
+﻿TYPE,CONTENT,PRIORITY,INDENT,AUTHOR,RESPONSIBLE,DATE,DATE_LANG,TIMEZONE
+task,macOS Configuration,2,1,Garrett (5042555),,today,en,America/New_York
+,,,,,,,,
+task,General Settings,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Use dark menu bar and Dock_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Sidebar icon size: _Small_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Recent items: _5_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Mission Control Settings,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Automatically rearrange Spaces based on most recent use_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,"Uncheck _When switching to an application, switch to a Space with open windows for the application_",4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Hot corners,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Bottom-Left: _Start Screen Saver_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Others: _Disable Screen Saver_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Security & Privacy Settings,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Require password _5 seconds_ after sleep or screen saver begins,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Allow your Apple Watch to unlock your Mac_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Privacy: Accessibility,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,BetterTouchTool,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Google Chrome,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Moom,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Steam,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Notifications Settings,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,iMessages,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show notifications on lock screen_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show message preview_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Insync,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show notifications on lock screen_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show in Notification Center_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Goofy: Uncheck _Show notifications on lock screen_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Notification Center widgets,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Quick Calendar,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Deliveries,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Todoist,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Displays Settings,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Toggle _Scaled: More Space_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show mirroring options in the menu bar_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Energy Saver: Check _Prevent computer from sleeping automatically when the display is off_,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Keyboard Settings,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Adjust keyboard brightness in low light_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Turn keyboard backlight off after _30 secs_ of inactivity,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Modifier Keys: Caps Lock is _Control_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Text Settings,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Capitalize words automatically_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Add period with double-space_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Shortcuts,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Turn Do Not Disturb On/Off: _Control+Esc_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check all _Mission Control_ shortcuts,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Show Spotlight search: _Option+Cmd+Space_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show Finder search window_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Dictation: Check _Use Enhanced Dictation_ (download for offline),4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Trackpad Settings: Set Click level to _Firm_,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Sound Settings: Check _Play feedback when volume is changed_ and _Show volume in menu bar_,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Internet Accounts,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,iCloud,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,iCloud Drive,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Photos: Options: !!Uncheck!! all,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Contacts,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Calendars,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Reminders,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Safari,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Notes,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Keychain,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Find My Mac,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Gmail,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Contacts,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Calendars,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,W&L: Contacts,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Facebook: Calendars !!only!!,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,App Store Settings: Uncheck _Install macOS updates_ and _Install system data files and security updates_,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Sharing Settings,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Set _Computer Name_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Remote Login (SSH)_ but only for these users: _Garrett_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Users & Groups Settings,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Login Items,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,BitBar,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,BetterTouchTool,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Insync,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Moom,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Alfred 3,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Login Options: Show fast user switching menu as: _Icon_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Finder Preferences,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Desktop icons: Snap to grid,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,"View Options: !!Sort!! by _name_, Show Library Folder, and Set as Defaults",4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Sidebar,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,"Remove _Recents_, _iCloud Drive_, _Documents_, _Remote Disc_, _computer_, and _Recent Tags_",4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,1: Personal (Insync folder for personal Google Drive),4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,2: Work (Insync folder for work Google Drive),4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,3: AirDrop,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,4: Applications,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,5: Home,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,6: Downloads,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,7: Desktop,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,8: IdeaProjects (IDE workspace),4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,HAL 9000 screensaver (in Google Drive _Backup_ folder),4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Generated backgrounds (my Bash script),4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
