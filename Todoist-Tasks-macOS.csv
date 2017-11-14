@@ -141,6 +141,8 @@ task,Check _Remote Login (SSH)_ but only for these users: _Garrett_,4,3,Garrett 
 ,,,,,,,,
 task,Users & Groups Settings,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Set password and profile picture,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Login Items,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,BitBar,4,4,Garrett (5042555),,,en,America/New_York
