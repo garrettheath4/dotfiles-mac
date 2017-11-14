@@ -183,6 +183,8 @@ task,Fan: Auto Boost Rules based on [https://docs.google.com/spreadsheets/d/1xS2
 ,,,,,,,,
 task,BitBar: Set plugins directory to _~/dotfiles/BitBarScripts_,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Goofy: Preferences: Check _Desktop notifications enabled_,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Spotify,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,High quality streaming,4,3,Garrett (5042555),,,en,America/New_York
