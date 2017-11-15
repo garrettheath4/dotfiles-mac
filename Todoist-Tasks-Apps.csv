@@ -1,5 +1,5 @@
 ﻿TYPE,CONTENT,PRIORITY,INDENT,AUTHOR,RESPONSIBLE,DATE,DATE_LANG,TIMEZONE
-task,Apps Configuration,2,1,Garrett (5042555),,today,en,America/New_York
+task,Apps Configuration,2,1,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Terminal dotfiles [Run _git clone https://github.com/garrettheath4/dotfiles-mac.git (https://github.com/garrettheath4/dotfiles-mac.git) (garrettheath4/dotfiles-mac) ~/dotfiles_ ],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -110,6 +110,8 @@ task,BetterTouchTool,4,2,Garrett (5042555),,,en,America/New_York
 task,Manage Presets: Import from _dotfiles/BetterTouchTool_ folder,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Advanced Settings: Uncheck _Show Menubar icon_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Advanced Settings: Window Snapping: Uncheck _Restore old window size if window is dragged away again_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Advanced Settings: Snap Areas: Disable the Snap Area feature,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
