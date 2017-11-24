@@ -5,6 +5,8 @@ task,Terminal dotfiles [Run _git clone https://github.com/garrettheath4/dotfiles
 ,,,,,,,,
 task,Run _installApps.sh_ script in dotfiles to install apps,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Calendar: Advanced settings: Check _Turn on time zone support_,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Google Chrome,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Personal profile,4,3,Garrett (5042555),,,en,America/New_York
