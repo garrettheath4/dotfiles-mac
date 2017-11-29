@@ -57,9 +57,9 @@ if [ -x "$vim_exec" ]; then
 	# shellcheck disable=SC2139
 	alias gvim="$vim_exec -g"
 	# shellcheck disable=SC2139
-	alias vimro="$vim_exec -M"
+	alias vimro="$vim_exec -RMn"
 else
-	alias vimro="vim -M"
+	alias vimro="vim -RMn"
 fi
 
 # Add user bin and sbin folders to PATH
