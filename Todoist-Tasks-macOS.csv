@@ -59,6 +59,8 @@ task,Goofy: Uncheck _Show notifications on lock screen_,4,3,Garrett (5042555),,,
 ,,,,,,,,
 task,Sonos: Uncheck _Show in Notification Center_ and _Show notifications on lock screen_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Slack: Uncheck _Show in Notification Center_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Notification Center widgets,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Quick Calendar,4,3,Garrett (5042555),,,en,America/New_York
