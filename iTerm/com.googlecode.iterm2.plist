@@ -246,7 +246,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~</string>
+	<string>~/Downloads/iTerm/mbadolato-iTerm2-Color-Schemes-d6098c7/schemes</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -280,19 +280,16 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 601 620 392 0 0 1920 1178 </string>
+	<string>650 602 620 392 0 0 1920 1178 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>660 358 599 505 0 0 1920 1178 </string>
+	<string>269 207 599 388 0 0 1920 1178 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>545 498 796 473 0 0 1920 1178 </string>
+	<string>502 583 918 381 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 799 1920 379 0 0 1920 1178 </string>
+	<string>0 709 1920 469 0 0 1920 1178 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>247 132 570 402 0 0 1920 1178 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1511,7 +1508,7 @@
 				<real>0.023</real>
 			</dict>
 			<key>Minimum Contrast</key>
-			<real>0.23820708069620253</real>
+			<real>0.383653085443038</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1591,17 +1588,13 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>C7116E9C-FD41-41B5-BF0C-A45AAD9C28AB</string>
+	<string>D450DFE5-F4D6-4491-99D8-F28A2C26B26A</string>
 	<key>NoSyncLastTipTime</key>
-	<real>524088507.25123698</real>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
-	<true/>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
+	<real>532281110.19257402</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>521510633.49549502</real>
+	<real>531436149.30767798</real>
 	<key>NoSyncTipsDisabled</key>
 	<true/>
 	<key>NoSyncTipsToNotShow</key>
@@ -1610,12 +1603,6 @@
 		<string>0000</string>
 		<string>0001</string>
 		<string>0002</string>
-		<string>0003</string>
-		<string>0004</string>
-		<string>0005</string>
-		<string>0006</string>
-		<string>0007</string>
-		<string>0008</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
@@ -1667,11 +1654,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=45</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=29</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-03T23:43:06Z</date>
+	<date>2017-11-29T19:20:20Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SmartPlacement</key>
@@ -1681,7 +1668,7 @@
 	<key>TmuxDashboardLimit</key>
 	<integer>10</integer>
 	<key>iTerm Version</key>
-	<string>3.1.4</string>
+	<string>3.1.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>5</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
