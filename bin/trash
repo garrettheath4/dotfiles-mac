@@ -7,7 +7,7 @@ while [ -n "$*" ]; do
 	trash_filename=""
 	if [ -e ~/.Trash/"$file_to_trash" ]; then
 		timestamp=$(date +'%I.%M.%S %p')
-		if [[ $file_to_trash == *.* ]]; then
+		if echo "$file_to_trash" | grep '\.[a-zA-Z]\+$' >/dev/null 2>&1; then
 			# Append date before file extension
 			before_ext="${file_to_trash%.*}"
 			after_ext="${file_to_trash##*.}"
