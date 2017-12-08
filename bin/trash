@@ -1,7 +1,22 @@
 #!/usr/bin/env bash
+# Moves each argument file to the current user's trash
 
 while [ -n "$*" ]; do
-	#Move each argument file to the current user's trash
-	mv -i "$1" ~/.Trash/
+	file_to_trash="$1"
+	# If trash_filename is empty, it will keep the same name in the Trash
+	trash_filename=""
+	if [ -e ~/.Trash/"$file_to_trash" ]; then
+		timestamp=$(date +'%I.%M.%S %p')
+		if [[ $file_to_trash == *.* ]]; then
+			# Append date before file extension
+			before_ext="${file_to_trash%.*}"
+			after_ext="${file_to_trash##*.}"
+			trash_filename="${before_ext} ${timestamp}.${after_ext}"
+		else
+			# Append date at end of filename (no extension)
+			trash_filename="$file_to_trash $timestamp"
+		fi
+	fi
+	mv -i "$file_to_trash" ~/.Trash/"$trash_filename"
 	shift
 done
