@@ -26,8 +26,8 @@ test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . "$_"
 # User aliases
 alias gcc='gcc -Wall --pedantic'
 
-alias rm="~/bin/rmm"
-alias rmm="/bin/rm"
+alias rm="~/bin/trash"
+alias rmm="command rm"
 alias ls="ls -G"
 alias lss="ls -haGl"
 alias lsr="ls -haGlt"
