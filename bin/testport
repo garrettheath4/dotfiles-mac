@@ -4,8 +4,7 @@ if [ "$#" -ge 1 ]; then
 	test_host="$1"
 	host_command='host '"$test_host"
 	if ! host_command_out=$(eval "$host_command"); then
-		echo "$host_command"
-		echo -n ' => '
+		echo "\$ $host_command"
 		echo "$host_command_out"
 	fi
 fi
@@ -20,10 +19,7 @@ test_port="$2"
 test_command='(echo >/dev/tcp/'"$test_host"'/'"$test_port"' </dev/null) >/dev/null 2>&1 && echo "Port is open" || echo "ERROR: Port is NOT open"'
 
 # Print command for easy copying
-echo "$test_command"
-
-# Tee up output by prepending =>
-echo -n ' => '
+echo "\$ $test_command"
 
 # Run command
 eval "$test_command"
