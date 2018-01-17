@@ -101,6 +101,8 @@ task,Show Spotlight search: _Option+Cmd+Space_,4,4,Garrett (5042555),,,en,Americ
 ,,,,,,,,
 task,Uncheck _Show Finder search window_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Messages: Create _Delete Conversation…_ menu shortcut for _Control+Option+Shift+Command+D_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Evernote: Create _Move to Notebook…_ menu shortcut for _Command+Shift+M_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Dictation: Check _Use Enhanced Dictation_ (download for offline),4,3,Garrett (5042555),,,en,America/New_York
