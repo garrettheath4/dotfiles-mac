@@ -2,21 +2,25 @@
 # Moves each argument file to the current user's trash
 
 while [ -n "$*" ]; do
-	file_to_trash="$1"
-	# If trash_filename is empty, it will keep the same name in the Trash
-	trash_filename=""
-	if [ -e ~/.Trash/"$file_to_trash" ]; then
-		timestamp=$(date +'%I.%M.%S %p')
-		if echo "$file_to_trash" | grep '\.[a-zA-Z]\+$' >/dev/null 2>&1; then
-			# Append date before file extension
-			before_ext="${file_to_trash%.*}"
-			after_ext="${file_to_trash##*.}"
-			trash_filename="${before_ext} ${timestamp}.${after_ext}"
-		else
-			# Append date at end of filename (no extension)
-			trash_filename="$file_to_trash $timestamp"
+	if [ "$1" == '-r' ] || [ "$1" == '-rf' ]; then 
+		echo "Warning: Running ~/bin/trash instead of real rm command, so ignoring $1 argument. Use 'command rm ...' if you want the real rm."
+	else
+		file_to_trash="$1"
+		# If trash_filename is empty, it will keep the same name in the Trash
+		trash_filename=""
+		if [ -e ~/.Trash/"$file_to_trash" ]; then
+			timestamp=$(date +'%I.%M.%S %p')
+			if echo "$file_to_trash" | grep '\.[a-zA-Z]\+$' >/dev/null 2>&1; then
+				# Append date before file extension
+				before_ext="${file_to_trash%.*}"
+				after_ext="${file_to_trash##*.}"
+				trash_filename="${before_ext} ${timestamp}.${after_ext}"
+			else
+				# Append date at end of filename (no extension)
+				trash_filename="$file_to_trash $timestamp"
+			fi
 		fi
+		mv -i "$file_to_trash" ~/.Trash/"$trash_filename"
 	fi
-	mv -i "$file_to_trash" ~/.Trash/"$trash_filename"
 	shift
 done
