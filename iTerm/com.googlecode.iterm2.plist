@@ -290,9 +290,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>660 358 599 505 0 0 1920 1178 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>545 477 796 473 0 0 1920 1178 </string>
+	<string>1166 808 918 452 0 0 3200 1778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 799 1920 379 0 0 1920 1178 </string>
+	<string>0 1399 3200 379 0 0 3200 1778 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1585,7 +1585,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>2</integer>
+			<integer>5</integer>
 			<key>Working Directory</key>
 			<string>/Users/gkoller</string>
 		</dict>
@@ -1675,7 +1675,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-04T19:34:41Z</date>
+	<date>2018-02-12T04:39:31Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SmartPlacement</key>

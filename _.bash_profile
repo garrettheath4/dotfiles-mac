@@ -110,6 +110,7 @@ if which tmux >/dev/null 2>&1; then
 					case "$windowName" in
 						drlvapiapp01) windowName='Test_API'; ;;
 						prlvapiapp01) windowName='PROD_API'; ;;
+						drlvmtlapp01) windowName='MTool-Web'; ;;
 					esac
 					tmux rename-window "$windowName"
 					#tmux set-window-option automatic-rename "on" 1>/dev/null
