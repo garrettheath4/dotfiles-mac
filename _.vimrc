@@ -20,6 +20,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'godlygeek/tabular'
 " vim-json: #MakeJsonPrettyAgain
 Plugin 'elzr/vim-json'
+" vim-jsbeautify: #MakeJavaScriptPrettyAgain
+" Usage: :call JsBeautify()
+Plugin 'maksimr/vim-jsbeautify'
 " xml.vim: #MakeXmlPrettyAgain
 Plugin 'othree/xml.vim'
 " AnsiEsc.vim: #MakeANSIEscapeSequencesPrettyAgain
