@@ -1,3 +1,6 @@
+# ~/.bash_profile: executed by bash(1) for login shells and Terminal.app sessions on macOS
+# (e.g. login via ssh or direct console login without GUI)
+
 # Source local definitions
 # I recommend putting a custom command prompt in .bash_profile.local
 # like: export PS1="\u@\h:\W$(tput sgr0) \$ "
@@ -24,21 +27,19 @@ test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . "$_"
 (which brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_completion" && . "$_"
 
 # User aliases
-alias gcc='gcc -Wall --pedantic'
-
-alias rm="~/bin/trash"
-alias rmm="command rm"
 alias ls="ls -G"
 alias lss="ls -haGl"
 alias lsr="ls -haGlt"
 alias lsrr="ls -haGlt | head"
+alias rm="~/bin/trash"
+alias rmm="command rm"
 alias woman="man"
 alias top="top -u -R -s 2 -stats user,pid,command,cpu,time,state,th,csw,ports,vsize"
 alias reverse="tail -r"
 alias incognito="unset HISTFILE"
 alias reload="source ~/.bash_profile"
 
-#  Git shortcuts
+## Git shortcuts
 alias ggp='git pull && git push'
 alias ggb='git branch'
 alias ggs='git status'
