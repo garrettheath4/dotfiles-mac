@@ -40,7 +40,7 @@ alias incognito="unset HISTFILE"
 alias reload="source ~/.bash_profile"
 
 ## Git shortcuts
-alias ggp='git pull && git push'
+alias ggp='git pull && test "$(git for-each-ref --format="%(push:track)" refs/heads)" != "" && git push || echo "Nothing to push."'
 alias ggb='git branch'
 alias ggs='git status'
 alias ggd='git diff'
