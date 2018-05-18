@@ -102,7 +102,7 @@ if which tmux >/dev/null 2>&1; then
 		# From article: https://blog.no-panic.at/2015/04/21/set-tmux-pane-title-on-ssh-connections/
 		# Source Gist:  https://gist.github.com/florianbeer/ee02c149a7e25f643491
 		ssh() {
-			if [ "$(ps -p "$(ps -p $$ -o ppid=)" -o comm=)" = "tmux" ]; then
+			if [ "$(ps -p "$(ps -p $$ -o ppid= | xargs)" -o comm=)" = "tmux" ]; then
 				if [ "$(tmux display-message -p '#W')" = "bash" ]; then
 					# Tmux window doesn't have a custom name already, so proceed with auto-rename
 					GrayTxt="$(tput setaf 0)"
