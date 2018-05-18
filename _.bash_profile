@@ -13,8 +13,8 @@ test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && . "$_"
 # unprintable and to not include them in the string width counting)
 # Bash Prompt Customization: https://wiki.archlinux.org/index.php/Bash/Prompt_customization
 # Terminal Codes intro: http://wiki.bash-hackers.org/scripting/terminalcodes
-BlueBgPS="\[$(tput setab 4)\]"
-ResetColorsPS="\[$(tput sgr0)\]"
+BlueBgPS="\\[$(tput setab 4)\\]"
+ResetColorsPS="\\[$(tput sgr0)\\]"
 export PS1="${BlueBgPS}${PS1}${ResetColorsPS}"
 export PS2="${BlueBgPS}${PS2}${ResetColorsPS}"
 
@@ -65,11 +65,12 @@ else
 fi
 
 # Add user bin and sbin folders to PATH
-if [ -d "$HOME/bin" ] && [[ $PATH != *$HOME/bin* ]]; then
+# [[ is not POSIX compatible so using alternative from https://stackoverflow.com/a/20460402/1360295
+if [ -d "$HOME/bin" ] && [ -n "${PATH##*$HOME/bin*}" ]; then
 	export PATH="$PATH:$HOME/bin"
 fi
 
-if [ -d "$HOME/sbin" ] && [[ $PATH != *$HOME/sbin* ]]; then
+if [ -d "$HOME/sbin" ] && [ -n "${PATH##*$HOME/sbin*}" ]; then
 	export PATH="$PATH:$HOME/sbin"
 fi
 
@@ -149,3 +150,5 @@ cd_tmux() {
 	pwd
 }
 
+
+# vim: set ft=sh:
