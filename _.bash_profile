@@ -85,20 +85,17 @@ fi
 if which tmux >/dev/null 2>&1; then
 	# Automatically start Tmux session if this is an iTerm2 window with the Hotkey profile
 	if [ "$ITERM_PROFILE" = "Hotkey" ] || [ "$ITERM_PROFILE" = "Hotkey Window" ] && [ -z "${TMUX+defined}" ]; then
-		if (tmux has-session 2>/dev/null); then
-			tmux attach
+		if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+			SessionName="Remote"
 		else
-			tmux
-		fi
-	fi
-
-	# If this is a TMUX session, automatically run some commands
-	if [ -n "${TMUX}" ]; then
-		# TMUX_PANE=%0
-		if [ "$TMUX_PANE" = '%0' ]; then
-			tmux rename-window 'Local'
+			SessionName="Local"
 		fi
 
+		tmux new-session -AdD -n Main -s "$SessionName"
+		tmux new-window -d -c ~/dotfiles -n dotfiles-update 'git fetch; if [ $(git rev-parse @) != $(git rev-parse @{u}) ]; then echo Run '"\'git pull\'"' to update your dotfiles; sleep 120; fi'
+		tmux attach
+	else
+		# If this is a TMUX session, automatically run some commands
 		# From article: https://blog.no-panic.at/2015/04/21/set-tmux-pane-title-on-ssh-connections/
 		# Source Gist:  https://gist.github.com/florianbeer/ee02c149a7e25f643491
 		ssh() {
