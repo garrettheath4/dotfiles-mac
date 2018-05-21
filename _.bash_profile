@@ -92,7 +92,7 @@ if which tmux >/dev/null 2>&1; then
 		fi
 
 		tmux new-session -AdD -n Main -s "$SessionName"
-		tmux new-window -d -c ~/dotfiles -n dotfiles-update 'git fetch; if [ $(git rev-parse @) != $(git rev-parse @{u}) ]; then echo Run '"\'git pull\'"' to update your dotfiles; sleep 120; fi'
+		tmux new-window -d -c ~/dotfiles -n dotfiles-check 'git fetch; if [ $(git rev-parse @) != $(git rev-parse @{u}) ]; then echo -e Run '"\'git pull\'"' to update your dotfiles \\a; tmux rename-window -t dotfiles-check UPDATE-DOTFILES; bash; fi'
 		tmux attach
 	else
 		# If this is a TMUX session, automatically run some commands
