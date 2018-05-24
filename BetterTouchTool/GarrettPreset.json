@@ -1,54 +1,141 @@
 {
   "BTTPresetName" : "GarrettPreset",
-  "BTTPresetUUID" : "A4B4E482-9782-4F01-BE7D-CE8F9A8E1A9F",
+  "BTTPresetUUID" : "269EB417-8CC7-4EDA-AA69-373BC72392B6",
   "BTTPresetContent" : [
     {
-      "BTTAppBundleIdentifier" : "com.todoist.mac.Todoist",
-      "BTTAppName" : "Todoist",
+      "BTTAppBundleIdentifier" : "com.google.Chrome",
+      "BTTAppName" : "Google Chrome",
       "BTTAppSpecificSettings" : {
 
       },
       "BTTTriggers" : [
         {
-          "BTTTriggerType" : -1,
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTTriggerType" : 133,
+          "BTTTriggerTypeDescription" : "TipTap Right (2 Fingers Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,48",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 2,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 138,
+          "BTTTriggerTypeDescription" : "TipTap Middle (2 Fingers Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
           "BTTPredefinedActionType" : -1,
           "BTTPredefinedActionName" : "No Action",
           "BTTShortcutToSend" : "55,15",
           "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 0,
-          "BTTShortcutModifierKeys" : 262144,
-          "BTTOrder" : 0,
+          "BTTOrder" : 3,
           "BTTIconData" : "",
           "BTTAlternateIconData" : ""
-        }
-      ]
-    },
-    {
-      "BTTAppBundleIdentifier" : "com.evernote.Evernote",
-      "BTTAppName" : "Evernote",
-      "BTTAppSpecificSettings" : {
-
-      },
-      "BTTTriggers" : [
+        },
         {
           "BTTTriggerType" : -1,
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : -1,
           "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "59,55,1",
+          "BTTShortcutToSend" : "55,17",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 17,
+          "BTTShortcutModifierKeys" : 262144,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : -1,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "56,55,4",
           "BTTEnabled" : 1,
           "BTTShortcutKeyCode" : 0,
           "BTTShortcutModifierKeys" : 262144,
           "BTTOrder" : 0,
           "BTTIconData" : "",
           "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : -1,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "55,13",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 13,
+          "BTTShortcutModifierKeys" : 262144,
+          "BTTOrder" : 2,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 155,
+          "BTTTriggerTypeDescription" : "3 Finger Clickswipe Up",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "55,17",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 4,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 156,
+          "BTTTriggerTypeDescription" : "3 Finger Clickswipe Down",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "55,13",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 5,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 132,
+          "BTTTriggerTypeDescription" : "TipTap Left (2 Fingers Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,56,48",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 112,
+          "BTTTriggerTypeDescription" : "3 Finger Click",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : 2,
+          "BTTPredefinedActionName" : "CMD(⌘)+Click",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
         }
       ]
     },
     {
-      "BTTAppBundleIdentifier" : "unity.Over The Moon.The Fall",
-      "BTTAppName" : "TheFall",
+      "BTTAppBundleIdentifier" : "com.factorio",
+      "BTTAppName" : "factorio",
+      "BTTAppProcessMatchMode" : 2,
+      "BTTAppProcessName" : "factorio",
+      "BTTAppSpecificSettings" : {
+        "BTTDisableBTT" : 1
+      },
+      "BTTTriggers" : [
+
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "com.polytroncorporation.FEZ",
+      "BTTAppName" : "FEZ",
       "BTTAppSpecificSettings" : {
         "BTTDisableBTT" : 1
       },
@@ -66,6 +153,807 @@
       },
       "BTTTriggers" : [
 
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "it.bloop.airmail2",
+      "BTTAppName" : "Airmail 2",
+      "BTTAppSpecificSettings" : {
+
+      },
+      "BTTTriggers" : [
+        {
+          "BTTTriggerType" : 133,
+          "BTTTriggerTypeDescription" : "TipTap Right (2 Fingers Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "125",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 138,
+          "BTTTriggerTypeDescription" : "TipTap Middle (2 Fingers Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "58,55,15",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 3,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : -1,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "58,55,15",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 0,
+          "BTTShortcutModifierKeys" : 262144,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 132,
+          "BTTTriggerTypeDescription" : "TipTap Left (2 Fingers Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "126",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 2,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 156,
+          "BTTTriggerTypeDescription" : "3 Finger Clickswipe Down",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "14",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        }
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "BT.G",
+      "BTTAppName" : "Global",
+      "BTTAppSpecificSettings" : {
+
+      },
+      "BTTTriggers" : [
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 5,
+          "BTTPredefinedActionName" : "Mission Control",
+          "BTTAdditionalConfiguration" : "8650752",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 126,
+          "BTTShortcutModifierKeys" : 8650752,
+          "BTTOrder" : 4,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 49,
+          "BTTPredefinedActionName" : "Open Application \/ File \/ Apple Script …",
+          "BTTLaunchPath" : "file:\/\/\/Users\/gkoller\/dotfiles\/Moom\/Switch%20Second%20Desktop%204-Calendar.scpt",
+          "BTTAdditionalConfiguration" : "393216",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 21,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 20,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 113,
+          "BTTPredefinedActionName" : "Move Left a Space",
+          "BTTAdditionalConfiguration" : "8650752",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 123,
+          "BTTShortcutModifierKeys" : 8650752,
+          "BTTOrder" : 7,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,56,50",
+          "BTTAdditionalConfiguration" : "393216",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 20,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 15,
+          "BTTAdditionalActions" : [
+            {
+              "BTTTriggerType" : -1,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTPredefinedActionType" : -1,
+              "BTTPredefinedActionName" : "No Action",
+              "BTTShortcutToSend" : "125",
+              "BTTEnabled" : 0,
+              "BTTShortcutKeyCode" : -1,
+              "BTTShortcutModifierKeys" : -1,
+              "BTTOrder" : 0,
+              "BTTIconData" : "",
+              "BTTAlternateIconData" : ""
+            },
+            {
+              "BTTTriggerType" : -1,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTPredefinedActionType" : -1,
+              "BTTPredefinedActionName" : "No Action",
+              "BTTShortcutToSend" : "20",
+              "BTTEnabled" : 0,
+              "BTTShortcutKeyCode" : -1,
+              "BTTShortcutModifierKeys" : -1,
+              "BTTOrder" : 1,
+              "BTTIconData" : "",
+              "BTTAlternateIconData" : ""
+            }
+          ],
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 165,
+          "BTTPredefinedActionName" : "Mission Control & Immediately Show Desktop Preview",
+          "BTTAdditionalConfiguration" : "8781824",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 126,
+          "BTTShortcutModifierKeys" : 8781824,
+          "BTTOrder" : 5
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Spotify.app",
+          "BTTShortcutAppUnderCursor" : "com.spotify.client",
+          "BTTShortcutToSend" : "55,125",
+          "BTTAdditionalConfiguration" : "8650752",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 103,
+          "BTTShortcutModifierKeys" : 8650752,
+          "BTTOrder" : 25,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 137,
+          "BTTPredefinedActionName" : "Execute Terminal Command",
+          "BTTTerminalCommand" : "open \"helium:\/\/http:\/\/spreadsheets.google.com\/ccc?new\"",
+          "BTTAdditionalConfiguration" : "1835008",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 1,
+          "BTTShortcutModifierKeys" : 1835008,
+          "BTTOrder" : 3,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Sonos.app",
+          "BTTShortcutAppUnderCursor" : "com.sonos.macController",
+          "BTTShortcutToSend" : "55,124",
+          "BTTAdditionalConfiguration" : "9175040",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 101,
+          "BTTShortcutModifierKeys" : 9175040,
+          "BTTOrder" : 23
+        },
+        {
+          "BTTTriggerType" : 1003,
+          "BTTTriggerTypeDescription" : "Button 3",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 114,
+          "BTTPredefinedActionName" : "Move Right a Space",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 2,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,56,50",
+          "BTTAdditionalConfiguration" : "393216",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 19,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 14,
+          "BTTAdditionalActions" : [
+            {
+              "BTTTriggerType" : -1,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTPredefinedActionType" : -1,
+              "BTTPredefinedActionName" : "No Action",
+              "BTTShortcutToSend" : "125",
+              "BTTEnabled" : 0,
+              "BTTShortcutKeyCode" : -1,
+              "BTTShortcutModifierKeys" : -1,
+              "BTTOrder" : 0,
+              "BTTIconData" : "",
+              "BTTAlternateIconData" : ""
+            },
+            {
+              "BTTTriggerType" : -1,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTPredefinedActionType" : -1,
+              "BTTPredefinedActionName" : "No Action",
+              "BTTShortcutToSend" : "19",
+              "BTTEnabled" : 0,
+              "BTTShortcutKeyCode" : -1,
+              "BTTShortcutModifierKeys" : -1,
+              "BTTOrder" : 1,
+              "BTTIconData" : "",
+              "BTTAlternateIconData" : ""
+            }
+          ],
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 49,
+          "BTTPredefinedActionName" : "Open Application \/ File \/ Apple Script …",
+          "BTTLaunchPath" : "file:\/\/\/Users\/gkoller\/dotfiles\/Moom\/Switch%20Second%20Desktop%202-Spotify.scpt",
+          "BTTAdditionalConfiguration" : "393216",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 19,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 18,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Sonos.app",
+          "BTTShortcutAppUnderCursor" : "com.sonos.macController",
+          "BTTShortcutToSend" : "55,123",
+          "BTTAdditionalConfiguration" : "9175040",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 98,
+          "BTTShortcutModifierKeys" : 9175040,
+          "BTTOrder" : 21
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Spotify.app",
+          "BTTShortcutAppUnderCursor" : "com.spotify.client",
+          "BTTShortcutToSend" : "55,126",
+          "BTTAdditionalConfiguration" : "8650752",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 111,
+          "BTTShortcutModifierKeys" : 8650752,
+          "BTTOrder" : 26,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,56,50",
+          "BTTAdditionalConfiguration" : "393216",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 21,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 16,
+          "BTTAdditionalActions" : [
+            {
+              "BTTTriggerType" : -1,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTPredefinedActionType" : -1,
+              "BTTPredefinedActionName" : "No Action",
+              "BTTShortcutToSend" : "125",
+              "BTTEnabled" : 0,
+              "BTTShortcutKeyCode" : -1,
+              "BTTShortcutModifierKeys" : -1,
+              "BTTOrder" : 0,
+              "BTTIconData" : "",
+              "BTTAlternateIconData" : ""
+            },
+            {
+              "BTTTriggerType" : -1,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTPredefinedActionType" : -1,
+              "BTTPredefinedActionName" : "No Action",
+              "BTTShortcutToSend" : "21",
+              "BTTEnabled" : 0,
+              "BTTShortcutKeyCode" : -1,
+              "BTTShortcutModifierKeys" : -1,
+              "BTTOrder" : 1,
+              "BTTIconData" : "",
+              "BTTAlternateIconData" : ""
+            }
+          ],
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 6,
+          "BTTPredefinedActionName" : "Application Expose",
+          "BTTAdditionalConfiguration" : "8650752",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 125,
+          "BTTShortcutModifierKeys" : 8650752,
+          "BTTOrder" : 6,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,56,19",
+          "BTTAdditionalConfiguration" : "8388608",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 107,
+          "BTTShortcutModifierKeys" : 8388608,
+          "BTTOrder" : 29,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Spotify.app",
+          "BTTShortcutAppUnderCursor" : "com.spotify.client",
+          "BTTShortcutToSend" : "55,124",
+          "BTTAdditionalConfiguration" : "8650752",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 101,
+          "BTTShortcutModifierKeys" : 8650752,
+          "BTTOrder" : 24,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 200,
+          "BTTPredefinedActionName" : "Toggle Do Not Disturb On\/Off",
+          "BTTAdditionalConfiguration" : "262144",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 53,
+          "BTTShortcutModifierKeys" : 262144,
+          "BTTOrder" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTTriggerType" : -1,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTPredefinedActionType" : 50,
+              "BTTPredefinedActionName" : "Hide All Windows",
+              "BTTEnabled" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTShortcutModifierKeys" : -1,
+              "BTTOrder" : 92
+            }
+          ]
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Spotify.app",
+          "BTTShortcutAppUnderCursor" : "com.spotify.client",
+          "BTTShortcutToSend" : "55,124",
+          "BTTAdditionalConfiguration" : "8388608",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 64,
+          "BTTShortcutModifierKeys" : 8388608,
+          "BTTOrder" : 32,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Spotify.app",
+          "BTTShortcutAppUnderCursor" : "com.spotify.client",
+          "BTTShortcutToSend" : "55,126",
+          "BTTAdditionalConfiguration" : "8388608",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 80,
+          "BTTShortcutModifierKeys" : 8388608,
+          "BTTOrder" : 34,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 172,
+          "BTTPredefinedActionName" : "Run Apple Script (enter directly as text)",
+          "BTTInlineAppleScript" : "tell application \"Moom\"\r\tarrange windows according to snapshot \"External Monitor [Dual App Screens]\"\rend tell\r",
+          "BTTAdditionalConfiguration" : "393216",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 19,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 12,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 136,
+          "BTTTriggerTypeDescription" : "TipTap Left (3 Fingers Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : 113,
+          "BTTPredefinedActionName" : "Move Left a Space",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,56,23",
+          "BTTAdditionalConfiguration" : "8388608",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 113,
+          "BTTShortcutModifierKeys" : 8388608,
+          "BTTOrder" : 30,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Spotify.app",
+          "BTTShortcutAppUnderCursor" : "com.spotify.client",
+          "BTTShortcutToSend" : "55,125",
+          "BTTAdditionalConfiguration" : "8388608",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 79,
+          "BTTShortcutModifierKeys" : 8388608,
+          "BTTOrder" : 33,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Spotify.app",
+          "BTTShortcutAppUnderCursor" : "com.spotify.client",
+          "BTTShortcutToSend" : "49",
+          "BTTAdditionalConfiguration" : "8388608",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 106,
+          "BTTShortcutModifierKeys" : 8388608,
+          "BTTOrder" : 31,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 137,
+          "BTTPredefinedActionName" : "Execute Terminal Command",
+          "BTTTerminalCommand" : "~\/bin\/mvim",
+          "BTTAdditionalConfiguration" : "1835008",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 9,
+          "BTTShortcutModifierKeys" : 1835008,
+          "BTTOrder" : 2,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Sonos.app",
+          "BTTShortcutAppUnderCursor" : "com.sonos.macController",
+          "BTTShortcutToSend" : "55,35",
+          "BTTAdditionalConfiguration" : "9175040",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 100,
+          "BTTShortcutModifierKeys" : 9175040,
+          "BTTOrder" : 22
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 49,
+          "BTTPredefinedActionName" : "Open Application \/ File \/ Apple Script …",
+          "BTTLaunchPath" : "file:\/\/\/Users\/gkoller\/dotfiles\/Moom\/ArrangeDualScreenWindows.scpt",
+          "BTTAdditionalConfiguration" : "393216",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 18,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 17,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 151,
+          "BTTPredefinedActionName" : "Move Window One Space\/Desktop Left",
+          "BTTAdditionalConfiguration" : "8781824",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 123,
+          "BTTShortcutModifierKeys" : 8781824,
+          "BTTOrder" : 9,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 137,
+          "BTTTriggerTypeDescription" : "TipTap Right (3 Fingers Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : 114,
+          "BTTPredefinedActionName" : "Move Right a Space",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 2,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 1002,
+          "BTTTriggerTypeDescription" : "Middle Mouse Button",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 5,
+          "BTTPredefinedActionName" : "Mission Control",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 114,
+          "BTTPredefinedActionName" : "Move Right a Space",
+          "BTTAdditionalConfiguration" : "8650752",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 124,
+          "BTTShortcutModifierKeys" : 8650752,
+          "BTTOrder" : 8,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 172,
+          "BTTPredefinedActionName" : "Run Apple Script (enter directly as text)",
+          "BTTInlineAppleScript" : "tell application \"Moom\"\r\tarrange windows according to snapshot \"MacBook Screen\"\rend tell\r",
+          "BTTAdditionalConfiguration" : "393216",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 18,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 11,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Sonos.app",
+          "BTTShortcutAppUnderCursor" : "com.sonos.macController",
+          "BTTShortcutToSend" : "55,27",
+          "BTTAdditionalConfiguration" : "9175040",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 103,
+          "BTTShortcutModifierKeys" : 9175040,
+          "BTTOrder" : 27
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Sonos.app",
+          "BTTShortcutAppUnderCursor" : "com.sonos.macController",
+          "BTTShortcutToSend" : "55,24",
+          "BTTAdditionalConfiguration" : "9175040",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 111,
+          "BTTShortcutModifierKeys" : 9175040,
+          "BTTOrder" : 28
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 152,
+          "BTTPredefinedActionName" : "Move Window One Space\/Desktop Right",
+          "BTTAdditionalConfiguration" : "8781824",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 124,
+          "BTTShortcutModifierKeys" : 8781824,
+          "BTTOrder" : 10,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 186,
+          "BTTTriggerTypeDescription" : "Corner FORCE Click Bottom Left",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : 49,
+          "BTTPredefinedActionName" : "Open Application \/ File \/ Apple Script …",
+          "BTTLaunchPath" : "file:\/\/\/System\/Library\/Frameworks\/ScreenSaver.framework\/Versions\/A\/Resources\/ScreenSaverEngine.app",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,56,50",
+          "BTTAdditionalConfiguration" : "393216",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 18,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 13,
+          "BTTAdditionalActions" : [
+            {
+              "BTTTriggerType" : -1,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTPredefinedActionType" : -1,
+              "BTTPredefinedActionName" : "No Action",
+              "BTTShortcutToSend" : "125",
+              "BTTEnabled" : 0,
+              "BTTShortcutKeyCode" : -1,
+              "BTTShortcutModifierKeys" : -1,
+              "BTTOrder" : 0,
+              "BTTIconData" : "",
+              "BTTAlternateIconData" : ""
+            },
+            {
+              "BTTTriggerType" : -1,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTPredefinedActionType" : -1,
+              "BTTPredefinedActionName" : "No Action",
+              "BTTShortcutToSend" : "18",
+              "BTTEnabled" : 0,
+              "BTTShortcutKeyCode" : -1,
+              "BTTShortcutModifierKeys" : -1,
+              "BTTOrder" : 1,
+              "BTTIconData" : "",
+              "BTTAlternateIconData" : ""
+            }
+          ],
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 128,
+          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
+          "BTTShortcutApp" : "\/Applications\/Evernote.app",
+          "BTTShortcutSwitchToAppFirst" : "1",
+          "BTTShortcutAppUnderCursor" : "com.evernote.Evernote",
+          "BTTShortcutToSend" : "55,45",
+          "BTTAdditionalConfiguration" : "1835008",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 49,
+          "BTTShortcutModifierKeys" : 1835008,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 1004,
+          "BTTTriggerTypeDescription" : "Button 4",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 113,
+          "BTTPredefinedActionName" : "Move Left a Space",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 49,
+          "BTTPredefinedActionName" : "Open Application \/ File \/ Apple Script …",
+          "BTTLaunchPath" : "file:\/\/\/Users\/gkoller\/dotfiles\/Moom\/Switch%20Second%20Desktop%203-Airmail.scpt",
+          "BTTAdditionalConfiguration" : "393216",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 0,
+          "BTTShortcutKeyCode" : 20,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 19,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        }
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "com.apple.iCal",
+      "BTTAppName" : "Calendar",
+      "BTTAppSpecificSettings" : {
+
+      },
+      "BTTTriggers" : [
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "55,17",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 0,
+          "BTTShortcutModifierKeys" : 262144,
+          "BTTOrder" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTTriggerType" : -1,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTPredefinedActionType" : -1,
+              "BTTPredefinedActionName" : "No Action",
+              "BTTShortcutToSend" : "55,15",
+              "BTTEnabled" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTShortcutModifierKeys" : -1,
+              "BTTOrder" : 86,
+              "BTTIconData" : "",
+              "BTTAlternateIconData" : ""
+            }
+          ],
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        }
       ]
     },
     {
@@ -134,143 +1022,12 @@
       ]
     },
     {
-      "BTTAppBundleIdentifier" : "com.google.Chrome",
-      "BTTAppName" : "Google Chrome",
-      "BTTAppSpecificSettings" : {
-
-      },
-      "BTTTriggers" : [
-        {
-          "BTTTriggerType" : -1,
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "55,13",
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 13,
-          "BTTShortcutModifierKeys" : 262144,
-          "BTTOrder" : 2,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 155,
-          "BTTTriggerTypeDescription" : "3 Finger Clickswipe Up",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "55,17",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 4,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : -1,
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "55,17",
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 17,
-          "BTTShortcutModifierKeys" : 262144,
-          "BTTOrder" : 1,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 138,
-          "BTTTriggerTypeDescription" : "TipTap Middle (2 Fingers Fix)",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "55,15",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 3,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 156,
-          "BTTTriggerTypeDescription" : "3 Finger Clickswipe Down",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "55,13",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 5,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 132,
-          "BTTTriggerTypeDescription" : "TipTap Left (2 Fingers Fix)",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "59,56,48",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 1,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 112,
-          "BTTTriggerTypeDescription" : "3 Finger Click",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : 2,
-          "BTTPredefinedActionName" : "CMD(⌘)+Click",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 0,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : -1,
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "56,55,4",
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 0,
-          "BTTShortcutModifierKeys" : 262144,
-          "BTTOrder" : 0,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 133,
-          "BTTTriggerTypeDescription" : "TipTap Right (2 Fingers Fix)",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "59,48",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 2,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        }
-      ]
-    },
-    {
       "BTTAppBundleIdentifier" : "com.spotify.client",
       "BTTAppName" : "Spotify",
       "BTTAppSpecificSettings" : {
 
       },
       "BTTTriggers" : [
-        {
-          "BTTTriggerType" : 138,
-          "BTTTriggerTypeDescription" : "TipTap Middle (2 Fingers Fix)",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "49",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 0,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
         {
           "BTTTriggerType" : 132,
           "BTTTriggerTypeDescription" : "TipTap Left (2 Fingers Fix)",
@@ -280,6 +1037,18 @@
           "BTTShortcutToSend" : "55,123",
           "BTTEnabled" : 1,
           "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 138,
+          "BTTTriggerTypeDescription" : "TipTap Middle (2 Fingers Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "49",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 0,
           "BTTIconData" : "",
           "BTTAlternateIconData" : ""
         },
@@ -298,81 +1067,25 @@
       ]
     },
     {
-      "BTTAppBundleIdentifier" : "com.polytroncorporation.FEZ",
-      "BTTAppName" : "FEZ",
-      "BTTAppSpecificSettings" : {
-        "BTTDisableBTT" : 1
-      },
-      "BTTTriggers" : [
-
-      ]
-    },
-    {
-      "BTTAppBundleIdentifier" : "com.aspyr.homeworld.steam",
-      "BTTAppName" : "HomeworldRemastered",
-      "BTTAppSpecificSettings" : {
-        "BTTDisableBTT" : 1
-      },
-      "BTTTriggers" : [
-
-      ]
-    },
-    {
-      "BTTAppBundleIdentifier" : "com.apple.iCal",
-      "BTTAppName" : "Calendar",
+      "BTTAppBundleIdentifier" : "com.evernote.Evernote",
+      "BTTAppName" : "Evernote",
       "BTTAppSpecificSettings" : {
 
       },
       "BTTTriggers" : [
         {
+          "BTTTriggerType" : -1,
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : -1,
           "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "55,17",
+          "BTTShortcutToSend" : "59,55,1",
           "BTTEnabled" : 1,
           "BTTShortcutKeyCode" : 0,
           "BTTShortcutModifierKeys" : 262144,
           "BTTOrder" : 0,
-          "BTTAdditionalActions" : [
-            {
-              "BTTTriggerType" : -1,
-              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-              "BTTPredefinedActionType" : -1,
-              "BTTPredefinedActionName" : "No Action",
-              "BTTShortcutToSend" : "55,15",
-              "BTTEnabled" : 1,
-              "BTTShortcutKeyCode" : -1,
-              "BTTShortcutModifierKeys" : -1,
-              "BTTOrder" : 86,
-              "BTTIconData" : "",
-              "BTTAlternateIconData" : ""
-            }
-          ],
           "BTTIconData" : "",
           "BTTAlternateIconData" : ""
         }
-      ]
-    },
-    {
-      "BTTAppBundleIdentifier" : "com.googlecode.iterm2",
-      "BTTAppName" : "iTerm",
-      "BTTAppSpecificSettings" : {
-
-      },
-      "BTTTriggers" : [
-
-      ]
-    },
-    {
-      "BTTAppBundleIdentifier" : "com.factorio",
-      "BTTAppName" : "factorio",
-      "BTTAppProcessMatchMode" : 2,
-      "BTTAppProcessName" : "factorio",
-      "BTTAppSpecificSettings" : {
-        "BTTDisableBTT" : 1
-      },
-      "BTTTriggers" : [
-
       ]
     },
     {
@@ -386,89 +1099,53 @@
       ]
     },
     {
-      "BTTAppBundleIdentifier" : "it.bloop.airmail2",
-      "BTTAppName" : "Airmail 2",
+      "BTTAppBundleIdentifier" : "com.todoist.mac.Todoist",
+      "BTTAppName" : "Todoist",
       "BTTAppSpecificSettings" : {
 
       },
       "BTTTriggers" : [
         {
-          "BTTTriggerType" : 156,
-          "BTTTriggerTypeDescription" : "3 Finger Clickswipe Down",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "14",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 0,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 132,
-          "BTTTriggerTypeDescription" : "TipTap Left (2 Fingers Fix)",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "126",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 2,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 133,
-          "BTTTriggerTypeDescription" : "TipTap Right (2 Fingers Fix)",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "125",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 1,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
           "BTTTriggerType" : -1,
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : -1,
           "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "58,55,15",
+          "BTTShortcutToSend" : "55,15",
           "BTTEnabled" : 1,
           "BTTShortcutKeyCode" : 0,
           "BTTShortcutModifierKeys" : 262144,
           "BTTOrder" : 0,
           "BTTIconData" : "",
           "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 138,
-          "BTTTriggerTypeDescription" : "TipTap Middle (2 Fingers Fix)",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "58,55,15",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 3,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
         }
       ]
     },
     {
-      "BTTAppBundleIdentifier" : "com.apple.finder",
-      "BTTAppName" : "Finder",
+      "BTTAppBundleIdentifier" : "unity.Over The Moon.The Fall",
+      "BTTAppName" : "TheFall",
+      "BTTAppSpecificSettings" : {
+        "BTTDisableBTT" : 1
+      },
+      "BTTTriggers" : [
+
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "com.junecloud.mac.Deliveries",
+      "BTTAppName" : "Deliveries",
       "BTTAppSpecificSettings" : {
 
       },
       "BTTTriggers" : [
         {
-          "BTTTriggerType" : 163,
-          "BTTTriggerTypeDescription" : "3 Finger Double-Tap",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : 116,
-          "BTTPredefinedActionName" : "Lookup Word Under Cursor",
+          "BTTTriggerType" : -1,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "56,55,15",
           "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 0,
+          "BTTShortcutModifierKeys" : 262144,
           "BTTOrder" : 0,
           "BTTIconData" : "",
           "BTTAlternateIconData" : ""
@@ -509,694 +1186,40 @@
       ]
     },
     {
-      "BTTAppBundleIdentifier" : "com.junecloud.mac.Deliveries",
-      "BTTAppName" : "Deliveries",
+      "BTTAppBundleIdentifier" : "com.aspyr.homeworld.steam",
+      "BTTAppName" : "HomeworldRemastered",
       "BTTAppSpecificSettings" : {
-
+        "BTTDisableBTT" : 1
       },
       "BTTTriggers" : [
-        {
-          "BTTTriggerType" : -1,
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "56,55,15",
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 0,
-          "BTTShortcutModifierKeys" : 262144,
-          "BTTOrder" : 0,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        }
+
       ]
     },
     {
-      "BTTAppBundleIdentifier" : "BT.G",
-      "BTTAppName" : "Global",
+      "BTTAppBundleIdentifier" : "com.googlecode.iterm2",
+      "BTTAppName" : "iTerm",
+      "BTTAppSpecificSettings" : {
+
+      },
+      "BTTTriggers" : [
+
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "com.apple.finder",
+      "BTTAppName" : "Finder",
       "BTTAppSpecificSettings" : {
 
       },
       "BTTTriggers" : [
         {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Spotify.app",
-          "BTTShortcutAppUnderCursor" : "com.spotify.client",
-          "BTTShortcutToSend" : "55,126",
-          "BTTAdditionalConfiguration" : "8650752",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 111,
-          "BTTShortcutModifierKeys" : 8650752,
-          "BTTOrder" : 24,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "59,56,50",
-          "BTTAdditionalConfiguration" : "393216",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 20,
-          "BTTShortcutModifierKeys" : 393216,
-          "BTTOrder" : 8,
-          "BTTAdditionalActions" : [
-            {
-              "BTTTriggerType" : -1,
-              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-              "BTTPredefinedActionType" : -1,
-              "BTTPredefinedActionName" : "No Action",
-              "BTTShortcutToSend" : "125",
-              "BTTEnabled" : 0,
-              "BTTShortcutKeyCode" : -1,
-              "BTTShortcutModifierKeys" : -1,
-              "BTTOrder" : 0,
-              "BTTIconData" : "",
-              "BTTAlternateIconData" : ""
-            },
-            {
-              "BTTTriggerType" : -1,
-              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-              "BTTPredefinedActionType" : -1,
-              "BTTPredefinedActionName" : "No Action",
-              "BTTShortcutToSend" : "20",
-              "BTTEnabled" : 0,
-              "BTTShortcutKeyCode" : -1,
-              "BTTShortcutModifierKeys" : -1,
-              "BTTOrder" : 1,
-              "BTTIconData" : "",
-              "BTTAlternateIconData" : ""
-            }
-          ],
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 6,
-          "BTTPredefinedActionName" : "Application Expose",
-          "BTTAdditionalConfiguration" : "8650752",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 125,
-          "BTTShortcutModifierKeys" : 8650752,
-          "BTTOrder" : 18,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 165,
-          "BTTPredefinedActionName" : "Mission Control & Immediately Show Desktop Preview",
-          "BTTAdditionalConfiguration" : "8781824",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 126,
-          "BTTShortcutModifierKeys" : 8781824,
-          "BTTOrder" : 17
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "59,56,19",
-          "BTTAdditionalConfiguration" : "8388608",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 107,
-          "BTTShortcutModifierKeys" : 8388608,
-          "BTTOrder" : 27,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Spotify.app",
-          "BTTShortcutAppUnderCursor" : "com.spotify.client",
-          "BTTShortcutToSend" : "55,124",
-          "BTTAdditionalConfiguration" : "8650752",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 101,
-          "BTTShortcutModifierKeys" : 8650752,
-          "BTTOrder" : 22,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 1004,
-          "BTTTriggerTypeDescription" : "Button 4",
-          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
-          "BTTPredefinedActionType" : 113,
-          "BTTPredefinedActionName" : "Move Left a Space",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 1,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "59,56,50",
-          "BTTAdditionalConfiguration" : "393216",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 18,
-          "BTTShortcutModifierKeys" : 393216,
-          "BTTOrder" : 6,
-          "BTTAdditionalActions" : [
-            {
-              "BTTTriggerType" : -1,
-              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-              "BTTPredefinedActionType" : -1,
-              "BTTPredefinedActionName" : "No Action",
-              "BTTShortcutToSend" : "125",
-              "BTTEnabled" : 0,
-              "BTTShortcutKeyCode" : -1,
-              "BTTShortcutModifierKeys" : -1,
-              "BTTOrder" : 0,
-              "BTTIconData" : "",
-              "BTTAlternateIconData" : ""
-            },
-            {
-              "BTTTriggerType" : -1,
-              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-              "BTTPredefinedActionType" : -1,
-              "BTTPredefinedActionName" : "No Action",
-              "BTTShortcutToSend" : "18",
-              "BTTEnabled" : 0,
-              "BTTShortcutKeyCode" : -1,
-              "BTTShortcutModifierKeys" : -1,
-              "BTTOrder" : 1,
-              "BTTIconData" : "",
-              "BTTAlternateIconData" : ""
-            }
-          ],
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 49,
-          "BTTPredefinedActionName" : "Open Application \/ File \/ Apple Script …",
-          "BTTLaunchPath" : "file:\/\/\/Users\/gkoller\/dotfiles\/Moom\/ArrangeDualScreenWindows.scpt",
-          "BTTAdditionalConfiguration" : "393216",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 18,
-          "BTTShortcutModifierKeys" : 393216,
-          "BTTOrder" : 10,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Spotify.app",
-          "BTTShortcutAppUnderCursor" : "com.spotify.client",
-          "BTTShortcutToSend" : "55,126",
-          "BTTAdditionalConfiguration" : "8388608",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 80,
-          "BTTShortcutModifierKeys" : 8388608,
-          "BTTOrder" : 32,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 137,
-          "BTTPredefinedActionName" : "Execute Terminal Command",
-          "BTTTerminalCommand" : "~\/bin\/mvim",
-          "BTTAdditionalConfiguration" : "1835008",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 9,
-          "BTTShortcutModifierKeys" : 1835008,
-          "BTTOrder" : 3,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Spotify.app",
-          "BTTShortcutAppUnderCursor" : "com.spotify.client",
-          "BTTShortcutToSend" : "55,124",
-          "BTTAdditionalConfiguration" : "8388608",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 64,
-          "BTTShortcutModifierKeys" : 8388608,
-          "BTTOrder" : 30,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Evernote.app",
-          "BTTShortcutSwitchToAppFirst" : "1",
-          "BTTShortcutAppUnderCursor" : "com.evernote.Evernote",
-          "BTTShortcutToSend" : "55,45",
-          "BTTAdditionalConfiguration" : "1835008",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 49,
-          "BTTShortcutModifierKeys" : 1835008,
-          "BTTOrder" : 2,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "59,56,23",
-          "BTTAdditionalConfiguration" : "8388608",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 113,
-          "BTTShortcutModifierKeys" : 8388608,
-          "BTTOrder" : 28,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Spotify.app",
-          "BTTShortcutAppUnderCursor" : "com.spotify.client",
-          "BTTShortcutToSend" : "55,125",
-          "BTTAdditionalConfiguration" : "8388608",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 79,
-          "BTTShortcutModifierKeys" : 8388608,
-          "BTTOrder" : 31,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 5,
-          "BTTPredefinedActionName" : "Mission Control",
-          "BTTAdditionalConfiguration" : "8650752",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 126,
-          "BTTShortcutModifierKeys" : 8650752,
-          "BTTOrder" : 16,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 186,
-          "BTTTriggerTypeDescription" : "Corner FORCE Click Bottom Left",
+          "BTTTriggerType" : 163,
+          "BTTTriggerTypeDescription" : "3 Finger Double-Tap",
           "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : 49,
-          "BTTPredefinedActionName" : "Open Application \/ File \/ Apple Script …",
-          "BTTLaunchPath" : "file:\/\/\/System\/Library\/Frameworks\/ScreenSaver.framework\/Versions\/A\/Resources\/ScreenSaverEngine.app",
+          "BTTPredefinedActionType" : 116,
+          "BTTPredefinedActionName" : "Lookup Word Under Cursor",
           "BTTEnabled" : 1,
           "BTTOrder" : 0,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 49,
-          "BTTPredefinedActionName" : "Open Application \/ File \/ Apple Script …",
-          "BTTLaunchPath" : "file:\/\/\/Users\/gkoller\/dotfiles\/Moom\/Switch%20Second%20Desktop%202-Spotify.scpt",
-          "BTTAdditionalConfiguration" : "393216",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 19,
-          "BTTShortcutModifierKeys" : 393216,
-          "BTTOrder" : 11,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 113,
-          "BTTPredefinedActionName" : "Move Left a Space",
-          "BTTAdditionalConfiguration" : "8650752",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 123,
-          "BTTShortcutModifierKeys" : 8650752,
-          "BTTOrder" : 14,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 151,
-          "BTTPredefinedActionName" : "Move Window One Space\/Desktop Left",
-          "BTTAdditionalConfiguration" : "8781824",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 123,
-          "BTTShortcutModifierKeys" : 8781824,
-          "BTTOrder" : 0,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 114,
-          "BTTPredefinedActionName" : "Move Right a Space",
-          "BTTAdditionalConfiguration" : "8650752",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 124,
-          "BTTShortcutModifierKeys" : 8650752,
-          "BTTOrder" : 15,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 49,
-          "BTTPredefinedActionName" : "Open Application \/ File \/ Apple Script …",
-          "BTTLaunchPath" : "file:\/\/\/Users\/gkoller\/dotfiles\/Moom\/Switch%20Second%20Desktop%203-Airmail.scpt",
-          "BTTAdditionalConfiguration" : "393216",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 20,
-          "BTTShortcutModifierKeys" : 393216,
-          "BTTOrder" : 12,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Sonos.app",
-          "BTTShortcutAppUnderCursor" : "com.sonos.macController",
-          "BTTShortcutToSend" : "55,27",
-          "BTTAdditionalConfiguration" : "9175040",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 103,
-          "BTTShortcutModifierKeys" : 9175040,
-          "BTTOrder" : 25
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Sonos.app",
-          "BTTShortcutAppUnderCursor" : "com.sonos.macController",
-          "BTTShortcutToSend" : "55,24",
-          "BTTAdditionalConfiguration" : "9175040",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 111,
-          "BTTShortcutModifierKeys" : 9175040,
-          "BTTOrder" : 26
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 152,
-          "BTTPredefinedActionName" : "Move Window One Space\/Desktop Right",
-          "BTTAdditionalConfiguration" : "8781824",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 124,
-          "BTTShortcutModifierKeys" : 8781824,
-          "BTTOrder" : 1,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "59,56,50",
-          "BTTAdditionalConfiguration" : "393216",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 21,
-          "BTTShortcutModifierKeys" : 393216,
-          "BTTOrder" : 9,
-          "BTTAdditionalActions" : [
-            {
-              "BTTTriggerType" : -1,
-              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-              "BTTPredefinedActionType" : -1,
-              "BTTPredefinedActionName" : "No Action",
-              "BTTShortcutToSend" : "125",
-              "BTTEnabled" : 0,
-              "BTTShortcutKeyCode" : -1,
-              "BTTShortcutModifierKeys" : -1,
-              "BTTOrder" : 0,
-              "BTTIconData" : "",
-              "BTTAlternateIconData" : ""
-            },
-            {
-              "BTTTriggerType" : -1,
-              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-              "BTTPredefinedActionType" : -1,
-              "BTTPredefinedActionName" : "No Action",
-              "BTTShortcutToSend" : "21",
-              "BTTEnabled" : 0,
-              "BTTShortcutKeyCode" : -1,
-              "BTTShortcutModifierKeys" : -1,
-              "BTTOrder" : 1,
-              "BTTIconData" : "",
-              "BTTAlternateIconData" : ""
-            }
-          ],
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Sonos.app",
-          "BTTShortcutAppUnderCursor" : "com.sonos.macController",
-          "BTTShortcutToSend" : "55,123",
-          "BTTAdditionalConfiguration" : "9175040",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 98,
-          "BTTShortcutModifierKeys" : 9175040,
-          "BTTOrder" : 19
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "59,56,50",
-          "BTTAdditionalConfiguration" : "393216",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 19,
-          "BTTShortcutModifierKeys" : 393216,
-          "BTTOrder" : 7,
-          "BTTAdditionalActions" : [
-            {
-              "BTTTriggerType" : -1,
-              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-              "BTTPredefinedActionType" : -1,
-              "BTTPredefinedActionName" : "No Action",
-              "BTTShortcutToSend" : "125",
-              "BTTEnabled" : 0,
-              "BTTShortcutKeyCode" : -1,
-              "BTTShortcutModifierKeys" : -1,
-              "BTTOrder" : 0,
-              "BTTIconData" : "",
-              "BTTAlternateIconData" : ""
-            },
-            {
-              "BTTTriggerType" : -1,
-              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-              "BTTPredefinedActionType" : -1,
-              "BTTPredefinedActionName" : "No Action",
-              "BTTShortcutToSend" : "19",
-              "BTTEnabled" : 0,
-              "BTTShortcutKeyCode" : -1,
-              "BTTShortcutModifierKeys" : -1,
-              "BTTOrder" : 1,
-              "BTTIconData" : "",
-              "BTTAlternateIconData" : ""
-            }
-          ],
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 49,
-          "BTTPredefinedActionName" : "Open Application \/ File \/ Apple Script …",
-          "BTTLaunchPath" : "file:\/\/\/Users\/gkoller\/dotfiles\/Moom\/Switch%20Second%20Desktop%204-Calendar.scpt",
-          "BTTAdditionalConfiguration" : "393216",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 21,
-          "BTTShortcutModifierKeys" : 393216,
-          "BTTOrder" : 13,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 137,
-          "BTTTriggerTypeDescription" : "TipTap Right (3 Fingers Fix)",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : 114,
-          "BTTPredefinedActionName" : "Move Right a Space",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 2,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 1002,
-          "BTTTriggerTypeDescription" : "Middle Mouse Button",
-          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
-          "BTTPredefinedActionType" : 5,
-          "BTTPredefinedActionName" : "Mission Control",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 0,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 1003,
-          "BTTTriggerTypeDescription" : "Button 3",
-          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
-          "BTTPredefinedActionType" : 114,
-          "BTTPredefinedActionName" : "Move Right a Space",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 2,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 172,
-          "BTTPredefinedActionName" : "Run Apple Script (enter directly as text)",
-          "BTTInlineAppleScript" : "tell application \"Moom\"\r\tarrange windows according to snapshot \"External Monitor [Dual App Screens]\"\rend tell\r",
-          "BTTAdditionalConfiguration" : "393216",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 19,
-          "BTTShortcutModifierKeys" : 393216,
-          "BTTOrder" : 5,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerType" : 136,
-          "BTTTriggerTypeDescription" : "TipTap Left (3 Fingers Fix)",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTPredefinedActionType" : 113,
-          "BTTPredefinedActionName" : "Move Left a Space",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 1,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Spotify.app",
-          "BTTShortcutAppUnderCursor" : "com.spotify.client",
-          "BTTShortcutToSend" : "55,125",
-          "BTTAdditionalConfiguration" : "8650752",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 103,
-          "BTTShortcutModifierKeys" : 8650752,
-          "BTTOrder" : 23,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 137,
-          "BTTPredefinedActionName" : "Execute Terminal Command",
-          "BTTTerminalCommand" : "open \"helium:\/\/http:\/\/spreadsheets.google.com\/ccc?new\"",
-          "BTTAdditionalConfiguration" : "1835008",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 1,
-          "BTTShortcutModifierKeys" : 1835008,
-          "BTTOrder" : 33,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Sonos.app",
-          "BTTShortcutAppUnderCursor" : "com.sonos.macController",
-          "BTTShortcutToSend" : "55,124",
-          "BTTAdditionalConfiguration" : "9175040",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 101,
-          "BTTShortcutModifierKeys" : 9175040,
-          "BTTOrder" : 21
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Spotify.app",
-          "BTTShortcutAppUnderCursor" : "com.spotify.client",
-          "BTTShortcutToSend" : "49",
-          "BTTAdditionalConfiguration" : "8388608",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 106,
-          "BTTShortcutModifierKeys" : 8388608,
-          "BTTOrder" : 29,
-          "BTTIconData" : "",
-          "BTTAlternateIconData" : ""
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 128,
-          "BTTPredefinedActionName" : "Send Shortcut to Specific App",
-          "BTTShortcutApp" : "\/Applications\/Sonos.app",
-          "BTTShortcutAppUnderCursor" : "com.sonos.macController",
-          "BTTShortcutToSend" : "55,35",
-          "BTTAdditionalConfiguration" : "9175040",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 100,
-          "BTTShortcutModifierKeys" : 9175040,
-          "BTTOrder" : 20
-        },
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 172,
-          "BTTPredefinedActionName" : "Run Apple Script (enter directly as text)",
-          "BTTInlineAppleScript" : "tell application \"Moom\"\r\tarrange windows according to snapshot \"MacBook Screen\"\rend tell\r",
-          "BTTAdditionalConfiguration" : "393216",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 0,
-          "BTTShortcutKeyCode" : 18,
-          "BTTShortcutModifierKeys" : 393216,
-          "BTTOrder" : 4,
           "BTTIconData" : "",
           "BTTAlternateIconData" : ""
         }
