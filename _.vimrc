@@ -81,6 +81,7 @@ else
 endif
 " Check the syntax with Syntastic using the shortcut <leader>c (usually \c)
 nmap <leader>c :SyntasticCheck<CR>
+nmap <leader>s :SyntasticToggleMode<CR>
 
 " General Vim configurations
 

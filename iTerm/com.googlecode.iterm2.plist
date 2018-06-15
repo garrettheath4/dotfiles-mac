@@ -286,13 +286,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 601 620 392 0 0 1920 1178 </string>
+	<string>1194 970 620 392 0 0 3008 1670 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>660 358 599 505 0 0 1920 1178 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1166 808 918 452 0 0 3200 1778 </string>
+	<string>945 663 918 512 0 0 3008 1670 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 1399 3200 379 0 0 3200 1778 </string>
+	<string>0 48 3008 379 0 0 3008 1670 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1127,7 +1127,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string></string>
+			<string>/usr/local/bin/tmux</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
@@ -1675,7 +1675,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-12T04:39:31Z</date>
+	<date>2018-06-11T18:15:05Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SmartPlacement</key>
@@ -1685,7 +1685,7 @@
 	<key>TmuxDashboardLimit</key>
 	<integer>10</integer>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>5</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
