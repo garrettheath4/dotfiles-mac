@@ -41,7 +41,8 @@ alias incognito="unset HISTFILE"
 alias reload="source ~/.bash_profile"
 
 ## Git shortcuts
-alias ggp='git pull && test "$(git for-each-ref --format="%(push:track)" refs/heads)" != "" && git push || echo "Nothing to push."'
+alias ggp='(git pull && test "$(git for-each-ref --format="%(if)%(HEAD)%(then)%(push:track)%(end)" refs/heads)" != "" && git push || echo "Nothing to push on this branch.") && test "$(git for-each-ref --format="%(push:track)" refs/heads)" != "" && (echo "Other branches:"; ggu)'
+alias ggu='git for-each-ref --format="%(align:15,right)%(push:track)%(end) %(refname:lstrip=-1)" refs/heads'
 alias ggb='git branch'
 alias ggs='git status'
 alias ggd='git diff'
