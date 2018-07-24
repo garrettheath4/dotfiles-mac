@@ -25,7 +25,7 @@ task,Security & Privacy Settings,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Require password _5 seconds_ after sleep or screen saver begins,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Check _Allow your Apple Watch to unlock your Mac_,4,3,Garrett (5042555),,,en,America/New_York
+task,Check _Allow your Apple Watch to unlock your Mac_ (unless it has Touch ID?),4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Privacy: Accessibility,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -97,9 +97,9 @@ task,Turn Do Not Disturb On/Off: _Control+Esc_,4,4,Garrett (5042555),,,en,Americ
 ,,,,,,,,
 task,Check all _Mission Control_ shortcuts,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Show Spotlight search: _Option+Cmd+Space_,4,4,Garrett (5042555),,,en,America/New_York
+task,Spotlight: Show Spotlight search: _Option+Cmd+Space_ (if Alfred is installed),4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Uncheck _Show Finder search window_,4,4,Garrett (5042555),,,en,America/New_York
+task,Spotlight: Uncheck _Show Finder search window_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Messages: Create _Delete Conversation…_ menu shortcut for _Control+Option+Shift+Command+D_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -143,13 +143,19 @@ task,W&L: Contacts,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Facebook: Calendars !!only!!,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,App Store Settings: Uncheck _Install macOS updates_ and _Install system data files and security updates_,4,2,Garrett (5042555),,,en,America/New_York
+task,App Store,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,App Store Settings: Uncheck _Install macOS updates_ and _Install system data files and security updates_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Sign in to App Store as _garrettheath4@gmail.com_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Sharing Settings,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Set _Computer Name_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Check _Remote Login (SSH)_ but only for these users: _Garrett_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Touch ID: !!Enable!!,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Users & Groups Settings,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -167,7 +173,9 @@ task,Moom,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Alfred 3,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Login Options: Show fast user switching menu as: _Icon_,4,3,Garrett (5042555),,,en,America/New_York
+task,Guest User: Disable,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Login Options: Show fast user switching menu as: _Icon_ (then disable if not needed),4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Accessibility Settings: Display: Check _Differentiate without color_,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -177,7 +185,7 @@ task,Desktop icons: Snap to grid,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,"View Options: !!Sort!! by _name_, Show Library Folder, and Set as Defaults",4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Sidebar,4,3,Garrett (5042555),,,en,America/New_York
+task,Preferences: Sidebar,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,"Remove _Recents_, _iCloud Drive_, _Documents_, _Remote Disc_, _computer_, and _Recent Tags_",4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
