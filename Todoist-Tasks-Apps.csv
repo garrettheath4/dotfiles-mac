@@ -1,13 +1,23 @@
 ﻿TYPE,CONTENT,PRIORITY,INDENT,AUTHOR,RESPONSIBLE,DATE,DATE_LANG,TIMEZONE
 task,Apps Configuration,2,1,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Terminal dotfiles [Run _git clone https://github.com/garrettheath4/dotfiles-mac.git (https://github.com/garrettheath4/dotfiles-mac.git) (garrettheath4/dotfiles-mac) ~/dotfiles_ ],4,2,Garrett (5042555),,,en,America/New_York
+task,Terminal Preferences,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Profiles: Set _Homebrew_ as Default,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Homebrew: Shell: When the shell exits: _Close if the shell exited cleanly_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Run _xcode-select --install_ to install command line tools,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Terminal dotfiles [Run _git clone https://github.com/garrettheath4/dotfiles-mac.git ~/dotfiles_ ],4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Run _installApps.sh_ script in dotfiles to install apps,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Calendar: Advanced settings: Check _Turn on time zone support_,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Google Chrome,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Warn Before Quitting_ in Chrome menu bar,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Personal profile,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
@@ -18,6 +28,8 @@ task,Log in to LastPass,4,4,Garrett (5042555),,,en,America/New_York
 task,YubiKey naming scheme: <computer> <OS type> <OS version name> <browser program> <browser profile> <date>,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,More Options: Identities: _Filtered_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Preferences: Advanced: Show Matching Sites in top level menu,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Log in to Evernote Web Clipper,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
