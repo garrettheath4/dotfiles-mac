@@ -17,17 +17,26 @@ ShowLicenses () {
 	fi
 }
 
-ConfirmInstall () {
+GenericInstallPrompt () {
 	if [ "$#" -lt 1 ]; then
-		echo 'Usage: ConfirmInstall <DescriptionString> [InstalledAppName]'
+		echo 'Usage: GenericInstallPrompt <PrettyAppName>'
+		echo 'Returns: 0 for YES or 1 for NO'
+		return 255
+	fi
+	read -r -p "Install $1 now? (y/n) [y]: " confirminstall
+	[ "$confirminstall" != 'n' ]
+}
+
+ConfirmInstallApp () {
+	if [ "$#" -lt 1 ]; then
+		echo 'Usage: ConfirmInstallApp <DescriptionString> [InstalledAppName]'
 		echo 'Returns: 0 for YES or 1 for NO'
 		return 255
 	fi
 	if [[ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" && ! -e "$2" ]]; then
-		read -r -p "Install $1 now? (y/n) [y]: " confirminstall
-		[ "$confirminstall" != 'n' ]
+		GenericInstallPrompt "$1"
 	else
-		# Return NO
+		# Return NO because it's already installed
 		return 1
 	fi
 }
@@ -42,13 +51,16 @@ ConfirmInstallBrewCask () {
 	if [ "$#" -ge 2 ]; then
 		CaskToInstall="$2"
 	fi
-	if ConfirmInstall "$AppToCheck"; then
+	if ConfirmInstallApp "$AppToCheck"; then
 		brew cask install "$CaskToInstall"
 	fi
 }
 
 OpenAppLinkAndPrompt () {
-	# Usage OpenAppLinkAndPrompt Evernote 'macappstore://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
+	if [ "$#" -lt 1 ]; then
+		echo "Usage: OpenAppLinkAndPrompt Evernote 'macappstore://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'"
+		return 255
+	fi
 	AppName="$1"
 	LinkToOpen="$2"
 	if [ -n "$LinkToOpen" ]; then
@@ -62,12 +74,12 @@ OpenAppLinkAndPrompt () {
 #
 
 # Add fractals to Pictures folder
-if ConfirmInstall 'fractals to Pictures folder' ~/Pictures/Fractals-2560x1600; then
+if ConfirmInstallApp 'fractals to Pictures folder' ~/Pictures/Fractals-2560x1600; then
 	ln -is "$REPO/Fractals-2560x1600" ~/Pictures/
 fi
 
 # Install special sound effects
-if ConfirmInstall "\"Robot Blip\" sound" ~/Library/Sounds/'Robot Blip.aiff'; then
+if ConfirmInstallApp "\"Robot Blip\" sound" ~/Library/Sounds/'Robot Blip.aiff'; then
 	echo "Adding \"Robot Blip\" to user sounds..."
 	if [ -e "$REPO/Sounds/Robot Blip.aiff" ]; then
 		if ! ( cp "$REPO/Sounds/Robot Blip.aiff" ~/Library/Sounds/ ); then
@@ -83,14 +95,16 @@ fi
 # Git (needed first to install Homebrew and its apps in this script)
 #
 
-if ! (which git >/dev/null); then
+if ! (which git >/dev/null) && GenericInstallPrompt "git (and other developer command line tools)"; then
 	xcode-select --install
 	# macOS should prompt you to install the Developer Tools which includes Git
+	# OpenAppLinkAndPrompt is just a fancy way to wait for the GUI installation
+	#   to finish before the user presses Enter to continue this script
 	OpenAppLinkAndPrompt 'Git'
 fi
 
 if ! git --version; then
-	echo 'Warning: It appears that Git was not installed. You may need to install it yourself from Xcode.'
+	echo 'Warning: It appears that Git was not installed. You may need to install it yourself.'
 	exit 1
 fi
 
@@ -99,8 +113,13 @@ fi
 # Homebrew (needed to install other tools and apps in this script)
 #
 
-if ! brew --version; then
+if ! brew --version && GenericInstallPrompt "Homebrew"; then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if ! brew --version; then
+	echo 'Warning: It appears that Homebrew was not installed. You may need to install it yourself.'
+	exit 2
 fi
 
 brew update
@@ -119,13 +138,13 @@ ConfirmInstallBrewCask 'Google Chrome'
 
 # LastPass extensions
 LastPassInstallerApp='/usr/local/Caskroom/lastpass/latest/LastPass Installer.app'
-if ConfirmInstall 'LastPass Universal Mac Installer' "$LastPassInstallerApp"; then
+if ConfirmInstallApp 'LastPass Universal Mac Installer' "$LastPassInstallerApp"; then
 	brew cask install lastpass
 	OpenAppLinkAndPrompt 'LastPass' "$LastPassInstallerApp"
 fi
 
 # Tmux
-if ! tmux -V; then
+if ! tmux -V && GenericInstallPrompt "Tmux"; then
 	brew install tmux
 fi
 
@@ -136,14 +155,14 @@ fi
 
 ConfirmInstallBrewCask 'Insync'
 
-if ConfirmInstall 'Todoist'; then
+if ConfirmInstallApp 'Todoist'; then
 	OpenAppLinkAndPrompt 'Todoist' \
 		'macappstore://itunes.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12'
 fi
 
 ConfirmInstallBrewCask 'KeepingYouAwake'
 
-if ConfirmInstall 'iTerm2' 'iTerm'; then
+if ConfirmInstallApp 'iTerm2' 'iTerm'; then
 	iTermPrefsFilename='com.googlecode.iterm2.plist'
 	# Initialize iTerm with stored preferences if not already in local Library
 	if [ ! -e ~/Library/Preferences/"$iTermPrefsFilename" ] && [ -e "$iTermPrefsFilename" ]; then
@@ -155,12 +174,12 @@ fi
 ConfirmInstallBrewCask 'Moom'
 ConfirmInstallBrewCask 'BetterTouchTool'
 
-if ConfirmInstall 'Airmail 3'; then
+if ConfirmInstallApp 'Airmail 3'; then
 	OpenAppLinkAndPrompt 'Airmail 3' \
 		'macappstore://itunes.apple.com/us/app/airmail-3/id918858936?mt=12'
 fi
 
-if ConfirmInstall 'Evernote'; then
+if ConfirmInstallApp 'Evernote'; then
 	OpenAppLinkAndPrompt 'Evernote' \
 		'macappstore://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
 fi
@@ -173,11 +192,11 @@ ConfirmInstallBrewCask 'TG Pro'
 ConfirmInstallBrewCask 'BitBar'
 ConfirmInstallBrewCask 'Goofy'
 
-if ConfirmInstall '1Keyboard'; then
+if ConfirmInstallApp '1Keyboard'; then
 	OpenAppLinkAndPrompt '1Keyboard' 'macappstore://itunes.apple.com/us/app/1keyboard/id766939888?mt=12'
 fi
 
-if ConfirmInstall 'Quick Calendar'; then
+if ConfirmInstallApp 'Quick Calendar'; then
 	OpenAppLinkAndPrompt 'Quick Calendar (app download) ' 'macappstore://itunes.apple.com/us/app/quick-calendar/id1004514425?mt=12'
 	OpenAppLinkAndPrompt 'Quick Calendar (post-download)' '/Applications/Quick Calendar.app'
 fi
@@ -185,7 +204,7 @@ fi
 ConfirmInstallBrewCask 'Tunnelblick'
 ConfirmInstallBrewCask 'BackupLoupe'
 
-if ConfirmInstall 'Deliveries'; then
+if ConfirmInstallApp 'Deliveries'; then
 	OpenAppLinkAndPrompt 'Deliveries' \
 		'macappstore://itunes.apple.com/us/app/deliveries-a-package-tracker/id924726344?mt=12'
 fi
@@ -199,7 +218,7 @@ ConfirmInstallBrewCask 'AirServer'
 
 ConfirmInstallBrewCask 'Spotify'
 
-if ConfirmInstall 'Sonos'; then
+if ConfirmInstallApp 'Sonos'; then
 	brew tap caskroom/drivers
 	brew cask install sonos
 fi
@@ -215,7 +234,7 @@ ConfirmInstallBrewCask '4K Video Downloader'
 
 ConfirmInstallBrewCask 'IntelliJ IDEA CE'
 
-if ConfirmInstall 'LaTeX' '/Applications/TeX'; then
+if ConfirmInstallApp 'LaTeX' '/Applications/TeX'; then
 	brew cask install 'mactex'
 fi
 
