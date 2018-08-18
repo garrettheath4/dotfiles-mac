@@ -39,6 +39,14 @@ task,Steam,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Notifications Settings,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Do Not Disturb,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,From _12:00 AM_ to _7:00 AM_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _When the display is sleeping_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Allow repeated calls_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,iMessages,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Uncheck _Show notifications on lock screen_,4,4,Garrett (5042555),,,en,America/New_York
