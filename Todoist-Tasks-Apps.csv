@@ -223,6 +223,10 @@ task,Open Spotify automatically after you log in: _No_,4,3,Garrett (5042555),,,e
 ,,,,,,,,
 task,Download playlists,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Check _Show unavailable songs in playlists_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Check _Crossfade songs: 3 sec_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Add Music folder from Google Drive,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Set up game save sync locations (GD Games folder),4,2,Garrett (5042555),,,en,America/New_York
