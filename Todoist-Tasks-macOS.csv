@@ -109,11 +109,21 @@ task,Turn Do Not Disturb On/Off: _Control+Esc_,4,4,Garrett (5042555),,,en,Americ
 ,,,,,,,,
 task,Check all _Mission Control_ shortcuts,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Spotlight: Show Spotlight search: _Option+Cmd+Space_ (if Alfred is installed),4,4,Garrett (5042555),,,en,America/New_York
-,,,,,,,,
 task,Spotlight: Uncheck _Show Finder search window_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Messages: Create _Delete Conversation…_ menu shortcut for _Control+Option+Shift+Command+D_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Services,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Add to iTunes as a Spoken Track_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show in Finder_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show Info in Finder_,4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Open_ (opens Finder text path),4,5,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Spotlight: Show Spotlight search: _Option+Cmd+Space_ (if Alfred is installed),4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Evernote: Create _Move to Notebook…_ menu shortcut for _Command+Shift+M_,4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
