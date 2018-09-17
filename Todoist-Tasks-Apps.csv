@@ -51,6 +51,14 @@ task,Uncheck _Remind me to track_,4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,"Enable integrations: _*.google.com_, _todoist.com_, and _jira.datawarehousellc.com_",4,5,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
+task,Todoist,4,2,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Preferences: Uncheck _Show Todoist in menu bar_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Shortcuts: Clear _Show/Hide Todoist_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Shortcuts: Set _Quick Add Task_ to _Ctrl+Space_,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
 task,Insync,4,2,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Add Personal Google account,4,3,Garrett (5042555),,,en,America/New_York
