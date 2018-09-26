@@ -65,7 +65,11 @@ task,AirMail: Uncheck _Show in Notification Center_ and _Show notifications on l
 ,,,,,,,,
 task,TogglDesktop: Uncheck _Show in Notification Center_ and _Show notifications on lock screen_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
-task,Goofy: Uncheck _Show notifications on lock screen_,4,3,Garrett (5042555),,,en,America/New_York
+task,Goofy,4,3,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Show notifications on lock screen_,4,4,Garrett (5042555),,,en,America/New_York
+,,,,,,,,
+task,Uncheck _Play sound for notifications_ (web app plays its own sound),4,4,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
 task,Sonos: Uncheck _Show in Notification Center_ and _Show notifications on lock screen_,4,3,Garrett (5042555),,,en,America/New_York
 ,,,,,,,,
