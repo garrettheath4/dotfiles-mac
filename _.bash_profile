@@ -95,7 +95,7 @@ if command -v tmux >/dev/null 2>&1; then
 		tmux new-session -AdD -n Main -s "$SessionName"
 		if git --version; then
 			# shellcheck disable=SC2016
-			tmux new-window -d -c ~/dotfiles -n dotfiles-check 'echo Checking for update to dotfiles repo...; git fetch; if [ $(git rev-parse @) != $(git rev-parse @{u}) ]; then echo -e Run \"git pull\" to update your dotfiles \\a\\n; tmux rename-window -t dotfiles-check UPDATE-DOTFILES; bash --init-file <(echo "pwd; git status"); fi'
+			tmux new-window -d -c ~/dotfiles -n dotfiles-check 'echo Checking for update to dotfiles repo...; git fetch; if [ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]; then echo -e Run \"git pull\" to update your dotfiles \\a\\n; tmux rename-window -t dotfiles-check UPDATE-DOTFILES; bash --init-file <(echo "pwd; git status"); fi'
 		else
 			tmux new-window -d -n INSTALL-GIT 'echo Git does not appear to be installed. Please install it to enable update checking for dotfiles.'
 		fi
