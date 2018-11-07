@@ -84,24 +84,30 @@ fi
 
 # Tmux-specific commands (only run if Tmux is installed)
 if command -v tmux >/dev/null 2>&1; then
-	# Automatically start Tmux session if this is an iTerm2 window with the Hotkey profile
-	if [ "$ITERM_PROFILE" = "Hotkey" ] || [ "$ITERM_PROFILE" = "Hotkey Window" ] && [ -z "${TMUX+defined}" ]; then
-		if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-			SessionName="Remote"
-		else
-			SessionName="Local"
-		fi
+	# Tmux is installed
+	if [ -z "${TMUX+defined}" ]; then
+		# This is not a Tmux session
+		if [ "$ITERM_PROFILE" = "Hotkey" ] || [ "$ITERM_PROFILE" = "Hotkey Window" ]; then
+			# This is an iTerm2 window with the Hotkey profile
+			if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+				SessionName="Remote"
+			else
+				SessionName="Local"
+			fi
 
-		tmux new-session -AdD -n Main -s "$SessionName"
-		if git --version; then
-			# shellcheck disable=SC2016
-			tmux new-window -d -c ~/dotfiles -n dotfiles-check 'echo Checking for update to dotfiles repo...; git fetch; if [ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]; then echo -e Run \"git pull\" to update your dotfiles \\a\\n; tmux rename-window -t dotfiles-check UPDATE-DOTFILES; bash --init-file <(echo "pwd; git status"); fi'
-		else
-			tmux new-window -d -n INSTALL-GIT 'echo Git does not appear to be installed. Please install it to enable update checking for dotfiles.'
+			tmux new-session -AdD -n Main -s "$SessionName"
+			if command -v git >/dev/null; then
+				# Git is installed
+				# shellcheck disable=SC2016
+				tmux new-window -d -c ~/dotfiles -n dotfiles-check 'echo Checking for update to dotfiles repo...; git fetch; if [ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]; then echo -e Run \"git pull\" to update your dotfiles \\a\\n; tmux rename-window -t dotfiles-check UPDATE-DOTFILES; bash --init-file <(echo "pwd; git status"); fi'
+			else
+				# Git is NOT installed
+				tmux new-window -d -n INSTALL-GIT 'echo Git does not appear to be installed. Please install it to enable update checking for dotfiles.'
+			fi
+			tmux attach
 		fi
-		tmux attach
 	else
-		# If this is a TMUX session, automatically run some commands
+		# This IS a Tmux session
 		# From article: https://blog.no-panic.at/2015/04/21/set-tmux-pane-title-on-ssh-connections/
 		# Source Gist:  https://gist.github.com/florianbeer/ee02c149a7e25f643491
 		ssh() {
@@ -143,7 +149,7 @@ cd_tmux() {
 	WindowName="$*"
 	if command -v tmux >/dev/null 2>&1 && [ "$(ps -p "$(ps -p $$ -o ppid=)" -o comm=)" = "tmux" ] && [ "$(tmux display-message -p '#W')" = "bash" ]; then
 		# Tmux is installed && this is a running Tmux session && the Tmux window has the default (non-custom) name
-		GrayTxt="$(tput setaf 0)"
+		GrayTxt="$(tput setaf 2)"
 		ResetColors="$(tput sgr0)"
 		echo "${GrayTxt}Renaming Tmux window to match current directory${ResetColors}" 1>&2
 		tmux rename-window "$WindowName"
