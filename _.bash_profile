@@ -86,78 +86,16 @@ fi
 if command -v tmux >/dev/null 2>&1; then
 	# Tmux is installed
 	if [ -z "${TMUX+defined}" ]; then
-		# This is not a Tmux session
+		# This is NOT a Tmux session
 		if [ "$ITERM_PROFILE" = "Hotkey" ] || [ "$ITERM_PROFILE" = "Hotkey Window" ]; then
 			# This is an iTerm2 window with the Hotkey profile
-			if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-				SessionName="Remote"
-			else
-				SessionName="Local"
-			fi
-
-			tmux new-session -AdD -n Main -s "$SessionName"
-			if command -v git >/dev/null; then
-				# Git is installed
-				# shellcheck disable=SC2016
-				tmux new-window -d -c ~/dotfiles -n dotfiles-check 'echo Checking for update to dotfiles repo...; git fetch; if [ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]; then echo -e Run \"git pull\" to update your dotfiles \\a\\n; tmux rename-window -t dotfiles-check UPDATE-DOTFILES; bash --init-file <(echo "pwd; git status"); fi'
-			else
-				# Git is NOT installed
-				tmux new-window -d -n INSTALL-GIT 'echo Git does not appear to be installed. Please install it to enable update checking for dotfiles.'
-			fi
-			tmux attach
+			tmux-name
 		fi
 	else
 		# This IS a Tmux session
-		# From article: https://blog.no-panic.at/2015/04/21/set-tmux-pane-title-on-ssh-connections/
-		# Source Gist:  https://gist.github.com/florianbeer/ee02c149a7e25f643491
-		ssh() {
-			if [ "$(ps -p "$(ps -p $$ -o ppid= | xargs)" -o comm=)" = "tmux" ]; then
-				if [ "$(tmux display-message -p '#W')" = "bash" ]; then
-					# Tmux window doesn't have a custom name already, so proceed with auto-rename
-					GrayTxt="$(tput setaf 0)"
-					ResetColors="$(tput sgr0)"
-					echo "${GrayTxt}Renaming Tmux window to match SSH session${ResetColors}" 1>&2
-					windowName=$(echo "$1" | cut -d '.' -f 1)
-					#TODO: Extract this known-server substitution into an optional .ssh_server_names.local definition file
-					case "$windowName" in
-						drlvapiapp01) windowName='Test_API'; ;;
-						prlvapiapp01) windowName='PROD_API'; ;;
-						drlvmtlapp01) windowName='MTool-Web'; ;;
-					esac
-					tmux rename-window "$windowName"
-					#tmux set-window-option automatic-rename "on" 1>/dev/null
-				else
-					: # Tmux window has a custom name already, so don't rename it
-				fi
-			else
-				echo "WARNING: Cannot rename the Tmux session because this is not a Tmux session.  This ssh() funcion shouldn't be defined.  Check your .bash_profile" 1>&2
-			fi
-			command ssh "$@"
-		}
+		alias ssh='ssh-name'
 	fi
 fi
-
-cd_tmux() {
-	# Usage: cd_tmux <DirToChangeTo> <NewTmuxWindowName>
-	if [ "$#" -lt 2 ]; then
-		echo 'Usage: cd_tmux <DirToChangeTo> <NewTmuxWindowName>'
-		exit 1
-	fi
-	NewDir="$1"
-	shift
-	# Remaining arg(s) is new window name
-	WindowName="$*"
-	if command -v tmux >/dev/null 2>&1 && [ "$(ps -p "$(ps -p $$ -o ppid=)" -o comm=)" = "tmux" ] && [ "$(tmux display-message -p '#W')" = "bash" ]; then
-		# Tmux is installed && this is a running Tmux session && the Tmux window has the default (non-custom) name
-		GrayTxt="$(tput setaf 2)"
-		ResetColors="$(tput sgr0)"
-		echo "${GrayTxt}Renaming Tmux window to match current directory${ResetColors}" 1>&2
-		tmux rename-window "$WindowName"
-	fi
-	# shellcheck disable=SC2164
-	cd "$NewDir"
-	pwd
-}
 
 
 # vim: set ft=sh:

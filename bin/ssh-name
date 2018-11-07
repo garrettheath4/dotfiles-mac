@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+if [ -n "${TMUX}" ]; then
+	# This is a Tmux session
+	if [ "$(tmux display-message -p '#W')" = "bash" ]; then
+		# Tmux window doesn't have a custom name already, so proceed with auto-rename
+		GreenTxt="$(tput setaf 2)"
+		ResetColors="$(tput sgr0)"
+		echo "${GreenTxt}Renaming Tmux window to match SSH session${ResetColors}" 1>&2
+		windowName=$(echo "$1" | cut -d '.' -f 1)
+		#TODO: Extract this known-server substitution into an optional .ssh_server_names.local definition file
+		case "$windowName" in
+			drlvapiapp01) windowName='Test_API'; ;;
+			prlvapiapp01) windowName='PROD_API'; ;;
+			drlvmtlapp01) windowName='MTool-Web'; ;;
+		esac
+		# From article: https://blog.no-panic.at/2015/04/21/set-tmux-pane-title-on-ssh-connections/
+		# Source Gist:  https://gist.github.com/florianbeer/ee02c149a7e25f643491
+		tmux rename-window "$windowName"
+		#tmux set-window-option automatic-rename "on" 1>/dev/null
+	else
+		: # Tmux window has a custom name already, so don't rename it
+	fi
+else
+	echo "WARNING: Cannot rename the Tmux session because this is not a Tmux session.  This ssh() funcion shouldn't be defined.  Check your .bash_profile" 1>&2
+fi
+command ssh "$@"
