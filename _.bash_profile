@@ -27,18 +27,21 @@ test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . "$_"
 (command -v brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_completion" && . "$_"
 
 # User aliases
-alias ls="ls -G"
-alias lss="ls -haGl"
-alias lsr="ls -haGlt"
-alias lsrr="ls -haGlt | head"
-alias rm="~/bin/trash"
-alias rmm="command rm"
-alias pss="ps aux | head -n1; ps aux | fgrep -v grep | fgrep"
-alias top="top -u -R -s 2 -stats user,pid,command,cpu,time,state,th,csw,ports,vsize"
-alias woman="man"
-alias reverse="tail -r"
-alias incognito="unset HISTFILE"
-alias reload="source ~/.bash_profile"
+alias ls='ls -G'
+alias lss='ls -haGl'
+alias lsr='ls -haGlt'
+alias lsrr='ls -haGlt | head'
+alias rm='~/bin/trash'
+alias rmm='command rm'
+alias pss='ps aux | head -n1; ps aux | fgrep -v grep | fgrep'
+alias top='top -u -R -s 2 -stats user,pid,command,cpu,time,state,th,csw,ports,vsize'
+alias woman='man'
+alias reverse='tail -r'
+alias incognito='unset HISTFILE'
+alias reload='source ~/.bash_profile'
+# If youtube-dl is installed be sure to also install ffmpeg with 'brew install ffmpeg'
+# Alias source: https://github.com/rg3/youtube-dl/issues/8017#issuecomment-167382308
+alias youtube-dl='youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'
 
 ## Git shortcuts
 alias ggp='(git pull && test "$(git for-each-ref --format="%(if)%(HEAD)%(then)%(push:track)%(end)" refs/heads)" != "" && git push || echo "Nothing to push on this branch.") && test "$(git for-each-ref --format="%(push:track)" refs/heads)" != "" && (echo "Other branches:"; ggu)'
@@ -50,7 +53,7 @@ alias gga='git add'
 alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
 
-#  GUI app shortcuts
+## GUI app shortcuts
 alias preview="open -a Preview"
 
 vim_exec=/Applications/MacVim.app/Contents/MacOS/Vim
