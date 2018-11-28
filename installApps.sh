@@ -95,7 +95,7 @@ fi
 # Git (needed first to install Homebrew and its apps in this script)
 #
 
-if ! (which git >/dev/null) && GenericInstallPrompt "git (and other developer command line tools)"; then
+if ! command -v git >/dev/null 2>&1 && GenericInstallPrompt "git (and other developer command line tools)"; then
 	xcode-select --install
 	# macOS should prompt you to install the Developer Tools which includes Git
 	# OpenAppLinkAndPrompt is just a fancy way to wait for the GUI installation
@@ -103,9 +103,11 @@ if ! (which git >/dev/null) && GenericInstallPrompt "git (and other developer co
 	OpenAppLinkAndPrompt 'Git'
 fi
 
-if ! git --version; then
+if ! command -v git >/dev/null 2>&1; then
 	echo 'Warning: It appears that Git was not installed. You may need to install it yourself.'
 	exit 1
+else
+	git --version
 fi
 
 
@@ -113,11 +115,13 @@ fi
 # Homebrew (needed to install other tools and apps in this script)
 #
 
-if ! brew --version && GenericInstallPrompt "Homebrew"; then
+if ! command -v brew >/dev/null 2>&1 && GenericInstallPrompt "Homebrew"; then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+	brew --version
 fi
 
-if ! brew --version; then
+if ! command -v brew >/dev/null 2>&1; then
 	echo 'Warning: It appears that Homebrew was not installed. You may need to install it yourself.'
 	exit 2
 fi
@@ -129,7 +133,7 @@ brew update
 # Google Chrome (install before opening web pages in this script)
 #
 
-ConfirmInstallBrewCask 'Google Chrome'
+ConfirmInstallBrewCask 'Google Chrome' 'google-chrome'
 
 
 #
@@ -144,10 +148,16 @@ if ConfirmInstallApp 'LastPass Universal Mac Installer' "$LastPassInstallerApp";
 fi
 
 # Tmux
-if ! tmux -V && GenericInstallPrompt "Tmux"; then
+if ! command -v tmux >/dev/null 2>&1 && GenericInstallPrompt "Tmux"; then
 	brew install tmux
+else
+	tmux -V
 fi
 
+# reattach-to-user-namespace (for Tmux copy-paste to work on macOS)
+if command -v tmux >/dev/null 2>&1 && ! command -v reattach-to-user-namespace >/dev/null 2>&1 && GenericInstallPrompt "reattach-to-user-namespace"; then
+	brew install reattach-to-user-namespace
+fi
 
 #
 # APPS
@@ -188,7 +198,7 @@ ConfirmInstallBrewCask 'TogglDesktop' 'toggl'
 ConfirmInstallBrewCask 'MacVim'
 ConfirmInstallBrewCask 'MacDown'
 ConfirmInstallBrewCask 'Alfred 3' 'alfred'
-ConfirmInstallBrewCask 'TG Pro'
+ConfirmInstallBrewCask 'TG Pro' 'tg-pro'
 ConfirmInstallBrewCask 'BitBar'
 ConfirmInstallBrewCask 'Goofy'
 
@@ -225,20 +235,20 @@ fi
 
 ConfirmInstallBrewCask 'GIMP'
 ConfirmInstallBrewCask 'VLC'
-ConfirmInstallBrewCask '4K Video Downloader'
+ConfirmInstallBrewCask '4K Video Downloader' '4k-video-downloader'
 
 
 #
 # DEVELOPER TOOLS
 #
 
-ConfirmInstallBrewCask 'IntelliJ IDEA CE'
+ConfirmInstallBrewCask 'JetBrains Toolbox' 'jetbrains-toolbox'
 
 if ConfirmInstallApp 'LaTeX' '/Applications/TeX'; then
 	brew cask install 'mactex'
 fi
 
-ConfirmInstallBrewCask 'Etcher'
+ConfirmInstallBrewCask 'Etcher' 'balenaetcher'
 
 
 #
