@@ -12,7 +12,7 @@ if [ -n "${TMUX}" ]; then
 		case "$windowName" in
 			drlvapiapp01) windowName='Test_API'; ;;
 			prlvapiapp01) windowName='PROD_API'; ;;
-			drlvmtlapp01) windowName='MTool-Web'; ;;
+			drlvmtlapp01) windowName='Test_Mtl'; ;;
 		esac
 		# From article: https://blog.no-panic.at/2015/04/21/set-tmux-pane-title-on-ssh-connections/
 		# Source Gist:  https://gist.github.com/florianbeer/ee02c149a7e25f643491
