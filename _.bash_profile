@@ -41,7 +41,7 @@ alias incognito='unset HISTFILE'
 alias reload='source ~/.bash_profile'
 # If youtube-dl is installed be sure to also install ffmpeg with 'brew install ffmpeg'
 # Alias source: https://github.com/rg3/youtube-dl/issues/8017#issuecomment-167382308
-alias youtube-dl='youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'
+alias youtube-dl='echo "youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"; youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'
 
 ## Git shortcuts
 alias ggp='(git pull && test "$(git for-each-ref --format="%(if)%(HEAD)%(then)%(push:track)%(end)" refs/heads)" != "" && git push || echo "Nothing to push on this branch.") && test "$(git for-each-ref --format="%(push:track)" refs/heads)" != "" && (echo "Other branches:"; ggu)'
@@ -54,7 +54,7 @@ alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
 
 ## GUI app shortcuts
-alias preview="open -a Preview"
+alias preview='open -a Preview'
 
 vim_exec=/Applications/MacVim.app/Contents/MacOS/Vim
 if [ -x "$vim_exec" ]; then
