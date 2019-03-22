@@ -1,8 +1,27 @@
 #!/usr/bin/env bash
 
+
 brew update
 echo
 echo '==> Outdated Packages'
-brew outdated
+brewOutdated=$(brew outdated)
+echo "$brewOutdated"
+
 echo '==> Outdated Casks (update with `brew cask upgrade`)'
-brew cask outdated
+caskOutdated=$(brew cask outdated)
+echo "$caskOutdated"
+
+if [ -n "$brewOutdated" ]; then
+	read -p "Some packages are outdated. Upgrade? (Y/n): " -n 1 -r
+	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+		brew upgrade
+	fi
+fi
+
+if [ -n "$caskOutdated" ]; then
+	read -p "Some casks are outdated. Upgrade casks? (Y/n): " -n 1 -r
+	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+		brew cask upgrade
+	fi
+fi
+
