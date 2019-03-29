@@ -49,6 +49,7 @@ alias ggu='git for-each-ref --format="%(align:15,right)%(push:track)%(end) %(ref
 alias ggb='git branch'
 alias ggs='git status'
 alias ggd='git diff'
+alias ggdi='git diff --word-diff'
 alias gga='git add'
 alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
