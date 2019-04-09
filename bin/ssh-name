@@ -24,4 +24,10 @@ if [ -n "${TMUX}" ]; then
 else
 	echo "WARNING: Cannot rename the Tmux session because this is not a Tmux session.  This ssh() funcion shouldn't be defined.  Check your .bash_profile" 1>&2
 fi
-command ssh "$@"
+
+if [ "$#" -le 1 ]; then
+	# Assume we want to log in to a Tmux session
+	command ssh -t "$@" 'tmux || bash --login'
+else
+	command ssh "$@"
+fi
