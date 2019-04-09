@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+	echo "Upgrades NPM package to latest version and then runs 'npm run build'"
+	echo "Usage: $0 <npm package name to update>"
+	echo "Usage: $0 /<npm package regex update>/"
+	exit 1
+fi
+
+exitOnError() {
+        if [ "$?" -ne 0 ]; then
+                echo -e '<== An error occured. Exiting just in case.\a\a\a'
+                exit 2
+        fi
+}
+
+filterArg=$1
+
+echo "==> ncu $filterArg"
+ncu "$filterArg"
+
+read -p "Upgrade package(s)? (Y/n): " -n 1 -r
+if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+	echo -e "\n==> ncu --upgrade $filterArg"
+	ncu --upgrade "$filterArg" || exitOnError
+
+	echo -e "\n==> npm install"
+	npm install || exitOnError
+
+	echo -e "\n==> npm run build"
+	npm run build || exitOnError
+fi
+
+echo -e "\n<== Done! \a"
