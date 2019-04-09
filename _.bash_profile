@@ -45,7 +45,7 @@ alias youtube-dl='echo "youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best
 
 ## Git shortcuts
 alias ggp='(git pull && test "$(git for-each-ref --format="%(if)%(HEAD)%(then)%(push:track)%(end)" refs/heads)" != "" && git push || echo "Nothing to push on this branch.") && test "$(git for-each-ref --format="%(push:track)" refs/heads)" != "" && (echo "Other branches:"; ggu)'
-alias ggu='git for-each-ref --format="%(align:15,right)%(push:track)%(end) %(refname:lstrip=-1)" refs/heads'
+alias ggu='git for-each-ref --format="%(align:15,right)%(push:track)%(end) %(refname:lstrip=2)" refs/heads'
 alias ggb='git branch'
 alias ggs='git status'
 alias ggd='git diff'
