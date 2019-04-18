@@ -44,7 +44,7 @@ alias reload='source ~/.bash_profile'
 alias youtube-dl='echo "youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"; youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'
 
 ## Git shortcuts
-alias ggp='(git pull && test "$(git for-each-ref --format="%(if)%(HEAD)%(then)%(push:track)%(end)" refs/heads)" != "" && git push || echo "Nothing to push on this branch.") && test "$(git for-each-ref --format="%(push:track)" refs/heads)" != "" && (echo "Other branches:"; ggu)'
+alias ggp='git-pull-push'
 alias ggu='git for-each-ref --format="%(align:15,right)%(push:track)%(end) %(refname:lstrip=2)" refs/heads'
 alias ggb='git branch'
 alias ggs='git status'

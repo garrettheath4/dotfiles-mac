@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 brew update
 echo
 echo '==> Outdated Packages'
