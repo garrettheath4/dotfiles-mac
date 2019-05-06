@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+usage () {
+	echo "Usage: $0           -- prints status of all local branches"
+	echo "   OR: $0 <branch>  -- pulls updates from <branch> without checking it out"
+}
+
+if [ "$#" -eq 0 ]; then
+	git for-each-ref --format='%(align:15,right)%(push:track)%(end) %(refname:lstrip=2)' refs/heads
+elif [ "$#" -eq 1 ]; then
+	if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+		usage
+		exit 1
+	fi
+	git fetch origin "$1:$1"
+else
+	usage
+	exit 2
+fi

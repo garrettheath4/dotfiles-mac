@@ -6,7 +6,7 @@ if [ "$(git for-each-ref --format="%(if)%(HEAD)%(then)%(push:track)%(end)" refs/
 	git push || exit 2
 	if [ "$(git for-each-ref --format="%(push:track)" refs/heads)" != '' ]; then
 		echo 'Other branches:'
-		ggu
+		git-branches-status
 	fi
 else
 	echo "Nothing to push on this branch."
