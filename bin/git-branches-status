@@ -6,7 +6,11 @@ usage () {
 }
 
 if [ "$#" -eq 0 ]; then
-	git for-each-ref --format='%(align:15,right)%(push:track)%(end) %(refname:lstrip=2)' refs/heads
+	if [ "$(git for-each-ref --format="%(push:track)" refs/heads)" != '' ]; then
+		git for-each-ref --format='%(align:15,right)%(push:track)%(end) %(refname:lstrip=2)' refs/heads
+	else
+		git branch
+	fi
 elif [ "$#" -eq 1 ]; then
 	if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
 		usage
