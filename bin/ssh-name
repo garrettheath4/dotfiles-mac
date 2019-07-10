@@ -27,7 +27,7 @@ fi
 
 if [ "$#" -le 1 ]; then
 	# Assume we want to log in to a Tmux session
-	command ssh -t "$@" 'tmux || bash --login'
+	command ssh -t "$@" 'tmux has-session &>/dev/null && tmux attach || tmux || bash --login'
 else
 	command ssh "$@"
 fi
