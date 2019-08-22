@@ -1,16 +1,24 @@
 #!/usr/bin/env bash
 
 if [ "$#" -ge 1 ]; then
+	pasteboard=0
+	if [ "$1" == '-c' ]; then
+		pasteboard=1
+		shift
+	fi
 	test_host="$1"
-	host_command='host '"$test_host"
-	if ! host_command_out=$(eval "$host_command"); then
-		echo "\$ $host_command"
-		echo "$host_command_out"
+	if (( ! "$pasteboard" )); then
+		host_command='host '"$test_host"
+		if ! host_command_out=$(eval "$host_command"); then
+			echo "\$ $host_command"
+			echo "$host_command_out"
+		fi
 	fi
 fi
 
 if [ "$#" -lt 2 ]; then
-	echo "Usage: $(basename "$0") <host> <port>"
+	echo "Usage: $(basename "$0") [-c] <host> <port>"
+	echo '-c : Copies command to clipboard instead of running it'
 	exit 1
 fi
 
@@ -18,9 +26,12 @@ fi
 test_port="$2"
 test_command='(echo >/dev/tcp/'"$test_host"'/'"$test_port"' </dev/null) >/dev/null 2>&1 && echo "Port is open" || echo "ERROR: Port is NOT open"'
 
-# Print command for easy copying
-echo "\$ $test_command"
-
-# Run command
-eval "$test_command"
+# Print command for easy copying and then run it
+if (( "$pasteboard" )); then
+	echo    "$test_command"
+	echo -n "$test_command" | pbcopy
+else
+	echo "\$ $test_command"
+	eval "$test_command"
+fi
 
