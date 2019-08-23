@@ -11,7 +11,7 @@ if [ -n "$WindowName" ] && [ -n "${TMUX}" ] && [ "$(tmux display-message -p '#W'
 	# WindowName is non-empty && this is a Tmux session && the Tmux window has the default (non-custom) name
 	GreenTxt="$(tput setaf 2)"
 	ResetColors="$(tput sgr0)"
-	echo "${GreenTxt}Renaming Tmux window to match current directory${ResetColors}" 1>&2
+	echo -n "${GreenTxt}Renaming Tmux window to match current directory: ${ResetColors}" 1>&2
 	tmux rename-window "$WindowName"
 fi
 # shellcheck disable=SC2164
