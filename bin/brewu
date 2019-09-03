@@ -6,11 +6,13 @@ echo '==> Outdated Packages'
 brewOutdated=$(brew outdated)
 echo "$brewOutdated"
 
+# shellcheck disable=SC2016
 echo '==> Outdated Casks (update with `brew cask upgrade`)'
 caskOutdated=$(brew cask outdated)
 echo "$caskOutdated"
 
 if [ -n "$brewOutdated" ]; then
+	echo -en '\a'
 	read -p "Some packages are outdated. Upgrade? (Y/n): " -n 1 -r
 	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
 		brew upgrade
@@ -18,6 +20,7 @@ if [ -n "$brewOutdated" ]; then
 fi
 
 if [ -n "$caskOutdated" ]; then
+	echo -en '\a'
 	read -p "Some casks are outdated. Upgrade casks? (Y/n): " -n 1 -r
 	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
 		brew cask upgrade
