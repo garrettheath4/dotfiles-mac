@@ -13,6 +13,7 @@ if [ -n "${TMUX}" ]; then
 			drlvapiapp01) windowName='Test_API'; ;;
 			prlvapiapp01) windowName='PROD_API'; ;;
 			drlvmtlapp01) windowName='Test_Mtl'; ;;
+			prlvfusapp01) windowName='PROD_Fusion'; ;;
 		esac
 		# From article: https://blog.no-panic.at/2015/04/21/set-tmux-pane-title-on-ssh-connections/
 		# Source Gist:  https://gist.github.com/florianbeer/ee02c149a7e25f643491
@@ -27,7 +28,7 @@ fi
 
 if [ "$#" -le 1 ]; then
 	# Assume we want to log in to a Tmux session
-	command ssh -t "$@" 'tmux has-session &>/dev/null && tmux attach || tmux || bash --login'
+	command ssh -t "$@" 'tmux new-session -A -n Main -s Remote || bash --login'
 else
 	command ssh "$@"
 fi
