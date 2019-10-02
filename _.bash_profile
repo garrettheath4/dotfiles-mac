@@ -1,6 +1,34 @@
 # ~/.bash_profile: executed by bash(1) for login shells and Terminal.app sessions on macOS
 # (e.g. login via ssh or direct console login without GUI)
 
+# Add user bin and sbin folders to PATH
+# [[ is not POSIX compatible so using alternative from https://stackoverflow.com/a/20460402/1360295
+if [ -d "$HOME/bin" ] && [ -n "${PATH##*$HOME/bin*}" ]; then
+	export PATH="$PATH:$HOME/bin"
+fi
+
+if [ -d "$HOME/sbin" ] && [ -n "${PATH##*$HOME/sbin*}" ]; then
+	export PATH="$PATH:$HOME/sbin"
+fi
+
+# Tmux-specific commands (only run if Tmux is installed)
+# This should go at the top of .bash_profile since we don't need to worry about
+# setting up THIS shell if we're just going to launch Tmux with its own shell so
+# setting up THIS shell doesn't matter if Tmux is installed (until Tmux exits)
+if command -v tmux >/dev/null 2>&1; then
+	# Tmux is installed
+	if [ -z "${TMUX+defined}" ]; then
+		# This is NOT a Tmux session
+		if [ "$ITERM_PROFILE" = "Hotkey" ] || [ "$ITERM_PROFILE" = "Hotkey Window" ]; then
+			# This is an iTerm2 window with the Hotkey profile
+			tmux-name
+		fi
+	else
+		# This IS a Tmux session
+		alias ssh='ssh-name'
+	fi
+fi
+
 # Source local definitions
 # I recommend putting a custom command prompt in .bash_profile.local
 # like: export PS1="\u@\h:\W$(tput sgr0) \$ "
@@ -55,6 +83,9 @@ alias gga='git add'
 alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
 
+## Other terminal shortcuts
+alias mvnt='mvn dependency:tree -Dverbose | vim "+set bt=nofile" -'
+
 ## GUI app shortcuts
 alias preview='open -a Preview'
 
@@ -70,36 +101,11 @@ else
 	alias vimro="vim -RMn"
 fi
 
-# Add user bin and sbin folders to PATH
-# [[ is not POSIX compatible so using alternative from https://stackoverflow.com/a/20460402/1360295
-if [ -d "$HOME/bin" ] && [ -n "${PATH##*$HOME/bin*}" ]; then
-	export PATH="$PATH:$HOME/bin"
-fi
-
-if [ -d "$HOME/sbin" ] && [ -n "${PATH##*$HOME/sbin*}" ]; then
-	export PATH="$PATH:$HOME/sbin"
-fi
-
 # Setting PATH for Python 3.5
 # The orginal version is saved in .bash_profile.pysave
 if [ -d "/Library/Frameworks/Python.framework/Versions/3.5/bin" ]; then
 	PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 	export PATH
-fi
-
-# Tmux-specific commands (only run if Tmux is installed)
-if command -v tmux >/dev/null 2>&1; then
-	# Tmux is installed
-	if [ -z "${TMUX+defined}" ]; then
-		# This is NOT a Tmux session
-		if [ "$ITERM_PROFILE" = "Hotkey" ] || [ "$ITERM_PROFILE" = "Hotkey Window" ]; then
-			# This is an iTerm2 window with the Hotkey profile
-			tmux-name
-		fi
-	else
-		# This IS a Tmux session
-		alias ssh='ssh-name'
-	fi
 fi
 
 
