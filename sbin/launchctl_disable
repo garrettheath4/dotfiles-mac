@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+# vim: set filetype=sh:
+
+if [ "$#" -ne 1 ]; then
+	echo "Usage: $0 <launchctl-service-to-disable>"
+	exit 1
+fi
+
+function list {
+	if [ -e "$1" ]; then
+		echo "==> ls $1"
+		ls -1 "$1"
+	else
+		echo "==> Nothing disabled in $1"
+	fi
+}
+
+function remove_all {
+	mv      "$HOME/Library/LaunchAgents/$1.plist" "$HOME/Library/LaunchAgents/Disabled/"
+	sudo mv "/Library/LaunchAgents/$1.plist"  /Library/LaunchAgents/Disabled/
+	sudo mv "/Library/LaunchDaemons/$1.plist" /Library/LaunchDaemons/Disabled/
+	sudo mv "/System/LaunchAgents/$1.plist"   /System/LaunchAgents/Disabled/
+	sudo mv "/System/LaunchDaemons/$1.plist"  /System/LaunchDaemons/Disabled/
+}
+
+function disable {
+	if [[ $1 == system/* ]]; then
+		echo "==> sudo launchctl disable $1"
+		sudo launchctl disable "$1"
+	else
+		echo "==> launchctl disable $1"
+		launchctl disable "$1"
+	fi
+}
+
+function bootout {
+	if [[ $1 == system/* ]]; then
+		echo "==> sudo launchctl bootout $1"
+		sudo launchctl bootout "$1"
+	else
+		echo "==> launchctl bootout $1"
+		launchctl bootout "$1"
+	fi
+}
+
+if [ "$1" == "-l" ]; then
+	list ~/Library/LaunchAgents/Disabled
+	list /Library/LaunchAgents/Disabled
+	list /Library/LaunchDaemons/Disabled
+	list /System/LaunchAgents/Disabled
+	list /System/LaunchDaemons/Disabled
+else
+	bootout "system/$1"
+	bootout "user/$UID/$1"
+	bootout "gui/$UID/$1"
+
+	# disable
+	disable "system/$1"
+	disable "user/$UID/$1"
+	disable "gui/$UID/$1"
+
+	remove_all "$1"
+fi
