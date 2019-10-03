@@ -3,8 +3,8 @@
 brew update
 echo
 echo '==> Outdated Packages'
-brewOutdated=$(brew outdated)
-echo "$brewOutdated"
+brewOutdated=$(brew outdated --verbose)
+echo "$brewOutdated" | sed -E 's|([^ ]+)(.*)|\1\2  -  https://formulae.brew.sh/formula/\1|'
 
 # shellcheck disable=SC2016
 echo '==> Outdated Casks (update with `brew cask upgrade`)'
