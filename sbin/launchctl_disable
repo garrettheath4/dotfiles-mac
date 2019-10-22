@@ -6,6 +6,8 @@ if [ "$#" -ne 1 ]; then
 	exit 1
 fi
 
+debug=true
+
 function list {
 	if [ -e "$1" ]; then
 		echo "==> ls $1"
@@ -16,11 +18,37 @@ function list {
 }
 
 function remove_all {
-	mv      "$HOME/Library/LaunchAgents/$1.plist" "$HOME/Library/LaunchAgents/Disabled/"
-	sudo mv "/Library/LaunchAgents/$1.plist"  /Library/LaunchAgents/Disabled/
-	sudo mv "/Library/LaunchDaemons/$1.plist" /Library/LaunchDaemons/Disabled/
-	sudo mv "/System/LaunchAgents/$1.plist"   /System/LaunchAgents/Disabled/
-	sudo mv "/System/LaunchDaemons/$1.plist"  /System/LaunchDaemons/Disabled/
+	service=${1%.plist}
+	remove_if_exist "$HOME/Library/LaunchAgents/$service.plist"
+	remove_if_exist "/Library/LaunchAgents/$service.plist"
+	remove_if_exist "/Library/LaunchDaemons/$service.plist"
+	remove_if_exist "/System/LaunchAgents/$service.plist"
+	remove_if_exist "/System/LaunchDaemons/$service.plist"
+}
+
+function remove_if_exist {
+	if [ -e "$1" ]; then
+		mkdir_if_not_exist "$(dirname "$1")/Disabled/"
+		if [[ $1 == $HOME* ]]; then
+			mv -v "$1" "$(dirname "$1")/Disabled/"
+		else
+			sudo mv -v "$1" "$(dirname "$1")/Disabled/"
+		fi
+	else
+		if [ "$debug" == true ]; then
+			echo "$1 does not exist"
+		fi
+	fi
+}
+
+function mkdir_if_not_exist {
+	if [ ! -e "$1" ]; then
+		if [[ $1 == $HOME* ]]; then
+			mkdir -v "$1"
+		else
+			sudo mkdir -v "$1"
+		fi
+	fi
 }
 
 function disable {
