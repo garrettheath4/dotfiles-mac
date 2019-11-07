@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Find the first "version" property in the JSON
+latest_version=$(curl --location --silent "https://data.services.jetbrains.com/products/releases?code=IIU" | grep -o -E --max-count=1 '"version":"[^",]+' | head -n1 | cut -c12-)
+
+installed_build=$(find /Applications/JetBrains/apps/IDEA-U/ch-0/* -maxdepth 0 -type d | cut -c42- | sort --reverse | head -n1)
+
+installed_version=$(sed -n -e '/<key>CFBundleShortVersionString<\/key>/,/.*/p' "/Applications/JetBrains/apps/IDEA-U/ch-0/$installed_build/IntelliJ IDEA.app/Contents/Info.plist" | tail -n1 | sed -E 's/[^<]*<string>([-0-9.]+)<\/string>.*/\1/')
+
+if [ "$latest_version" == "$installed_version" ]; then
+	echo "The latest version of IntelliJ IDEA Ultimate is installed: $latest_version"
+else
+	echo "A new version of IntelliJ IDEA Ultimate is available: $latest_version"
+	echo "You currently have $installed_version installed"
+fi
