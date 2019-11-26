@@ -32,8 +32,7 @@ fi
 # Source local definitions
 # I recommend putting a custom command prompt in .bash_profile.local
 # like: export PS1="\u@\h:\W$(tput sgr0) \$ "
-# shellcheck disable=SC1091
-# shellcheck source=../.bash_profile.local
+# shellcheck source=../.bash_profile.local disable=SC1091
 test -f ~/.bash_profile.local -a -x ~/.bash_profile.local && . "$_"
 
 # Add background color to command prompt
@@ -46,12 +45,12 @@ ResetColorsPS="\\[$(tput sgr0)\\]"
 export PS1="${BlueBgPS}${PS1}${ResetColorsPS}"
 export PS2="${BlueBgPS}${PS2}${ResetColorsPS}"
 
-# shellcheck disable=SC1091
-# shellcheck source=../.git-completion.bash
+# shellcheck source=../.git-completion.bash disable=SC1091
 test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . "$_"
 
 # Enable Bash completion scripts from Homebrew installs if Homebrew and Homebrew:bash-completion are installed
 # bash-completion can be installed with: brew install bash-completion
+# shellcheck source=/usr/local/etc/bash_completion disable=SC1091
 (command -v brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_completion" && . "$_"
 
 # User aliases
