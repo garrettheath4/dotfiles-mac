@@ -11,19 +11,38 @@ echo '==> Outdated Casks (update with `brew cask upgrade`)'
 caskOutdated=$(brew cask outdated)
 echo "$caskOutdated"
 
+rangBell=no
+pleaseUpgradePackages=no
+pleaseUpgradeCasks=no
+
 if [ -n "$brewOutdated" ]; then
-	echo -en '\a'
+	if [ "$rangBell" == "no" ]; then
+		echo -en '\a'
+		rangBell=yes
+	fi
 	read -p "Some packages are outdated. Upgrade? (Y/n): " -n 1 -r
 	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
-		brew upgrade
+		pleaseUpgradePackages=yes
 	fi
 fi
 
 if [ -n "$caskOutdated" ]; then
-	echo -en '\a'
+	if [ "$rangBell" == "no" ]; then
+		echo -en '\a'
+		rangBell=yes
+	fi
 	read -p "Some casks are outdated. Upgrade casks? (Y/n): " -n 1 -r
 	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
 		brew cask upgrade
+		pleaseUpgradeCasks=yes
 	fi
+fi
+
+if [ "$pleaseUpgradePackages" == "yes" ]; then
+	brew upgrade
+fi
+
+if [ "$pleaseUpgradeCasks" == "yes" ]; then
+	brew cask upgrade
 fi
 
