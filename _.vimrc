@@ -21,8 +21,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 "*****************************************************************************
-"" Vundle install plugins
-"*****************************************************************************
+"" Vundle install plugins begin
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -37,6 +36,7 @@ Plugin 'vim-airline/vim-airline'     " Fancy Vim statusline
 "-----------------------------------------------------------------------------
 "" garrettheath4 custom plugins
 
+Plugin 'jaredgorski/SpaceCamp'       " Modern Vim colorscheme
 Plugin 'godlygeek/tabular'           " Align text tables with :Tabularize
 Plugin 'elzr/vim-json'               " JSON
 Plugin 'maksimr/vim-jsbeautify'      " JavaScript with :call JsBeautify()
@@ -50,6 +50,8 @@ if has("mac")
   Plugin 'darfink/vim-plist'
 endif
 
+"" Vundle install plugins end
+"*****************************************************************************
 
 " All of your Plugins must be added before the following line
 call vundle#end()             " required
@@ -99,7 +101,7 @@ map Q gq
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   set guioptions-=T
-  color koehler
+  color SpaceCamp
   syntax on
   hi Error guifg=Yellow guibg=Red ctermfg=8 ctermbg=1
   set hlsearch
