@@ -4,6 +4,7 @@
 # Vim files
 *~
 *.swp
+.viminfo
 
 # Vim plugin files
 _.vim/.netrwhist

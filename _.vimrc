@@ -1,9 +1,18 @@
-" VUNDLE PLUGIN MANAGER START "
+"*****************************************************************************
+"" VUNDLE PLUGIN MANAGER BEGIN
+"*****************************************************************************
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+let vundle_exists=expand('~/.vim/bundle/Vundle.vim')
+
+if !isdirectory(vundle_exists)
+  echoerr "You have to first install Vundle yourself! https://github.com/VundleVim/Vundle.vim"
+  execute "q!"
+endif
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -11,32 +20,30 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+"*****************************************************************************
+"" Vundle install plugins
+"*****************************************************************************
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" List Vundle plugin packages here
+"-----------------------------------------------------------------------------
+"" Plugins suggested by https://vim-bootstrap.com/
 
-" tabular: #MakeTextTablesPrettyAgain
-Plugin 'godlygeek/tabular'
-" vim-json: #MakeJsonPrettyAgain
-Plugin 'elzr/vim-json'
-" vim-jsbeautify: #MakeJavaScriptPrettyAgain
-" Usage: :call JsBeautify()
-Plugin 'maksimr/vim-jsbeautify'
-" xml.vim: #MakeXmlPrettyAgain
-Plugin 'othree/xml.vim'
-" AnsiEsc.vim: #MakeANSIEscapeSequencesPrettyAgain
-Plugin 'AnsiEsc.vim'
-" syntastic: Syntax checking plugin (includes ShellCheck support for scripts)
-Plugin 'scrooloose/syntastic'
-" Coding language-specific plugins: vim-scala
-Plugin 'derekwyatt/vim-scala'
-" vim-fugitive: Git wrapper
-Plugin 'tpope/vim-fugitive'
-" nerdtree: Vim file browser
-Plugin 'scrooloose/nerdtree'
-" nerdtree-git-plugin: Git plugin for nerdtree (requires nerdtree obviously)
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/nerdtree'         " Vim file browser
+Plugin 'tpope/vim-fugitive'          " Git wrapper
+Plugin 'vim-airline/vim-airline'     " Fancy Vim statusline
+
+"-----------------------------------------------------------------------------
+"" garrettheath4 custom plugins
+
+Plugin 'godlygeek/tabular'           " Align text tables with :Tabularize
+Plugin 'elzr/vim-json'               " JSON
+Plugin 'maksimr/vim-jsbeautify'      " JavaScript with :call JsBeautify()
+Plugin 'othree/xml.vim'              " XML
+Plugin 'AnsiEsc.vim'                 " Interpret ANSI esc sequences w/ :AnsiEsc
+Plugin 'derekwyatt/vim-scala'        " Scala
+Plugin 'Xuyuanp/nerdtree-git-plugin' " Git plugin for nerdtree (nerdtree req'd)
 
 if has("mac")
   " List Mac-specific Vundle plugin packages here
@@ -59,32 +66,9 @@ filetype plugin indent on     " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" VUNDLE PLUGIN MANAGER END   "
-
-" Plugin-specific configurations
-
-" Syntastic configurations
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-set statusline+=%=%-14.(%l,%c%V%)\ %P
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-if has("multi_byte")
-	let g:syntastic_error_symbol = "✗✗"
-	let g:syntastic_warning_symbol = "◊◊"
-else
-	let g:syntastic_error_symbol = "!>"
-	let g:syntastic_warning_symbol = "~>"
-endif
-" Check the syntax with Syntastic using the shortcut <leader>c (usually \c)
-nmap <leader>c :SyntasticCheck<CR>
-nmap <leader>s :SyntasticToggleMode<CR>
-" Disable Syntastic auto checking for Java files
-let g:syntastic_mode_map = { "mode": "active", "active_filetypes": [], "passive_filetypes": ["java"] }
+"*****************************************************************************
+"" VUNDLE PLUGIN MANAGER BEGIN
+"*****************************************************************************
 
 " General Vim configurations
 
@@ -119,7 +103,7 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   hi Error guifg=Yellow guibg=Red ctermfg=8 ctermbg=1
   set hlsearch
-  set cul
+  set cursorline
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -157,33 +141,31 @@ endif " has("autocmd")
 " Alter the sort sequence for the Netrw Directory Listing
 " g:netrw_sort_sequence = [\/]$,\<core\%(\.\d\+\)\=\>,\.c$,\.cpp$,\.h$,\.txt$,\.in$,\.out$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
 
-
-" ai=Auto Indent, si=Smart Indent, ci=C code indent, pi=Preserve Indent
-set ts=5
-set sw=5
-set ai
-set si
-set ci
-set pi
-" is=Incremental Search
-set is
-set so=2
-set ru
-set ex
+set tabstop=4
+set sw=4
+set autoindent
+set smartindent
+set copyindent
+set preserveindent
+set incsearch
+set scrolloff=1
+set ruler
+set exrc
 set backspace=2
-set nu
-" list=Show formatting characters
-set list
+set number
+set list                             " Show formatting characters
 " Show <Tab> as >-- and trailing spaces as ~
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 " Set color of eol, extends, and precedes to black (visible only when editing line)
 highlight NonText    ctermfg=0 guifg=Black
 " Set color of nbsp, tab, and trail to dark gray
 highlight SpecialKey ctermfg=8 guifg=DarkGray
-set ml
-set mls=3
+set modeline
+set modelines=3
 if has("gui_running") && !exists("mvim")
   set acd
   set lines=91
   set columns=85
 endif
+
+" vim: set ts=2 sw=2 vts=2 sta sts=2 sr et:
