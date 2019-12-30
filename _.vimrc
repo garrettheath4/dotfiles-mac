@@ -32,6 +32,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'         " Vim file browser
 Plugin 'tpope/vim-fugitive'          " Git wrapper
 Plugin 'vim-airline/vim-airline'     " Fancy Vim statusline
+Plugin 'dense-analysis/ale'          " Asynchronous Lint Engine
+Plugin 'jelera/vim-javascript-syntax'
 
 "-----------------------------------------------------------------------------
 "" garrettheath4 custom plugins
@@ -169,5 +171,28 @@ if has("gui_running") && !exists("mvim")
   set lines=91
   set columns=85
 endif
+
+" vim-airline
+" let g:airline_theme = 'powerlineish'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline_skip_empty_sections = 1
+
+" ale
+" let g:ale_fix_on_save = 1
+" let g:ale_linters_explicit = 1
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'javascriptreact': ['eslint'],
+\   'sh': ['shellcheck'],
+\}
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'javascriptreact': ['prettier'],
+\   'css': ['prettier'],
+\}
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma --no-semi es5'
 
 " vim: set ts=2 sw=2 vts=2 sta sts=2 sr et:
