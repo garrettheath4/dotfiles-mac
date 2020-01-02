@@ -173,7 +173,6 @@ if has("gui_running") && !exists("mvim")
 endif
 
 " vim-airline
-" let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -181,8 +180,8 @@ let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
 
 " ale
-" let g:ale_fix_on_save = 1
-" let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 0            " Maybe set to 1
+let g:ale_linters_explicit = 0       " Maybe set to 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'javascriptreact': ['eslint'],
