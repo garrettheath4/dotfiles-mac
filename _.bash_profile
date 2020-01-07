@@ -11,6 +11,8 @@ if [ -d "$HOME/sbin" ] && [ -n "${PATH##*$HOME/sbin*}" ]; then
 	export PATH="$PATH:$HOME/sbin"
 fi
 
+export VISUAL=vim
+
 # Tmux-specific commands (only run if Tmux is installed)
 # This should go at the top of .bash_profile since we don't need to worry about
 # setting up THIS shell if we're just going to launch Tmux with its own shell so
