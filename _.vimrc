@@ -71,7 +71,7 @@ filetype plugin indent on     " required
 " Put your non-Plugin stuff after this line
 
 "*****************************************************************************
-"" VUNDLE PLUGIN MANAGER BEGIN
+"" VUNDLE PLUGIN MANAGER END
 "*****************************************************************************
 
 " General Vim configurations
@@ -178,6 +178,19 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
+
+" The Silver Searcher
+" source: https://thoughtbot.com/blog/faster-grepping-in-vim
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " ale
 let g:ale_fix_on_save = 0            " Maybe set to 1
