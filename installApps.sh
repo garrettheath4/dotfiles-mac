@@ -69,6 +69,14 @@ OpenAppLinkAndPrompt () {
 	read -r -p "Press Enter after $AppName is installed to continue..."
 }
 
+CommandExists () {
+	command -v "$1" >/dev/null 2>&1
+}
+
+CommandDoesNotExist () {
+	! CommandExists "$1"
+}
+
 #
 # FILES
 #
@@ -95,7 +103,7 @@ fi
 # Git (needed first to install Homebrew and its apps in this script)
 #
 
-if ! command -v git >/dev/null 2>&1 && GenericInstallPrompt "git (and other developer command line tools)"; then
+if CommandDoesNotExist git && GenericInstallPrompt "git (and other developer command line tools)"; then
 	xcode-select --install
 	# macOS should prompt you to install the Developer Tools which includes Git
 	# OpenAppLinkAndPrompt is just a fancy way to wait for the GUI installation
@@ -103,7 +111,7 @@ if ! command -v git >/dev/null 2>&1 && GenericInstallPrompt "git (and other deve
 	OpenAppLinkAndPrompt 'Git'
 fi
 
-if ! command -v git >/dev/null 2>&1; then
+if CommandDoesNotExist git; then
 	echo 'Warning: It appears that Git was not installed. You may need to install it yourself.'
 	exit 1
 else
@@ -115,13 +123,13 @@ fi
 # Homebrew (needed to install other tools and apps in this script)
 #
 
-if ! command -v brew >/dev/null 2>&1 && GenericInstallPrompt "Homebrew"; then
+if CommandDoesNotExist brew && GenericInstallPrompt "Homebrew"; then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
 	brew --version
 fi
 
-if ! command -v brew >/dev/null 2>&1; then
+if CommandDoesNotExist brew; then
 	echo 'Warning: It appears that Homebrew was not installed. You may need to install it yourself.'
 	exit 2
 fi
@@ -148,15 +156,19 @@ if ConfirmInstallApp 'LastPass Universal Mac Installer' "$LastPassInstallerApp";
 fi
 
 # Tmux
-if ! command -v tmux >/dev/null 2>&1 && GenericInstallPrompt "Tmux"; then
+if CommandDoesNotExist tmux && GenericInstallPrompt "Tmux"; then
 	brew install tmux
 else
 	tmux -V
 fi
 
 # reattach-to-user-namespace (for Tmux copy-paste to work on macOS)
-if command -v tmux >/dev/null 2>&1 && ! command -v reattach-to-user-namespace >/dev/null 2>&1 && GenericInstallPrompt "reattach-to-user-namespace"; then
+if CommandExists tmux && CommandDoesNotExist reattach-to-user-namespace && GenericInstallPrompt "reattach-to-user-namespace"; then
 	brew install reattach-to-user-namespace
+fi
+
+if CommandDoesNotExist ag; then
+	brew install ag
 fi
 
 #
