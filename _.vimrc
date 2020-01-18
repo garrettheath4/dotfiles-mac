@@ -46,6 +46,7 @@ Plugin 'othree/xml.vim'              " XML
 Plugin 'AnsiEsc.vim'                 " Interpret ANSI esc sequences w/ :AnsiEsc
 Plugin 'derekwyatt/vim-scala'        " Scala
 Plugin 'Xuyuanp/nerdtree-git-plugin' " Git plugin for nerdtree (nerdtree req'd)
+Plugin 'ctrlpvim/ctrlp.vim'          " Full path fuzzy file finder
 
 if has("mac")
   " List Mac-specific Vundle plugin packages here
