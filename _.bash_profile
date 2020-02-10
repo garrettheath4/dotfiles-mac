@@ -71,12 +71,12 @@ export PS1="${BlueBgPS}${PS1}${ResetColorsPS}"
 export PS2="${BlueBgPS}${PS2}${ResetColorsPS}"
 
 # shellcheck source=../.git-completion.bash disable=SC1091
-test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && . "$_"
+test -f ~/.git-completion.bash -a -x ~/.git-completion.bash && source "$_"
 
 # Enable Bash completion scripts from Homebrew installs if Homebrew and Homebrew:bash-completion are installed
 # bash-completion can be installed with: brew install bash-completion
 # shellcheck source=/usr/local/etc/bash_completion disable=SC1091
-(command -v brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_completion" && . "$_"
+(command -v brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_completion" && source "$_"
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -94,8 +94,8 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Set the editor to Vim if it is installed
-if which vim >/dev/null 2>&1; then
-	EDITOR=$(which vim)
+if command -v vim >/dev/null 2>&1; then
+	EDITOR=$(command -v vim)
 	export EDITOR
 	alias vimro="vim -RMn"
 fi
@@ -139,7 +139,7 @@ ifDistIsThenSource () {
 		echo "Usage: ifDistIsThenSource: Ubuntu ~/.bashrc.os.ubuntu" 1>&2
 		return 1
 	fi
-	if ( which lsb_release 1>/dev/null 2>&1 && lsb_release -i | grep -F "$1" 1>/dev/null 2>&1 ); then
+	if ( command -v lsb_release 1>/dev/null 2>&1 && lsb_release -i | grep -F "$1" 1>/dev/null 2>&1 ); then
 		if [ -r "$2" ]; then
 			# shellcheck disable=SC1090
 			. "$2"
@@ -149,6 +149,9 @@ ifDistIsThenSource () {
 
 # Bootstrap based on OS/Disto
 ifDistIsThenSource "Raspbian" ~/.bashrc.os.raspbian
+
+# Decorate terminal prompt using oh-my-git
+test -f ~/dotfiles/oh-my-git/prompt.sh && source "$_"
 
 
 # vim: set ft=sh:
