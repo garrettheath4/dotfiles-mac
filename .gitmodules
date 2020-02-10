@@ -1,3 +1,10 @@
 [submodule "_.vim/bundle/Vundle.vim"]
 	path = _.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "oh-my-git"]
+	path = oh-my-git
+	url = https://github.com/arialdomartini/oh-my-git.git
+[submodule "awesome-terminal-fonts"]
+	path = awesome-terminal-fonts
+	url = https://github.com/gabrielelana/awesome-terminal-fonts.git
+	branch = patching-strategy
