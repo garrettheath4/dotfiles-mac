@@ -151,6 +151,7 @@ ifDistIsThenSource () {
 ifDistIsThenSource "Raspbian" ~/.bashrc.os.raspbian
 
 # Decorate terminal prompt using oh-my-git
+# shellcheck disable=SC1090
 test -f ~/dotfiles/oh-my-git/prompt.sh && source "$_"
 
 
