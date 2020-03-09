@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+search_for='^javax/ws/rs/core/Response.class'
+if [ "$#" -eq 1 ]; then
+	search_for="$1"
+else
+	echo "Searching for $search_for by default since no argument was given"
+fi
+
+mvn dependency:build-classpath | grep '^/' | tr : '\n' | while IFS= read -r jar_filename; do
+	search_result=$(jar tf "$jar_filename" | grep "$search_for")
+	if [ -n "$search_result" ]; then
+		echo "$jar_filename:"
+		echo "$search_result" | sed 's/^/  /'
+	fi
+done
