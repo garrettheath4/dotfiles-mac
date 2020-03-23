@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>com.garrettheath4.brew.update.plist</string>
+	<string>com.garrettheath4.brew.update</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>/Users/gkoller/bin/brewu</string>
