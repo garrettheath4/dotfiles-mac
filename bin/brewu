@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+if [ "$1" == '-qn' ]; then
+	brew update >/dev/null
+	brewOutdated=$(brew outdated)
+	caskOutdated=$(brew cask outdated)
+	if [ -n "$brewOutdated" ] || [ -n "$caskOutdated" ]; then
+		# shellcheck disable=SC2016
+		osascript -e 'display notification "Homebrew" with title "Updates are available for Homebrew. Run `brewu` when you get a chance."'
+		exit 1
+	else
+		exit 0
+	fi
+fi
+
 brew update
 echo
 echo '==> Outdated Packages'

@@ -14,6 +14,7 @@ if [ -n "${TMUX}" ]; then
 			prlvapiapp01) windowName='PROD_API'; ;;
 			drlvmtlapp01) windowName='Test_Mtl'; ;;
 			prlvfusapp01) windowName='PROD_Fusion'; ;;
+			pdtechsrvr1)  windowName='TEST_CDH_5'; ;;
 			prlpcdhvip)   windowName='PROD_CDH_5'; ;;
 		esac
 		# From article: https://blog.no-panic.at/2015/04/21/set-tmux-pane-title-on-ssh-connections/
