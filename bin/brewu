@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$1" == '-qn' ]; then
+if [ "$1" == '--notify' ]; then
 	brew update >/dev/null
 	brewOutdated=$(brew outdated)
 	caskOutdated=$(brew cask outdated)
