@@ -14,16 +14,48 @@ if [ "$1" == '--notify' ]; then
 	fi
 fi
 
+printWithUrlExceptTrusted() {
+	# Usage: printWithUrlExceptTrusted <brewOutdatedOutput> <approvedList> <formula|cask>
+
+	# ==> Outdated Packages
+	# libomp (9.0.1) < 10.0.0  -  https://formulae.brew.sh/formula/libomp
+	# sbt (1.3.8_1) < 1.3.9  -  https://formulae.brew.sh/formula/sbt
+	# ==> Outdated Casks (update with `brew cask upgrade`)
+	#
+
+	local brewOutdated="$1"
+	local approved="$2"
+	local urlPath="$3/"
+
+	while IFS= read -r line; do
+		if echo "$approved" | grep -wq "$(echo "$line" | cut -f1 -d' ')"; then
+			echo "$line"
+		else
+			echo "$line" | sed -E "s|([^ ]+)(.*)|\1\2  -  https://formulae.brew.sh/$urlPath\1|"
+		fi
+	done <<< "$brewOutdated"
+}
+
+
+approvedPkgs='bash bash-completion ffmpeg flac freetype git imagemagick jpeg
+lame maven maven@3.6.1 mysql node node@10 openjdk openssl openssl@1.1
+postgresql@10 python readline reattach-to-user-namespace sbt scala scala@2.12
+shellcheck sqlite tmux tomcat wakeonlan watchman wget youtube-dl'
+
+approvedCasks='adoptopenjdk8 alfred anaconda atom backuploupe balenaetcher
+bettertouchtool dbeaver-enterprise discord docker firefox gimp goofy insync
+iterm2 macdown macvim signal toggl tunnelblick tuple'
+
 brew update
 echo
 echo '==> Outdated Packages'
 brewOutdated=$(brew outdated --verbose)
-echo "$brewOutdated" | sed -E 's|([^ ]+)(.*)|\1\2  -  https://formulae.brew.sh/formula/\1|'
+printWithUrlExceptTrusted "$brewOutdated" "$approvedPkgs" 'formula'
 
 # shellcheck disable=SC2016
 echo '==> Outdated Casks (update with `brew cask upgrade`)'
 caskOutdated=$(brew cask outdated)
-echo "$caskOutdated"
+printWithUrlExceptTrusted "$caskOutdated" "$approvedCasks" 'cask'
 
 rangBell=no
 pleaseUpgradePackages=no
