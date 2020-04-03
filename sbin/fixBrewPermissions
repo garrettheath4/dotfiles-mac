@@ -3,20 +3,20 @@
 sudo chown root:admin /usr/local
 sudo chmod g+w /usr/local
 
-sudo chown gkoller:admin /usr/local/bin
+sudo chown $USER:admin /usr/local/bin
 sudo chmod g+w /usr/local/bin
 
-sudo chown gkoller:admin /usr/local/share
+sudo chown $USER:admin /usr/local/share
 sudo chmod g+w /usr/local/share
 
-sudo chown gkoller:admin /usr/local/share/man
+sudo chown $USER:admin /usr/local/share/man
 sudo chmod g+w /usr/local/share/man
 
-sudo chown gkoller:admin /usr/local/share/man/man1
+sudo chown $USER:admin /usr/local/share/man/man1
 sudo chmod g+w /usr/local/share/man/man1
 
-sudo chown gkoller:admin /usr/local/share/man/de
+sudo chown $USER:admin /usr/local/share/man/de
 sudo chmod g+w /usr/local/share/man/de
 
-sudo chown gkoller:admin /usr/local/share/man/de/man1
+sudo chown $USER:admin /usr/local/share/man/de/man1
 sudo chmod g+w /usr/local/share/man/de/man1
