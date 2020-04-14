@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [ "$#" -ne 2 ]; then
+	echo "Usage: $0 <string_to_search_for> '<./**/*.*>'"
+fi
+
+shopt -s globstar
+
+for file in $2; do
+	if grep -Fiq "$1" "$file"; then
+		echo "$file:"
+		grep -Fi "$1" "$file"
+	fi
+done
