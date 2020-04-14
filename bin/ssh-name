@@ -12,7 +12,7 @@ if [ -n "${TMUX}" ]; then
 		case "$windowName" in
 			drlvapiapp01) windowName='Test_API'; ;;
 			prlvapiapp01) windowName='PROD_API'; ;;
-			drlvmtlapp01) windowName='Test_Mtl'; ;;
+			drlvfusapp01) windowName='Test_Fusion'; ;;
 			prlvfusapp01) windowName='PROD_Fusion'; ;;
 			pdtechsrvr1)  windowName='TEST_CDH_5'; ;;
 			prlpcdhvip)   windowName='PROD_CDH_5'; ;;
