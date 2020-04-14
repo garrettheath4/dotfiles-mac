@@ -132,6 +132,7 @@ alias ggl='git log --pretty=oneline --abbrev-commit'
 
 ## Other terminal shortcuts
 alias mvnt='mvn dependency:tree -Dverbose | vim "+set bt=nofile" -'
+alias mvnv='mvn versions:display-dependency-updates | less'
 
 ifDistIsThenSource () {
 	if [ "$#" -ne 2 ] || [ -z "$1" ] || [ -z "$2" ]; then
