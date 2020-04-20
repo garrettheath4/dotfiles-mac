@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+disagree() {
+	message="$1"
+	if [ -z "$message" ]; then
+		message="Disagree?"
+	fi
+	read -p "$message (yes/no) [default yes]: " -r
+	echo
+	if [[ $REPLY =~ ^[Nn] ]]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+bell() {
+	echo -en '\a'
+}
+
+# shellcheck disable=SC2120
+waitForKey() {
+	if [ -n "$1" ]; then
+		echo "$1"
+	fi
+	bell
+	read -n 1 -s -r -p 'Press any key to continue or Ctrl+C to exit... '
+	echo
+}
+
+echo 'This script runs based on what has been merged into the current branch.'
+
+currentBranch=$(git branch --show-current)
+
+if [ "$currentBranch" != master ]; then
+	if ! disagree 'Switch to the "master" branch?'; then
+		git checkout master
+		currentBranch=$(git branch --show-current)
+	fi
+fi
+
+branchesToDelete=$(git branch --merged | grep -Ev '(^\*|master|develop)')
+
+if [ -z "$branchesToDelete" ]; then
+	echo "There are no branches that have not been merged into $currentBranch."
+	exit 0
+fi
+
+echo 'The following branches will be deleted:'
+echo "$branchesToDelete"
+
+# shellcheck disable=SC2119
+waitForKey
+
+echo "$branchesToDelete" | xargs git branch -d
+
