@@ -152,13 +152,14 @@ set autoindent
 set smartindent
 set copyindent
 set preserveindent
+set nojoinspaces    " nojoinspaces => only 1 period after spaces when reformatting
 set incsearch
 set scrolloff=1
 set ruler
 set exrc
 set backspace=2
 set number
-set list                             " Show formatting characters
+set list            " Show formatting characters
 " Show <Tab> as >-- and trailing spaces as ~
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 " Set color of eol, extends, and precedes to black (visible only when editing line)
