@@ -191,8 +191,10 @@ fi
 
 # User aliases
 tick
-if man which | grep -F read-alias >/dev/null; then
-	alias which='alias | command which --tty-only --read-alias --show-dot --show-tilde'
+which_alias="alias | command which --tty-only --read-alias --show-dot --show-tilde"
+if $which_alias which 2>/dev/null ; then
+	# shellcheck disable=SC2139
+	alias which="$which_alias"
 	tockDebug "Yes read-alias"
 else
 	tockDebug 'No read-alias'
@@ -257,8 +259,12 @@ ifDistIsThenSource "Raspbian" ~/.bashrc.os.raspbian
 # Decorate terminal prompt using oh-my-git
 tick
 # shellcheck disable=SC1090 disable=SC2039
-test -f ~/dotfiles/oh-my-git/prompt.sh && source "$_"
-tockDebug "Yes oh-my-git"
+if test -f ~/dotfiles/oh-my-git/prompt.sh ; then
+	source "$_"
+	tockDebug "Yes oh-my-git"
+else
+	tockDebug "Yes oh-my-git"
+fi
 
 
 # vim: set ft=sh:
