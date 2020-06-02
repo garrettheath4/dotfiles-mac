@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ $# -lt 2 ]; then
+	echo "Usage: $(basename "$0") <https://example.com/video_playlist.m3u8> <downloaded_video.mp4>"
+	exit 1
+fi
+
+ffmpeg -protocol_whitelist file,http,https,tcp,tls,crypto -i "$1" -c copy "$2"
