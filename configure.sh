@@ -67,6 +67,7 @@ git config --global pull.ff only
 git config --global push.default simple
 git config --global diff.tool vimdiff
 git config --global color.ui auto
+git config --global alias.prune 'remote prune origin'
 
 if ! git config --global user.name || ! git config --global user.email ; then
 	read -rp "Enter your full name to set the user.name global configuration value in Git [$default_full_name]: "
