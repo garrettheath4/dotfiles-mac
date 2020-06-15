@@ -8,6 +8,7 @@ dotfiles="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 hidden_files='.bash_profile
 .git-completion.bash
+.editorconfig
 .vimrc
 .ideavimrc
 .tmux.conf
