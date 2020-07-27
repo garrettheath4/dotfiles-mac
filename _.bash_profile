@@ -59,6 +59,11 @@ tockDebug () {
 
 debug -T 'Yes interactive'
 
+if ! command -v gdate >/dev/null 2>&1; then
+	debug -T 'No gdate installed (for load times)'
+	ENABLE_DEBUG=0
+fi
+
 # Source system's global definitions
 tick
 if [ -f /etc/bashrc ]; then
