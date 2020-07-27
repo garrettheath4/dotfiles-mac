@@ -60,7 +60,7 @@ tockDebug () {
 debug -T 'Yes interactive'
 
 if ! command -v gdate >/dev/null 2>&1; then
-	debug -T 'No gdate installed (for load times)'
+	debug -T 'No gdate installed (for showing load times; install with `brew install coreutils`)'
 	ENABLE_DEBUG=0
 fi
 
