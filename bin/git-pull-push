@@ -2,10 +2,23 @@
 
 git pull || exit 1
 
-if [ "$(git for-each-ref --format="%(if)%(HEAD)%(then)%(push:track)%(end)" refs/heads)" != '' ]; then
-	git push || exit 2
-	echo 'All branches:'
-	git-branches-status
+# create a Bash array containing the major.minor.patch version of Git
+git_version=( $(git --version | grep --only-matching '[[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+' | sed 's/\./ /g') )
+git_major=${git_version[0]}
+git_minor=${git_version[1]}
+git_patch=${git_version[2]}
+
+# the "%(if)" field name was introduced in Git v2.13.7
+if [ "$git_major" -lt 2 ] || ( [ "$git_major" -eq 2 ] && [ "$git_minor" -lt 13 ] ) || ( [ "$git_major" -eq 2 ] && [ "$git_minor" -eq 13 ] && [ "$git_patch" -lt 7 ] ); then
+	git push
 else
-	echo "Nothing to push on this branch."
+	# only try to push if there is something to push in the first place
+	if [ "$(git for-each-ref --format="%(if)%(HEAD)%(then)%(push:track)%(end)" refs/heads)" != '' ]; then
+		git push || exit 2
+	else
+		echo "Nothing to push on this branch."
+	fi
 fi
+
+echo 'All branches:'
+git-branches-status
