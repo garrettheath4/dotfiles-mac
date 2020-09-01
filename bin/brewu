@@ -41,11 +41,11 @@ approvedPkgs='bash bash-completion ffmpeg flac freetype git imagemagick jpeg
 lame maven maven@3.6.1 mysql node node@10 openjdk openssl openssl@1.1
 postgresql@10 python readline reattach-to-user-namespace sbt scala scala@2.12
 shellcheck sqlite tmux tomcat wakeonlan watchman wget youtube-dl unbound
-harfbuzz backuploupe libde265 libheif balenaetcher'
+harfbuzz backuploupe libde265 libheif balenaetcher blender'
 
 approvedCasks='adoptopenjdk8 alfred anaconda atom backuploupe balenaetcher
 bettertouchtool dbeaver-enterprise discord docker firefox gimp goofy insync
-iterm2 macdown macvim signal toggl tunnelblick tuple'
+iterm2 macdown macvim signal toggl tunnelblick tuple blender'
 
 brew update
 echo
