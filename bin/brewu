@@ -42,7 +42,7 @@ lame maven maven@3.6.1 mysql node node@10 openjdk openssl openssl@1.1
 postgresql@10 python readline reattach-to-user-namespace sbt scala scala@2.12
 shellcheck sqlite tmux tomcat wakeonlan watchman wget youtube-dl unbound
 harfbuzz backuploupe libde265 libheif balenaetcher blender toggl black pipenv
-pylint python@3.8'
+pylint python@3.8 dos2unix glib libomp'
 
 approvedCasks='adoptopenjdk8 alfred anaconda atom backuploupe balenaetcher
 bettertouchtool dbeaver-enterprise discord docker firefox gimp goofy insync
