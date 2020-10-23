@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+approvedPkgsFile=~/.brew/approved_packages
+approvedCasksFile=~/.brew/approved_casks
+
 if [ "$1" == '--notify' ]; then
 	shift
 	brew update >/dev/null
@@ -36,28 +39,38 @@ printWithUrlExceptTrusted() {
 	done <<< "$brewOutdated"
 }
 
+messages=''
 
-approvedPkgs='bash bash-completion ffmpeg flac freetype git imagemagick jpeg
-lame maven maven@3.6.1 mysql node node@10 openjdk openssl openssl@1.1
-postgresql@10 python readline reattach-to-user-namespace sbt scala scala@2.12
-shellcheck sqlite tmux tomcat wakeonlan watchman wget youtube-dl unbound
-harfbuzz backuploupe libde265 libheif balenaetcher blender toggl black pipenv
-pylint python@3.8 dos2unix glib libomp'
+approvedPkgsList=''
+if [ -r $approvedPkgsFile ]; then
+	approvedPkgsList=$(cat $approvedPkgsFile)
+else
+	messages="${messages}No approved packages list file present at $approvedPkgsFile"
+fi
 
-approvedCasks='adoptopenjdk8 alfred anaconda atom backuploupe balenaetcher
-bettertouchtool dbeaver-enterprise discord docker firefox gimp goofy insync
-iterm2 macdown macvim signal toggl tunnelblick tuple blender'
+approvedCasksList=''
+if [ -r $approvedCasksFile ]; then
+	approvedCasksList=$(cat $approvedCasksFile)
+else
+	messages="${messages}No approved casks list file present at $approvedCasksFile"
+fi
+
+if [ -n "$messages" ]; then
+	echo '==> INFO'
+	echo "$messages"
+	echo
+fi
 
 brew update
 echo
 echo '==> Outdated Packages'
 brewOutdated=$(brew outdated --formula --verbose)
-printWithUrlExceptTrusted "$brewOutdated" "$approvedPkgs" 'formula'
+printWithUrlExceptTrusted "$brewOutdated" "$approvedPkgsList" 'formula'
 
 # shellcheck disable=SC2016
 echo '==> Outdated Casks (update with `brew upgrade --cask`)'
 caskOutdated=$(brew outdated --cask)
-printWithUrlExceptTrusted "$caskOutdated" "$approvedCasks" 'cask'
+printWithUrlExceptTrusted "$caskOutdated" "$approvedCasksList" 'cask'
 
 rangBell=no
 pleaseUpgradePackages=no
