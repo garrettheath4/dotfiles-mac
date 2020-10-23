@@ -45,19 +45,19 @@ approvedPkgsList=''
 if [ -r $approvedPkgsFile ]; then
 	approvedPkgsList=$(cat $approvedPkgsFile)
 else
-	messages="${messages}No approved packages list file present at $approvedPkgsFile"
+	messages="${messages}\nNo approved packages list file present at $approvedPkgsFile"
 fi
 
 approvedCasksList=''
 if [ -r $approvedCasksFile ]; then
 	approvedCasksList=$(cat $approvedCasksFile)
 else
-	messages="${messages}No approved casks list file present at $approvedCasksFile"
+	messages="${messages}\nNo approved casks list file present at $approvedCasksFile"
 fi
 
 if [ -n "$messages" ]; then
-	echo '==> INFO'
-	echo "$messages"
+	echo    '==> WARNING'
+	echo -e "$messages"
 	echo
 fi
 
