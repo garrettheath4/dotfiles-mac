@@ -1,6 +1,6 @@
 {
   "BTTPresetCreatorNotes" : "",
-  "BTTPresetInfoURL" : "https:\/\/github.com\/garrettheath4\/dotfiles-mac\/blob\/master\/BetterTouchTool-Garrett.bttpreset",
+  "BTTPresetInfoURL" : "",
   "BTTPresetName" : "Garrett",
   "BTTPresetColor" : "206.550000, 16.524000, 38.693700, 255.000000",
   "BTTGeneralSettings" : {
@@ -144,7 +144,7 @@
     "showOtherTriggersTab" : true,
     "BSTSnapAreaDefaultPictoDistanceFromLeft" : 0.10000000149011612
   },
-  "BTTPresetUUID" : "5A7005F2-C922-4A03-838F-CEE315A2EEC1",
+  "BTTPresetUUID" : "5F163050-577A-4A34-ADB6-B1242CBB70C1",
   "BTTPresetContent" : [
     {
       "BTTAppBundleIdentifier" : "error_no_bundle_identifier",
@@ -174,7 +174,7 @@
           "BTTPredefinedActionType" : 284,
           "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
           "BTTAdditionalActionData" : {
-            "BTTClipboardTransformerExampleInput" : "123",
+            "BTTClipboardTransformerExampleInput" : "",
             "SelectedTransformerTab" : 1,
             "BTTClipboardTransformerJS" : "async (clipboardContentString) => {\n  const d = new Date();\n  const YYYY = d.getFullYear().toString();\n  const MM = (d.getMonth() + 1).toString().padStart(2, '0');\n  const DD = d.getDate().toString().padStart(2, '0');\n  return `${YYYY}-${MM}-${DD}`;\n}\n"
           },
@@ -285,7 +285,7 @@
           "BTTPredefinedActionType" : 284,
           "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
           "BTTAdditionalActionData" : {
-            "BTTClipboardTransformerExampleInput" : "123",
+            "BTTClipboardTransformerExampleInput" : "",
             "SelectedTransformerTab" : 1,
             "BTTClipboardTransformerJS" : "async (clipboardContentString) => {\n  const d = new Date();\n  const YYYY = d.getFullYear().toString();\n  const MM = (d.getMonth() + 1).toString().padStart(2, '0');\n  const DD = d.getDate().toString().padStart(2, '0');\n  return `${YYYY}${MM}${DD}`;\n}\n"
           },
