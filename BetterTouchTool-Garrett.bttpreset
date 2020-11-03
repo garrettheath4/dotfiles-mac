@@ -1,6 +1,6 @@
 {
   "BTTPresetCreatorNotes" : "",
-  "BTTPresetInfoURL" : "",
+  "BTTPresetInfoURL" : "https:\/\/github.com\/garrettheath4\/dotfiles-mac\/blob\/master\/BetterTouchTool-Garrett.bttpreset",
   "BTTPresetName" : "Garrett",
   "BTTPresetColor" : "206.550000, 16.524000, 38.693700, 255.000000",
   "BTTGeneralSettings" : {
@@ -144,7 +144,7 @@
     "showOtherTriggersTab" : true,
     "BSTSnapAreaDefaultPictoDistanceFromLeft" : 0.10000000149011612
   },
-  "BTTPresetUUID" : "CAF663F6-1250-4814-B5DB-4BFD457563BE",
+  "BTTPresetUUID" : "5A7005F2-C922-4A03-838F-CEE315A2EEC1",
   "BTTPresetContent" : [
     {
       "BTTAppBundleIdentifier" : "error_no_bundle_identifier",
@@ -259,11 +259,7 @@
           "BTTShortcutModifierKeys" : 1703936,
           "BTTOrder" : 4,
           "BTTDisplayOrder" : 0,
-          "BTTAutoAdaptToKeyboardLayout" : 0,
-          "BTTTriggerConfig" : {
-            "BTTHUDDetailText" : "Raw Timestamp",
-            "BTTShowHUD" : 1
-          }
+          "BTTAutoAdaptToKeyboardLayout" : 0
         },
         {
           "BTTGestureNotes" : "Farther side button",
