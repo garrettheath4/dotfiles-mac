@@ -43,7 +43,7 @@
     "BTTTpFourFingerSwipeSensitivity" : 0.40000000000000002,
     "BSTMoveTreshold" : 2,
     "BTTHideFomControlStripWhenOpen" : false,
-    "BTTNumberOfStarts" : 67,
+    "BTTNumberOfStarts" : 68,
     "BTTForceNormalClickPressure3F" : 150,
     "showSiriRemoteTab" : true,
     "SIRIScrollSpeed" : 1,
@@ -67,7 +67,7 @@
     "BTTForceForceClickPressure5F" : 600,
     "BTTForceForceClickPressure" : 700,
     "BSTMemorySaver" : true,
-    "BTTLastClamshellState" : false,
+    "BTTLastClamshellState" : true,
     "BTTTouchBarAnimateGroups" : true,
     "BTTShowBTTWhenControlStripHidden" : true,
     "BTTFreeSpaceAfterESC" : 10,
@@ -144,7 +144,7 @@
     "showOtherTriggersTab" : true,
     "BSTSnapAreaDefaultPictoDistanceFromLeft" : 0.10000000149011612
   },
-  "BTTPresetUUID" : "5F163050-577A-4A34-ADB6-B1242CBB70C1",
+  "BTTPresetUUID" : "0F227021-22AB-4930-AB80-E3B93DD0DF8A",
   "BTTPresetContent" : [
     {
       "BTTAppBundleIdentifier" : "error_no_bundle_identifier",
@@ -193,7 +193,12 @@
           "BTTShortcutModifierKeys" : 1703936,
           "BTTOrder" : 2,
           "BTTDisplayOrder" : 0,
-          "BTTAutoAdaptToKeyboardLayout" : 0
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTTriggerConfig" : {
+            "BTTHUDText" : "⇧⌥⌘D",
+            "BTTHUDDetailText" : "Today's Date with Dashes\nYYYY-MM-DD",
+            "BTTShowHUD" : 1
+          }
         },
         {
           "BTTGestureNotes" : "Closer side button",
@@ -219,6 +224,7 @@
           "BTTPredefinedActionName" : "Move Window One Space\/Desktop Right",
           "BTTAdditionalConfiguration" : "8790020",
           "BTTEnabled2" : 1,
+          "BTTKeyboardShortcutScope" : 0,
           "BTTKeyboardShortcutKeyboardType" : 0,
           "BTTRepeatDelay" : 0,
           "BTTUUID" : "5F586EB3-AB4E-4E34-9DB0-09FF6A611977",
@@ -244,7 +250,7 @@
             "SelectedTransformerTab" : 1,
             "BTTActionCustomTextTransformer" : ""
           },
-          "BTTAdditionalConfiguration" : "0",
+          "BTTAdditionalConfiguration" : "Unix timestamp code",
           "BTTEnabled2" : 1,
           "BTTKeyboardShortcutScope" : 0,
           "BTTKeyboardShortcutKeyboardType" : 2299,
@@ -259,7 +265,12 @@
           "BTTShortcutModifierKeys" : 1703936,
           "BTTOrder" : 4,
           "BTTDisplayOrder" : 0,
-          "BTTAutoAdaptToKeyboardLayout" : 0
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTTriggerConfig" : {
+            "BTTHUDText" : "⇧⌥⌘T",
+            "BTTHUDDetailText" : "Unix Timestamp\nwith \"T\"",
+            "BTTShowHUD" : 1
+          }
         },
         {
           "BTTGestureNotes" : "Farther side button",
@@ -304,8 +315,12 @@
           "BTTShortcutModifierKeys" : 1966080,
           "BTTOrder" : 3,
           "BTTDisplayOrder" : 0,
-          "BTTAutoAdaptToKeyboardLayout" : 0
-        },
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTTriggerConfig" : {
+            "BTTHUDDetailText" : "⇧⌃⌥⌘ D\n\nDate Code\nYYYYMMDD",
+            "BTTShowHUD" : 1
+          }
+        }
         {
           "BTTTriggerType" : 1002,
           "BTTTriggerTypeDescription" : "Middle Mouse Button",
@@ -329,6 +344,7 @@
           "BTTPredefinedActionName" : "Move Window One Space\/Desktop Left",
           "BTTAdditionalConfiguration" : "8790020",
           "BTTEnabled2" : 1,
+          "BTTKeyboardShortcutScope" : 0,
           "BTTKeyboardShortcutKeyboardType" : 0,
           "BTTRepeatDelay" : 0,
           "BTTUUID" : "981AA3CA-03DB-40E3-8251-8661D4DA1158",
