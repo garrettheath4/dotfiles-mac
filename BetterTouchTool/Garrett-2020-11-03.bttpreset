@@ -1,5 +1,8 @@
 {
+  "BTTPresetCreatorNotes" : "",
+  "BTTPresetInfoURL" : "",
   "BTTPresetName" : "Garrett",
+  "BTTPresetColor" : "206.550000, 16.524000, 38.693700, 255.000000",
   "BTTGeneralSettings" : {
     "BTTPathSampleSize" : 100,
     "BTTCMOnTop" : true,
@@ -31,17 +34,16 @@
     "BSTSnapAreaDefaultDashedBorder" : false,
     "BTTEnablePalmRecognition" : true,
     "BSTBrokenAPICheckEnabled" : false,
-    "oldScale" : 1,
     "BTTAllowThumbIfAllFingersArePlacedSimultaneously" : true,
     "BTTShowControlStripItem" : true,
     "BSTSnapAreaDefaultCornerRadius" : 20,
     "BTTMovePastedToTop" : true,
     "BTTMaxAllowedDrawingRotation" : 30,
-    "BTTDidRegisterForUpdateStats" : "3.209",
+    "BTTDidRegisterForUpdateStats" : "3.401",
     "BTTTpFourFingerSwipeSensitivity" : 0.40000000000000002,
     "BSTMoveTreshold" : 2,
     "BTTHideFomControlStripWhenOpen" : false,
-    "BTTNumberOfStarts" : 198,
+    "BTTNumberOfStarts" : 67,
     "BTTForceNormalClickPressure3F" : 150,
     "showSiriRemoteTab" : true,
     "SIRIScrollSpeed" : 1,
@@ -51,7 +53,7 @@
     "BSTSnapAreaDefaultBorderWidth" : 3,
     "BTTTouchBarHapticFeedback" : 0,
     "BTTForceNormalClickPressure" : 150,
-    "BTTDrawingRightMouse" : true,
+    "BTTDrawingRightMouse" : false,
     "BTTConvertedDevices" : true,
     "snapBottomRight" : true,
     "BTTThreeFingerTipTapMinSpread" : 0.029999999999999999,
@@ -92,7 +94,6 @@
     "BTTForceForceHapticResponse" : 13,
     "showMagicMouseTab" : true,
     "BTTAlwaysShowPresetIndicators" : true,
-    "BTTForcedHidden" : false,
     "showTouchBarTab" : true,
     "BTTFreeSpaceAfterBTT" : 20,
     "BTTTwoFingerTipTapMinSpread" : 0.029999999999999999,
@@ -143,13 +144,57 @@
     "showOtherTriggersTab" : true,
     "BSTSnapAreaDefaultPictoDistanceFromLeft" : 0.10000000149011612
   },
-  "BTTPresetUUID" : "F4F7B673-F0C5-4A9C-B992-8DF219588C44",
+  "BTTPresetUUID" : "CAF663F6-1250-4814-B5DB-4BFD457563BE",
   "BTTPresetContent" : [
+    {
+      "BTTAppBundleIdentifier" : "error_no_bundle_identifier",
+      "BTTAppName" : "java",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTAppProcessMatchMode" : 2,
+      "BTTAppProcessName" : "java",
+      "BTTAppSpecificSettings" : {
+        "BTTDisableBTT" : 1
+      },
+      "BTTTriggers" : [
+
+      ]
+    },
     {
       "BTTAppBundleIdentifier" : "BT.G",
       "BTTAppName" : "Global",
       "BTTAppAutoInvertIcon" : 1,
+      "BTTAppSpecificSettings" : {
+
+      },
       "BTTTriggers" : [
+        {
+          "BTTGestureNotes" : "Paste today's date",
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 284,
+          "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
+          "BTTAdditionalActionData" : {
+            "BTTClipboardTransformerExampleInput" : "123",
+            "SelectedTransformerTab" : 1,
+            "BTTClipboardTransformerJS" : "async (clipboardContentString) => {\n  const d = new Date();\n  const YYYY = d.getFullYear().toString();\n  const MM = (d.getMonth() + 1).toString().padStart(2, '0');\n  const DD = d.getDate().toString().padStart(2, '0');\n  return `${YYYY}-${MM}-${DD}`;\n}\n"
+          },
+          "BTTAdditionalConfiguration" : "Today's Date with Dashes",
+          "BTTEnabled2" : 1,
+          "BTTKeyboardShortcutScope" : 0,
+          "BTTKeyboardShortcutKeyboardType" : 2299,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "159415DF-675C-4644-8F8E-F14E36E79723",
+          "BTTTriggerOnDown" : 1,
+          "BTTNotesInsteadOfDescription" : 1,
+          "BTTLayoutIndependentChar" : "d",
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTShortcutKeyCode" : 2,
+          "BTTShortcutModifierKeys" : 1703936,
+          "BTTOrder" : 2,
+          "BTTDisplayOrder" : 0,
+          "BTTAutoAdaptToKeyboardLayout" : 0
+        },
         {
           "BTTGestureNotes" : "Closer side button",
           "BTTTriggerType" : 1003,
@@ -159,6 +204,7 @@
           "BTTPredefinedActionName" : "Move Left a Space",
           "BTTEnabled2" : 1,
           "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
           "BTTUUID" : "417BBD9E-54D0-4A57-A5EB-C6053243A53F",
           "BTTNotesInsteadOfDescription" : 0,
           "BTTEnabled" : 1,
@@ -174,6 +220,7 @@
           "BTTAdditionalConfiguration" : "8790020",
           "BTTEnabled2" : 1,
           "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTRepeatDelay" : 0,
           "BTTUUID" : "5F586EB3-AB4E-4E34-9DB0-09FF6A611977",
           "BTTTriggerOnDown" : 1,
           "BTTNotesInsteadOfDescription" : 0,
@@ -187,13 +234,107 @@
           "BTTAutoAdaptToKeyboardLayout" : 0
         },
         {
+          "BTTGestureNotes" : "Paste stripped timestamp",
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 284,
+          "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
+          "BTTAdditionalActionData" : {
+            "BTTClipboardTransformerJS" : "async (clipboardContentString) => {\n  const d = new Date();\n  const YYYY = d.getFullYear().toString();\n  const MM = (d.getMonth() + 1).toString().padStart(2, '0');\n  const DD = d.getDate().toString().padStart(2, '0');\n  const hh = d.getHours().toString().padStart(2, '0');\n  const mn = d.getMinutes().toString().padStart(2, '0');\n  const ss = d.getSeconds().toString().padStart(2, '0');\n  return `${YYYY}${MM}${DD}T${hh}${mn}${ss}`;\n}\n",
+            "SelectedTransformerTab" : 1,
+            "BTTActionCustomTextTransformer" : ""
+          },
+          "BTTAdditionalConfiguration" : "0",
+          "BTTEnabled2" : 1,
+          "BTTKeyboardShortcutScope" : 0,
+          "BTTKeyboardShortcutKeyboardType" : 2299,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "D748CB65-5D7F-49EE-8BC5-425688B2F7A1",
+          "BTTTriggerOnDown" : 1,
+          "BTTNotesInsteadOfDescription" : 1,
+          "BTTLayoutIndependentChar" : "t",
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTShortcutKeyCode" : 17,
+          "BTTShortcutModifierKeys" : 1703936,
+          "BTTOrder" : 4,
+          "BTTDisplayOrder" : 0,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTTriggerConfig" : {
+            "BTTHUDDetailText" : "Raw Timestamp",
+            "BTTShowHUD" : 1
+          }
+        },
+        {
+          "BTTGestureNotes" : "Farther side button",
+          "BTTTriggerType" : 1004,
+          "BTTTriggerTypeDescription" : "Button 4",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 114,
+          "BTTPredefinedActionName" : "Move Right a Space",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "6FC24A97-C8DF-4E07-9AD3-656D2E388708",
+          "BTTNotesInsteadOfDescription" : 0,
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTOrder" : 1,
+          "BTTDisplayOrder" : 0
+        },
+        {
+          "BTTGestureNotes" : "Paste today's date code",
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 284,
+          "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
+          "BTTAdditionalActionData" : {
+            "BTTClipboardTransformerExampleInput" : "123",
+            "SelectedTransformerTab" : 1,
+            "BTTClipboardTransformerJS" : "async (clipboardContentString) => {\n  const d = new Date();\n  const YYYY = d.getFullYear().toString();\n  const MM = (d.getMonth() + 1).toString().padStart(2, '0');\n  const DD = d.getDate().toString().padStart(2, '0');\n  return `${YYYY}${MM}${DD}`;\n}\n"
+          },
+          "BTTAdditionalConfiguration" : "Today's Date Code WITHOUT Dashes",
+          "BTTEnabled2" : 1,
+          "BTTKeyboardShortcutScope" : 0,
+          "BTTKeyboardShortcutKeyboardType" : 2299,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "2234CAC2-003F-4952-90F7-C530B6C78829",
+          "BTTTriggerOnDown" : 1,
+          "BTTNotesInsteadOfDescription" : 1,
+          "BTTLayoutIndependentChar" : "d",
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTShortcutKeyCode" : 2,
+          "BTTShortcutModifierKeys" : 1966080,
+          "BTTOrder" : 3,
+          "BTTDisplayOrder" : 0,
+          "BTTAutoAdaptToKeyboardLayout" : 0
+        },
+        {
+          "BTTTriggerType" : 1002,
+          "BTTTriggerTypeDescription" : "Middle Mouse Button",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 165,
+          "BTTPredefinedActionName" : "Mission Control & Immediately Show Desktop Preview",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "D02FDD70-F2B9-468C-A1EC-ADFFD30DC870",
+          "BTTNotesInsteadOfDescription" : 0,
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTOrder" : 2,
+          "BTTDisplayOrder" : 0
+        },
+        {
           "BTTTriggerType" : 0,
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : 151,
           "BTTPredefinedActionName" : "Move Window One Space\/Desktop Left",
           "BTTAdditionalConfiguration" : "8790020",
           "BTTEnabled2" : 1,
-          "BTTKeyboardShortcutKeyboardType" : 46,
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTRepeatDelay" : 0,
           "BTTUUID" : "981AA3CA-03DB-40E3-8251-8661D4DA1158",
           "BTTTriggerOnDown" : 1,
           "BTTNotesInsteadOfDescription" : 0,
@@ -205,22 +346,6 @@
           "BTTOrder" : 1,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0
-        },
-        {
-          "BTTGestureNotes" : "Farther side button",
-          "BTTTriggerType" : 1004,
-          "BTTTriggerTypeDescription" : "Button 4",
-          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
-          "BTTPredefinedActionType" : 114,
-          "BTTPredefinedActionName" : "Move Right a Space",
-          "BTTEnabled2" : 1,
-          "BTTAlternateModifierKeys" : 0,
-          "BTTUUID" : "6FC24A97-C8DF-4E07-9AD3-656D2E388708",
-          "BTTNotesInsteadOfDescription" : 0,
-          "BTTEnabled" : 1,
-          "BTTModifierMode" : 0,
-          "BTTOrder" : 1,
-          "BTTDisplayOrder" : 0
         }
       ]
     },
@@ -228,6 +353,19 @@
       "BTTAppBundleIdentifier" : "com.apple.finder",
       "BTTAppName" : "Finder",
       "BTTAppAutoInvertIcon" : 1,
+      "BTTTriggers" : [
+
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "net.java.openjdk.cmd",
+      "BTTAppName" : "Tekkit Classic",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTAppProcessMatchMode" : 2,
+      "BTTAppProcessName" : "Tekkit Classic",
+      "BTTAppSpecificSettings" : {
+        "BTTDisableBTT" : 1
+      },
       "BTTTriggers" : [
 
       ]
