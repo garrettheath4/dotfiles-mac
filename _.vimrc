@@ -30,23 +30,24 @@ Plugin 'VundleVim/Vundle.vim'
 "" Plugins suggested by https://vim-bootstrap.com/
 
 Plugin 'scrooloose/nerdtree'         " Vim file browser
-Plugin 'tpope/vim-fugitive'          " Git wrapper
+Plugin 'tpope/vim-fugitive'          " :Gcommit and other similar commands
 Plugin 'vim-airline/vim-airline'     " Fancy Vim statusline
+Plugin 'airblade/vim-gitgutter'      " Shows Git changed lines in left margin
 Plugin 'dense-analysis/ale'          " Asynchronous Lint Engine
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'derekwyatt/vim-scala'        " Scala
 
 "-----------------------------------------------------------------------------
 "" garrettheath4 custom plugins
 
 Plugin 'jaredgorski/SpaceCamp'       " Modern Vim colorscheme
-Plugin 'godlygeek/tabular'           " Align text tables with :Tabularize
+Plugin 'godlygeek/tabular'           " :Tabularize to align text tables
 Plugin 'elzr/vim-json'               " JSON
-Plugin 'maksimr/vim-jsbeautify'      " JavaScript with :call JsBeautify()
+Plugin 'maksimr/vim-jsbeautify'      " :call JsBeautify()
 Plugin 'othree/xml.vim'              " XML
-Plugin 'AnsiEsc.vim'                 " Interpret ANSI esc sequences w/ :AnsiEsc
-Plugin 'derekwyatt/vim-scala'        " Scala
+Plugin 'AnsiEsc.vim'                 " :AnsiEsc to Interpret ANSI esc sequences
 Plugin 'Xuyuanp/nerdtree-git-plugin' " Git plugin for nerdtree (nerdtree req'd)
-Plugin 'ctrlpvim/ctrlp.vim'          " Full path fuzzy file finder
+Plugin 'ctrlpvim/ctrlp.vim'          " Ctrl+P for full path fuzzy file finder
 
 if has("mac")
   " List Mac-specific Vundle plugin packages here
