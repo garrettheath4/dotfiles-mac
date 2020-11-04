@@ -43,7 +43,7 @@
     "BTTTpFourFingerSwipeSensitivity" : 0.40000000000000002,
     "BSTMoveTreshold" : 2,
     "BTTHideFomControlStripWhenOpen" : false,
-    "BTTNumberOfStarts" : 68,
+    "BTTNumberOfStarts" : 69,
     "BTTForceNormalClickPressure3F" : 150,
     "showSiriRemoteTab" : true,
     "SIRIScrollSpeed" : 1,
@@ -144,14 +144,14 @@
     "showOtherTriggersTab" : true,
     "BSTSnapAreaDefaultPictoDistanceFromLeft" : 0.10000000149011612
   },
-  "BTTPresetUUID" : "0F227021-22AB-4930-AB80-E3B93DD0DF8A",
+  "BTTPresetUUID" : "9FBFBD86-2412-4C88-97CF-09478BC82E23",
   "BTTPresetContent" : [
     {
-      "BTTAppBundleIdentifier" : "error_no_bundle_identifier",
-      "BTTAppName" : "java",
+      "BTTAppBundleIdentifier" : "net.java.openjdk.cmd",
+      "BTTAppName" : "Tekkit Classic",
       "BTTAppAutoInvertIcon" : 1,
       "BTTAppProcessMatchMode" : 2,
-      "BTTAppProcessName" : "java",
+      "BTTAppProcessName" : "Tekkit Classic",
       "BTTAppSpecificSettings" : {
         "BTTDisableBTT" : 1
       },
@@ -168,17 +168,128 @@
       },
       "BTTTriggers" : [
         {
+          "BTTGestureNotes" : "Paste stripped timestamp",
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 284,
+          "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
+          "BTTAdditionalActionData" : {
+            "BTTClipboardTransformerJS" : "\/\/ Edit at dotfiles-mac\/BetterTouchTool\/getTimestampCode.js\n\/\/ and paste from that file into BetterTouchTool\nasync (clipboardContentString) => {  \/\/ eslint-disable-line no-unused-vars\n  const d = new Date();\n  const YYYY = d.getFullYear().toString();\n  const MM = (d.getMonth() + 1).toString().padStart(2, '0');\n  const DD = d.getDate().toString().padStart(2, '0');\n  const hh = d.getHours().toString().padStart(2, '0');\n  const mn = d.getMinutes().toString().padStart(2, '0');\n  const ss = d.getSeconds().toString().padStart(2, '0');\n  return `${YYYY}${MM}${DD}T${hh}${mn}${ss}`;\n};\n\/\/ vim: set ts=2 sw=2 sta sts=2 sr et si:\n",
+            "SelectedTransformerTab" : 1,
+            "BTTActionCustomTextTransformer" : ""
+          },
+          "BTTAdditionalConfiguration" : "getTimestampCode.js",
+          "BTTEnabled2" : 1,
+          "BTTKeyboardShortcutScope" : 0,
+          "BTTKeyboardShortcutKeyboardType" : 2299,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "D748CB65-5D7F-49EE-8BC5-425688B2F7A1",
+          "BTTTriggerOnDown" : 1,
+          "BTTNotesInsteadOfDescription" : 1,
+          "BTTLayoutIndependentChar" : "t",
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTShortcutKeyCode" : 17,
+          "BTTShortcutModifierKeys" : 1703936,
+          "BTTOrder" : 4,
+          "BTTDisplayOrder" : 0,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTTriggerConfig" : {
+            "BTTHUDText" : "⇧⌥⌘T",
+            "BTTHUDDetailText" : "Unix Timestamp\nwith \"T\"",
+            "BTTShowHUD" : 1
+          }
+        },
+        {
+          "BTTTriggerType" : 1002,
+          "BTTTriggerTypeDescription" : "Middle Mouse Button",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 165,
+          "BTTPredefinedActionName" : "Mission Control & Immediately Show Desktop Preview",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "D02FDD70-F2B9-468C-A1EC-ADFFD30DC870",
+          "BTTNotesInsteadOfDescription" : 0,
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTOrder" : 2,
+          "BTTDisplayOrder" : 0
+        },
+        {
+          "BTTGestureNotes" : "Update Link in Todoist",
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 284,
+          "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
+          "BTTAdditionalActionData" : {
+            "SelectedTransformerTab" : 1,
+            "BTTClipboardTransformerJS" : "\/\/ Edit at dotfiles-mac\/BetterTouchTool\/fixTodoistLink.js\n\/\/ and paste from that file into BetterTouchTool\nasync (clipboardContentString) => {\n  \/\/ Before: [https:\/\/github.com\/jimeh\/git-aware-prompt (GitHub)]\n  \/\/ After:  [GitHub](https:\/\/github.com\/jimeh\/git-aware-prompt)\n  const linkRegex = \/\\[(?<url>[a-z]+:\\\/\\\/[\\w-.]+) \\((?<text>[\\w-])\\)\\]\/;\n  const match = linkRegex.exec(clipboardContentString);\n  if (match !== null) {\n    return `[${match.groups.text}](${match.groups.url})`;\n  } else {\n    return clipboardContentString;\n  }\n};\n\/\/ vim: set ts=2 sw=2 sta sts=2 sr et si:\n"
+          },
+          "BTTAdditionalConfiguration" : "fixTodoistLink.js",
+          "BTTEnabled2" : 1,
+          "BTTKeyboardShortcutScope" : 0,
+          "BTTKeyboardShortcutKeyboardType" : 1683,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "63DDFC22-0791-434A-BC39-B621875C97B0",
+          "BTTTriggerOnDown" : 1,
+          "BTTNotesInsteadOfDescription" : 1,
+          "BTTLayoutIndependentChar" : "u",
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTShortcutKeyCode" : 32,
+          "BTTShortcutModifierKeys" : 1703936,
+          "BTTOrder" : 5,
+          "BTTDisplayOrder" : 0,
+          "BTTAutoAdaptToKeyboardLayout" : 0
+        },
+        {
+          "BTTGestureNotes" : "Farther side button",
+          "BTTTriggerType" : 1004,
+          "BTTTriggerTypeDescription" : "Button 4",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 114,
+          "BTTPredefinedActionName" : "Move Right a Space",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "6FC24A97-C8DF-4E07-9AD3-656D2E388708",
+          "BTTNotesInsteadOfDescription" : 0,
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTOrder" : 1,
+          "BTTDisplayOrder" : 0
+        },
+        {
+          "BTTGestureNotes" : "Closer side button",
+          "BTTTriggerType" : 1003,
+          "BTTTriggerTypeDescription" : "Button 3",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 113,
+          "BTTPredefinedActionName" : "Move Left a Space",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "417BBD9E-54D0-4A57-A5EB-C6053243A53F",
+          "BTTNotesInsteadOfDescription" : 0,
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTOrder" : 0,
+          "BTTDisplayOrder" : 0
+        },
+        {
           "BTTGestureNotes" : "Paste today's date",
           "BTTTriggerType" : 0,
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : 284,
           "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
           "BTTAdditionalActionData" : {
-            "BTTClipboardTransformerExampleInput" : "",
+            "BTTActionCustomTextTransformer" : "",
+            "BTTClipboardTransformerJS" : "\/\/ Edit at dotfiles-mac\/BetterTouchTool\/getDateFormatted.js\n\/\/ and paste from that file into BetterTouchTool\nasync (clipboardContentString) => {  \/\/ eslint-disable-line no-unused-vars\n  const d = new Date();\n  const YYYY = d.getFullYear().toString();\n  const MM = (d.getMonth() + 1).toString().padStart(2, '0');\n  const DD = d.getDate().toString().padStart(2, '0');\n  return `${YYYY}-${MM}-${DD}`;\n};\n\/\/ vim: set ts=2 sw=2 sta sts=2 sr et si:\n",
             "SelectedTransformerTab" : 1,
-            "BTTClipboardTransformerJS" : "async (clipboardContentString) => {\n  const d = new Date();\n  const YYYY = d.getFullYear().toString();\n  const MM = (d.getMonth() + 1).toString().padStart(2, '0');\n  const DD = d.getDate().toString().padStart(2, '0');\n  return `${YYYY}-${MM}-${DD}`;\n}\n"
+            "BTTClipboardTransformerExampleInput" : ""
           },
-          "BTTAdditionalConfiguration" : "Today's Date with Dashes",
+          "BTTAdditionalConfiguration" : "getDateFormatted.js",
           "BTTEnabled2" : 1,
           "BTTKeyboardShortcutScope" : 0,
           "BTTKeyboardShortcutKeyboardType" : 2299,
@@ -199,23 +310,6 @@
             "BTTHUDDetailText" : "Today's Date with Dashes\nYYYY-MM-DD",
             "BTTShowHUD" : 1
           }
-        },
-        {
-          "BTTGestureNotes" : "Closer side button",
-          "BTTTriggerType" : 1003,
-          "BTTTriggerTypeDescription" : "Button 3",
-          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
-          "BTTPredefinedActionType" : 113,
-          "BTTPredefinedActionName" : "Move Left a Space",
-          "BTTEnabled2" : 1,
-          "BTTAlternateModifierKeys" : 0,
-          "BTTRepeatDelay" : 0,
-          "BTTUUID" : "417BBD9E-54D0-4A57-A5EB-C6053243A53F",
-          "BTTNotesInsteadOfDescription" : 0,
-          "BTTEnabled" : 1,
-          "BTTModifierMode" : 0,
-          "BTTOrder" : 0,
-          "BTTDisplayOrder" : 0
         },
         {
           "BTTTriggerType" : 0,
@@ -240,56 +334,6 @@
           "BTTAutoAdaptToKeyboardLayout" : 0
         },
         {
-          "BTTGestureNotes" : "Paste stripped timestamp",
-          "BTTTriggerType" : 0,
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 284,
-          "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
-          "BTTAdditionalActionData" : {
-            "BTTClipboardTransformerJS" : "async (clipboardContentString) => {\n  const d = new Date();\n  const YYYY = d.getFullYear().toString();\n  const MM = (d.getMonth() + 1).toString().padStart(2, '0');\n  const DD = d.getDate().toString().padStart(2, '0');\n  const hh = d.getHours().toString().padStart(2, '0');\n  const mn = d.getMinutes().toString().padStart(2, '0');\n  const ss = d.getSeconds().toString().padStart(2, '0');\n  return `${YYYY}${MM}${DD}T${hh}${mn}${ss}`;\n}\n",
-            "SelectedTransformerTab" : 1,
-            "BTTActionCustomTextTransformer" : ""
-          },
-          "BTTAdditionalConfiguration" : "Unix timestamp code",
-          "BTTEnabled2" : 1,
-          "BTTKeyboardShortcutScope" : 0,
-          "BTTKeyboardShortcutKeyboardType" : 2299,
-          "BTTRepeatDelay" : 0,
-          "BTTUUID" : "D748CB65-5D7F-49EE-8BC5-425688B2F7A1",
-          "BTTTriggerOnDown" : 1,
-          "BTTNotesInsteadOfDescription" : 1,
-          "BTTLayoutIndependentChar" : "t",
-          "BTTEnabled" : 1,
-          "BTTModifierMode" : 0,
-          "BTTShortcutKeyCode" : 17,
-          "BTTShortcutModifierKeys" : 1703936,
-          "BTTOrder" : 4,
-          "BTTDisplayOrder" : 0,
-          "BTTAutoAdaptToKeyboardLayout" : 0,
-          "BTTTriggerConfig" : {
-            "BTTHUDText" : "⇧⌥⌘T",
-            "BTTHUDDetailText" : "Unix Timestamp\nwith \"T\"",
-            "BTTShowHUD" : 1
-          }
-        },
-        {
-          "BTTGestureNotes" : "Farther side button",
-          "BTTTriggerType" : 1004,
-          "BTTTriggerTypeDescription" : "Button 4",
-          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
-          "BTTPredefinedActionType" : 114,
-          "BTTPredefinedActionName" : "Move Right a Space",
-          "BTTEnabled2" : 1,
-          "BTTAlternateModifierKeys" : 0,
-          "BTTRepeatDelay" : 0,
-          "BTTUUID" : "6FC24A97-C8DF-4E07-9AD3-656D2E388708",
-          "BTTNotesInsteadOfDescription" : 0,
-          "BTTEnabled" : 1,
-          "BTTModifierMode" : 0,
-          "BTTOrder" : 1,
-          "BTTDisplayOrder" : 0
-        },
-        {
           "BTTGestureNotes" : "Paste today's date code",
           "BTTTriggerType" : 0,
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
@@ -298,9 +342,9 @@
           "BTTAdditionalActionData" : {
             "BTTClipboardTransformerExampleInput" : "",
             "SelectedTransformerTab" : 1,
-            "BTTClipboardTransformerJS" : "async (clipboardContentString) => {\n  const d = new Date();\n  const YYYY = d.getFullYear().toString();\n  const MM = (d.getMonth() + 1).toString().padStart(2, '0');\n  const DD = d.getDate().toString().padStart(2, '0');\n  return `${YYYY}${MM}${DD}`;\n}\n"
+            "BTTClipboardTransformerJS" : "\/\/ Edit at dotfiles-mac\/BetterTouchTool\/getDateCode.js\n\/\/ and paste from that file into BetterTouchTool\nasync (clipboardContentString) => {  \/\/ eslint-disable-line no-unused-vars\n  const d = new Date();\n  const YYYY = d.getFullYear().toString();\n  const MM = (d.getMonth() + 1).toString().padStart(2, '0');\n  const DD = d.getDate().toString().padStart(2, '0');\n  return `${YYYY}${MM}${DD}`;\n};\n\/\/ vim: set ts=2 sw=2 sta sts=2 sr et si:\n"
           },
-          "BTTAdditionalConfiguration" : "Today's Date Code WITHOUT Dashes",
+          "BTTAdditionalConfiguration" : "getDateCode.js",
           "BTTEnabled2" : 1,
           "BTTKeyboardShortcutScope" : 0,
           "BTTKeyboardShortcutKeyboardType" : 2299,
@@ -320,22 +364,6 @@
             "BTTHUDDetailText" : "⇧⌃⌥⌘ D\n\nDate Code\nYYYYMMDD",
             "BTTShowHUD" : 1
           }
-        }
-        {
-          "BTTTriggerType" : 1002,
-          "BTTTriggerTypeDescription" : "Middle Mouse Button",
-          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
-          "BTTPredefinedActionType" : 165,
-          "BTTPredefinedActionName" : "Mission Control & Immediately Show Desktop Preview",
-          "BTTEnabled2" : 1,
-          "BTTAlternateModifierKeys" : 0,
-          "BTTRepeatDelay" : 0,
-          "BTTUUID" : "D02FDD70-F2B9-468C-A1EC-ADFFD30DC870",
-          "BTTNotesInsteadOfDescription" : 0,
-          "BTTEnabled" : 1,
-          "BTTModifierMode" : 0,
-          "BTTOrder" : 2,
-          "BTTDisplayOrder" : 0
         },
         {
           "BTTTriggerType" : 0,
@@ -362,19 +390,11 @@
       ]
     },
     {
-      "BTTAppBundleIdentifier" : "com.apple.finder",
-      "BTTAppName" : "Finder",
-      "BTTAppAutoInvertIcon" : 1,
-      "BTTTriggers" : [
-
-      ]
-    },
-    {
-      "BTTAppBundleIdentifier" : "net.java.openjdk.cmd",
-      "BTTAppName" : "Tekkit Classic",
+      "BTTAppBundleIdentifier" : "error_no_bundle_identifier",
+      "BTTAppName" : "java",
       "BTTAppAutoInvertIcon" : 1,
       "BTTAppProcessMatchMode" : 2,
-      "BTTAppProcessName" : "Tekkit Classic",
+      "BTTAppProcessName" : "java",
       "BTTAppSpecificSettings" : {
         "BTTDisableBTT" : 1
       },
