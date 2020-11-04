@@ -43,7 +43,7 @@
     "BTTTpFourFingerSwipeSensitivity" : 0.40000000000000002,
     "BSTMoveTreshold" : 2,
     "BTTHideFomControlStripWhenOpen" : false,
-    "BTTNumberOfStarts" : 69,
+    "BTTNumberOfStarts" : 70,
     "BTTForceNormalClickPressure3F" : 150,
     "showSiriRemoteTab" : true,
     "SIRIScrollSpeed" : 1,
@@ -103,7 +103,7 @@
     "BTTDefaultTBIconWidth" : 22,
     "snapTopRight" : true,
     "BSTSnapAreaDefaultShowPictogram" : false,
-    "BTTSelectedKeyboardTabIndex" : 0,
+    "BTTSelectedKeyboardTabIndex" : 1,
     "BTTTouchBarKeepIconRatio" : true,
     "BSTBrokenAPICheckDelay" : 0.20000000000000001,
     "showKeyboardTab" : true,
@@ -144,8 +144,21 @@
     "showOtherTriggersTab" : true,
     "BSTSnapAreaDefaultPictoDistanceFromLeft" : 0.10000000149011612
   },
-  "BTTPresetUUID" : "9FBFBD86-2412-4C88-97CF-09478BC82E23",
+  "BTTPresetUUID" : "722E5A2A-72FC-416A-A746-55698AA42FD9",
   "BTTPresetContent" : [
+    {
+      "BTTAppBundleIdentifier" : "error_no_bundle_identifier",
+      "BTTAppName" : "java",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTAppProcessMatchMode" : 2,
+      "BTTAppProcessName" : "java",
+      "BTTAppSpecificSettings" : {
+        "BTTDisableBTT" : 1
+      },
+      "BTTTriggers" : [
+
+      ]
+    },
     {
       "BTTAppBundleIdentifier" : "net.java.openjdk.cmd",
       "BTTAppName" : "Tekkit Classic",
@@ -201,83 +214,6 @@
           }
         },
         {
-          "BTTTriggerType" : 1002,
-          "BTTTriggerTypeDescription" : "Middle Mouse Button",
-          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
-          "BTTPredefinedActionType" : 165,
-          "BTTPredefinedActionName" : "Mission Control & Immediately Show Desktop Preview",
-          "BTTEnabled2" : 1,
-          "BTTAlternateModifierKeys" : 0,
-          "BTTRepeatDelay" : 0,
-          "BTTUUID" : "D02FDD70-F2B9-468C-A1EC-ADFFD30DC870",
-          "BTTNotesInsteadOfDescription" : 0,
-          "BTTEnabled" : 1,
-          "BTTModifierMode" : 0,
-          "BTTOrder" : 2,
-          "BTTDisplayOrder" : 0
-        },
-        {
-          "BTTGestureNotes" : "Update Link in Todoist",
-          "BTTTriggerType" : 0,
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 284,
-          "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
-          "BTTAdditionalActionData" : {
-            "SelectedTransformerTab" : 1,
-            "BTTClipboardTransformerJS" : "\/\/ Edit at dotfiles-mac\/BetterTouchTool\/fixTodoistLink.js\n\/\/ and paste from that file into BetterTouchTool\nasync (clipboardContentString) => {\n  \/\/ Before: [https:\/\/github.com\/jimeh\/git-aware-prompt (GitHub)]\n  \/\/ After:  [GitHub](https:\/\/github.com\/jimeh\/git-aware-prompt)\n  const linkRegex = \/\\[(?<url>[a-z]+:\\\/\\\/[\\w-.]+) \\((?<text>[\\w-])\\)\\]\/;\n  const match = linkRegex.exec(clipboardContentString);\n  if (match !== null) {\n    return `[${match.groups.text}](${match.groups.url})`;\n  } else {\n    return clipboardContentString;\n  }\n};\n\/\/ vim: set ts=2 sw=2 sta sts=2 sr et si:\n"
-          },
-          "BTTAdditionalConfiguration" : "fixTodoistLink.js",
-          "BTTEnabled2" : 1,
-          "BTTKeyboardShortcutScope" : 0,
-          "BTTKeyboardShortcutKeyboardType" : 1683,
-          "BTTRepeatDelay" : 0,
-          "BTTUUID" : "63DDFC22-0791-434A-BC39-B621875C97B0",
-          "BTTTriggerOnDown" : 1,
-          "BTTNotesInsteadOfDescription" : 1,
-          "BTTLayoutIndependentChar" : "u",
-          "BTTEnabled" : 1,
-          "BTTModifierMode" : 0,
-          "BTTShortcutKeyCode" : 32,
-          "BTTShortcutModifierKeys" : 1703936,
-          "BTTOrder" : 5,
-          "BTTDisplayOrder" : 0,
-          "BTTAutoAdaptToKeyboardLayout" : 0
-        },
-        {
-          "BTTGestureNotes" : "Farther side button",
-          "BTTTriggerType" : 1004,
-          "BTTTriggerTypeDescription" : "Button 4",
-          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
-          "BTTPredefinedActionType" : 114,
-          "BTTPredefinedActionName" : "Move Right a Space",
-          "BTTEnabled2" : 1,
-          "BTTAlternateModifierKeys" : 0,
-          "BTTRepeatDelay" : 0,
-          "BTTUUID" : "6FC24A97-C8DF-4E07-9AD3-656D2E388708",
-          "BTTNotesInsteadOfDescription" : 0,
-          "BTTEnabled" : 1,
-          "BTTModifierMode" : 0,
-          "BTTOrder" : 1,
-          "BTTDisplayOrder" : 0
-        },
-        {
-          "BTTGestureNotes" : "Closer side button",
-          "BTTTriggerType" : 1003,
-          "BTTTriggerTypeDescription" : "Button 3",
-          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
-          "BTTPredefinedActionType" : 113,
-          "BTTPredefinedActionName" : "Move Left a Space",
-          "BTTEnabled2" : 1,
-          "BTTAlternateModifierKeys" : 0,
-          "BTTRepeatDelay" : 0,
-          "BTTUUID" : "417BBD9E-54D0-4A57-A5EB-C6053243A53F",
-          "BTTNotesInsteadOfDescription" : 0,
-          "BTTEnabled" : 1,
-          "BTTModifierMode" : 0,
-          "BTTOrder" : 0,
-          "BTTDisplayOrder" : 0
-        },
-        {
           "BTTGestureNotes" : "Paste today's date",
           "BTTTriggerType" : 0,
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
@@ -312,6 +248,39 @@
           }
         },
         {
+          "BTTGestureNotes" : "Closer side button",
+          "BTTTriggerType" : 1003,
+          "BTTTriggerTypeDescription" : "Button 3",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 113,
+          "BTTPredefinedActionName" : "Move Left a Space",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "417BBD9E-54D0-4A57-A5EB-C6053243A53F",
+          "BTTNotesInsteadOfDescription" : 0,
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTOrder" : 0,
+          "BTTDisplayOrder" : 0
+        },
+        {
+          "BTTTriggerType" : 1002,
+          "BTTTriggerTypeDescription" : "Middle Mouse Button",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 165,
+          "BTTPredefinedActionName" : "Mission Control & Immediately Show Desktop Preview",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "D02FDD70-F2B9-468C-A1EC-ADFFD30DC870",
+          "BTTNotesInsteadOfDescription" : 0,
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTOrder" : 2,
+          "BTTDisplayOrder" : 0
+        },
+        {
           "BTTTriggerType" : 0,
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : 152,
@@ -332,6 +301,52 @@
           "BTTOrder" : 0,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0
+        },
+        {
+          "BTTGestureNotes" : "Farther side button",
+          "BTTTriggerType" : 1004,
+          "BTTTriggerTypeDescription" : "Button 4",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 114,
+          "BTTPredefinedActionName" : "Move Right a Space",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "6FC24A97-C8DF-4E07-9AD3-656D2E388708",
+          "BTTNotesInsteadOfDescription" : 0,
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTOrder" : 1,
+          "BTTDisplayOrder" : 0
+        },
+        {
+          "BTTTriggerType" : 679,
+          "BTTTriggerTypeDescription" : "Clipboard Manager \/ Java Script Transformer: fixTodoistLink.js",
+          "BTTTriggerClass" : "BTTTriggerTypeOtherTriggers",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTAdditionalConfiguration" : "fixTodoistLink.js",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "6E3403CD-91F2-4980-A971-D2B11BDA4ECB",
+          "BTTNotesInsteadOfDescription" : 0,
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTOrder" : 0,
+          "BTTDisplayOrder" : 0,
+          "BTTIconData" : "TU0AKgAAQAj___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAAD_AAAA0AAAABD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8AAAAAEAAAANAAAAD_AAAA0AAAABD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADTAAAAEP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAAD_AAAA0wAAABD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADTAAAA0wAAAP8AAADQAAAAEP___wD___8A____AP___wD___8AAAAAEAAAANAAAAD_AAAA0AAAABD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADTAAAAEP___wD___8AAAAAEAAAANAAAAD_AAAA0AAAABD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAAD_AAAA0wAAABD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8AAAAAEAAAANAAAAD_AAAA0P___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADTAAAA0wAAAP8AAADQAAAAEP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AAAAABAAAADQAAAA_wAAAND___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8AAAAAEAAAANAAAAD_AAAA0AAAABD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8AAAAAEAAAANAAAAD_AAAA0AAAABD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AAAAABAAAADQAAAA_wAAANMAAADTAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8AAAAAEAAAANMAAAD_AAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8AAAAAEAAAANAAAAD_AAAA0AAAABD___8A____AAAAABAAAADTAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANMAAADTAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8AAAAAEAAAANMAAAD_AAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADTAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8AAAAA0wAAAP8AAADTAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8AAAAAYAAAAP8AAAD_AAAA0wAAABD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAAOAAAAD_AAAA4gAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAAGAAAAD_AAAA4AAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAADgAAAA_wAAAGD___8AAAAAEAAAANAAAAD_AAAA0AAAABD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAABgAAAA_wAAAOD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8AAAAA4AAAAP8AAABg____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8AAAAAYAAAAP8AAADg____AP___wD___8A____AP___wD___8AAAAAEAAAANAAAAD_AAAA0AAAABD___8A____AAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAAOAAAAD_AAAAYP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAP8AAADQAAAAEAAAABAAAADQAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAAGAAAAD_AAAA4P___wD___8A____AP___wD___8A____AP___wD___8A____AAAAABAAAADQAAAA_wAAANMAAADTAAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAADgAAAA_wAAAM4AAABwAAAAMP___wD___8A____AP___wD___8A____AP___wD___8AAAAAEAAAAOIAAAD_AAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAABgAAAA_wAAAP8AAAD_AAAA_wAAAP8AAADw____AP___wD___8A____AP___wD___8AAAAAYAAAAOAAAAD_AAAA_wAAANAAAAAQ____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8AAAAA4AAAAP8AAAB+AAAAcAAAALAAAADwAAAA_wAAADD___8A____AP___wAAAABgAAAA4AAAAP8AAAD_AAAA4AAAAGD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8AAAAAYAAAAP8AAADg____AP___wD___8AAAAAsAAAAP8AAABw____AAAAAGAAAADgAAAA_wAAAP8AAADgAAAAYP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAAOAAAAD_AAAAYP___wD___8A____AAAAAHAAAAD_AAAAzgAAAOAAAAD_AAAA_wAAAOAAAABg____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAAGAAAAD_AAAA4P___wD___8A____AP___wAAAAB+AAAA_wAAAP8AAAD_AAAA4AAAAGD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAADgAAAA_wAAAGD___8A____AAAAAGAAAADgAAAA_wAAAP8AAADiAAAAYP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAABgAAAA_wAAAOD___8AAAAAYAAAAOAAAAD_AAAA_wAAAOAAAABg____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8AAAAA4AAAAP8AAACwAAAA4AAAAP8AAAD_AAAA4AAAAGD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AAAAANAAAAD_AAAA_wAAAP8AAADgAAAAYP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wAAAAAQAAAA0AAAAOAAAABg____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8A____AP___wD___8AABABAAADAAAAAQBAAAABAQADAAAAAQBAAAABAgADAAAABAAAQM4BAwADAAAAAQABAAABBgADAAAAAQACAAABCgADAAAAAQABAAABEQAEAAAAAQAAAAgBEgADAAAAAQABAAABFQADAAAAAQAEAAABFgADAAAAAQBAAAABFwAEAAAAAQAAQAABHAADAAAAAQABAAABKAADAAAAAQACAAABUgADAAAAAQACAAABUwADAAAABAAAQNaHcwAHAAAMSAAAQN4AAAAAAAgACAAIAAgAAQABAAEAAQAADEhMaW5vAhAAAG1udHJSR0IgWFlaIAfOAAIACQAGADEAAGFjc3BNU0ZUAAAAAElFQyBzUkdCAAAAAAAAAAAAAAAAAAD21gABAAAAANMtSFAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEWNwcnQAAAFQAAAAM2Rlc2MAAAGEAAAAbHd0cHQAAAHwAAAAFGJrcHQAAAIEAAAAFHJYWVoAAAIYAAAAFGdYWVoAAAIsAAAAFGJYWVoAAAJAAAAAFGRtbmQAAAJUAAAAcGRtZGQAAALEAAAAiHZ1ZWQAAANMAAAAhnZpZXcAAAPUAAAAJGx1bWkAAAP4AAAAFG1lYXMAAAQMAAAAJHRlY2gAAAQwAAAADHJUUkMAAAQ8AAAIDGdUUkMAAAQ8AAAIDGJUUkMAAAQ8AAAIDHRleHQAAAAAQ29weXJpZ2h0IChjKSAxOTk4IEhld2xldHQtUGFja2FyZCBDb21wYW55AABkZXNjAAAAAAAAABJzUkdCIElFQzYxOTY2LTIuMQAAAAAAAAAAAAAAEnNSR0IgSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAAAAAAAAAAAAAAAAWFlaIAAAAAAAAG+iAAA49QAAA5BYWVogAAAAAAAAYpkAALeFAAAY2lhZWiAAAAAAAAAkoAAAD4QAALbPZGVzYwAAAAAAAAAWSUVDIGh0dHA6Ly93d3cuaWVjLmNoAAAAAAAAAAAAAAAWSUVDIGh0dHA6Ly93d3cuaWVjLmNoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGRlc2MAAAAAAAAALklFQyA2MTk2Ni0yLjEgRGVmYXVsdCBSR0IgY29sb3VyIHNwYWNlIC0gc1JHQgAAAAAAAAAAAAAALklFQyA2MTk2Ni0yLjEgRGVmYXVsdCBSR0IgY29sb3VyIHNwYWNlIC0gc1JHQgAAAAAAAAAAAAAAAAAAAAAAAAAAAABkZXNjAAAAAAAAACxSZWZlcmVuY2UgVmlld2luZyBDb25kaXRpb24gaW4gSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAAsUmVmZXJlbmNlIFZpZXdpbmcgQ29uZGl0aW9uIGluIElFQzYxOTY2LTIuMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdmlldwAAAAAAE6T+ABRfLgAQzxQAA+3MAAQTCwADXJ4AAAABWFlaIAAAAAAATAlWAFAAAABXH+dtZWFzAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAACjwAAAAJzaWcgAAAAAENSVCBjdXJ2AAAAAAAABAAAAAAFAAoADwAUABkAHgAjACgALQAyADcAOwBAAEUASgBPAFQAWQBeAGMAaABtAHIAdwB8AIEAhgCLAJAAlQCaAJ8ApACpAK4AsgC3ALwAwQDGAMsA0ADVANsA4ADlAOsA8AD2APsBAQEHAQ0BEwEZAR8BJQErATIBOAE+AUUBTAFSAVkBYAFnAW4BdQF8AYMBiwGSAZoBoQGpAbEBuQHBAckB0QHZAeEB6QHyAfoCAwIMAhQCHQImAi8COAJBAksCVAJdAmcCcQJ6AoQCjgKYAqICrAK2AsECywLVAuAC6wL1AwADCwMWAyEDLQM4A0MDTwNaA2YDcgN+A4oDlgOiA64DugPHA9MD4APsA_kEBgQTBCAELQQ7BEgEVQRjBHEEfgSMBJoEqAS2BMQE0wThBPAE_gUNBRwFKwU6BUkFWAVnBXcFhgWWBaYFtQXFBdUF5QX2BgYGFgYnBjcGSAZZBmoGewaMBp0GrwbABtEG4wb1BwcHGQcrBz0HTwdhB3QHhgeZB6wHvwfSB+UH+AgLCB8IMghGCFoIbgiCCJYIqgi+CNII5wj7CRAJJQk6CU8JZAl5CY8JpAm6Cc8J5Qn7ChEKJwo9ClQKagqBCpgKrgrFCtwK8wsLCyILOQtRC2kLgAuYC7ALyAvhC_kMEgwqDEMMXAx1DI4MpwzADNkM8w0NDSYNQA1aDXQNjg2pDcMN3g34DhMOLg5JDmQOfw6bDrYO0g7uDwkPJQ9BD14Peg+WD7MPzw_sEAkQJhBDEGEQfhCbELkQ1xD1ERMRMRFPEW0RjBGqEckR6BIHEiYSRRJkEoQSoxLDEuMTAxMjE0MTYxODE6QTxRPlFAYUJxRJFGoUixStFM4U8BUSFTQVVhV4FZsVvRXgFgMWJhZJFmwWjxayFtYW+hcdF0EXZReJF64X0hf3GBsYQBhlGIoYrxjVGPoZIBlFGWsZkRm3Gd0aBBoqGlEadxqeGsUa7BsUGzsbYxuKG7Ib2hwCHCocUhx7HKMczBz1HR4dRx1wHZkdwx3sHhYeQB5qHpQevh7pHxMfPh9pH5Qfvx_qIBUgQSBsIJggxCDwIRwhSCF1IaEhziH7IiciVSKCIq8i3SMKIzgjZiOUI8Ij8CQfJE0kfCSrJNolCSU4JWgllyXHJfcmJyZXJocmtyboJxgnSSd6J6sn3CgNKD8ocSiiKNQpBik4KWspnSnQKgIqNSpoKpsqzysCKzYraSudK9EsBSw5LG4soizXLQwtQS12Last4S4WLkwugi63Lu4vJC9aL5Evxy_+MDUwbDCkMNsxEjFKMYIxujHyMioyYzKbMtQzDTNGM38zuDPxNCs0ZTSeNNg1EzVNNYc1wjX9Njc2cjauNuk3JDdgN5w31zgUOFA4jDjIOQU5Qjl_Obw5+To2OnQ6sjrvOy07azuqO+g8JzxlPKQ84z0iPWE9oT3gPiA+YD6gPuA_IT9hP6I_4kAjQGRApkDnQSlBakGsQe5CMEJyQrVC90M6Q31DwEQDREdEikTORRJFVUWaRd5GIkZnRqtG8Ec1R3tHwEgFSEtIkUjXSR1JY0mpSfBKN0p9SsRLDEtTS5pL4kwqTHJMuk0CTUpNk03cTiVObk63TwBPSU+TT91QJ1BxULtRBlFQUZtR5lIxUnxSx1MTU19TqlP2VEJUj1TbVShVdVXCVg9WXFapVvdXRFeSV+BYL1h9WMtZGllpWbhaB1pWWqZa9VtFW5Vb5Vw1XIZc1l0nXXhdyV4aXmxevV8PX2Ffs2AFYFdgqmD8YU9homH1YklinGLwY0Njl2PrZEBklGTpZT1lkmXnZj1mkmboZz1nk2fpaD9olmjsaUNpmmnxakhqn2r3a09rp2v_bFdsr20IbWBtuW4SbmtuxG8eb3hv0XArcIZw4HE6cZVx8HJLcqZzAXNdc7h0FHRwdMx1KHWFdeF2Pnabdvh3VnezeBF4bnjMeSp5iXnnekZ6pXsEe2N7wnwhfIF84X1BfaF+AX5ifsJ_I3+Ef+WAR4CogQqBa4HNgjCCkoL0g1eDuoQdhICE44VHhauGDoZyhteHO4efiASIaYjOiTOJmYn+imSKyoswi5aL_IxjjMqNMY2Yjf+OZo7OjzaPnpAGkG6Q1pE_kaiSEZJ6kuOTTZO2lCCUipT0lV+VyZY0lp+XCpd1l+CYTJi4mSSZkJn8mmia1ZtCm6+cHJyJnPedZJ3SnkCerp8dn4uf+qBpoNihR6G2oiailqMGo3aj5qRWpMelOKWpphqmi6b9p26n4KhSqMSpN6mpqhyqj6sCq3Wr6axcrNCtRK24ri2uoa8Wr4uwALB1sOqxYLHWskuywrM4s660JbSctRO1irYBtnm28Ldot+C4WbjRuUq5wro7urW7LrunvCG8m70VvY++Cr6Evv+_er_1wHDA7MFnwePCX8Lbw1jD1MRRxM7FS8XIxkbGw8dBx7_IPci8yTrJuco4yrfLNsu2zDXMtc01zbXONs62zzfPuNA50LrRPNG+0j_SwdNE08bUSdTL1U7V0dZV1tjXXNfg2GTY6Nls2fHadtr724DcBdyK3RDdlt4c3qLfKd+v4DbgveFE4cziU+Lb42Pj6+Rz5PzlhOYN5pbnH+ep6DLovOlG6dDqW+rl63Dr++yG7RHtnO4o7rTvQO_M8Fjw5fFy8f_yjPMZ86f0NPTC9VD13vZt9vv3ivgZ+Kj5OPnH+lf65_t3_Af8mP0p_br+S_7c_23__w==",
+          "BTTClipboardTransformerInfo" : {
+            "BTTClipboardTransformerExampleInput" : "One [http:\/\/google.com (LINK)] and [http:\/\/catalist.us\/careers (TWO)]",
+            "BTTClipboardTransformerJS" : "\/\/ Edit at dotfiles-mac\/BetterTouchTool\/fixTodoistLink.js\n\/\/ and paste from that file into BetterTouchTool\nasync (clipboardContentString) => {\n  \/\/ Before: [https:\/\/github.com\/jimeh\/git-aware-prompt (GitHub)]\n  \/\/ After:  [GitHub](https:\/\/github.com\/jimeh\/git-aware-prompt)\n  const linkRegex = \/\\[(?<url>[a-z]+:\\\/\\\/[\\w-_.\/?&=+#@]+) \\((?<text>[\\w-]+)\\)\\]\/;\n  var textToSearch = clipboardContentString;\n  var match = linkRegex.exec(textToSearch);\n  while (match !== null) {\n    textToSearch = textToSearch.replace(linkRegex,\n      `[|${match.groups.text}|](${match.groups.url})`);\n    match = linkRegex.exec(textToSearch);\n  }\n  return textToSearch;\n};\n\/\/ vim: set ts=2 sw=2 sta sts=2 sr et si:\n",
+            "BTTClipboardTransformerShortcut" : {
+              "BTTKeyAdvancedModifiers" : 0,
+              "BTTKeyModifiers" : 0,
+              "BTTKeyCode" : -1,
+              "BTTKeyboardType" : 1683
+            }
+          },
+          "BTTClipboardTransformerName" : "fixTodoistLink.js"
         },
         {
           "BTTGestureNotes" : "Paste today's date code",
@@ -366,6 +381,150 @@
           }
         },
         {
+          "BTTGestureNotes" : "Fix Todoist link format",
+          "BTTTriggerType" : 624,
+          "BTTTriggerTypeDescription" : "Please Select a Trigger ",
+          "BTTTriggerClass" : "BTTTriggerTypeKeySequence",
+          "BTTPredefinedActionType" : 284,
+          "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
+          "BTTAdditionalActionData" : {
+            "BTTActionCustomTextTransformer" : "fixTodoistLink.js",
+            "BTTClipboardTransformerJS" : "\/\/ Edit at dotfiles-mac\/BetterTouchTool\/fixTodoistLink.js\n\/\/ and paste from that file into BetterTouchTool\nasync (clipboardContentString) => {\n  \/\/ Before: [https:\/\/github.com\/jimeh\/git-aware-prompt (GitHub)]\n  \/\/ After:  [GitHub](https:\/\/github.com\/jimeh\/git-aware-prompt)\n  const linkRegex = \/\\[(?<url>[a-z]+:\\\/\\\/[\\w-_.\/?&=+#]+) \\((?<text>[\\w-]+)\\)\\]\/;\n  var textToSearch = clipboardContentString;\n  var match = linkRegex.exec(textToSearch);\n  while (match !== null) {\n    textToSearch = textToSearch.replace(linkRegex,\n      `[|${match.groups.text}|](${match.groups.url})`);\n    match = linkRegex.exec(textToSearch);\n  }\n  return textToSearch;\n};\n\/\/ vim: set ts=2 sw=2 sta sts=2 sr et si:\n",
+            "SelectedTransformerTab" : 2,
+            "BTTClipboardTransformerExampleInput" : "One [http:\/\/google.com (LINK)] and [http:\/\/catalist.us\/careers (TWO)]"
+          },
+          "BTTAdditionalConfiguration" : "fixTodoistLink.js",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 0,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "2CE7D5F0-9B7C-4C9E-AB39-030414F2060B",
+          "BTTNotesInsteadOfDescription" : 0,
+          "BTTEnabled" : 0,
+          "BTTModifierMode" : 0,
+          "BTTOrder" : 0,
+          "BTTDisplayOrder" : 0,
+          "BTTKeySequence" : {
+            "BTTPauseBetween" : 0.29999999999999999,
+            "BTTKeyCount" : 6,
+            "BTTKeySequenceDownKeys" : [
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              },
+              {
+                "BTTKEYCharacter" : " A",
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              },
+              {
+                "BTTKEYCharacter" : " A",
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              }
+            ],
+            "BTTKeySequenceMixedKeys" : [
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              },
+              {
+                "BTTKEYCharacter" : " A",
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              },
+              {
+                "BTTKEYCharacter" : " A",
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              },
+              {
+                "BTTKEYCharacter" : " A",
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              },
+              {
+                "BTTKEYCharacter" : " A",
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              },
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              }
+            ],
+            "BTTKeySequenceUpKeys" : [
+              {
+                "BTTKEYCharacter" : " A",
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              },
+              {
+                "BTTKEYCharacter" : " A",
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              },
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 626208640
+              }
+            ]
+          },
+          "BTTTriggerConfig" : {
+            "BTTHUDText" : "Todoist",
+            "BTTHUDDetailText" : "Fixing link format",
+            "BTTShowHUD" : 1
+          }
+        },
+        {
+          "BTTGestureNotes" : "Fix Todoist link format",
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 284,
+          "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
+          "BTTAdditionalActionData" : {
+            "BTTClipboardTransformerJS" : "async (clipboardContentString) => {\n    \/\/example\n   return clipboardContentString.toUpperCase()\n}",
+            "SelectedTransformerTab" : 2,
+            "BTTActionCustomTextTransformer" : "fixTodoistLink.js"
+          },
+          "BTTAdditionalConfiguration" : "1704020",
+          "BTTEnabled2" : 1,
+          "BTTKeyboardShortcutScope" : 0,
+          "BTTKeyboardShortcutKeyboardType" : 1683,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "15F13B28-862B-4FCC-A220-ACDF53F84BE9",
+          "BTTTriggerOnDown" : 1,
+          "BTTNotesInsteadOfDescription" : 1,
+          "BTTLayoutIndependentChar" : "e",
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTShortcutKeyCode" : 14,
+          "BTTShortcutModifierKeys" : 1703936,
+          "BTTOrder" : 5,
+          "BTTDisplayOrder" : 0,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTTriggerConfig" : {
+            "BTTHUDText" : "Todoist",
+            "BTTHUDDetailText" : "Fixing link format",
+            "BTTShowHUD" : 1
+          }
+        },
+        {
           "BTTTriggerType" : 0,
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : 151,
@@ -386,20 +545,32 @@
           "BTTOrder" : 1,
           "BTTDisplayOrder" : 0,
           "BTTAutoAdaptToKeyboardLayout" : 0
+        },
+        {
+          "BTTGestureNotes" : "Fix Link in Todoist",
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeySequence",
+          "BTTPredefinedActionType" : 284,
+          "BTTPredefinedActionName" : "Transform & Replace Selection With Java Script",
+          "BTTAdditionalActionData" : {
+            "BTTClipboardTransformerExampleInput" : "One [http:\/\/google.com (LINK)] and [http:\/\/catalist.us\/careers (TWO)]",
+            "SelectedTransformerTab" : 1,
+            "BTTClipboardTransformerJS" : "\/\/ Edit at dotfiles-mac\/BetterTouchTool\/fixTodoistLink.js\n\/\/ and paste from that file into BetterTouchTool\nasync (clipboardContentString) => {\n  \/\/ Before: [https:\/\/github.com\/jimeh\/git-aware-prompt (GitHub)]\n  \/\/ After:  [GitHub](https:\/\/github.com\/jimeh\/git-aware-prompt)\n  const linkRegex = \/\\[(?<url>[a-z]+:\\\/\\\/[\\w-_.\/?&=+#]+) \\((?<text>[\\w-]+)\\)\\]\/;\n  var textToSearch = clipboardContentString;\n  var match = linkRegex.exec(textToSearch);\n  while (match !== null) {\n    textToSearch = textToSearch.replace(linkRegex,\n      `[|${match.groups.text}|](${match.groups.url})`);\n    match = linkRegex.exec(textToSearch);\n  }\n  return textToSearch;\n};\n\/\/ vim: set ts=2 sw=2 sta sts=2 sr et si:\n"
+          },
+          "BTTAdditionalConfiguration" : "1572944",
+          "BTTEnabled2" : 1,
+          "BTTAlternateModifierKeys" : 1683,
+          "BTTRepeatDelay" : 0,
+          "BTTUUID" : "71DD710E-4836-4790-88C5-76FD891BBBE3",
+          "BTTTriggerOnDown" : 1,
+          "BTTNotesInsteadOfDescription" : 1,
+          "BTTNotes" : "a",
+          "BTTEnabled" : 1,
+          "BTTModifierMode" : 0,
+          "BTTRequiredModifierKeys" : 1572864,
+          "BTTOrder" : 5,
+          "BTTDisplayOrder" : 0
         }
-      ]
-    },
-    {
-      "BTTAppBundleIdentifier" : "error_no_bundle_identifier",
-      "BTTAppName" : "java",
-      "BTTAppAutoInvertIcon" : 1,
-      "BTTAppProcessMatchMode" : 2,
-      "BTTAppProcessName" : "java",
-      "BTTAppSpecificSettings" : {
-        "BTTDisableBTT" : 1
-      },
-      "BTTTriggers" : [
-
       ]
     }
   ],
