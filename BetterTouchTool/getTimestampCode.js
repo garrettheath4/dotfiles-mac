@@ -10,3 +10,4 @@ async (clipboardContentString) => {  // eslint-disable-line no-unused-vars
   const ss = d.getSeconds().toString().padStart(2, '0');
   return `${YYYY}${MM}${DD}T${hh}${mn}${ss}`;
 };
+// vim: set ts=2 sw=2 sta sts=2 sr et si:
