@@ -1,0 +1,28 @@
+# vim: ft=sh:
+
+DEBUG=false
+
+cd() {
+	command cd "$@" || return
+	# shellcheck disable=SC2039
+	if [[ -n $TMUX && "$#" -ge 1 ]]; then
+		oldName=$(tmux display-message -p '#W')
+		oldDir=${OLDPWD##*/}
+		newDir=${PWD##*/}
+		if [[ $DEBUG = true ]]; then
+			echo "OLDPWD = $OLDPWD"
+			echo "PWD    = $PWD"
+			echo "oldName = $oldName"
+			echo "oldDir  = $oldDir"
+			echo "newDir  = $newDir"
+			echo "! -d $OLDPWD/.git = $(test ! -d "$OLDPWD/.git" && echo true || echo false)"
+		fi
+		# shellcheck disable=SC2039
+		if [[ $oldName = bash || ( $oldName = "$oldDir" && ! -d "$OLDPWD/.git" ) ]]; then
+			GreenTxt="$(tput setaf 2)"
+			ResetColors="$(tput sgr0)"
+			echo "${GreenTxt}Renaming Tmux window to match current directory${ResetColors}" 1>&2
+			tmux rename-window "$newDir"
+		fi
+	fi
+}

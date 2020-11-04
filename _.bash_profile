@@ -60,6 +60,7 @@ tockDebug () {
 debug -T 'Yes interactive'
 
 if ! command -v gdate >/dev/null 2>&1; then
+	# shellcheck disable=SC2016
 	debug -T 'No gdate installed (for showing load times; install with `brew install coreutils`)'
 	ENABLE_DEBUG=0
 fi
@@ -112,8 +113,18 @@ if command -v tmux >/dev/null 2>&1; then
 		fi
 	else
 		# This IS a Tmux session
-		alias ssh='ssh-name'
-		tockDebug "Yes alias ssh=ssh-name"
+		if command -v ssh-name >/dev/null 2>&1; then
+			alias ssh='ssh-name'
+			if [ -f ~/bin/cd-wrapper-tmux ]; then
+				# shellcheck disable=SC1090 disable=SC2039
+				source ~/bin/cd-wrapper-tmux
+				tockDebug "Yes ssh-name & cd-wrapper-tmux"
+			else
+				tockDebug "No cd-wrapper-tmux"
+			fi
+		else
+			tockDebug "No ssh-name"
+		fi
 	fi
 fi
 
@@ -189,9 +200,9 @@ if command -v vim >/dev/null 2>&1; then
 	EDITOR=$(command -v vim)
 	export EDITOR
 	alias vimro="vim -RMn"
-	tockDebug "Yes vim"
+	tockDebug "Yes EDITOR=vim"
 else
-	tockDebug 'No vim'
+	tockDebug 'No EDITOR=vim'
 fi
 
 # User aliases
