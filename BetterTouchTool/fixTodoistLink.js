@@ -3,7 +3,7 @@
 async (clipboardContentString) => {
   // Before: [https://github.com/jimeh/git-aware-prompt (GitHub)]
   // After:  [GitHub](https://github.com/jimeh/git-aware-prompt)
-  const linkRegex = /\[(?<url>[a-z]+:\/\/[\w-_./?&=+#@]+) \((?<text>[\w-]+)\)\]/;
+  const linkRegex = /\[(?<url>[a-z]+:\/\/[\w-_./?&=+#@%]+) \((?<text>[\w- $]+)\)\]/;
   var textToSearch = clipboardContentString;
   var match = linkRegex.exec(textToSearch);
   while (match !== null) {
