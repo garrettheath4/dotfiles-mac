@@ -11,6 +11,7 @@ hidden_files='.bash_profile
 .editorconfig
 .vimrc
 .ideavimrc
+.mdlrc
 .tmux.conf
 .tmux-osx.conf'
 
