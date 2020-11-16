@@ -2,6 +2,7 @@
 
 approvedPkgsFile=~/.brew/approved_packages
 approvedCasksFile=~/.brew/approved_casks
+greedyCasksFile=~/.brew/greedy_casks
 
 if [ "$1" == '--notify' ]; then
 	shift
@@ -55,6 +56,13 @@ else
 	messages="${messages}\nNo approved casks list file present at $approvedCasksFile"
 fi
 
+greedyCasksList=''
+if [ -r $greedyCasksFile ]; then
+	greedyCasksList=$(cat $greedyCasksFile)
+else
+	messages="${messages}\nNo greedy (force update) casks list file present at $greedyCasksFile"
+fi
+
 if [ -n "$messages" ]; then
 	echo    '==> WARNING'
 	echo -e "$messages"
@@ -69,12 +77,22 @@ printWithUrlExceptTrusted "$brewOutdated" "$approvedPkgsList" 'formula'
 
 # shellcheck disable=SC2016
 echo '==> Outdated Casks (update with `brew upgrade --cask`)'
-caskOutdated=$(brew outdated --cask)
+caskOutdated=$(brew outdated --cask --verbose)
 printWithUrlExceptTrusted "$caskOutdated" "$approvedCasksList" 'cask'
+
+# shellcheck disable=SC2016
+echo '--> Outdated Auto-Updating Casks (update with `brew upgrade --cask --greedy`)'
+caskGreedyOutdated=''
+if [ -n "$greedyCasksList" ]; then
+	caskGreedyOutdatedVerbose=$(echo "$greedyCasksList" | xargs brew outdated --cask --greedy --verbose)
+	echo "$caskGreedyOutdatedVerbose"
+	caskGreedyOutdated=$(echo "$caskGreedyOutdatedVerbose" | cut -f1 -d' ')
+fi
 
 rangBell=no
 pleaseUpgradePackages=no
 pleaseUpgradeCasks=no
+pleaseUpgradeGreedyCasks=no
 
 if [ -n "$brewOutdated" ]; then
 	if [ "$rangBell" == "no" ]; then
@@ -98,6 +116,18 @@ if [ -n "$caskOutdated" ]; then
 	fi
 fi
 
+if [ -n "$caskGreedyOutdated" ]; then
+	if [ "$rangBell" == "no" ]; then
+		echo -en '\a'
+		rangBell=yes
+	fi
+	read -p "Some 'self-updating' casks are outdated. Upgrade greedy casks? (Y/n): " -n 1 -r
+	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+		pleaseUpgradeGreedyCasks=yes
+	fi
+fi
+
+
 if [ "$pleaseUpgradePackages" == "yes" ]; then
 	brew upgrade --formula
 fi
@@ -106,3 +136,6 @@ if [ "$pleaseUpgradeCasks" == "yes" ]; then
 	brew upgrade --cask
 fi
 
+if [ "$pleaseUpgradeGreedyCasks" == "yes" ]; then
+	echo "$caskGreedyOutdated" | xargs brew upgrade --greedy
+fi
