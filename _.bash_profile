@@ -111,20 +111,6 @@ if command -v tmux >/dev/null 2>&1; then
 		else
 			tockDebug 'Not hotkey'
 		fi
-	else
-		# This IS a Tmux session
-		if command -v ssh-name >/dev/null 2>&1; then
-			alias ssh='ssh-name'
-			if [ -f ~/bin/cd-wrapper-tmux ]; then
-				# shellcheck disable=SC1090 disable=SC2039
-				source ~/bin/cd-wrapper-tmux
-				tockDebug "Yes ssh-name & cd-wrapper-tmux"
-			else
-				tockDebug "No cd-wrapper-tmux"
-			fi
-		else
-			tockDebug "No ssh-name"
-		fi
 	fi
 fi
 
@@ -280,6 +266,22 @@ if test -f ~/dotfiles/oh-my-git/prompt.sh ; then
 	tockDebug "Yes oh-my-git"
 else
 	tockDebug "Yes oh-my-git"
+fi
+
+if command -v tmux >/dev/null 2>&1 && test -n "${TMUX+defined}"; then
+	# This IS a Tmux session
+	if command -v ssh-name >/dev/null 2>&1; then
+		alias ssh='ssh-name'
+		if [ -f ~/bin/cd-wrapper-tmux ]; then
+			# shellcheck disable=SC1090 disable=SC2039
+			source ~/bin/cd-wrapper-tmux
+			tockDebug "Yes ssh-name & cd-wrapper-tmux"
+		else
+			tockDebug "No cd-wrapper-tmux"
+		fi
+	else
+		tockDebug "No ssh-name"
+	fi
 fi
 
 
