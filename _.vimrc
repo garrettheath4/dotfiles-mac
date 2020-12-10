@@ -172,7 +172,7 @@ set modelines=3
 if has("gui_running") && !exists("mvim")
   set acd
   set lines=91
-  set columns=85
+  set columns=86
 endif
 
 " vim-airline
