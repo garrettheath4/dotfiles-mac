@@ -137,5 +137,5 @@ if [ "$pleaseUpgradeCasks" == "yes" ]; then
 fi
 
 if [ "$pleaseUpgradeGreedyCasks" == "yes" ]; then
-	echo "$caskGreedyOutdated" | xargs brew upgrade --greedy
+	echo "$caskGreedyOutdated" | xargs brew upgrade --cask --greedy
 fi
