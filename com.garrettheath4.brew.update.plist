@@ -16,6 +16,10 @@
 		<string>/Users/gkoller/bin/brewu</string>
 		<string>--notify</string>
 	</array>
+	<key>StandardErrorPath</key>
+	<string>/tmp/com.garrettheath4.brew.update.err</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/com.garrettheath4.brew.update.out</string>
 	<key>StartCalendarInterval</key>
 	<dict>
 		<key>Hour</key>
