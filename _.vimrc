@@ -1,5 +1,7 @@
+" Note: This .vimrc file uses Vim folding. Toggle a fold with `za`.
+
 "*****************************************************************************
-"" VUNDLE PLUGIN MANAGER BEGIN
+"{{{1 VUNDLE PLUGIN MANAGER BEGIN
 "*****************************************************************************
 
 " Use Vim settings, rather then Vi settings (much better!).
@@ -21,24 +23,47 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 "*****************************************************************************
-"" Vundle install plugins begin
+"{{{2 Vundle install plugins begin
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 "-----------------------------------------------------------------------------
-"" Plugins suggested by https://vim-bootstrap.com/
+"{{{3 Plugins suggested by https://vim-bootstrap.com/
 
 Plugin 'scrooloose/nerdtree'         " Vim file browser
 Plugin 'tpope/vim-fugitive'          " :Gcommit and other similar commands
-Plugin 'vim-airline/vim-airline'     " Fancy Vim statusline
+
+Plugin 'vim-airline/vim-airline'     " Fancy Vim statusline {{{4
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline_skip_empty_sections = 1
+" }}}4
+
 Plugin 'airblade/vim-gitgutter'      " Shows Git changed lines in left margin
-Plugin 'dense-analysis/ale'          " Asynchronous Lint Engine
+Plugin 'dense-analysis/ale'          " Asynchronous Lint Engine {{{4
+let g:ale_fix_on_save = 0            " Maybe set to 1
+let g:ale_linters_explicit = 0       " Maybe set to 1
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'javascriptreact': ['eslint'],
+\   'sh': ['shellcheck'],
+\}
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'javascriptreact': ['prettier'],
+\   'css': ['prettier'],
+\}
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma --no-semi es5'
+" }}}4
+
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'derekwyatt/vim-scala'        " Scala
 
 "-----------------------------------------------------------------------------
-"" garrettheath4 custom plugins
+"{{{3 garrettheath4 custom plugins
 
 Plugin 'jaredgorski/SpaceCamp'       " Modern Vim colorscheme
 Plugin 'godlygeek/tabular'           " :Tabularize to align text tables
@@ -47,15 +72,35 @@ Plugin 'maksimr/vim-jsbeautify'      " :call JsBeautify()
 Plugin 'othree/xml.vim'              " XML
 Plugin 'AnsiEsc.vim'                 " :AnsiEsc to Interpret ANSI esc sequences
 Plugin 'Xuyuanp/nerdtree-git-plugin' " Git plugin for nerdtree (nerdtree req'd)
-Plugin 'ctrlpvim/ctrlp.vim'          " Ctrl+P for full path fuzzy file finder
+
+Plugin 'ctrlpvim/ctrlp.vim'          " Ctrl+P for fuzzy file finder (ag: the Silver Searcher)  {{{4
+" source: https://thoughtbot.com/blog/faster-grepping-in-vim
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+" }}}4
+
+
+"-----------------------------------------------------------------------------
+"{{{3 OS-specific plugins
 
 if has("mac")
   " List Mac-specific Vundle plugin packages here
   Plugin 'darfink/vim-plist'
 endif
 
-"" Vundle install plugins end
+"}}}2 Vundle install plugins end
 "*****************************************************************************
+
+"*****************************************************************************
+"{{{2 Vundle finish initialization
 
 " All of your Plugins must be added before the following line
 call vundle#end()             " required
@@ -72,11 +117,16 @@ filetype plugin indent on     " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"*****************************************************************************
-"" VUNDLE PLUGIN MANAGER END
+"}}}2 Vundle finish initialization
 "*****************************************************************************
 
-" General Vim configurations
+"*****************************************************************************
+"}}}1 VUNDLE PLUGIN MANAGER END
+"*****************************************************************************
+
+"*****************************************************************************
+"{{{1 GENERAL VIM CONFIGURATIONS
+"*****************************************************************************
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -175,39 +225,4 @@ if has("gui_running") && !exists("mvim")
   set columns=86
 endif
 
-" vim-airline
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1
-
-" The Silver Searcher
-" source: https://thoughtbot.com/blog/faster-grepping-in-vim
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" ale
-let g:ale_fix_on_save = 0            " Maybe set to 1
-let g:ale_linters_explicit = 0       " Maybe set to 1
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'javascriptreact': ['eslint'],
-\   'sh': ['shellcheck'],
-\}
-let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\   'javascriptreact': ['prettier'],
-\   'css': ['prettier'],
-\}
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma --no-semi es5'
-
-" vim: set ts=2 sw=2 vts=2 sta sts=2 sr et:
+" vim: set tabstop=2 shiftwidth=2 vts=2 smarttab softtabstop=2 shiftround expandtab foldmethod=marker:
