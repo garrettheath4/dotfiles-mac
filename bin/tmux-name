@@ -23,8 +23,8 @@ if command -v git >/dev/null; then
 	if command -v vim >/dev/null; then
 		tmux new-window -d -n vim-update 'echo Checking for updates to installed Vim plugins... ; vim +PluginUpdate +qall'
 	fi
-	if command -v brewu >/dev/null; then
-		tmux new-window -d -n brew-update 'echo Checking for updates to installed Homebrew formulas and casks... ; brewu'
+	if command -v brew-auto-upgrade >/dev/null; then
+		tmux new-window -d -n brew-update 'echo Checking for updates to installed Homebrew formulas and casks... ; brew-auto-upgrade'
 	fi
 else
 	# Git is NOT installed

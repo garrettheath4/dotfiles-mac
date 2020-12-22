@@ -11,7 +11,7 @@ if [ "$1" == '--notify' ]; then
 	caskOutdated=$(brew outdated --cask)
 	if [ -n "$brewOutdated" ] || [ -n "$caskOutdated" ] || [ "$1" == '--test' ]; then
 		# shellcheck disable=SC2016
-		osascript -e 'display notification "Updates are available for Homebrew. Run `brewu` when you get a chance." with title "Homebrew"'
+		osascript -e 'display notification "Updates are available for Homebrew. Run `'"$(basename "$0")"'` when you get a chance." with title "Homebrew"'
 		exit 1
 	else
 		exit 0

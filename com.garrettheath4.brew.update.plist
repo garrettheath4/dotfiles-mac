@@ -13,7 +13,7 @@
 	<array>
 		<string>/usr/bin/env</string>
 		<string>bash</string>
-		<string>/Users/gkoller/bin/brewu</string>
+		<string>/Users/gkoller/bin/brew-auto-upgrade</string>
 		<string>--notify</string>
 	</array>
 	<key>StandardErrorPath</key>
