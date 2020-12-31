@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+# dockerfileViz
+# Script for visualizing multi-stage Dockerfile's as an SVG image
+# Source: https://blog.afoolishmanifesto.com/posts/graphviz/
+
+if [ "$#" -eq 0 ] && test -f Dockerfile; then
+	inputFile=Dockerfile
+	outputFile=Dockerfile.svg
+else
+	if [ "$#" -eq 0 ] || [ "$#" -gt 2 ] || [ "$1" == -h ] || [ "$1" == --help ]; then
+		echo 'Converts a multi-stage Dockerfile to an SVG image.'
+		echo "Usage: $(basename "$0") <Dockerfile> [output.svg]"
+		exit 1
+	fi
+	inputFile="$1"
+	outputFile="${2-${1-output}.svg}"
+fi
+
+if ! test -f "$inputFile"; then
+	echo "Error: Input file not found: $inputFile"
+	exit 2
+fi
+
+if ! command -v perl >/dev/null; then
+	echo 'Error: perl must be installed to use this script'
+	exit 2
+fi
+
+if ! command -v dot >/dev/null; then
+	echo 'Error: Graphviz must be installed to use this script'
+	# shellcheck disable=SC2016
+	echo 'Try installig it with `brew install graphviz`'
+	exit 2
+fi
+
+perl -pE '
+BEGIN { say "digraph {\n" }
+
+our ($from, $to);
+if (m/^FROM (.*) AS (.*)$/) {
+   $from = $1;
+   $to = $2;
+   $_ = qq("$from" -> "$to"\n)
+} elsif (m/COPY --from=(.*?)\s/) {
+   $_ = qq("$1" -> "$to"[style=dashed]\n)
+} else {
+   undef $_
+}
+
+END { say "}" }
+' "$inputFile" | dot -Tsvg > "$outputFile"
+
+echo "Now open '$outputFile' in a browser (e.g. Google Chrome)"
+
