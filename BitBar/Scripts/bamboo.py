@@ -1,4 +1,4 @@
-#!/usr/bin/env PYTHONIOENCODING=UTF-8 python3
+#!/usr/bin/env PYTHONIOENCODING=UTF-8 /usr/local/bin/python3
 """
 bamboo.py
 BitBar script that polls the status of an Atlassian Bamboo server.
