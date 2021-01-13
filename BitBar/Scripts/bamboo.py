@@ -44,14 +44,9 @@ def get_output_lines():
     build_status = builds[0]['status']
     if build_status == 'BUILDING':
         build_status = '🛠'
-        if builds[0]['percentageComplete']:
-            if builds[0]['percentageComplete'] > 25.0:
-                build_status = '🕐'
-            if builds[0]['percentageComplete'] > 50.0:
-                build_status = '🕖'
-            if builds[0]['percentageComplete'] > 75.0:
-                build_status = '🕙'
-    output = [build_status.title() + ' ' + plan_key]
+    if builds[0]['percentageComplete']:
+        build_status = str(round(builds[0]['percentageComplete'])) + '%'
+    output = [plan_key + ' ' + build_status.title()]
     output += ['---']
     output += [f'Open Bamboo build in browser | href={URL}/browse/{plan_result_key}']
     return output
