@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Usage: pollBamboo <URL>
+# http://bamboo.datawarehousellc.com:8085/rest/api/latest/result/FUS-MSTR-6
+# http://bamboo.datawarehousellc.com:8085/rest/api/latest/result/FUS-MSTR-latest
+
+if [ "$#" -lt 1 ] || [ "$1" == --help ] || [ "$1" == -h ]; then
+	echo 'Usage: pollBamboo <URL>'
+	echo 'Example URLs: http://bamboo.datawarehousellc.com:8085/rest/api/latest/result/FUS-MSTR-6'
+	echo '              http://bamboo.datawarehousellc.com:8085/rest/api/latest/result/FUS-MSTR-latest'
+	exit 2
+fi
+
+URL="$1"
+
+echo -n 'Polling...'
+isDone=false
+while [ "$isDone" == false ]; do
+	curlResponse=$(curl --silent "$URL")
+	exitCode="$?"
+	if [ "$exitCode" -ne 0 ]; then
+		echo "ERROR: curl failed with exit code $exitCode"
+		echo "$curlResponse"
+		isDone=true
+		exit 3
+	fi
+	grep -F --silent 'successful="true"' <<< "$curlResponse"
+	exitCode="$?"
+	if [ "$exitCode" -ne 0 ]; then
+		echo -n ".$exitCode"
+		sleep 10
+	else
+		echo
+		echo 'Build is passing now.'
+		isDone=true
+	fi
+done
+
