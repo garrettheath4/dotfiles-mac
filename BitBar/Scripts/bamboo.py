@@ -44,7 +44,7 @@ def get_output_lines():
     build_status = builds[0]['status']
     if build_status == 'BUILDING':
         build_status = '🛠'
-    if builds[0]['percentageComplete']:
+    if builds[0]['percentageComplete'] and builds[0]['percentageComplete'] in range (1, 100):
         build_status = str(round(builds[0]['percentageComplete'])) + '%'
     output = [plan_key + ' ' + build_status.title()]
     output += ['---']
