@@ -206,7 +206,6 @@ set preserveindent
 set nojoinspaces    " nojoinspaces => only 1 period after spaces when reformatting
 set incsearch
 set scrolloff=1
-set ruler
 set exrc
 set backspace=2
 set number
