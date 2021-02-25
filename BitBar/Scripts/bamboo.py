@@ -18,6 +18,7 @@ except ModuleNotFoundError:
 HOSTNAME = 'bamboo.datawarehousellc.com'
 PORT = 8085
 URL = f'http://{HOSTNAME}:{PORT}'
+INVALID_IPS = ['92.242.140.21']
 
 def get_output_lines():
     """ Main entrypoint for this script. """
@@ -59,10 +60,10 @@ def is_domain_resolvable(host):
     Example: is_domain_resolvable('google.com')
     """
     try:
-        socket.gethostbyname(host)
+        ip_addr = socket.gethostbyname(host)
     except:  # pylint: disable=bare-except
         return False
-    return True
+    return ip_addr not in INVALID_IPS
 
 
 # pylint: disable=invalid-name
