@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-if [ -z "$PUSHOVER_APP_TOKEN" ]; then
-	echo -e 'ERROR: PUSHOVER_APP_TOKEN environment variable not defined \a'
-	echo    '     : Try running the following to add it into your .profile file:'
-	echo    '     :   echo "export PUSHOVER_APP_TOKEN=<your-app-token-here>" >> .profile'
-	exit 2
-fi
-
 if [ -z "$PUSHOVER_USER_KEY" ]; then
 	echo -e 'ERROR: PUSHOVER_USER_KEY environment variable not defined \a'
-	echo    '     : Try running the following to add it into your .profile file:'
+	echo    '     : Get it from your account at pushover.net and use it in the following command to add it into your .profile file:'
 	echo    '     :   echo "export PUSHOVER_USER_KEY=<your-user-key-here>" >> .profile'
 	exit 3
+fi
+
+if [ -z "$PUSHOVER_APP_TOKEN" ]; then
+	echo -e 'ERROR: PUSHOVER_APP_TOKEN environment variable not defined \a'
+	echo    '     : Create an Application/API token from your account at pushover.net and use it in the following command to add it into your .profile file:'
+	echo    '     :   echo "export PUSHOVER_APP_TOKEN=<your-app-token-here>" >> .profile'
+	exit 2
 fi
 
 if [ "$#" -eq 0 ]; then
