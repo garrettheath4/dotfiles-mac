@@ -128,6 +128,11 @@ if [ -n "$caskGreedyOutdated" ]; then
 fi
 
 
+if [ "$pleaseUpgradeCasks" == "yes" ] || [ "$pleaseUpgradeGreedyCasks" == "yes" ]; then
+	echo 'Sudo access might be necessary when upgrading casks. Pre-authenticate now:'
+	sudo echo 'Authenticated.'
+fi
+
 if [ "$pleaseUpgradePackages" == "yes" ]; then
 	brew upgrade --formula
 fi
@@ -139,3 +144,4 @@ fi
 if [ "$pleaseUpgradeGreedyCasks" == "yes" ]; then
 	echo "$caskGreedyOutdated" | xargs brew upgrade --cask --greedy
 fi
+
