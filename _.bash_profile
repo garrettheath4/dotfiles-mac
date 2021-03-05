@@ -219,7 +219,7 @@ alias brewu='brew-auto-upgrade'
 # If youtube-dl is installed be sure to also install ffmpeg with 'brew install ffmpeg'
 # Alias source: https://github.com/rg3/youtube-dl/issues/8017#issuecomment-167382308
 alias youtube-dl='echo "youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"; youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'
-alias docker-clean='docker rm $(docker ps -a -q); docker rmi $(docker images -q); docker image prune --force'
+alias docker-clean='docker-compose down; docker rm $(docker ps -a -q); docker rmi $(docker images -q); docker image prune --force; docker system prune --force'
 alias ssh-local='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null'
 alias sftp-local='sftp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null'
 
