@@ -24,10 +24,15 @@ message="$*"
 # Print the message here and ring the terminal bell too, just in case
 echo -en "📲 $message\n--> \a"
 
-# Make sure curl is the last command in this script so its exit code becomes this script's exit code
 curl -s \
   --form-string "token=$PUSHOVER_APP_TOKEN" \
   --form-string "user=$PUSHOVER_USER_KEY" \
   --form-string "message=$message" \
   https://api.pushover.net/1/messages.json
+
+exit_code=$?
+
+echo
+
+exit $exit_code
 
