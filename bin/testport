@@ -24,7 +24,7 @@ fi
 
 #test_host="$1"
 test_port="$2"
-test_command='(echo >/dev/tcp/'"$test_host"'/'"$test_port"' </dev/null) >/dev/null 2>&1 && echo "Port is open" || echo "ERROR: Port is NOT open"'
+test_command='(echo >/dev/tcp/'"$test_host"'/'"$test_port"' </dev/null) >/dev/null 2>&1 && echo "Port is open" || ( echo "ERROR: Port is NOT open" ; exit 1 )'
 
 # Print command for easy copying and then run it
 if (( "$pasteboard" )); then
