@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ "$#" -eq 0 ]; then
+	echo "Usage: $0 <command_name>"
+	# shellcheck disable=SC2016
+	echo 'Uses `which` or `alias` to find where a program or command are defined in the PATH or environment.'
+	exit 1
+fi
+
+bash --login -i -c "which $1 || alias $1" | tail -n1
