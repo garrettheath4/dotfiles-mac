@@ -15,7 +15,7 @@ if [ -z "$PUSHOVER_APP_TOKEN" ]; then
 fi
 
 if [ "$#" -eq 0 ]; then
-	echo -e "Usage: $0 Push message text here."
+	echo -e "Usage: $(basename "$0") Push message text here."
 	exit 1
 fi
 
