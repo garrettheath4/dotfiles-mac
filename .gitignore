@@ -6,11 +6,6 @@
 *.swp
 .viminfo
 
-# Vim plugin files
-_.vim/.netrwhist
-_.vim/bundle/*
-!_.vim/bundle/Vundle.vim
-
 # Python IDLE files
 _.idlerc/recent-files.lst
 
