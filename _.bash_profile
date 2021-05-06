@@ -16,6 +16,7 @@ case $- in
 esac
 
 ENABLE_DEBUG=1
+ENABLE_DEBUG_TIMES=1
 
 emojify () {
 	echo "$1" | sed -e 's/^Yes /✅ /' -e 's/^No /❌ /'
@@ -27,21 +28,25 @@ debug () {
 	fi
 	if [ "$1" = -T ]; then
 		shift
-		echo "       $(emojify "$1")"
+		if [ "$ENABLE_DEBUG_TIMES" == 1 ]; then
+			echo "       $(emojify "$1")"
+		else
+			emojify "$1"
+		fi
 	else
 		emojify "$1"
 	fi
 }
 
 tick () {
-	if [ "$ENABLE_DEBUG" != 1 ]; then
+	if [ "$ENABLE_DEBUG" != 1 ] || [ "$ENABLE_DEBUG_TIMES" != 1 ]; then
 		return
 	fi
 	tick_micro=$(echo "$(gdate +%s.%N) * 1000000 / 1" | bc)
 }
 
 tock () {
-	if [ "$ENABLE_DEBUG" != 1 ]; then
+	if [ "$ENABLE_DEBUG" != 1 ] || [ "$ENABLE_DEBUG_TIMES" != 1 ]; then
 		return
 	fi
 	tock_micro=$(echo "$(gdate +%s.%N) * 1000000 / 1" | bc)
@@ -54,15 +59,31 @@ tockDebug () {
 	if [ "$ENABLE_DEBUG" != 1 ]; then
 		return
 	fi
-	printf '%4.0fms %s\n' "$(tock)" "$(emojify "$1")"
+	if [ "$ENABLE_DEBUG_TIMES" == 1 ]; then
+		printf '%4.0fms %s\n' "$(tock)" "$(emojify "$1")"
+	else
+		emojify "$1"
+	fi
 }
+
+if ! command -v gdate >/dev/null 2>&1; then
+	if [ -d /opt/homebrew/bin ]; then
+		# gdate is installed but is just not in the path, so add it
+		debug -T 'added Homebrew to path'
+		export PATH="$PATH:/opt/homebrew/bin"
+	fi
+fi
+
+# check gdate again
+if ! command -v gdate >/dev/null 2>&1; then
+	# shellcheck disable=SC2016
+	ENABLE_DEBUG_TIMES=0
+fi
 
 debug -T 'Yes interactive'
 
-if ! command -v gdate >/dev/null 2>&1; then
-	# shellcheck disable=SC2016
-	debug -T 'No gdate installed (for showing load times; install with `brew install coreutils`)'
-	ENABLE_DEBUG=0
+if [ "$ENABLE_DEBUG" == 1 ] && [ "$ENABLE_DEBUG_TIMES" != 1 ]; then
+	debug 'No gdate installed (for showing load times; install with `brew install coreutils`)'
 fi
 
 # Source system's global definitions
@@ -112,6 +133,9 @@ if command -v tmux >/dev/null 2>&1; then
 			tockDebug 'Not hotkey'
 		fi
 	fi
+else
+	echo "PATH=$PATH"
+	tockDebug 'No tmux installed'
 fi
 
 # Source user's local definitions
@@ -157,6 +181,15 @@ if (command -v brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_compl
 	# shellcheck disable=SC2039
 	source "$_"
 	tockDebug "Yes Homebrew bash_completion"
+elif type brew &>/dev/null; then
+	HOMEBREW_PREFIX="$(brew --prefix)"
+	if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+		source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+	else
+		for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+			[[ -r "$COMPLETION" ]] && source "$COMPLETION"
+		done
+	fi
 else
 	tockDebug 'No Homebrew bash_completion'
 fi
