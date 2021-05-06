@@ -10,247 +10,287 @@ REPO="$(pwd)"
 LicensePage='https://docs.google.com/spreadsheets/d/14pl7ljKn8bf8rZZgHrU56zbQFePMpGCLUH0U3UQRTVI/edit#gid=0'
 OpenedLicenses='NO'
 
+
+#
+# HELPER FUNCTIONS  {{{1
+#
+
 ShowLicenses () {
-	if [ "$OpenedLicenses" == 'NO' ]; then
-		open "$LicensePage"
-		OpenedLicenses='YES'
-	fi
+    if [ "$OpenedLicenses" == 'NO' ]; then
+        open "$LicensePage"
+        OpenedLicenses='YES'
+    fi
 }
 
 GenericInstallPrompt () {
-	if [ "$#" -lt 1 ]; then
-		echo 'Usage: GenericInstallPrompt <PrettyAppName>'
-		echo 'Returns: 0 for YES or 1 for NO'
-		return 255
-	fi
-	read -r -p "Install $1 now? (y/n) [y]: " confirminstall
-	[ "$confirminstall" != 'n' ]
+    if [ "$#" -lt 1 ]; then
+        echo 'Usage: GenericInstallPrompt <PrettyAppName>'
+        echo 'Returns: 0 for YES or 1 for NO'
+        return 255
+    fi
+    read -r -p "Install $1 now? (y/n) [y]: " confirminstall
+    [ "$confirminstall" != 'n' ]
 }
 
 ConfirmInstallApp () {
-	if [ "$#" -lt 1 ]; then
-		echo 'Usage: ConfirmInstallApp <DescriptionString> [InstalledAppName]'
-		echo 'Returns: 0 for YES or 1 for NO'
-		return 255
-	fi
-	if [[ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" && ! -e "$2" ]]; then
-		GenericInstallPrompt "$1"
-	else
-		# Return NO because it's already installed
-		return 1
-	fi
+    if [ "$#" -lt 1 ]; then
+        echo 'Usage: ConfirmInstallApp <DescriptionString> [InstalledAppName]'
+        echo 'Returns: 0 for YES or 1 for NO'
+        return 255
+    fi
+    if [[ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" && ! -e "$2" ]]; then
+        GenericInstallPrompt "$1"
+    else
+        # Return NO because it's already installed
+        return 1
+    fi
 }
 
 ConfirmInstallBrewCask () {
-	if [ "$#" -lt 1 ]; then
-		echo 'Usage: ConfirmInstallBrewCask <AppToCheck> [CaskToInstall]'
-		return 255
-	fi
-	AppToCheck="$1"
-	CaskToInstall="${AppToCheck// /-}"
-	if [ "$#" -ge 2 ]; then
-		CaskToInstall="$2"
-	fi
-	if ConfirmInstallApp "$AppToCheck"; then
-		brew install --cask "$CaskToInstall"
-	fi
+    if [ "$#" -lt 1 ]; then
+        echo 'Usage: ConfirmInstallBrewCask <AppToCheck> [CaskToInstall]'
+        return 255
+    fi
+    AppToCheck="$1"
+    CaskToInstall="${AppToCheck// /-}"
+    if [ "$#" -ge 2 ]; then
+        CaskToInstall="$2"
+    fi
+    if ConfirmInstallApp "$AppToCheck"; then
+        brew install --cask "$CaskToInstall"
+    fi
 }
 
 OpenAppLinkAndPrompt () {
-	if [ "$#" -lt 1 ]; then
-		echo "Usage: OpenAppLinkAndPrompt Evernote 'macappstore://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'"
-		return 255
-	fi
-	AppName="$1"
-	LinkToOpen="$2"
-	if [ -n "$LinkToOpen" ]; then
-		open "$LinkToOpen"
-	fi
-	read -r -p "Press Enter after $AppName is installed to continue..."
+    if [ "$#" -lt 1 ]; then
+        echo "Usage: OpenAppLinkAndPrompt Evernote 'macappstore://apps.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'"
+        return 255
+    fi
+    AppName="$1"
+    LinkToOpen="$2"
+    if [ -n "$LinkToOpen" ]; then
+        open "$LinkToOpen"
+    fi
+    read -r -p "Press Enter after $AppName is installed to continue..."
 }
 
 CommandExists () {
-	command -v "$1" >/dev/null 2>&1
+    command -v "$1" >/dev/null 2>&1
 }
 
 CommandDoesNotExist () {
-	! CommandExists "$1"
+    ! CommandExists "$1"
 }
 
+# End helper functions  }}}1
+
+
 #
-# FILES
+# BASIC FILE INSTALLS (fractals)  {{{1
 #
 
-# Add fractals to Pictures folder
+# Add fractals to Pictures folder  {{{2
 if ConfirmInstallApp 'fractals to Pictures folder' ~/Pictures/Fractals-2560x1600; then
-	ln -is "$REPO/Fractals-2560x1600" ~/Pictures/
+    ln -is "$REPO/Fractals-2560x1600" ~/Pictures/
 fi
+# End fractals  }}}2
+
+# End basic file installs  }}}1
 
 
 #
-# Git (needed first to install Homebrew and its apps in this script)
+# INITIAL INSTALLS (Git and Homebrew)  {{{1
 #
 
+# Git (needed first to install Homebrew and its apps in this script)  {{{2
 if CommandDoesNotExist git && GenericInstallPrompt "git (and other developer command line tools)"; then
-	xcode-select --install
-	# macOS should prompt you to install the Developer Tools which includes Git
-	# OpenAppLinkAndPrompt is just a fancy way to wait for the GUI installation
-	#   to finish before the user presses Enter to continue this script
-	OpenAppLinkAndPrompt 'Git'
+    xcode-select --install
+    # macOS should prompt you to install the Developer Tools which includes Git
+    # OpenAppLinkAndPrompt is just a fancy way to wait for the GUI installation
+    #   to finish before the user presses Enter to continue this script
+    OpenAppLinkAndPrompt 'Git'
 fi
 
 if CommandDoesNotExist git; then
-	echo 'Warning: It appears that Git was not installed. You may need to install it yourself.'
-	exit 1
+    echo 'Warning: It appears that Git was not installed. You may need to install it yourself.'
+    exit 1
 else
-	git --version
+    git --version
 fi
+# End Git  }}}2
 
 
-#
-# Homebrew (needed to install other tools and apps in this script)
-#
-
+# Homebrew (needed to install other tools and apps in this script)  {{{2
 if CommandDoesNotExist brew && GenericInstallPrompt "Homebrew"; then
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-	brew --version
+    brew --version
 fi
 
 if CommandDoesNotExist brew; then
-	echo 'Warning: It appears that Homebrew was not installed. You may need to install it yourself.'
-	exit 2
+    echo 'Warning: It appears that Homebrew was not installed. You may need to install it yourself.'
+    exit 2
 fi
 
 brew update
+# End Homebrew  }}}2
+
+# End Initial Installs  }}}1
 
 
 #
-# Google Chrome (install before opening web pages in this script)
+# GOOGLE CHROME (install before opening web pages in this script)  {{{1
 #
 
 ConfirmInstallBrewCask 'Google Chrome' 'google-chrome'
 
+# End Google Chrome  }}}1
+
 
 #
-# TOOLS
+# TOOLS  {{{1
 #
 
-# LastPass extensions
+# LastPass extensions  {{{2
 LastPassInstallerApp='/usr/local/Caskroom/lastpass/latest/LastPass Installer.app'
 if ConfirmInstallApp 'LastPass Universal Mac Installer' "$LastPassInstallerApp"; then
-	brew install --cask lastpass
-	OpenAppLinkAndPrompt 'LastPass' "$LastPassInstallerApp"
+    brew install --cask lastpass
+    OpenAppLinkAndPrompt 'LastPass' "$LastPassInstallerApp"
 fi
+# End LastPass extensions  }}}2
 
-# Tmux
-if CommandDoesNotExist tmux && GenericInstallPrompt "Tmux"; then
-	brew install tmux
+if CommandDoesNotExist tmux && GenericInstallPrompt "Tmux"; then  # {{{2
+    brew install tmux
 else
-	tmux -V
-fi
+    tmux -V
+fi  # }}}2
 
-# reattach-to-user-namespace (for Tmux copy-paste to work on macOS)
+# reattach-to-user-namespace (for Tmux copy-paste to work on macOS)  {{{2
 if CommandExists tmux && CommandDoesNotExist reattach-to-user-namespace && GenericInstallPrompt "reattach-to-user-namespace"; then
-	brew install reattach-to-user-namespace
+    brew install reattach-to-user-namespace
 fi
+# End reattach-to-user-namespace  }}}2
 
-# ag: The Silver Searcher, a code searching tool similar to `ack` but faster
-if CommandDoesNotExist ag; then
-	brew install ag
-fi
+if CommandDoesNotExist ag; then  # The Silver Searcher, similar to `ack`  {{{2
+    brew install ag
+fi  # }}}2
+
+if ConfirmInstallApp 'iTerm'; then  # {{{2
+    iTermPrefsFilename='com.googlecode.iterm2.plist'
+    # Initialize iTerm with stored preferences if not already in local Library
+    if [ ! -e ~/Library/Preferences/"$iTermPrefsFilename" ] && [ -e "$iTermPrefsFilename" ]; then
+        cp "$iTermPrefsFilename" ~/Library/Preferences/"$iTermPrefsFilename"
+    fi
+    brew install --cask iterm2
+fi  # }}}2
+
+# End tools  }}}1
+
 
 #
-# APPS
+# BACKGROUND UTILITIES  {{{1
 #
-
-ConfirmInstallBrewCask 'Insync'
-
-if ConfirmInstallApp 'Todoist'; then
-	OpenAppLinkAndPrompt 'Todoist' \
-		'macappstore://itunes.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12'
-fi
-
-ConfirmInstallBrewCask 'KeepingYouAwake'
-
-if ConfirmInstallApp 'iTerm'; then
-	iTermPrefsFilename='com.googlecode.iterm2.plist'
-	# Initialize iTerm with stored preferences if not already in local Library
-	if [ ! -e ~/Library/Preferences/"$iTermPrefsFilename" ] && [ -e "$iTermPrefsFilename" ]; then
-		cp "$iTermPrefsFilename" ~/Library/Preferences/"$iTermPrefsFilename"
-	fi
-	brew install --cask iterm2
-fi
 
 ConfirmInstallBrewCask 'Moom'
 ConfirmInstallBrewCask 'BetterTouchTool'
-
-if ConfirmInstallApp 'Evernote'; then
-	OpenAppLinkAndPrompt 'Evernote' \
-		'macappstore://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
-fi
-
-ConfirmInstallBrewCask 'TogglDesktop' 'toggl'
-ConfirmInstallBrewCask 'MacVim'
-ConfirmInstallBrewCask 'MacDown'
+ConfirmInstallBrewCask 'Insync'
 ConfirmInstallBrewCask 'Alfred 4' 'alfred'
 ConfirmInstallBrewCask 'Bartender'
+ConfirmInstallBrewCask 'TogglDesktop' 'toggl'
+ConfirmInstallBrewCask 'Tunnelblick'
+ConfirmInstallBrewCask 'KeepingYouAwake'
 ConfirmInstallBrewCask 'TG Pro' 'tg-pro'
 ConfirmInstallBrewCask 'BitBar'
-
-if ConfirmInstallApp '1Keyboard'; then
-	OpenAppLinkAndPrompt '1Keyboard' 'macappstore://itunes.apple.com/us/app/1keyboard/id766939888?mt=12'
-fi
-
-if ConfirmInstallApp 'Quick Calendar'; then
-	OpenAppLinkAndPrompt 'Quick Calendar (app download) ' 'macappstore://itunes.apple.com/us/app/quick-calendar/id1004514425?mt=12'
-	OpenAppLinkAndPrompt 'Quick Calendar (post-download)' '/Applications/Quick Calendar.app'
-fi
-
-ConfirmInstallBrewCask 'Tunnelblick'
-ConfirmInstallBrewCask 'BackupLoupe'
-
-if ConfirmInstallApp 'Deliveries'; then
-	OpenAppLinkAndPrompt 'Deliveries' \
-		'macappstore://itunes.apple.com/us/app/deliveries-a-package-tracker/id924726344?mt=12'
-fi
-
 ConfirmInstallBrewCask 'AirServer'
+
+if ConfirmInstallApp '1Keyboard'; then  # {{{2
+    OpenAppLinkAndPrompt '1Keyboard' 'macappstore://apps.apple.com/us/app/1keyboard/id766939888?mt=12'
+fi  # }}}2
+
+if ConfirmInstallApp 'Quick Calendar'; then  # {{{2
+    OpenAppLinkAndPrompt 'Quick Calendar (app download) ' 'macappstore://apps.apple.com/us/app/quick-calendar/id1004514425?mt=12'
+    OpenAppLinkAndPrompt 'Quick Calendar (post-download)' '/Applications/Quick Calendar.app'
+fi  # }}}2
+
+# End background utilities  }}}1
 
 
 #
-# MEDIA TOOLS
+# APPS  {{{1
+#
+
+ConfirmInstallBrewCask 'MacVim'
+ConfirmInstallBrewCask 'MacDown'
+ConfirmInstallBrewCask 'BackupLoupe'
+
+if ConfirmInstallApp 'Todoist'; then  # {{{2
+    OpenAppLinkAndPrompt 'Todoist' \
+        'macappstore://apps.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12'
+fi  # }}}2
+
+if ConfirmInstallApp 'Messenger'; then  # {{{2
+    OpenAppLinkAndPrompt 'Messenger' \
+        'macappstore://apps.apple.com/us/app/messenger/id1480068668?mt=12'
+fi  # }}}2
+
+if ConfirmInstallApp 'Evernote'; then  # {{{2
+    OpenAppLinkAndPrompt 'Evernote' \
+        'macappstore://apps.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
+fi  # }}}2
+
+if ConfirmInstallApp 'Deliveries'; then  # {{{2
+    OpenAppLinkAndPrompt 'Deliveries' \
+        'macappstore://apps.apple.com/us/app/deliveries-a-package-tracker/id290986013?mt=12'
+fi  # }}}2
+
+if ConfirmInstallApp 'Drafts'; then  # {{{2
+    OpenAppLinkAndPrompt 'Drafts' \
+        'macappstore://apps.apple.com/us/app/drafts/id1435957248?mt=12'
+fi  # }}}2
+
+# End apps  }}}1
+
+
+#
+# MEDIA APPS  {{{1
 #
 
 ConfirmInstallBrewCask 'Spotify'
-
-if ConfirmInstallApp 'Sonos'; then
-	brew tap caskroom/drivers
-	brew install --cask sonos
-fi
-
 ConfirmInstallBrewCask 'GIMP'
 ConfirmInstallBrewCask 'VLC'
 ConfirmInstallBrewCask '4K Video Downloader' '4k-video-downloader'
 
+if ConfirmInstallApp 'Sonos'; then  # {{{2
+    brew tap caskroom/drivers
+    brew install --cask sonos
+fi  # }}}2
+
+# End media apps  }}}1
+
 
 #
-# DEVELOPER TOOLS
+# DEVELOPER TOOLS  {{{1
 #
 
 ConfirmInstallBrewCask 'JetBrains Toolbox' 'jetbrains-toolbox'
-
-if ConfirmInstallApp 'LaTeX' '/Applications/TeX'; then
-	brew install --cask 'mactex'
-fi
-
 ConfirmInstallBrewCask 'Etcher' 'balenaetcher'
+
+if ConfirmInstallApp 'LaTeX' '/Applications/TeX'; then  # {{{2
+    brew install --cask 'mactex'
+fi  # }}}2
+
+# End developer tools  }}}1
 
 
 #
-# GAMES
+# GAMES  {{{1
 #
 
 ConfirmInstallBrewCask 'Steam'
 ConfirmInstallBrewCask 'Minecraft'
 
+# End games  }}}1
+
+
+
+# vim: set tabstop=4 shiftwidth=4 smarttab shiftround expandtab autoindent smartindent copyindent preserveindent foldmethod=marker:
