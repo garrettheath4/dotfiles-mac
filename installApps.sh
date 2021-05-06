@@ -52,7 +52,7 @@ ConfirmInstallBrewCask () {
 		CaskToInstall="$2"
 	fi
 	if ConfirmInstallApp "$AppToCheck"; then
-		brew cask install "$CaskToInstall"
+		brew install --cask "$CaskToInstall"
 	fi
 }
 
@@ -84,18 +84,6 @@ CommandDoesNotExist () {
 # Add fractals to Pictures folder
 if ConfirmInstallApp 'fractals to Pictures folder' ~/Pictures/Fractals-2560x1600; then
 	ln -is "$REPO/Fractals-2560x1600" ~/Pictures/
-fi
-
-# Install special sound effects
-if ConfirmInstallApp "\"Robot Blip\" sound" ~/Library/Sounds/'Robot Blip.aiff'; then
-	echo "Adding \"Robot Blip\" to user sounds..."
-	if [ -e "$REPO/Sounds/Robot Blip.aiff" ]; then
-		if ! ( cp "$REPO/Sounds/Robot Blip.aiff" ~/Library/Sounds/ ); then
-			echo 'Warning: Error in installing Robot Blip to user profile.'
-		fi
-	else
-		echo "Warning: Unable to find \"Robot Blip.aiff\" in dotfiles repo."
-	fi
 fi
 
 
@@ -151,7 +139,7 @@ ConfirmInstallBrewCask 'Google Chrome' 'google-chrome'
 # LastPass extensions
 LastPassInstallerApp='/usr/local/Caskroom/lastpass/latest/LastPass Installer.app'
 if ConfirmInstallApp 'LastPass Universal Mac Installer' "$LastPassInstallerApp"; then
-	brew cask install lastpass
+	brew install --cask lastpass
 	OpenAppLinkAndPrompt 'LastPass' "$LastPassInstallerApp"
 fi
 
@@ -167,6 +155,7 @@ if CommandExists tmux && CommandDoesNotExist reattach-to-user-namespace && Gener
 	brew install reattach-to-user-namespace
 fi
 
+# ag: The Silver Searcher, a code searching tool similar to `ack` but faster
 if CommandDoesNotExist ag; then
 	brew install ag
 fi
@@ -188,18 +177,13 @@ if ConfirmInstallApp 'iTerm2' 'iTerm'; then
 	iTermPrefsFilename='com.googlecode.iterm2.plist'
 	# Initialize iTerm with stored preferences if not already in local Library
 	if [ ! -e ~/Library/Preferences/"$iTermPrefsFilename" ] && [ -e "$iTermPrefsFilename" ]; then
-		cp "$iTermPrefsFilename" ~/Library/Preferences/"$iTermPrefsFilename"
+term		cp "$iTermPrefsFilename" ~/Library/Preferences/"$iTermPrefsFilename"
 	fi
-	brew cask install iterm2
+	brew install --cask iterm2
 fi
 
 ConfirmInstallBrewCask 'Moom'
 ConfirmInstallBrewCask 'BetterTouchTool'
-
-if ConfirmInstallApp 'Airmail 3'; then
-	OpenAppLinkAndPrompt 'Airmail 3' \
-		'macappstore://itunes.apple.com/us/app/airmail-3/id918858936?mt=12'
-fi
 
 if ConfirmInstallApp 'Evernote'; then
 	OpenAppLinkAndPrompt 'Evernote' \
@@ -213,7 +197,6 @@ ConfirmInstallBrewCask 'Alfred 3' 'alfred'
 ConfirmInstallBrewCask 'Bartender'
 ConfirmInstallBrewCask 'TG Pro' 'tg-pro'
 ConfirmInstallBrewCask 'BitBar'
-ConfirmInstallBrewCask 'Goofy'
 
 if ConfirmInstallApp '1Keyboard'; then
 	OpenAppLinkAndPrompt '1Keyboard' 'macappstore://itunes.apple.com/us/app/1keyboard/id766939888?mt=12'
@@ -243,7 +226,7 @@ ConfirmInstallBrewCask 'Spotify'
 
 if ConfirmInstallApp 'Sonos'; then
 	brew tap caskroom/drivers
-	brew cask install sonos
+	brew install --cask sonos
 fi
 
 ConfirmInstallBrewCask 'GIMP'
@@ -258,7 +241,7 @@ ConfirmInstallBrewCask '4K Video Downloader' '4k-video-downloader'
 ConfirmInstallBrewCask 'JetBrains Toolbox' 'jetbrains-toolbox'
 
 if ConfirmInstallApp 'LaTeX' '/Applications/TeX'; then
-	brew cask install 'mactex'
+	brew install --cask 'mactex'
 fi
 
 ConfirmInstallBrewCask 'Etcher' 'balenaetcher'

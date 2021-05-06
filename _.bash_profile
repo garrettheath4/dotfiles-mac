@@ -261,6 +261,15 @@ ifDistIsThenSource () {
 # Bootstrap based on OS/Disto
 ifDistIsThenSource "Raspbian" ~/.bashrc.os.raspbian
 
+# Show SSH key fingerprint as ASCII art (for memorization)
+tick
+if test -f ~/.ssh/id_rsa.pub ; then
+	ssh-keygen -lvf ~/.ssh/id_rsa.pub
+	tockDebug "Yes ssh key"
+else
+	tockDebug "No ssh key"
+fi
+
 # Decorate terminal prompt using oh-my-git
 tick
 # shellcheck disable=SC1090 disable=SC2039
@@ -268,7 +277,7 @@ if test -f ~/dotfiles/oh-my-git/prompt.sh ; then
 	source "$_"
 	tockDebug "Yes oh-my-git"
 else
-	tockDebug "Yes oh-my-git"
+	tockDebug "No oh-my-git"
 fi
 
 if command -v tmux >/dev/null 2>&1 && test -n "${TMUX+defined}"; then
