@@ -173,11 +173,11 @@ fi
 
 ConfirmInstallBrewCask 'KeepingYouAwake'
 
-if ConfirmInstallApp 'iTerm2' 'iTerm'; then
+if ConfirmInstallApp 'iTerm'; then
 	iTermPrefsFilename='com.googlecode.iterm2.plist'
 	# Initialize iTerm with stored preferences if not already in local Library
 	if [ ! -e ~/Library/Preferences/"$iTermPrefsFilename" ] && [ -e "$iTermPrefsFilename" ]; then
-term		cp "$iTermPrefsFilename" ~/Library/Preferences/"$iTermPrefsFilename"
+		cp "$iTermPrefsFilename" ~/Library/Preferences/"$iTermPrefsFilename"
 	fi
 	brew install --cask iterm2
 fi
@@ -193,7 +193,7 @@ fi
 ConfirmInstallBrewCask 'TogglDesktop' 'toggl'
 ConfirmInstallBrewCask 'MacVim'
 ConfirmInstallBrewCask 'MacDown'
-ConfirmInstallBrewCask 'Alfred 3' 'alfred'
+ConfirmInstallBrewCask 'Alfred 4' 'alfred'
 ConfirmInstallBrewCask 'Bartender'
 ConfirmInstallBrewCask 'TG Pro' 'tg-pro'
 ConfirmInstallBrewCask 'BitBar'
