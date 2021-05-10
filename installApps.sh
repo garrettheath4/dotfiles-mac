@@ -15,6 +15,15 @@ OpenedLicenses='NO'
 # HELPER FUNCTIONS  {{{1
 #
 
+CommandExists () {
+    command -v "$1" >/dev/null 2>&1
+}
+
+CommandDoesNotExist () {
+    ! CommandExists "$1"
+}
+
+
 ShowLicenses () {
     if [ "$OpenedLicenses" == 'NO' ]; then
         open "$LicensePage"
@@ -22,49 +31,84 @@ ShowLicenses () {
     fi
 }
 
-GenericInstallPrompt () {
-    if [ "$#" -lt 1 ]; then
-        echo 'Usage: GenericInstallPrompt <PrettyAppName>'
+ShouldInstall () {
+    if [ "$#" -lt 1 ] || [ -z "$1" ]; then
+        echo 'Usage: ShouldInstall <PrettyAppName>'
         echo 'Returns: 0 for YES or 1 for NO'
-        return 255
+        exit 38
     fi
     read -r -p "Install $1 now? (y/n) [y]: " confirminstall
     [ "$confirminstall" != 'n' ]
 }
 
-ConfirmInstallApp () {
-    if [ "$#" -lt 1 ]; then
-        echo 'Usage: ConfirmInstallApp <DescriptionString> [InstalledAppName]'
+ShouldInstallCmdIfNew () {
+    if [ "$#" -lt 1 ] || [ -z "$1" ]; then
+        echo 'Usage: ShouldInstallCmdIfNew [DescriptionString] <TerminalCommandName>'
         echo 'Returns: 0 for YES or 1 for NO'
-        return 255
+        exit 48
     fi
-    if [[ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" && ! -e "$2" ]]; then
-        GenericInstallPrompt "$1"
+    CmdDescription="$1"
+    CmdName="${CmdDescription// /-}"
+    if [ "$#" -ge 2 ]; then
+        CmdName="$2"
+    fi
+    if CommandDoesNotExist "$CmdName"; then
+        ShouldInstall "$CmdDescription"
     else
         # Return NO because it's already installed
         return 1
     fi
 }
 
+ShouldInstallAppIfNew () {
+    if [ "$#" -lt 1 ] || [ -z "$1" ]; then
+        echo 'Usage: ShouldInstallAppIfNew [DescriptionString] <InstalledAppName>'
+        echo 'Returns: 0 for YES or 1 for NO'
+        exit 62
+    fi
+    if [[ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" && ! -e "$2" ]]; then
+        ShouldInstall "$1"
+    else
+        # Return NO because it's already installed
+        return 1
+    fi
+}
+
+ConfirmInstallBrewPackage () {
+    if [ "$#" -lt 1 ] || [ -z "$1" ]; then
+        echo 'Usage: ConfirmInstallBrewCask [CmdToCheck] <PackageToInstall>'
+        exit 75
+    fi
+    CmdToCheck="$1"
+    PackageToInstall="${CmdToCheck// /-}"
+    if [ "$#" -ge 2 ]; then
+        PackageToInstall="$2"
+    fi
+    if ShouldInstallCmdIfNew "$CmdToCheck"; then
+        brew install "$PackageToInstall"
+    fi
+}
+
 ConfirmInstallBrewCask () {
-    if [ "$#" -lt 1 ]; then
-        echo 'Usage: ConfirmInstallBrewCask <AppToCheck> [CaskToInstall]'
-        return 255
+    if [ "$#" -lt 1 ] || [ -z "$1" ]; then
+        echo 'Usage: ConfirmInstallBrewCask [AppToCheck] <CaskToInstall>'
+        exit 75
     fi
     AppToCheck="$1"
     CaskToInstall="${AppToCheck// /-}"
     if [ "$#" -ge 2 ]; then
         CaskToInstall="$2"
     fi
-    if ConfirmInstallApp "$AppToCheck"; then
+    if ShouldInstallAppIfNew "$AppToCheck"; then
         brew install --cask "$CaskToInstall"
     fi
 }
 
-OpenAppLinkAndPrompt () {
-    if [ "$#" -lt 1 ]; then
-        echo "Usage: OpenAppLinkAndPrompt Evernote 'macappstore://apps.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'"
-        return 255
+OpenLinkAndWait () {
+    if [ "$#" -lt 1 ] || [ -z "$1" ]; then
+        echo "Usage: OpenLinkAndWait <AppNameToDisplay> [LinkToOpen]"
+        echo "Example: OpenLinkAndWait Evernote 'macappstore://apps.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'"
+        exit 91
     fi
     AppName="$1"
     LinkToOpen="$2"
@@ -74,12 +118,17 @@ OpenAppLinkAndPrompt () {
     read -r -p "Press Enter after $AppName is installed to continue..."
 }
 
-CommandExists () {
-    command -v "$1" >/dev/null 2>&1
-}
-
-CommandDoesNotExist () {
-    ! CommandExists "$1"
+ConfirmInstallLinkAndWait () {
+    if [ "$#" -lt 1 ] || [ -z "$1" ]; then
+        echo "Usage: ConfirmInstallLinkAndWait <AppNameToCheck> [LinkToOpen]"
+        echo "Example: ConfirmInstallLinkAndWait Evernote 'macappstore://apps.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'"
+        exit 125
+    fi
+    AppName="$1"
+    LinkToOpen="$2"
+    if ShouldInstallAppIfNew "$AppName" "$LinkToOpen"; then
+        OpenLinkAndWait "$AppName" "$LinkToOpen"
+    fi
 }
 
 # End helper functions  }}}1
@@ -90,7 +139,7 @@ CommandDoesNotExist () {
 #
 
 # Add fractals to Pictures folder  {{{2
-if ConfirmInstallApp 'fractals to Pictures folder' ~/Pictures/Fractals-2560x1600; then
+if ShouldInstallAppIfNew 'fractals to Pictures folder' ~/Pictures/Fractals-2560x1600; then
     ln -is "$REPO/Fractals-2560x1600" ~/Pictures/
 fi
 # End fractals  }}}2
@@ -103,12 +152,12 @@ fi
 #
 
 # Git (needed first to install Homebrew and its apps in this script)  {{{2
-if CommandDoesNotExist git && GenericInstallPrompt "git (and other developer command line tools)"; then
+if CommandDoesNotExist git && ShouldInstall "git (and other developer command line tools)"; then
     xcode-select --install
     # macOS should prompt you to install the Developer Tools which includes Git
-    # OpenAppLinkAndPrompt is just a fancy way to wait for the GUI installation
+    # OpenLinkAndWait is just a fancy way to wait for the GUI installation
     #   to finish before the user presses Enter to continue this script
-    OpenAppLinkAndPrompt 'Git'
+    OpenLinkAndWait 'Git'
 fi
 
 if CommandDoesNotExist git; then
@@ -121,7 +170,7 @@ fi
 
 
 # Homebrew (needed to install other tools and apps in this script)  {{{2
-if CommandDoesNotExist brew && GenericInstallPrompt "Homebrew"; then
+if CommandDoesNotExist brew && ShouldInstall "Homebrew"; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
     brew --version
@@ -142,7 +191,7 @@ brew update
 # GOOGLE CHROME (install before opening web pages in this script)  {{{1
 #
 
-ConfirmInstallBrewCask 'Google Chrome' 'google-chrome'
+ConfirmInstallBrewCask 'Google Chrome'
 
 # End Google Chrome  }}}1
 
@@ -153,29 +202,18 @@ ConfirmInstallBrewCask 'Google Chrome' 'google-chrome'
 
 # LastPass extensions  {{{2
 LastPassInstallerApp='/usr/local/Caskroom/lastpass/latest/LastPass Installer.app'
-if ConfirmInstallApp 'LastPass Universal Mac Installer' "$LastPassInstallerApp"; then
+if ShouldInstallAppIfNew 'LastPass Universal Mac Installer' "$LastPassInstallerApp"; then
     brew install --cask lastpass
-    OpenAppLinkAndPrompt 'LastPass' "$LastPassInstallerApp"
+    OpenLinkAndWait 'LastPass' "$LastPassInstallerApp"
 fi
 # End LastPass extensions  }}}2
 
-if CommandDoesNotExist tmux && GenericInstallPrompt "Tmux"; then  # {{{2
-    brew install tmux
-else
-    tmux -V
-fi  # }}}2
+ConfirmInstallBrewPackage tmux
+ConfirmInstallBrewPackage ag
 
-# reattach-to-user-namespace (for Tmux copy-paste to work on macOS)  {{{2
-if CommandExists tmux && CommandDoesNotExist reattach-to-user-namespace && GenericInstallPrompt "reattach-to-user-namespace"; then
-    brew install reattach-to-user-namespace
-fi
-# End reattach-to-user-namespace  }}}2
+CommandExists tmux && ConfirmInstallBrewPackage reattach-to-user-namespace
 
-if CommandDoesNotExist ag; then  # The Silver Searcher, similar to `ack`  {{{2
-    brew install ag
-fi  # }}}2
-
-if ConfirmInstallApp 'iTerm'; then  # {{{2
+if ShouldInstallAppIfNew 'iTerm'; then  # {{{2
     iTermPrefsFilename='com.googlecode.iterm2.plist'
     # Initialize iTerm with stored preferences if not already in local Library
     if [ ! -e ~/Library/Preferences/"$iTermPrefsFilename" ] && [ -e "$iTermPrefsFilename" ]; then
@@ -196,20 +234,18 @@ ConfirmInstallBrewCask 'BetterTouchTool'
 ConfirmInstallBrewCask 'Insync'
 ConfirmInstallBrewCask 'Alfred 4' 'alfred'
 ConfirmInstallBrewCask 'Bartender'
-ConfirmInstallBrewCask 'TogglDesktop' 'toggl'
+ConfirmInstallBrewCask 'Toggl Track'
 ConfirmInstallBrewCask 'Tunnelblick'
 ConfirmInstallBrewCask 'KeepingYouAwake'
-ConfirmInstallBrewCask 'TG Pro' 'tg-pro'
+ConfirmInstallBrewCask 'TG Pro'
 ConfirmInstallBrewCask 'BitBar'
 ConfirmInstallBrewCask 'AirServer'
 
-if ConfirmInstallApp '1Keyboard'; then  # {{{2
-    OpenAppLinkAndPrompt '1Keyboard' 'macappstore://apps.apple.com/us/app/1keyboard/id766939888?mt=12'
-fi  # }}}2
+ConfirmInstallLinkAndWait '1Keyboard' 'macappstore://apps.apple.com/us/app/1keyboard/id766939888?mt=12'
 
-if ConfirmInstallApp 'Quick Calendar'; then  # {{{2
-    OpenAppLinkAndPrompt 'Quick Calendar (app download) ' 'macappstore://apps.apple.com/us/app/quick-calendar/id1004514425?mt=12'
-    OpenAppLinkAndPrompt 'Quick Calendar (post-download)' '/Applications/Quick Calendar.app'
+if ShouldInstallAppIfNew 'Quick Calendar'; then  # {{{2
+    OpenLinkAndWait 'Quick Calendar (app download) ' 'macappstore://apps.apple.com/us/app/quick-calendar/id1004514425?mt=12'
+    OpenLinkAndWait 'Quick Calendar (post-download)' '/Applications/Quick Calendar.app'
 fi  # }}}2
 
 # End background utilities  }}}1
@@ -223,30 +259,11 @@ ConfirmInstallBrewCask 'MacVim'
 ConfirmInstallBrewCask 'MacDown'
 ConfirmInstallBrewCask 'BackupLoupe'
 
-if ConfirmInstallApp 'Todoist'; then  # {{{2
-    OpenAppLinkAndPrompt 'Todoist' \
-        'macappstore://apps.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12'
-fi  # }}}2
-
-if ConfirmInstallApp 'Messenger'; then  # {{{2
-    OpenAppLinkAndPrompt 'Messenger' \
-        'macappstore://apps.apple.com/us/app/messenger/id1480068668?mt=12'
-fi  # }}}2
-
-if ConfirmInstallApp 'Evernote'; then  # {{{2
-    OpenAppLinkAndPrompt 'Evernote' \
-        'macappstore://apps.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
-fi  # }}}2
-
-if ConfirmInstallApp 'Deliveries'; then  # {{{2
-    OpenAppLinkAndPrompt 'Deliveries' \
-        'macappstore://apps.apple.com/us/app/deliveries-a-package-tracker/id290986013?mt=12'
-fi  # }}}2
-
-if ConfirmInstallApp 'Drafts'; then  # {{{2
-    OpenAppLinkAndPrompt 'Drafts' \
-        'macappstore://apps.apple.com/us/app/drafts/id1435957248?mt=12'
-fi  # }}}2
+ConfirmInstallLinkAndWait 'Todoist' 'macappstore://apps.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12'
+ConfirmInstallLinkAndWait 'Messenger' 'macappstore://apps.apple.com/us/app/messenger/id1480068668?mt=12'
+ConfirmInstallLinkAndWait 'Evernote' 'macappstore://apps.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
+ConfirmInstallLinkAndWait 'Deliveries' 'macappstore://apps.apple.com/us/app/deliveries-a-package-tracker/id290986013?mt=12'
+ConfirmInstallLinkAndWait 'Drafts' 'macappstore://apps.apple.com/us/app/drafts/id1435957248?mt=12'
 
 # End apps  }}}1
 
@@ -260,7 +277,7 @@ ConfirmInstallBrewCask 'GIMP'
 ConfirmInstallBrewCask 'VLC'
 ConfirmInstallBrewCask '4K Video Downloader' '4k-video-downloader'
 
-if ConfirmInstallApp 'Sonos'; then  # {{{2
+if ShouldInstallAppIfNew 'Sonos'; then  # {{{2
     brew tap caskroom/drivers
     brew install --cask sonos
 fi  # }}}2
@@ -275,7 +292,7 @@ fi  # }}}2
 ConfirmInstallBrewCask 'JetBrains Toolbox' 'jetbrains-toolbox'
 ConfirmInstallBrewCask 'Etcher' 'balenaetcher'
 
-if ConfirmInstallApp 'LaTeX' '/Applications/TeX'; then  # {{{2
+if ShouldInstallAppIfNew 'LaTeX' '/Applications/TeX'; then  # {{{2
     brew install --cask 'mactex'
 fi  # }}}2
 
