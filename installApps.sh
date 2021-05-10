@@ -66,7 +66,12 @@ ShouldInstallAppIfNew () {
         echo 'Returns: 0 for YES or 1 for NO'
         exit 62
     fi
-    if [[ ! -d "/Applications/$2.app" && ! -d "/Applications/$1.app" && ! -e "$2" ]]; then
+    AppDescription="$1"
+    AppName="$AppDescription"
+    if [ "$#" -ge 2 ]; then
+        AppName="$2"
+    fi
+    if [[ ! -d "/Applications/$AppName.app" && ! -e /"$AppName" ]]; then
         ShouldInstall "$1"
     else
         # Return NO because it's already installed
@@ -125,8 +130,11 @@ ConfirmInstallLinkAndWait () {
         exit 125
     fi
     AppName="$1"
-    LinkToOpen="$2"
-    if ShouldInstallAppIfNew "$AppName" "$LinkToOpen"; then
+    LinkToOpen="$AppName"
+    if [ "$#" -ge 2 ]; then
+        LinkToOpen="$2"
+    fi
+    if ShouldInstallAppIfNew "$AppName"; then
         OpenLinkAndWait "$AppName" "$LinkToOpen"
     fi
 }
@@ -273,9 +281,9 @@ ConfirmInstallLinkAndWait 'Drafts' 'macappstore://apps.apple.com/us/app/drafts/i
 #
 
 ConfirmInstallBrewCask 'Spotify'
-ConfirmInstallBrewCask 'GIMP'
+ConfirmInstallBrewCask 'GIMP-2.10' 'gimp'
 ConfirmInstallBrewCask 'VLC'
-ConfirmInstallBrewCask '4K Video Downloader' '4k-video-downloader'
+ConfirmInstallBrewCask '4K Video Downloader'
 
 if ShouldInstallAppIfNew 'Sonos'; then  # {{{2
     brew tap caskroom/drivers
@@ -289,12 +297,9 @@ fi  # }}}2
 # DEVELOPER TOOLS  {{{1
 #
 
-ConfirmInstallBrewCask 'JetBrains Toolbox' 'jetbrains-toolbox'
-ConfirmInstallBrewCask 'Etcher' 'balenaetcher'
-
-if ShouldInstallAppIfNew 'LaTeX' '/Applications/TeX'; then  # {{{2
-    brew install --cask 'mactex'
-fi  # }}}2
+ConfirmInstallBrewCask 'JetBrains Toolbox'
+ConfirmInstallBrewCask 'balenaEtcher'
+ConfirmInstallBrewCask 'TeXShop'
 
 # End developer tools  }}}1
 
