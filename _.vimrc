@@ -72,6 +72,7 @@ Plugin 'maksimr/vim-jsbeautify'      " :call JsBeautify()
 Plugin 'othree/xml.vim'              " XML
 Plugin 'AnsiEsc.vim'                 " :AnsiEsc to Interpret ANSI esc sequences
 Plugin 'Xuyuanp/nerdtree-git-plugin' " Git plugin for nerdtree (nerdtree req'd)
+Plugin 'plasticboy/vim-markdown'     " Better Markdown support?
 
 Plugin 'ctrlpvim/ctrlp.vim'          " Ctrl+P for fuzzy file finder (ag: the Silver Searcher)  {{{4
 " source: https://thoughtbot.com/blog/faster-grepping-in-vim
