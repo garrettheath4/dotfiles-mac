@@ -7,8 +7,8 @@ REPO="$(pwd)"
 
 # Variable: Has the spreadsheet with the list of licenses been opened yet?
 #   Values: 'YES' or 'NO'
-LicensePage='https://docs.google.com/spreadsheets/d/14pl7ljKn8bf8rZZgHrU56zbQFePMpGCLUH0U3UQRTVI/edit#gid=0'
-OpenedLicenses='NO'
+licensePage='https://docs.google.com/spreadsheets/d/14pl7ljKn8bf8rZZgHrU56zbQFePMpGCLUH0U3UQRTVI/edit#gid=0'
+openedLicenses='NO'
 
 
 #
@@ -25,9 +25,9 @@ CommandDoesNotExist () {
 
 
 ShowLicenses () {
-    if [ "$OpenedLicenses" == 'NO' ]; then
-        open "$LicensePage"
-        OpenedLicenses='YES'
+    if [ "$openedLicenses" == 'NO' ]; then
+        open "$licensePage"
+        openedLicenses='YES'
     fi
 }
 
@@ -47,13 +47,13 @@ ShouldInstallCmdIfNew () {
         echo 'Returns: 0 for YES or 1 for NO'
         exit 48
     fi
-    CmdDescription="$1"
-    CmdName="${CmdDescription// /-}"
+    cmdDescription="$1"
+    cmdName="${cmdDescription// /-}"
     if [ "$#" -ge 2 ]; then
-        CmdName="$2"
+        cmdName="$2"
     fi
-    if CommandDoesNotExist "$CmdName"; then
-        ShouldInstall "$CmdDescription"
+    if CommandDoesNotExist "$cmdName"; then
+        ShouldInstall "$cmdDescription"
     else
         # Return NO because it's already installed
         return 1
@@ -66,12 +66,12 @@ ShouldInstallAppIfNew () {
         echo 'Returns: 0 for YES or 1 for NO'
         exit 62
     fi
-    AppDescription="$1"
-    AppName="$AppDescription"
+    appDescription="$1"
+    appName="$appDescription"
     if [ "$#" -ge 2 ]; then
-        AppName="$2"
+        appName="$2"
     fi
-    if [[ ! -d "/Applications/$AppName.app" && ! -e /"$AppName" ]]; then
+    if [[ ! -d "/Applications/$appName.app" && ! -e /"$appName" ]]; then
         ShouldInstall "$1"
     else
         # Return NO because it's already installed
@@ -84,13 +84,13 @@ ConfirmInstallBrewPackage () {
         echo 'Usage: ConfirmInstallBrewCask [CmdToCheck] <PackageToInstall>'
         exit 75
     fi
-    CmdToCheck="$1"
-    PackageToInstall="${CmdToCheck// /-}"
+    cmdToCheck="$1"
+    packageToInstall="${cmdToCheck// /-}"
     if [ "$#" -ge 2 ]; then
-        PackageToInstall="$2"
+        packageToInstall="$2"
     fi
-    if ShouldInstallCmdIfNew "$CmdToCheck"; then
-        brew install "$PackageToInstall"
+    if ShouldInstallCmdIfNew "$cmdToCheck"; then
+        brew install "$packageToInstall"
     fi
 }
 
@@ -99,13 +99,13 @@ ConfirmInstallBrewCask () {
         echo 'Usage: ConfirmInstallBrewCask [AppToCheck] <CaskToInstall>'
         exit 75
     fi
-    AppToCheck="$1"
-    CaskToInstall="${AppToCheck// /-}"
+    appToCheck="$1"
+    caskToInstall="${appToCheck// /-}"
     if [ "$#" -ge 2 ]; then
-        CaskToInstall="$2"
+        caskToInstall="$2"
     fi
-    if ShouldInstallAppIfNew "$AppToCheck"; then
-        brew install --cask "$CaskToInstall"
+    if ShouldInstallAppIfNew "$appToCheck"; then
+        brew install --cask "$caskToInstall"
     fi
 }
 
@@ -115,12 +115,12 @@ OpenLinkAndWait () {
         echo "Example: OpenLinkAndWait Evernote 'macappstore://apps.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'"
         exit 91
     fi
-    AppName="$1"
-    LinkToOpen="$2"
-    if [ -n "$LinkToOpen" ]; then
-        open "$LinkToOpen"
+    appName="$1"
+    linkToOpen="$2"
+    if [ -n "$linkToOpen" ]; then
+        open "$linkToOpen"
     fi
-    read -r -p "Press Enter after $AppName is installed to continue..."
+    read -r -p "Press Enter after $appName is installed to continue..."
 }
 
 ConfirmInstallLinkAndWait () {
@@ -129,13 +129,13 @@ ConfirmInstallLinkAndWait () {
         echo "Example: ConfirmInstallLinkAndWait Evernote 'macappstore://apps.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'"
         exit 125
     fi
-    AppName="$1"
-    LinkToOpen="$AppName"
+    appName="$1"
+    linkToOpen="$appName"
     if [ "$#" -ge 2 ]; then
-        LinkToOpen="$2"
+        linkToOpen="$2"
     fi
-    if ShouldInstallAppIfNew "$AppName"; then
-        OpenLinkAndWait "$AppName" "$LinkToOpen"
+    if ShouldInstallAppIfNew "$appName"; then
+        OpenLinkAndWait "$appName" "$linkToOpen"
     fi
 }
 
@@ -209,10 +209,10 @@ ConfirmInstallBrewCask 'Google Chrome'
 #
 
 # LastPass extensions  {{{2
-LastPassInstallerApp='/usr/local/Caskroom/lastpass/latest/LastPass Installer.app'
-if ShouldInstallAppIfNew 'LastPass Universal Mac Installer' "$LastPassInstallerApp"; then
+lastPassInstallerApp='/usr/local/Caskroom/lastpass/latest/LastPass Installer.app'
+if ShouldInstallAppIfNew 'LastPass Universal Mac Installer' "$lastPassInstallerApp"; then
     brew install --cask lastpass
-    OpenLinkAndWait 'LastPass' "$LastPassInstallerApp"
+    OpenLinkAndWait 'LastPass' "$lastPassInstallerApp"
 fi
 # End LastPass extensions  }}}2
 
