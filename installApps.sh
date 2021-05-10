@@ -7,7 +7,6 @@ REPO="$(pwd)"
 
 # Variable: Has the spreadsheet with the list of licenses been opened yet?
 #   Values: 'YES' or 'NO'
-licensePage='https://docs.google.com/spreadsheets/d/14pl7ljKn8bf8rZZgHrU56zbQFePMpGCLUH0U3UQRTVI/edit#gid=0'
 openedLicenses='NO'
 
 
@@ -26,7 +25,7 @@ CommandDoesNotExist () {
 
 ShowLicenses () {
     if [ "$openedLicenses" == 'NO' ]; then
-        open "$licensePage"
+        echo 'You can find various software license keys in your LastPass account.'
         openedLicenses='YES'
     fi
 }
@@ -91,6 +90,8 @@ ConfirmInstallBrewPackage () {
     fi
     if ShouldInstallCmdIfNew "$cmdToCheck"; then
         brew install "$packageToInstall"
+    else
+        echo "✅ $packageToInstall"
     fi
 }
 
@@ -106,6 +107,8 @@ ConfirmInstallBrewCask () {
     fi
     if ShouldInstallAppIfNew "$appToCheck"; then
         brew install --cask "$caskToInstall"
+    else
+        echo "✅ $appToCheck"
     fi
 }
 
@@ -136,6 +139,8 @@ ConfirmInstallLinkAndWait () {
     fi
     if ShouldInstallAppIfNew "$appName"; then
         OpenLinkAndWait "$appName" "$linkToOpen"
+    else
+        echo "✅ $appName"
     fi
 }
 
@@ -208,18 +213,12 @@ ConfirmInstallBrewCask 'Google Chrome'
 # TOOLS  {{{1
 #
 
-# LastPass extensions  {{{2
-lastPassInstallerApp='/usr/local/Caskroom/lastpass/latest/LastPass Installer.app'
-if ShouldInstallAppIfNew 'LastPass Universal Mac Installer' "$lastPassInstallerApp"; then
-    brew install --cask lastpass
-    OpenLinkAndWait 'LastPass' "$lastPassInstallerApp"
-fi
-# End LastPass extensions  }}}2
-
 ConfirmInstallBrewPackage tmux
 ConfirmInstallBrewPackage ag
 
 CommandExists tmux && ConfirmInstallBrewPackage reattach-to-user-namespace
+
+ConfirmInstallLinkAndWait 'LastPass' 'macappstore://apps.apple.com/us/app/lastpass-password-manager/id926036361?mt=12'
 
 if ShouldInstallAppIfNew 'iTerm'; then  # {{{2
     iTermPrefsFilename='com.googlecode.iterm2.plist'
