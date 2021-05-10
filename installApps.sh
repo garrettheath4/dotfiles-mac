@@ -241,14 +241,14 @@ ConfirmInstallBrewCask 'BetterTouchTool'
 ConfirmInstallBrewCask 'Insync'
 ConfirmInstallBrewCask 'Alfred 4' 'alfred'
 ConfirmInstallBrewCask 'Bartender'
-ConfirmInstallBrewCask 'Toggl Track'
 ConfirmInstallBrewCask 'Tunnelblick'
 ConfirmInstallBrewCask 'KeepingYouAwake'
-ConfirmInstallBrewCask 'TG Pro'
 ConfirmInstallBrewCask 'BitBar'
 ConfirmInstallBrewCask 'AirServer'
 
+ConfirmInstallLinkAndWait 'Toggl Track' 'macappstore://apps.apple.com/us/app/toggl-track-hours-time/id957734279?mt=12'
 ConfirmInstallLinkAndWait '1Keyboard' 'macappstore://apps.apple.com/us/app/1keyboard/id766939888?mt=12'
+ConfirmInstallLinkAndWait 'iStat Menus' 'macappstore://apps.apple.com/us/app/istat-menus/id1319778037?mt=12'
 
 if ShouldInstallAppIfNew 'Quick Calendar'; then  # {{{2
     OpenLinkAndWait 'Quick Calendar (app download) ' 'macappstore://apps.apple.com/us/app/quick-calendar/id1004514425?mt=12'
@@ -269,10 +269,23 @@ ConfirmInstallBrewCask 'BackupLoupe'
 ConfirmInstallLinkAndWait 'Todoist' 'macappstore://apps.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12'
 ConfirmInstallLinkAndWait 'Messenger' 'macappstore://apps.apple.com/us/app/messenger/id1480068668?mt=12'
 ConfirmInstallLinkAndWait 'Evernote' 'macappstore://apps.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
+ConfirmInstallLinkAndWait 'iA Writer' 'macappstore://apps.apple.com/us/app/ia-writer/id775737590?mt=12'
 ConfirmInstallLinkAndWait 'Deliveries' 'macappstore://apps.apple.com/us/app/deliveries-a-package-tracker/id290986013?mt=12'
 ConfirmInstallLinkAndWait 'Drafts' 'macappstore://apps.apple.com/us/app/drafts/id1435957248?mt=12'
+ConfirmInstallLinkAndWait 'Home Assistant' 'macappstore://apps.apple.com/us/app/home-assistant/id1099568401'
 
 # End apps  }}}1
+
+
+#
+# SAFARI EXTENSIONS  {{{1
+#
+
+ConfirmInstallLinkAndWait 'Ka-Block!' 'macappstore://apps.apple.com/us/app/ka-block/id1335413823?mt=12'
+ConfirmInstallLinkAndWait 'Vimari' 'macappstore://apps.apple.com/us/app/vimari/id1480933944?mt=12'
+ConfirmInstallLinkAndWait 'Dark Reader for Safari' 'macappstore://apps.apple.com/us/app/dark-reader-for-safari/id1438243180?mt=12'
+
+# End Safari extensions  }}}1
 
 
 #
@@ -311,6 +324,8 @@ ConfirmInstallBrewCask 'Steam'
 ConfirmInstallBrewCask 'Minecraft'
 
 # End games  }}}1
+
+echo '👉 Note: Make sure you enable any Safari extensions in Safari → Preferences → Extensions'
 
 
 
