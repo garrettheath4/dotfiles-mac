@@ -115,6 +115,7 @@ else
 fi
 
 export VISUAL=vim
+export BROWSER=open
 
 # Tmux-specific commands (only run if Tmux is installed)
 # This should go at the top of .bash_profile since we don't need to worry about

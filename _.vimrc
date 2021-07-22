@@ -65,14 +65,16 @@ Plugin 'derekwyatt/vim-scala'        " Scala
 "-----------------------------------------------------------------------------
 "{{{3 garrettheath4 custom plugins
 
-Plugin 'jaredgorski/SpaceCamp'       " Modern Vim colorscheme
-Plugin 'godlygeek/tabular'           " :Tabularize to align text tables
-Plugin 'elzr/vim-json'               " JSON
-Plugin 'maksimr/vim-jsbeautify'      " :call JsBeautify()
-Plugin 'othree/xml.vim'              " XML
-Plugin 'AnsiEsc.vim'                 " :AnsiEsc to Interpret ANSI esc sequences
-Plugin 'Xuyuanp/nerdtree-git-plugin' " Git plugin for nerdtree (nerdtree req'd)
-Plugin 'plasticboy/vim-markdown'     " Better Markdown support?
+Plugin 'jaredgorski/SpaceCamp'         " Modern Vim colorscheme
+Plugin 'godlygeek/tabular'             " :Tabularize to align text tables
+Plugin 'elzr/vim-json'                 " JSON
+Plugin 'maksimr/vim-jsbeautify'        " :call JsBeautify()
+Plugin 'othree/xml.vim'                " XML
+Plugin 'AnsiEsc.vim'                   " :AnsiEsc to Interpret ANSI esc sequences
+Plugin 'Xuyuanp/nerdtree-git-plugin'   " Git plugin for nerdtree (nerdtree req'd)
+"Plugin 'plasticboy/vim-markdown'      " Better Markdown support?
+Plugin 'nelstrom/vim-markdown-folding' " Enables section folding in Markdown files
+Plugin 'nathangrigg/vim-beancount'     " beancount syntax support (plaintext accounting CLI tool)
 
 Plugin 'ctrlpvim/ctrlp.vim'          " Ctrl+P for fuzzy file finder (ag: the Silver Searcher)  {{{4
 " source: https://thoughtbot.com/blog/faster-grepping-in-vim
