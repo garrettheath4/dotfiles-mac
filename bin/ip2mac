@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 1 ]; then
+	echo "Usage: $0 <IP_ADDRESS>"
+	exit 2
+fi
+
+ping -c 1 "$1" >/dev/null && arp -a | grep -F "($1)"
+
