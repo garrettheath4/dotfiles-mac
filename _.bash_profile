@@ -126,7 +126,7 @@ if command -v tmux >/dev/null 2>&1; then
 	# Tmux is installed
 	if [ -z "${TMUX+defined}" ]; then
 		# This is NOT a Tmux session
-		if [ "$ITERM_PROFILE" = "Hotkey" ] || [ "$ITERM_PROFILE" = "Hotkey Window" ]; then
+		if [[ $ITERM_PROFILE =~ ^Hotkey ]]; then
 			# This is an iTerm2 window with the Hotkey profile
 			tockDebug "Yes Launching tmux-name..."
 			tmux-name
