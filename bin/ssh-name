@@ -10,10 +10,13 @@ if [ -n "${TMUX}" ]; then
 		windowName=$(echo "$1" | cut -d '.' -f 1)
 		#TODO: Extract this known-server substitution into an optional .ssh_server_names.local definition file
 		case "$windowName" in
+			root@cosmia)  windowName='Cosmia'; ;;
 			drlvapiapp01) windowName='Test_API'; ;;
 			prlvapiapp01) windowName='PROD_API'; ;;
 			drlvfusapp01) windowName='Test_Fusion'; ;;
 			prlvfusapp01) windowName='PROD_Fusion'; ;;
+			prlvbamapp01) windowName='Bamboo1'; ;;
+			prlvbamapp02) windowName='Bamboo2'; ;;
 			pdtechsrvr1)  windowName='TEST_CDH_5'; ;;
 			prlpcdhvip)   windowName='PROD_CDH_5'; ;;
 		esac
