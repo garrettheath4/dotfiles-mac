@@ -25,7 +25,7 @@ CommandDoesNotExist () {
 
 ShowLicenses () {
     if [ "$openedLicenses" == 'NO' ]; then
-        echo 'You can find various software license keys in your LastPass account.'
+        echo 'You can find various software license keys in your 1Password account.'
         openedLicenses='YES'
     fi
 }
@@ -204,7 +204,8 @@ brew update
 # GOOGLE CHROME (install before opening web pages in this script)  {{{1
 #
 
-ConfirmInstallBrewCask 'Google Chrome'
+#ConfirmInstallBrewCask 'Google Chrome'
+ConfirmInstallBrewCask 'Brave Browser'
 
 # End Google Chrome  }}}1
 
@@ -218,7 +219,8 @@ ConfirmInstallBrewPackage ag
 
 CommandExists tmux && ConfirmInstallBrewPackage reattach-to-user-namespace
 
-ConfirmInstallLinkAndWait 'LastPass' 'macappstore://apps.apple.com/us/app/lastpass-password-manager/id926036361?mt=12'
+# Install password manager early since you might need the license keys from it to install the other apps
+ConfirmInstallLinkAndWait '1Password' 'macappstore://apps.apple.com/us/app/1password-7-password-manager/id1333542190?mt=12'
 
 if ShouldInstallAppIfNew 'iTerm'; then  # {{{2
     iTermPrefsFilename='com.googlecode.iterm2.plist'
@@ -238,10 +240,10 @@ fi  # }}}2
 
 ConfirmInstallBrewCask 'Moom'
 ConfirmInstallBrewCask 'BetterTouchTool'
-ConfirmInstallBrewCask 'Insync'
 ConfirmInstallBrewCask 'Alfred 4' 'alfred'
 ConfirmInstallBrewCask 'Bartender'
-ConfirmInstallBrewCask 'Tunnelblick'
+ConfirmInstallBrewCask 'Insync'
+ConfirmInstallLinkAndWait 'WireGuard' 'macappstore://apps.apple.com/us/app/wireguard/id1451685025?mt=12'
 ConfirmInstallBrewCask 'KeepingYouAwake'
 ConfirmInstallBrewCask 'BitBar'
 ConfirmInstallBrewCask 'AirServer'
