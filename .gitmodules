@@ -1,5 +1,5 @@
 [submodule "_.vim/bundle/Vundle.vim"]
-	path = _.vim/bundle/Vundle.vim
+	path = .vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "oh-my-git"]
 	path = oh-my-git

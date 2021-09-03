@@ -25,26 +25,26 @@ default_full_name='Garrett Heath Koller'
 default_email='garrettheath4@gmail.com'
 
 for hf in $hidden_files; do
-	if [ -f "_$hf" ]; then
+	if [ -f "$hf" ]; then
 		if [ ! -e ~/"$hf" ]; then
-			ln -sv "$dotfiles/_$hf" ~/"$hf"
+			ln -sv "$dotfiles/$hf" ~/"$hf"
 		else
 			echo "Warning:" ~/"$hf already exists"
 		fi
 	else
-		echo "Warning: _$hf does not exist"
+		echo "Warning: $hf does not exist"
 	fi
 done
 
 for hd in $hidden_dirs; do
-	if [ -d "_$hd" ]; then
+	if [ -d "$hd" ]; then
 		if [ ! -e ~/"$hd" ]; then
-			ln -sv "$dotfiles/_$hd" ~/"$hd"
+			ln -sv "$dotfiles/$hd" ~/"$hd"
 		else
 			echo "Warning:" ~/"$hd/ already exists"
 		fi
 	else
-		echo "Warning: _$hd does not exist"
+		echo "Warning: $hd does not exist"
 	fi
 done
 
