@@ -116,6 +116,8 @@ fi
 
 export VISUAL=vim
 export BROWSER=open
+# https://apple.stackexchange.com/a/371998
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Tmux-specific commands (only run if Tmux is installed)
 # This should go at the top of .bash_profile since we don't need to worry about
