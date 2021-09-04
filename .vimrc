@@ -158,7 +158,11 @@ map Q gq
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   set guioptions-=T
-  color SpaceCamp
+  try
+    colorscheme SpaceCamp
+  catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme koehler
+  endtry
   syntax on
   hi Error guifg=Yellow guibg=Red ctermfg=8 ctermbg=1
   set hlsearch
