@@ -184,6 +184,7 @@ defaults write com.apple.dock showhidden -bool true
 # Hot corners
 # Possible values:
 #  0: no-op
+#  1: no-op
 #  2: Mission Control
 #  3: Show application windows
 #  4: Desktop
@@ -193,14 +194,22 @@ defaults write com.apple.dock showhidden -bool true
 # 10: Put display to sleep
 # 11: Launchpad
 # 12: Notification Center
+#
+# Possible modifiers:
+#  262144: Control
+#  131072: Shift
+#  524288: Option
+# 1048576: Command
+#  393216: Shift+Control
+# 1572864: Command+Option
 # Top left screen corner → Disable screen saver
 defaults write com.apple.dock wvous-tl-corner -int 6
 defaults write com.apple.dock wvous-tl-modifier -int 0
-# Top right screen corner → Put display to sleep
-defaults write com.apple.dock wvous-tr-corner -int 10
-defaults write com.apple.dock wvous-tr-modifier -int 0
-# Bottom left screen corner → Desktop
-defaults write com.apple.dock wvous-bl-corner -int 4
+# Top right screen corner with Command key → Start screen saver
+defaults write com.apple.dock wvous-tr-corner -int 5
+defaults write com.apple.dock wvous-tr-modifier -int 1048576
+# Bottom left screen corner → Disabled
+defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-bl-modifier -int 0
 # Bottom right screen corner → Mission Control
 defaults write com.apple.dock wvous-br-corner -int 2
