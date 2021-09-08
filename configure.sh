@@ -78,9 +78,18 @@ if ! git config --global user.name || ! git config --global user.email ; then
 	git config --global user.email "${REPLY:-$default_email}"
 fi
 
-# Suggest installing patched Awesome-Terminal-Fonts to use in termminal app to display Git-enhanced prompt from oh-my-git
-if test -f awesome-terminal-fonts/patched/Droid+Sans+Mono+Awesome.ttf ; then
-	echo 'Please install a patched Awesome-Terminal-Fonts font and use it with your Terminal app to display enhanced Git icons in the Bash prompt.'
-	echo 'For example, run:  open ~/dotfiles/awesome-terminal-fonts/patched/Droid+Sans+Mono+Awesome.ttf'
-	echo 'Then set "Droid Sans Mono Awesome" as the font for your Terminal app.'
+fontName=Droid+Sans+Mono+Awesome.ttf
+fontDir=awesome-terminal-fonts/patched
+
+# If not found, prompt to install patched Awesome-Terminal-Fonts
+# to use in terminal app to display Git-enhanced prompt from oh-my-git
+if test -f "$fontDir/$fontName" && test ! -f "~/Library/Fonts/$fontName" ; then
+	read -p "Install new font $fontName? [Y/n]: " -n 1 -r ; echo
+	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+		open "$fontDir/$fontName"
+	else
+		echo 'Please install a patched Awesome-Terminal-Fonts font and use it with your Terminal app to display enhanced Git icons in the Bash prompt.'
+		echo 'For example, run:  open ~/dotfiles/awesome-terminal-fonts/patched/Droid+Sans+Mono+Awesome.ttf'
+		echo 'Then set "Droid Sans Mono Awesome" as the font for your Terminal app.'
+	fi
 fi
