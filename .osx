@@ -69,6 +69,9 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
+# Trackpad: Trigger Look up with "Tap with three-fingers" instead of "Force Click with one finger"
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2
+
 # Trackpad: Haptic feedback (light, silent clicking)
 # defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 # defaults write com.apple.AppleMultitouchTrackpad ActuationStrength -int 0
