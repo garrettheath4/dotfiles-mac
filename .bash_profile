@@ -162,8 +162,7 @@ fi
 tick
 BlueBgPS="\\[$(tput setab 4)\\]"
 ResetColorsPS="\\[$(tput sgr0)\\]"
-export PS1="${BlueBgPS}${PS1}${ResetColorsPS}"
-export PS2="${BlueBgPS}${PS2}${ResetColorsPS}"
+export PS1="${BlueBgPS}\\h:\\W \\u${ResetColorsPS}\\$ "
 tockDebug "Yes PS1"
 
 tick
