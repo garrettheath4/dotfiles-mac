@@ -65,6 +65,7 @@ git submodule init && git submodule update
 vim +PluginInstall +qall
 
 # Configure Git
+git config --global init.defaultBranch main
 git config --global pull.ff only
 git config --global push.default simple
 git config --global diff.tool vimdiff
