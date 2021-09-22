@@ -39,14 +39,17 @@ fi
 # General UI/UX                                                               #
 ###############################################################################
 
+# macOS Dark Mode
+defaults write -globalDomain AppleInterfaceStyle -string "Dark"
+
 # Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write -globalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 # Expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write -globalDomain PMPrintingExpandedStateForPrint -bool true
 
 # Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+defaults write -globalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -57,10 +60,10 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # fi
 
 # Disable smart quotes as they’re annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+# defaults write -globalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+# defaults write -globalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Set background to dark-grey color
 # osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Stone.png"'
@@ -80,17 +83,17 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -
 # defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 # defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
 # defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
-# defaults write NSGlobalDomain ContextMenuGesture -int 1
+# defaults write -globalDomain ContextMenuGesture -int 1
 
 # Disable press-and-hold for keys in favor of key repeat
-# defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+# defaults write -globalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate, and make it happen more quickly.
-# defaults write NSGlobalDomain InitialKeyRepeat -int 20
-# defaults write NSGlobalDomain KeyRepeat -int 1
+# defaults write -globalDomain InitialKeyRepeat -int 20
+# defaults write -globalDomain KeyRepeat -int 1
 
 # Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write -globalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
 # Screen                                                                      #
@@ -125,7 +128,7 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write -globalDomain AppleShowAllExtensions -bool true
 
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -143,10 +146,10 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Enable spring loading for directories
-defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+defaults write -globalDomain com.apple.springing.enabled -bool true
 
 # Remove the spring loading delay for directories
-# defaults write NSGlobalDomain com.apple.springing.delay -float 0.1
+# defaults write -globalDomain com.apple.springing.delay -float 0.1
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -228,7 +231,7 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
 # Add a context menu item for showing the Web Inspector in web views
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+defaults write -globalDomain WebKitDeveloperExtras -bool true
 
 ###############################################################################
 # Mail                                                                        #
