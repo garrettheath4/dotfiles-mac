@@ -95,6 +95,12 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -
 # Disable auto-correct
 defaults write -globalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Disable Spotlight keyboard shortcut "Show Finder search window"
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:65:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
+# Change Spotlight keyboard shortcut to Cmd+Opt+Space instead of just Cmd+Space (since Alfred will take Cmd+Space)
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:64:value:parameters:2 1572864" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
 # Disable Dictation keyboard shotcut
 /usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:164:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
