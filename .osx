@@ -289,15 +289,6 @@ if [ -d "$iTermSyncDir" ]; then
 fi
 
 ###############################################################################
-# Alfred                                                                      #
-###############################################################################
-
-alfredSyncDir="~/dotfiles/Alfred/Preferences"
-if [ -d "$alfredSyncDir" ]; then
-	defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "$alfredSyncDir"
-fi
-
-###############################################################################
 # Kill/restart affected applications                                          #
 ###############################################################################
 
@@ -307,5 +298,16 @@ if [[ ! ($* == *--no-restart*) ]]; then
 		killall "${app}" > /dev/null 2>&1
 	done
 fi
+
+###############################################################################
+# Alfred (must happen AFTER it quits)                                         #
+###############################################################################
+
+alfredSyncDir="~/dotfiles/Alfred/Preferences"
+if [ -d "$alfredSyncDir" ]; then
+	defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "$alfredSyncDir"
+	defaults write com.runningwithcrayons.Alfred-Preferences NSNavLastRootDirectory -string "$alfredSyncDir"
+fi
+
 
 printf "Please log out and log back in to make all settings take effect.\n"
