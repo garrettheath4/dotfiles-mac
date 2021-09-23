@@ -67,10 +67,10 @@ tockDebug () {
 }
 
 if ! command -v gdate >/dev/null 2>&1; then
-	if [ -d /opt/homebrew/bin ]; then
+	if [ -d "$(brew --prefix)/bin" ]; then
 		# gdate is installed but is just not in the path, so add it
 		debug -T 'added Homebrew to path'
-		export PATH="$PATH:/opt/homebrew/bin"
+		export PATH="$PATH:$(brew --prefix)/bin"
 	fi
 fi
 
@@ -97,21 +97,26 @@ else
 fi
 
 # Add user bin and sbin folders to PATH
-tick
 # [[ is not POSIX compatible so using alternative from https://stackoverflow.com/a/20460402/1360295
 if [ -d "$HOME/bin" ] && [ -n "${PATH##*$HOME/bin*}" ]; then
 	export PATH="$PATH:$HOME/bin"
-	tockDebug "Yes ~/bin"
 else
-	tockDebug 'No ~/bin'
+	debug -T 'No ~/bin'
+fi
+
+if [ -d "$HOME/sbin" ] && [ -n "${PATH##*$HOME/sbin*}" ]; then
+	export PATH="$PATH:$HOME/sbin"
+else
+	debug -T 'No ~/sbin'
 fi
 
 tick
-if [ -d "$HOME/sbin" ] && [ -n "${PATH##*$HOME/sbin*}" ]; then
-	export PATH="$PATH:$HOME/sbin"
-	tockDebug "Yes ~/bin"
+pythonUserBin=~/Library/Python/$(ls ~/Library/Python/ | tail -n1)/bin
+if [ -d "$pythonUserBin" ] && [ -n "${PATH##*$pythonUserBin*}" ]; then
+	export PATH="$PATH:$pythonUserBin"
+	tockDebug "Yes PATH+=$pythonUserBin"
 else
-	tockDebug 'No ~/sbin'
+	tockDebug "No PATH+=$pythonUserBin"
 fi
 
 export VISUAL=vim
@@ -159,11 +164,10 @@ fi
 # unprintable and to not include them in the string width counting)
 # Bash Prompt Customization: https://wiki.archlinux.org/index.php/Bash/Prompt_customization
 # Terminal Codes intro: http://wiki.bash-hackers.org/scripting/terminalcodes
-tick
 BlueBgPS="\\[$(tput setab 4)\\]"
 ResetColorsPS="\\[$(tput sgr0)\\]"
 export PS1="${BlueBgPS}\\h:\\W \\u${ResetColorsPS}\\$ "
-tockDebug "Yes PS1"
+debug -T "Yes PS1"
 
 tick
 # shellcheck source=../.git-completion.bash disable=SC1091
