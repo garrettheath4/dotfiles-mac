@@ -1,3 +1,6 @@
+# Local-only Alfred preferences files
+Alfred/Preferences/Alfred.alfredpreferences/preferences/local/
+
 # OS X files
 .DS_Store
 
@@ -7,7 +10,7 @@
 .viminfo
 
 # Python IDLE files
-_.idlerc/recent-files.lst
+.idlerc/recent-files.lst
 
 # App launcher files for Homebrew and Wine
 bin/steam
