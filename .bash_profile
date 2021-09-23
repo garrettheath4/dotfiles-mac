@@ -66,6 +66,13 @@ tockDebug () {
 	fi
 }
 
+if ! command -v brew >/dev/null 2>&1; then
+	# It's possible Homebrew is installed but isn't on the PATH
+	if [ -d /opt/homebrew/bin ]; then
+		export PATH="$PATH:/opt/homebrew/bin"
+	fi
+fi
+
 if ! command -v gdate >/dev/null 2>&1; then
 	if [ -d "$(brew --prefix)/bin" ]; then
 		# gdate is installed but is just not in the path, so add it
