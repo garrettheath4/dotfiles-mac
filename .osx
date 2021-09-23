@@ -281,9 +281,20 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # iTerm2                                                                      #
 ###############################################################################
 
-if [ -d "$HOME/dotfiles/iTerm/Preferences" ]; then
-	defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/iTerm/Preferences"
+iTermSyncDir="$HOME/dotfiles/iTerm/Preferences"
+
+if [ -d "$iTermSyncDir" ]; then
+	defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$iTermSyncDir"
 	defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+fi
+
+###############################################################################
+# Alfred                                                                      #
+###############################################################################
+
+alfredSyncDir="~/dotfiles/Alfred/Preferences"
+if [ -d "$alfredSyncDir" ]; then
+	defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "$alfredSyncDir"
 fi
 
 ###############################################################################
