@@ -66,19 +66,29 @@ tockDebug () {
 	fi
 }
 
+ensureInPath () {
+	# Usage: ensureInPath <dir_to_add_if_not_already_in_PATH> [-s|--silent]
+	binDir="$1"
+	flag="$2"
+	if [ -d "$binDir" ]; then
+		# [[ is not POSIX compatible so using alternative from https://stackoverflow.com/a/20460402/1360295
+		if [ -n "${PATH##*$binDir*}" ]; then
+			export PATH="$PATH:$binDir"
+		fi
+	else
+		if [ "$flag" != '--silent' ] && [ "$flag" != '-s' ]; then
+			debug -T "No $binDir does not exist"
+		fi
+	fi
+}
+
 if ! command -v brew >/dev/null 2>&1; then
 	# It's possible Homebrew is installed but isn't on the PATH
-	if [ -d /opt/homebrew/bin ]; then
-		export PATH="$PATH:/opt/homebrew/bin"
-	fi
+	ensureInPath /opt/homebrew/bin --silent
 fi
 
 if ! command -v gdate >/dev/null 2>&1; then
-	if [ -d "$(brew --prefix)/bin" ]; then
-		# gdate is installed but is just not in the path, so add it
-		debug -T 'added Homebrew to path'
-		export PATH="$PATH:$(brew --prefix)/bin"
-	fi
+	ensureInPath "$(brew --prefix)/bin"
 fi
 
 # check gdate again
@@ -87,9 +97,8 @@ if ! command -v gdate >/dev/null 2>&1; then
 	ENABLE_DEBUG_TIMES=0
 fi
 
-debug -T 'Yes interactive'
-
 if [ "$ENABLE_DEBUG" == 1 ] && [ "$ENABLE_DEBUG_TIMES" != 1 ]; then
+	# shellcheck disable=SC2016
 	debug 'No gdate installed (for showing load times; install with `brew install coreutils`)'
 fi
 
@@ -104,27 +113,10 @@ else
 fi
 
 # Add user bin and sbin folders to PATH
-# [[ is not POSIX compatible so using alternative from https://stackoverflow.com/a/20460402/1360295
-if [ -d "$HOME/bin" ] && [ -n "${PATH##*$HOME/bin*}" ]; then
-	export PATH="$PATH:$HOME/bin"
-else
-	debug -T 'No ~/bin'
-fi
+ensureInPath "$HOME/bin"
+ensureInPath "$HOME/sbin"
 
-if [ -d "$HOME/sbin" ] && [ -n "${PATH##*$HOME/sbin*}" ]; then
-	export PATH="$PATH:$HOME/sbin"
-else
-	debug -T 'No ~/sbin'
-fi
-
-tick
-pythonUserBin=~/Library/Python/$(ls ~/Library/Python/ | tail -n1)/bin
-if [ -d "$pythonUserBin" ] && [ -n "${PATH##*$pythonUserBin*}" ]; then
-	export PATH="$PATH:$pythonUserBin"
-	tockDebug "Yes PATH+=$pythonUserBin"
-else
-	tockDebug "No PATH+=$pythonUserBin"
-fi
+ensureInPath "$(find -s "$HOME/Library/Python" -depth 1 | tail -n1)/bin"
 
 export VISUAL=vim
 export BROWSER=open
@@ -174,7 +166,6 @@ fi
 BlueBgPS="\\[$(tput setab 4)\\]"
 ResetColorsPS="\\[$(tput sgr0)\\]"
 export PS1="${BlueBgPS}\\h:\\W \\u${ResetColorsPS}\\$ "
-debug -T "Yes PS1"
 
 tick
 # shellcheck source=../.git-completion.bash disable=SC1091
@@ -221,7 +212,6 @@ if [ -x /usr/bin/dircolors ]; then
 	alias grep='grep --color=auto'
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
-	tockDebug 'Yes dircolors'
 else
 	tockDebug 'No dircolors'
 fi
@@ -326,6 +316,7 @@ else
 	tockDebug "No oh-my-git"
 fi
 
+tick
 if command -v tmux >/dev/null 2>&1 && test -n "${TMUX+defined}"; then
 	# This IS a Tmux session
 	if command -v ssh-name >/dev/null 2>&1; then
