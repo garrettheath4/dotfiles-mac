@@ -342,6 +342,12 @@ if [ -d "${alfredSyncDir/\~/$HOME}" ]; then
 	defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "$alfredSyncDir"
 	defaults write com.runningwithcrayons.Alfred-Preferences NSNavLastRootDirectory -string "$alfredSyncDir"
 fi
+
+##########################################################################}}}1#
+# Spotify                                                                     #
+##########################################################################{{{1#
+
+defaults write com.spotify.client AutoStartSettingIsHidden -bool false
 # }}}1
 
 
