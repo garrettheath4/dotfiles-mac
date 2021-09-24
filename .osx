@@ -256,6 +256,9 @@ defaults write -globalDomain WebKitDeveloperExtras -bool true
 # Mail                                                                        #
 ###############################################################################
 
+# Inbox list shows 1 preview line of email body content instead of 2
+defaults write com.apple.mail NumberOfSnippetLines -int 1
+
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
