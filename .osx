@@ -88,6 +88,9 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -
 # defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
 # defaults write -globalDomain ContextMenuGesture -int 1
 
+# Keyboard: Use Tab to move focus between UI controls
+defaults write -globalDomain AppleKeyboardUIMode -int 2
+
 # Disable press-and-hold for keys in favor of key repeat
 # defaults write -globalDomain ApplePressAndHoldEnabled -bool false
 
@@ -314,6 +317,18 @@ if [ -d "$iTermSyncDir" ]; then
 fi
 
 ##########################################################################}}}1#
+# 1Password                                                                   #
+##########################################################################{{{1#
+
+defaults write com.agilebits.onepassword7 ShowItemCounts -bool true
+
+##########################################################################}}}1#
+# Spotify                                                                     #
+##########################################################################{{{1#
+
+defaults write com.spotify.client AutoStartSettingIsHidden -bool false
+
+##########################################################################}}}1#
 # Drafts                                                                      #
 ##########################################################################{{{1#
 
@@ -342,12 +357,6 @@ if [ -d "${alfredSyncDir/\~/$HOME}" ]; then
 	defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "$alfredSyncDir"
 	defaults write com.runningwithcrayons.Alfred-Preferences NSNavLastRootDirectory -string "$alfredSyncDir"
 fi
-
-##########################################################################}}}1#
-# Spotify                                                                     #
-##########################################################################{{{1#
-
-defaults write com.spotify.client AutoStartSettingIsHidden -bool false
 # }}}1
 
 
