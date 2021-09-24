@@ -311,6 +311,14 @@ if [ -d "$iTermSyncDir" ]; then
 fi
 
 ###############################################################################
+# Drafts                                                                      #
+###############################################################################
+
+defaults write com.agiletortoise.Drafts-OSX com.agiletortoise.Drafts.Backups.ActionGroupBackupNumberToKeep -int 10
+defaults write com.agiletortoise.Drafts-OSX com.agiletortoise.Drafts.Backups.DraftsBackupNumberToKeep -int 30
+defaults write com.agiletortoise.Drafts-OSX com.agiletortoise.Drafts5.Backup.DraftsInterval -int 1
+
+###############################################################################
 # Kill/restart affected applications                                          #
 ###############################################################################
 
