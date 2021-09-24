@@ -28,7 +28,7 @@
 # Warn that some commands will not be run if the script is not run as root.
 if [[ $EUID -ne 0 ]]; then
 	RUN_AS_ROOT=false
-	printf "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo', for example: $ sudo $0\n\n" | fold -s -w 80
+	echo -e "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo', for example: $ sudo $0\n" | fold -s -w 80
 else
 	RUN_AS_ROOT=true
 	# Update existing `sudo` timestamp until `.osx` has finished
@@ -41,6 +41,9 @@ fi
 
 # macOS Dark Mode
 defaults write -globalDomain AppleInterfaceStyle -string "Dark"
+
+# Beep every time the volume is changed
+defaults write -globalDomain com.apple.sound.beep.feedback -int 1
 
 # Expand save panel by default
 defaults write -globalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -333,11 +336,12 @@ fi
 # Alfred (must happen AFTER it quits)                                         #
 ###############################################################################
 
+# shellcheck disable=SC2088
 alfredSyncDir="~/dotfiles/Alfred/Preferences"
-if [ -d "$alfredSyncDir" ]; then
+if [ -d "${alfredSyncDir/\~/$HOME}" ]; then
 	defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "$alfredSyncDir"
 	defaults write com.runningwithcrayons.Alfred-Preferences NSNavLastRootDirectory -string "$alfredSyncDir"
 fi
 
 
-printf "Please log out and log back in to make all settings take effect.\n"
+echo "Please log out and log back in to make all settings take effect."
