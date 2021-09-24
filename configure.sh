@@ -29,7 +29,7 @@ for hf in $hidden_files; do
 		if [ ! -e ~/"$hf" ]; then
 			ln -sv "$dotfiles/$hf" ~/"$hf"
 		else
-			echo "Warning:" ~/"$hf already exists"
+			echo "Info:" ~/"$hf already exists"
 		fi
 	else
 		echo "Warning: $hf does not exist"
@@ -41,7 +41,7 @@ for hd in $hidden_dirs; do
 		if [ ! -e ~/"$hd" ]; then
 			ln -sv "$dotfiles/$hd" ~/"$hd"
 		else
-			echo "Warning:" ~/"$hd/ already exists"
+			echo "Info:" ~/"$hd/ already exists"
 		fi
 	else
 		echo "Warning: $hd does not exist"
@@ -53,7 +53,7 @@ for nd in $normal_dirs; do
 		if [ ! -e ~/"$nd" ]; then
 			ln -sv "$dotfiles/$nd" ~/"$nd"
 		else
-			echo "Warning:" ~/"$nd/ already exists"
+			echo "Info:" ~/"$nd/ already exists"
 		fi
 	else
 		echo "Warning: $nd does not exist"
@@ -84,7 +84,7 @@ fontDir=awesome-terminal-fonts/patched
 
 # If not found, prompt to install patched Awesome-Terminal-Fonts
 # to use in terminal app to display Git-enhanced prompt from oh-my-git
-if test -f "$fontDir/$fontName" && test ! -f "~/Library/Fonts/$fontName" ; then
+if test -f "$fontDir/$fontName" && test ! -f "$HOME/Library/Fonts/$fontName" ; then
 	read -p "Install new font $fontName? [Y/n]: " -n 1 -r ; echo
 	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
 		open "$fontDir/$fontName"
