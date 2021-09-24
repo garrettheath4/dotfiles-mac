@@ -5,7 +5,7 @@
 
 # Mac OS X configuration
 #
-# This configuration applies to the latest version of macOS (currently 11.3),
+# This configuration applies to the latest version of macOS (currently 11.5),
 # and sets up preferences and configurations for all the built-in services and
 # apps. Third-party app config should be done elsewhere.
 #
@@ -37,7 +37,7 @@ fi
 
 ###############################################################################
 # General UI/UX                                                               #
-###############################################################################
+##########################################################################{{{1#
 
 # macOS Dark Mode
 defaults write -globalDomain AppleInterfaceStyle -string "Dark"
@@ -71,9 +71,9 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Set background to dark-grey color
 # osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Stone.png"'
 
-###############################################################################
+##########################################################################}}}1#
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-###############################################################################
+##########################################################################{{{1#
 
 # Trackpad: Trigger Look up with "Tap with three-fingers" instead of "Force Click with one finger"
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2
@@ -107,9 +107,9 @@ defaults write -globalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable Dictation keyboard shotcut
 /usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:164:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
-###############################################################################
+##########################################################################}}}1#
 # Screen                                                                      #
-###############################################################################
+##########################################################################{{{1#
 
 # Save screenshots to Downloads folder.
 # defaults write com.apple.screencapture location -string "${HOME}/Downloads"
@@ -120,9 +120,9 @@ defaults write com.apple.screencapture type -string "png"
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
-###############################################################################
+##########################################################################}}}1#
 # Finder                                                                      #
-###############################################################################
+##########################################################################{{{1#
 
 # Set the default location for new Finder windows
 # For Desktop, use `PfDe` and `file://${HOME}/Desktop/`
@@ -193,9 +193,9 @@ chflags nohidden ~/Library
 # Automatically delete Trash items after 30 days
 defaults write com.apple.finder FXRemoveOldTrashItems -bool true
 
-###############################################################################
+##########################################################################}}}1#
 # Dock, Dashboard, and hot corners                                            #
-###############################################################################
+##########################################################################{{{1#
 
 # Set the icon size of Dock items
 defaults write com.apple.dock tilesize -int 32
@@ -243,9 +243,9 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 defaults write com.apple.dock wvous-br-corner -int 2
 defaults write com.apple.dock wvous-br-modifier -int 0
 
-###############################################################################
+##########################################################################}}}1#
 # Safari & WebKit                                                             #
-###############################################################################
+##########################################################################{{{1#
 
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
@@ -255,9 +255,9 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 # Add a context menu item for showing the Web Inspector in web views
 defaults write -globalDomain WebKitDeveloperExtras -bool true
 
-###############################################################################
+##########################################################################}}}1#
 # Mail                                                                        #
-###############################################################################
+##########################################################################{{{1#
 
 # Inbox list shows 1 preview line of email body content instead of 2
 defaults write com.apple.mail NumberOfSnippetLines -int 1
@@ -268,9 +268,9 @@ defaults write com.apple.mail SwipeAction -int 1
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
-###############################################################################
+##########################################################################}}}1#
 # Spotlight                                                                   #
-###############################################################################
+##########################################################################{{{1#
 
 if [[ "$RUN_AS_ROOT" = true ]]; then
 	# Disable Spotlight indexing for any volume that gets mounted and has not yet
@@ -282,9 +282,9 @@ if [[ "$RUN_AS_ROOT" = true ]]; then
 	killall mds > /dev/null 2>&1
 fi
 
-###############################################################################
+##########################################################################}}}1#
 # Activity Monitor                                                            #
-###############################################################################
+##########################################################################{{{1#
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -292,9 +292,9 @@ defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 # Show all processes in Activity Monitor
 defaults write com.apple.ActivityMonitor ShowCategory -int 0
 
-###############################################################################
+##########################################################################}}}1#
 # Messages                                                                    #
-###############################################################################
+##########################################################################{{{1#
 
 # Disable smart quotes as it’s annoying for messages that contain code
 # defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
@@ -302,9 +302,9 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Disable continuous spell checking
 # defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
-###############################################################################
+##########################################################################}}}1#
 # iTerm2                                                                      #
-###############################################################################
+##########################################################################{{{1#
 
 iTermSyncDir="$HOME/dotfiles/iTerm/Preferences"
 
@@ -313,17 +313,17 @@ if [ -d "$iTermSyncDir" ]; then
 	defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 fi
 
-###############################################################################
+##########################################################################}}}1#
 # Drafts                                                                      #
-###############################################################################
+##########################################################################{{{1#
 
 defaults write com.agiletortoise.Drafts-OSX com.agiletortoise.Drafts.Backups.ActionGroupBackupNumberToKeep -int 10
 defaults write com.agiletortoise.Drafts-OSX com.agiletortoise.Drafts.Backups.DraftsBackupNumberToKeep -int 30
 defaults write com.agiletortoise.Drafts-OSX com.agiletortoise.Drafts5.Backup.DraftsInterval -int 1
 
-###############################################################################
+##########################################################################}}}1#
 # Kill/restart affected applications                                          #
-###############################################################################
+##########################################################################{{{1#
 
 # Restart affected applications if `--no-restart` flag is not present.
 if [[ ! ($* == *--no-restart*) ]]; then
@@ -332,9 +332,9 @@ if [[ ! ($* == *--no-restart*) ]]; then
 	done
 fi
 
-###############################################################################
+##########################################################################}}}1#
 # Alfred (must happen AFTER it quits)                                         #
-###############################################################################
+##########################################################################{{{1#
 
 # shellcheck disable=SC2088
 alfredSyncDir="~/dotfiles/Alfred/Preferences"
@@ -342,6 +342,10 @@ if [ -d "${alfredSyncDir/\~/$HOME}" ]; then
 	defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "$alfredSyncDir"
 	defaults write com.runningwithcrayons.Alfred-Preferences NSNavLastRootDirectory -string "$alfredSyncDir"
 fi
+# }}}1
 
 
 echo "Please log out and log back in to make all settings take effect."
+
+
+# vim: set copyindent preserveindent foldmethod=marker:
