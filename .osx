@@ -265,6 +265,12 @@ defaults write -globalDomain WebKitDeveloperExtras -bool true
 # Inbox list shows 1 preview line of email body content instead of 2
 defaults write com.apple.mail NumberOfSnippetLines -int 1
 
+# Unread messages are in bold
+defaults write com.apple.mail ShouldShowUnreadMessagesInBold -bool true
+
+# In a message thread: show unread messages at the top
+defaults write com.apple.mail ConversationViewSortDescending -bool true
+
 # Swiping left on an email message in a list archives it instead of deleting it
 defaults write com.apple.mail SwipeAction -int 1
 
