@@ -117,6 +117,10 @@ defaults write -globalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable Dictation keyboard shotcut
 /usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:164:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
+# Enable Ctrl+<Desktop #> (such as Ctrl+1) to switch to a specific Desktop
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:118:enabled true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:119:enabled true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
 ##########################################################################}}}1#
 # Screen                                                                      #
 ##########################################################################{{{1#
