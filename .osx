@@ -282,6 +282,9 @@ defaults write com.apple.mail ShouldShowUnreadMessagesInBold -bool true
 # In a message thread: show unread messages at the top
 defaults write com.apple.mail ConversationViewSortDescending -bool true
 
+# In a message thread: mark all messages as read when viewing thread
+defaults write com.apple.mail ConversationViewMarkAllAsRead -bool true
+
 # Swiping left on an email message in a list archives it instead of deleting it
 defaults write com.apple.mail SwipeAction -int 1
 
