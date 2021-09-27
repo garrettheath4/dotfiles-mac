@@ -352,6 +352,8 @@ defaults write com.spotify.client AutoStartSettingIsHidden -bool false
 defaults write com.agiletortoise.Drafts-OSX com.agiletortoise.Drafts.Backups.ActionGroupBackupNumberToKeep -int 10
 defaults write com.agiletortoise.Drafts-OSX com.agiletortoise.Drafts.Backups.DraftsBackupNumberToKeep -int 30
 defaults write com.agiletortoise.Drafts-OSX com.agiletortoise.Drafts5.Backup.DraftsInterval -int 1
+defaults delete com.agiletortoise.Drafts-OSX "NSStatusItem Preferred Position Item-0"
+defaults write com.agiletortoise.Drafts-OSX "NSStatusItem Visible Item-0" -bool false
 
 ##########################################################################}}}1#
 # Kill/restart affected applications                                          #
