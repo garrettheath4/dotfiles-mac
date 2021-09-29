@@ -116,7 +116,10 @@ fi
 ensureInPath "$HOME/bin"
 ensureInPath "$HOME/sbin"
 
-ensureInPath "$(find -s "$HOME/Library/Python" -depth 1 | tail -n1)/bin"
+tick
+# shellcheck disable=SC2012
+ensureInPath "$HOME/Library/Python/$(ls "$HOME/Library/Python" | tail -n1)/bin"
+tockDebug 'Yes user-specific Python packages in PATH'
 
 export VISUAL=vim
 export BROWSER=open
