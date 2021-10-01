@@ -60,7 +60,10 @@ tockDebug () {
 		return
 	fi
 	if [ "$ENABLE_DEBUG_TIMES" == 1 ]; then
-		printf '%4.0fms %s\n' "$(tock)" "$(emojify "$1")"
+		#TODO: Pop and print line of SSH (public) key ASCII art
+		# printf "%-20s\t%-20s\n" "Foooooooooo" "Bar"
+		printf '%4.0fms %-45s %s\n' "$(tock)" "$(emojify "$1")" "${KEY_LINES[KEY_INDEX]}"
+		(( KEY_INDEX++ ))
 	else
 		emojify "$1"
 	fi
@@ -100,6 +103,17 @@ fi
 if [ "$ENABLE_DEBUG" == 1 ] && [ "$ENABLE_DEBUG_TIMES" != 1 ]; then
 	# shellcheck disable=SC2016
 	debug 'No gdate installed (for showing load times; install with `brew install coreutils`)'
+fi
+
+# Show SSH key fingerprint as ASCII art (for memorization)
+tick
+declare -a KEY_LINES=()
+KEY_INDEX=0
+if test -f ~/.ssh/id_rsa.pub ; then
+	IFS=$'\n' KEY_LINES=($(ssh-keygen -lvf ~/.ssh/id_rsa.pub | tail -n +2))
+	tockDebug "Yes ssh key"
+else
+	tockDebug "No ssh key"
 fi
 
 # Source system's global definitions
@@ -299,15 +313,6 @@ ifDistIsThenSource () {
 
 # Bootstrap based on OS/Disto
 ifDistIsThenSource "Raspbian" ~/.bashrc.os.raspbian
-
-# Show SSH key fingerprint as ASCII art (for memorization)
-tick
-if test -f ~/.ssh/id_rsa.pub ; then
-	ssh-keygen -lvf ~/.ssh/id_rsa.pub
-	tockDebug "Yes ssh key"
-else
-	tockDebug "No ssh key"
-fi
 
 # Decorate terminal prompt using oh-my-git
 tick
