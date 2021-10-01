@@ -285,23 +285,6 @@ ifDistIsThenSource () {
 # Bootstrap based on OS/Disto
 ifDistIsThenSource "Raspbian" ~/.bashrc.os.raspbian
 
-tickDebug 'ssh-name'
-if command -v tmux >/dev/null 2>&1 && test -n "${TMUX+defined}"; then
-	# This IS a Tmux session
-	if command -v ssh-name >/dev/null 2>&1; then
-		alias ssh='ssh-name'
-		if [ -f ~/bin/cd-wrapper-tmux ]; then
-			# shellcheck disable=SC1090 disable=SC2039
-			source ~/bin/cd-wrapper-tmux
-			tockDebug "Yes ssh-name & cd-wrapper-tmux"
-		else
-			tockDebug "No cd-wrapper-tmux"
-		fi
-	else
-		tockDebug "No ssh-name"
-	fi
-fi
-
 tickDebug 'user-specific Python packages in PATH'
 # shellcheck disable=SC2012
 ensureInPath "$HOME/Library/Python/$(ls "$HOME/Library/Python" | tail -n1)/bin"
@@ -315,6 +298,16 @@ if [ -x ~/.git-completion.bash ]; then
 	tockDebug "Yes ~/.git-completion.bash"
 else
 	tockDebug 'No ~/.git-completion.bash'
+fi
+
+# Decorate terminal prompt using oh-my-git
+tickDebug 'oh-my-git'
+# shellcheck disable=SC1090 disable=SC2039
+if test -f ~/dotfiles/oh-my-git/prompt.sh ; then
+	source "$_"
+	tockDebug 'Yes oh-my-git'
+else
+	tockDebug 'No oh-my-git'
 fi
 
 # Enable Bash completion scripts from Homebrew installs if Homebrew and Homebrew:bash-completion are installed
@@ -338,14 +331,23 @@ else
 	tockDebug 'No Homebrew bash_completion'
 fi
 
-# Decorate terminal prompt using oh-my-git
-tickDebug 'oh-my-git'
-# shellcheck disable=SC1090 disable=SC2039
-if test -f ~/dotfiles/oh-my-git/prompt.sh ; then
-	source "$_"
-	tockDebug 'Yes oh-my-git'
-else
-	tockDebug 'No oh-my-git'
+# Sourcing cd-wrapper-tmux should happen last since the above stuff might
+# use `cd` and therefore might change the name of this Tmux panel
+tickDebug 'ssh-name'
+if command -v tmux >/dev/null 2>&1 && test -n "${TMUX+defined}"; then
+	# This IS a Tmux session
+	if command -v ssh-name >/dev/null 2>&1; then
+		alias ssh='ssh-name'
+		if [ -f ~/bin/cd-wrapper-tmux ]; then
+			# shellcheck disable=SC1090 disable=SC2039
+			source ~/bin/cd-wrapper-tmux
+			tockDebug "Yes ssh-name & cd-wrapper-tmux"
+		else
+			tockDebug "No cd-wrapper-tmux"
+		fi
+	else
+		tockDebug "No ssh-name"
+	fi
 fi
 
 
