@@ -55,6 +55,13 @@ tock () {
 	printf '%g\n' "$(echo "scale=3; ${delta}/1000" | bc)"
 }
 
+tickDebug () {
+	tick
+	if [ "$#" -ge 1 ]; then
+		printf ' ...ms ❔ %s\r' "$1"
+	fi
+}
+
 tockDebug () {
 	if [ "$ENABLE_DEBUG" != 1 ]; then
 		return
@@ -106,7 +113,7 @@ if [ "$ENABLE_DEBUG" == 1 ] && [ "$ENABLE_DEBUG_TIMES" != 1 ]; then
 fi
 
 # Show SSH key fingerprint as ASCII art (for memorization)
-tick
+tickDebug 'ssh key'
 declare -a KEY_LINES=()
 KEY_INDEX=0
 if test -f ~/.ssh/id_rsa.pub ; then
@@ -117,7 +124,7 @@ else
 fi
 
 # Source system's global definitions
-tick
+tickDebug '/etc/bashrc'
 if [ -f /etc/bashrc ]; then
 	# shellcheck disable=SC1091 disable=SC2039
 	source /etc/bashrc
@@ -130,7 +137,7 @@ fi
 ensureInPath "$HOME/bin"
 ensureInPath "$HOME/sbin"
 
-tick
+tickDebug 'user-specific Python packages in PATH'
 # shellcheck disable=SC2012
 ensureInPath "$HOME/Library/Python/$(ls "$HOME/Library/Python" | tail -n1)/bin"
 tockDebug 'Yes user-specific Python packages in PATH'
@@ -144,7 +151,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # This should go at the top of .bash_profile since we don't need to worry about
 # setting up THIS shell if we're just going to launch Tmux with its own shell so
 # setting up THIS shell doesn't matter if Tmux is installed (until Tmux exits)
-tick
+tickDebug 'hotkey'
 if command -v tmux >/dev/null 2>&1; then
 	# Tmux is installed
 	if [ -z "${TMUX+defined}" ]; then
@@ -166,7 +173,7 @@ fi
 # I recommend putting a custom command prompt in .bash_profile.local
 # like: export PS1="\u@\h:\W$(tput sgr0) \$ "
 # shellcheck source=../.bash_profile.local disable=SC1091
-tick
+tickDebug '~/.bash_profile.local'
 if [ -f ~/.bash_profile.local ]; then
 	# shellcheck disable=SC1090 disable=SC2039
 	source ~/.bash_profile.local
@@ -184,7 +191,7 @@ BlueBgPS="\\[$(tput setab 4)\\]"
 ResetColorsPS="\\[$(tput sgr0)\\]"
 export PS1="${BlueBgPS}\\h:\\W \\u${ResetColorsPS}\\$ "
 
-tick
+tickDebug '~/.git-completion.bash'
 # shellcheck source=../.git-completion.bash disable=SC1091
 if [ -x ~/.git-completion.bash ]; then
 	# shellcheck disable=SC2039
@@ -196,12 +203,12 @@ fi
 
 # Enable Bash completion scripts from Homebrew installs if Homebrew and Homebrew:bash-completion are installed
 # bash-completion can be installed with: brew install bash-completion
-tick
+tickDebug 'Homebrew bash_completion'
 # shellcheck source=/usr/local/etc/bash_completion disable=SC1091
 if (command -v brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_completion"; then
 	# shellcheck disable=SC2039
 	source "$_"
-	tockDebug "Yes Homebrew bash_completion"
+	tockDebug 'Yes Homebrew bash_completion'
 elif type brew &>/dev/null; then
 	HOMEBREW_PREFIX="$(brew --prefix)"
 	if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
@@ -234,7 +241,7 @@ else
 fi
 
 # Set the editor to Vim if it is installed
-tick
+tickDebug 'EDITOR=vim'
 if command -v vim >/dev/null 2>&1; then
 	EDITOR=$(command -v vim)
 	export EDITOR
@@ -245,7 +252,7 @@ else
 fi
 
 # User aliases
-tick
+tickDebug 'read-alias'
 which_alias="alias | command which --tty-only --read-alias --show-dot --show-tilde"
 if $which_alias which 2>/dev/null ; then
 	# shellcheck disable=SC2139
@@ -255,7 +262,7 @@ else
 	tockDebug 'No read-alias'
 fi
 
-tick
+tickDebug 'aliases'
 alias ls='ls -G'
 alias lss='ls -haGl'
 alias lsr='ls -haGlt'
@@ -294,7 +301,7 @@ alias mvnv='mvn versions:display-dependency-updates | less'
 tockDebug "Yes aliases"
 
 ifDistIsThenSource () {
-	tick
+	tickDebug "$2"
 	if [ "$#" -ne 2 ] || [ -z "$1" ] || [ -z "$2" ]; then
 		echo "ERROR: ifDistIsThenSource needs two non-empty args" 1>&2
 		echo "Usage: ifDistIsThenSource: Ubuntu ~/.bashrc.os.ubuntu" 1>&2
@@ -315,16 +322,16 @@ ifDistIsThenSource () {
 ifDistIsThenSource "Raspbian" ~/.bashrc.os.raspbian
 
 # Decorate terminal prompt using oh-my-git
-tick
+tickDebug 'oh-my-git'
 # shellcheck disable=SC1090 disable=SC2039
 if test -f ~/dotfiles/oh-my-git/prompt.sh ; then
 	source "$_"
-	tockDebug "Yes oh-my-git"
+	tockDebug 'Yes oh-my-git'
 else
-	tockDebug "No oh-my-git"
+	tockDebug 'No oh-my-git'
 fi
 
-tick
+tickDebug 'ssh-name'
 if command -v tmux >/dev/null 2>&1 && test -n "${TMUX+defined}"; then
 	# This IS a Tmux session
 	if command -v ssh-name >/dev/null 2>&1; then
