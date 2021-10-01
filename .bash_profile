@@ -137,11 +137,6 @@ fi
 ensureInPath "$HOME/bin"
 ensureInPath "$HOME/sbin"
 
-tickDebug 'user-specific Python packages in PATH'
-# shellcheck disable=SC2012
-ensureInPath "$HOME/Library/Python/$(ls "$HOME/Library/Python" | tail -n1)/bin"
-tockDebug 'Yes user-specific Python packages in PATH'
-
 export VISUAL=vim
 export BROWSER=open
 # https://apple.stackexchange.com/a/371998
@@ -190,37 +185,6 @@ fi
 BlueBgPS="\\[$(tput setab 4)\\]"
 ResetColorsPS="\\[$(tput sgr0)\\]"
 export PS1="${BlueBgPS}\\h:\\W \\u${ResetColorsPS}\\$ "
-
-tickDebug '~/.git-completion.bash'
-# shellcheck source=../.git-completion.bash disable=SC1091
-if [ -x ~/.git-completion.bash ]; then
-	# shellcheck disable=SC2039
-	source ~/.git-completion.bash
-	tockDebug "Yes ~/.git-completion.bash"
-else
-	tockDebug 'No ~/.git-completion.bash'
-fi
-
-# Enable Bash completion scripts from Homebrew installs if Homebrew and Homebrew:bash-completion are installed
-# bash-completion can be installed with: brew install bash-completion
-tickDebug 'Homebrew bash_completion'
-# shellcheck source=/usr/local/etc/bash_completion disable=SC1091
-if (command -v brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_completion"; then
-	# shellcheck disable=SC2039
-	source "$_"
-	tockDebug 'Yes Homebrew bash_completion'
-elif type brew &>/dev/null; then
-	HOMEBREW_PREFIX="$(brew --prefix)"
-	if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
-		source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-	else
-		for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
-			[[ -r "$COMPLETION" ]] && source "$COMPLETION"
-		done
-	fi
-else
-	tockDebug 'No Homebrew bash_completion'
-fi
 
 # Enable color support of ls and also add handy aliases
 tick
@@ -321,16 +285,6 @@ ifDistIsThenSource () {
 # Bootstrap based on OS/Disto
 ifDistIsThenSource "Raspbian" ~/.bashrc.os.raspbian
 
-# Decorate terminal prompt using oh-my-git
-tickDebug 'oh-my-git'
-# shellcheck disable=SC1090 disable=SC2039
-if test -f ~/dotfiles/oh-my-git/prompt.sh ; then
-	source "$_"
-	tockDebug 'Yes oh-my-git'
-else
-	tockDebug 'No oh-my-git'
-fi
-
 tickDebug 'ssh-name'
 if command -v tmux >/dev/null 2>&1 && test -n "${TMUX+defined}"; then
 	# This IS a Tmux session
@@ -346,6 +300,52 @@ if command -v tmux >/dev/null 2>&1 && test -n "${TMUX+defined}"; then
 	else
 		tockDebug "No ssh-name"
 	fi
+fi
+
+tickDebug 'user-specific Python packages in PATH'
+# shellcheck disable=SC2012
+ensureInPath "$HOME/Library/Python/$(ls "$HOME/Library/Python" | tail -n1)/bin"
+tockDebug 'Yes user-specific Python packages in PATH'
+
+tickDebug '~/.git-completion.bash'
+# shellcheck source=../.git-completion.bash disable=SC1091
+if [ -x ~/.git-completion.bash ]; then
+	# shellcheck disable=SC2039
+	source ~/.git-completion.bash
+	tockDebug "Yes ~/.git-completion.bash"
+else
+	tockDebug 'No ~/.git-completion.bash'
+fi
+
+# Enable Bash completion scripts from Homebrew installs if Homebrew and Homebrew:bash-completion are installed
+# bash-completion can be installed with: brew install bash-completion
+tickDebug 'Homebrew bash_completion'
+# shellcheck source=/usr/local/etc/bash_completion disable=SC1091
+if (command -v brew >/dev/null 2>&1) && test -f "$(brew --prefix)/etc/bash_completion"; then
+	# shellcheck disable=SC2039
+	source "$_"
+	tockDebug 'Yes Homebrew bash_completion'
+elif type brew &>/dev/null; then
+	HOMEBREW_PREFIX="$(brew --prefix)"
+	if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+		source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+	else
+		for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+			[[ -r "$COMPLETION" ]] && source "$COMPLETION"
+		done
+	fi
+else
+	tockDebug 'No Homebrew bash_completion'
+fi
+
+# Decorate terminal prompt using oh-my-git
+tickDebug 'oh-my-git'
+# shellcheck disable=SC1090 disable=SC2039
+if test -f ~/dotfiles/oh-my-git/prompt.sh ; then
+	source "$_"
+	tockDebug 'Yes oh-my-git'
+else
+	tockDebug 'No oh-my-git'
 fi
 
 
