@@ -349,6 +349,14 @@ defaults write com.agilebits.onepassword7 ShowItemCounts -bool true
 defaults write com.spotify.client AutoStartSettingIsHidden -bool false
 
 ##########################################################################}}}1#
+# iA Writer                                                                   #
+##########################################################################{{{1#
+
+defaults write pro.writer.mac "Document Path Extension" -string "md"
+defaults write pro.writer.mac "Content Size" -string "S"
+defaults write pro.writer.mac "Editor Line Length Limit" -int 80
+
+##########################################################################}}}1#
 # Drafts                                                                      #
 ##########################################################################{{{1#
 
