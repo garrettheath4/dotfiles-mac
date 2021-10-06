@@ -269,6 +269,9 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 # Add a context menu item for showing the Web Inspector in web views
 defaults write -globalDomain WebKitDeveloperExtras -bool true
 
+# Disable Apple Personalized Ads (disables ad tracking)
+defaults write com.apple.AdLib allowApplePersonalizedAdvertising -bool false
+
 ##########################################################################}}}1#
 # Mail                                                                        #
 ##########################################################################{{{1#
