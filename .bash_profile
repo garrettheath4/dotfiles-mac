@@ -335,15 +335,20 @@ fi
 
 # >>>> Vagrant command completion (start)
 tickDebug 'Vagrant bash_completion'
-# shellcheck disable=SC2012
-vagrantCompletion="/opt/vagrant/embedded/gems/$(ls /opt/vagrant/embedded/gems/ | tail -n1)/gems/vagrant-*/contrib/bash/completion.sh"
-# shellcheck disable=SC2086
-if (command -v vagrant >/dev/null 2>&1) && [ -f $vagrantCompletion ]; then
-	# shellcheck disable=SC2086 source=/opt/vagrant/embedded/gems/2.2.18/gems/vagrant-2.2.18/contrib/bash/completion.sh
-	source $vagrantCompletion
-	tockDebug 'Yes Vagrant bash_completion'
+vagrantGems=/opt/vagrant/embedded/gems/
+if (command -v vagrant >/dev/null 2>&1) && [ -d $vagrantGems ]; then
+	# shellcheck disable=SC2012
+	vagrantCompletion="$vagrantGems$(ls $vagrantGems | tail -n1)/gems/vagrant-*/contrib/bash/completion.sh"
+	# shellcheck disable=SC2086
+	if [ -f $vagrantCompletion ]; then
+		# shellcheck disable=SC2086 source=/opt/vagrant/embedded/gems/2.2.18/gems/vagrant-2.2.18/contrib/bash/completion.sh
+		source $vagrantCompletion
+		tockDebug 'Yes Vagrant bash_completion'
+	else
+		tockDebug 'No Vagrant bash_completion'
+	fi
 else
-	tockDebug 'No Vagrant bash_completion'
+	tockDebug 'No Vagrant'
 fi
 # <<<<  Vagrant command completion (end)
 
