@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-approvedPkgsFile=~/.brew/approved_packages
+approvedPkgsFile=~/.brew/approved_formulae
 approvedCasksFile=~/.brew/approved_casks
 greedyCasksFile=~/.brew/greedy_casks
 
@@ -38,6 +38,33 @@ printWithUrlExceptTrusted() {
 			echo "$line" | sed -E "s|([^ ]+)(.*)|\1\2  -  https://formulae.brew.sh/$urlPath\1|"
 		fi
 	done <<< "$brewOutdated"
+}
+
+trustAll() {
+	# Usage: trustAll <brewOutdatedOutput> <formulae|casks>
+
+	local brewOutdated="$1"
+	local formulaeOrCasks="$2"
+
+	if [ "$formulaeOrCasks" != 'formulae' ] && [ "$formulaeOrCasks" != 'casks' ]; then
+		echo "ERROR: Unexpected argument: $formulaeOrCasks (expected 'formulae' or 'casks')"
+		return 2
+	fi
+
+	( cat ~/.brew/approved_"$formulaeOrCasks" ; echo "$brewOutdated" | cut -f1 -d' ' ) | sort | uniq > /tmp/approved_"$formulaeOrCasks"
+	mv /tmp/approved_"$formulaeOrCasks" ~/.brew/approved_"$formulaeOrCasks"
+}
+
+trustAllFormulae() {
+	# Usage: trustAllFormulae <brewOutdatedOutput>
+
+	trustAll "$1" 'formulae'
+}
+
+trustAllCasks() {
+	# Usage: trustAllCasks <brewOutdatedOutput>
+
+	trustAll "$1" 'casks'
 }
 
 messages=''
@@ -134,10 +161,12 @@ if [ "$pleaseUpgradeCasks" == "yes" ] || [ "$pleaseUpgradeGreedyCasks" == "yes" 
 fi
 
 if [ "$pleaseUpgradePackages" == "yes" ]; then
+	trustAllFormulae "$brewOutdated"
 	brew upgrade --formula
 fi
 
 if [ "$pleaseUpgradeCasks" == "yes" ]; then
+	trustAllCasks "$caskOutdated"
 	brew upgrade --cask
 fi
 
