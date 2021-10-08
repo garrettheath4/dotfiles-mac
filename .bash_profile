@@ -92,9 +92,12 @@ ensureInPath () {
 	fi
 }
 
-if ! command -v brew >/dev/null 2>&1; then
-	# It's possible Homebrew is installed but isn't on the PATH
-	ensureInPath /opt/homebrew/bin --silent
+if [ -x /opt/homebrew/bin/brew ]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+	if [ -x /usr/local/bin/brew ]; then
+		eval "$(/usr/local/bin/brew shellenv)"
+	fi
 fi
 
 if ! command -v gdate >/dev/null 2>&1; then
@@ -156,7 +159,7 @@ if command -v tmux >/dev/null 2>&1; then
 			tockDebug "Yes Launching tmux-name..."
 			tmux-name
 		else
-			tockDebug 'Not hotkey'
+			tockDebug 'No hotkey'
 		fi
 	fi
 else
