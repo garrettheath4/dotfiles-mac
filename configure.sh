@@ -22,7 +22,7 @@ normal_dirs='bin
 sbin'
 
 default_full_name='Garrett Heath Koller'
-default_email='garrettheath4@gmail.com'
+default_email=$(echo 'Z2FycmV0dGhlYXRoNEBnbWFpbC5jb20K' | base64 --decode)
 
 for hf in $hidden_files; do
 	if [ -f "$hf" ]; then
