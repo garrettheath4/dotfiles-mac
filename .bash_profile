@@ -83,7 +83,7 @@ ensureInPath () {
 	if [ -d "$binDir" ]; then
 		# [[ is not POSIX compatible so using alternative from https://stackoverflow.com/a/20460402/1360295
 		if [ -n "${PATH##*$binDir*}" ]; then
-			export PATH="$PATH:$binDir"
+			export PATH="$binDir:$PATH"
 		fi
 	else
 		if [ "$flag" != '--silent' ] && [ "$flag" != '-s' ]; then
@@ -140,6 +140,9 @@ fi
 ensureInPath "$HOME/bin"
 ensureInPath "$HOME/sbin"
 
+# Make sure the Homebrew-installed version of Ruby is in the PATH
+ensureInPath '/usr/local/opt/ruby/bin' --silent
+
 export VISUAL=vim
 export BROWSER=open
 # https://apple.stackexchange.com/a/371998
@@ -170,7 +173,7 @@ fi
 # Source user's local definitions
 # I recommend putting a custom command prompt in .bash_profile.local
 # like: export PS1="\u@\h:\W$(tput sgr0) \$ "
-# shellcheck source=../.bash_profile.local disable=SC1091
+# shellcheck source=../.bash_profile.local disable=SC1091 disable=SC2088
 tickDebug '~/.bash_profile.local'
 if [ -f ~/.bash_profile.local ]; then
 	# shellcheck disable=SC1090 disable=SC2039
@@ -295,6 +298,7 @@ tickDebug 'user-specific Python packages in PATH'
 ensureInPath "$HOME/Library/Python/$(ls "$HOME/Library/Python" | tail -n1)/bin"
 tockDebug 'Yes user-specific Python packages in PATH'
 
+# shellcheck disable=SC2088
 tickDebug '~/.git-completion.bash'
 # shellcheck source=../.git-completion.bash disable=SC1091
 if [ -x ~/.git-completion.bash ]; then
