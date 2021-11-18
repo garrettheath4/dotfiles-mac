@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+	echo "Usage: $0 <PID_to_wait_for> <notify_message>"
+	exit 2
+fi
+
+pid="$1"
+
+shift
+message="Process $pid has finished running on $(hostname)."
+
+if [ $# -ge 1 ]; then
+	message="$*"
+fi
+
+# Source: https://stackoverflow.com/a/4503323
+while kill -0 "$pid" 2>/dev/null ; do
+	sleep 1
+done
+
+notify "$message"
+
