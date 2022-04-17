@@ -270,6 +270,7 @@ alias ggl='git log --pretty=oneline --abbrev-commit'
 ## Other terminal shortcuts
 alias mvnt='mvn dependency:tree -Dverbose | vim "+set bt=nofile" -'
 alias mvnv='mvn versions:display-dependency-updates | less'
+alias sbtt='sbt dependencyTree | vim "+set bt=nofile" -'
 
 tockDebug "Yes aliases"
 
