@@ -270,7 +270,6 @@ ConfirmInstallBrewCask 'BackupLoupe'
 
 ConfirmInstallLinkAndWait 'Todoist' 'macappstore://apps.apple.com/us/app/todoist-to-do-list-task-list/id585829637?mt=12'
 ConfirmInstallLinkAndWait 'Messenger' 'macappstore://apps.apple.com/us/app/messenger/id1480068668?mt=12'
-ConfirmInstallLinkAndWait 'Evernote' 'macappstore://apps.apple.com/us/app/evernote-stay-organized/id406056744?mt=12'
 ConfirmInstallLinkAndWait 'iA Writer' 'macappstore://apps.apple.com/us/app/ia-writer/id775737590?mt=12'
 ConfirmInstallLinkAndWait 'Deliveries' 'macappstore://apps.apple.com/us/app/deliveries-a-package-tracker/id290986013?mt=12'
 ConfirmInstallLinkAndWait 'Drafts' 'macappstore://apps.apple.com/us/app/drafts/id1435957248?mt=12'
