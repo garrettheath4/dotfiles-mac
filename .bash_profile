@@ -21,7 +21,7 @@ if [ -r ~/.ghk_profile ]; then
 	# shellcheck source=.ghk_profile
 	source ~/.ghk_profile
 
-	# Source user's local definitions
+	# Source user's local-only initialization script
 	# I recommend putting a custom command prompt in .bash_profile.local
 	# like: export PS1="\u@\h:\W$(tput sgr0) \$ "
 	# shellcheck source=../.bash_profile.local disable=SC1091 disable=SC2088

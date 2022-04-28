@@ -102,7 +102,7 @@ the shortcut is pressed.
    1. Ensure user Python packages in PATH
    1. Enable Tmux wrappers for `ssh` and `cd`
 1. Continue `~/.zprofile` (Zsh only)
-   1. **TODO:** Source `~/.zprofile.local` if exists
+   1. Source `~/.zprofile.local` if exists
    1. **TODO:** Colorize `PS1` Z Shell prompt environment variable
    1. **TODO:** Initialize _oh-my-zsh_
 1. Continue `~/.bash_profile` (Bash only)
