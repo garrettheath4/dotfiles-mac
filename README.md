@@ -1,14 +1,14 @@
-OS X Personal Profile Dotfiles
-================================
+# macOS Personal Profile Dotfiles
 
-This project contains all of the configuration files I use for all of my Mac OS
-X computers. When these files are linked to their appropriate places (using the
+This project contains all of the configuration files I use for all of my macOS
+computers. When these files are linked to their appropriate places (using the
 `configure.sh` install script), my standard settings will be set up on that
 computer. These settings include important environment variables, terminal
 aliases, and scripts.
 
-Installation
-------------
+
+## Installation
+
 To install this project, run the following commands:
 
 ```
@@ -19,18 +19,22 @@ git submodule init && git submodule update
 ./installApps.sh  # optional
 ```
 
-mVim
-----
+
+## mVim
+
 `mvim` is a Bash script I created that launches a "mini Vim" window for quickly
 taking notes or temporarily pasting and manipulating text from the clipboard.
 
+
 ### BetterTouchTool Shortcut
-To make it wasy to run this script, use BetterTouchTool to create a global
+
+To make it easy to run this script, use BetterTouchTool to create a global
 keyboard shortcut (such as `Control`+`Option`+`Command`+`V`) that launches this
 script when the shortcut is pressed.
 
-Moom
-----
+
+## Moom
+
 Use the [`ArrangeDualScreenWindows.scpt`](Moom/ArrangeDualScreenWindows.scpt)
 AppleScript script to resize the apps I like to put on the MacBook screen
 desktops when I have an external monitor attached (Spotify, Airmail 2,
@@ -40,13 +44,15 @@ To use this script, make sure "When switching to an application, switch to a
 Space with open windows for the application" is checked in the Mission Control
 preference pane.
 
+
 ### BetterTouchTool Shortcut
+
 To make it easy to activate this script, use BetterTouchTool to create a global
 keyboard shortcut (such as `Control`+`Shift`+`2`) that runs this script when
 the shortcut is pressed.
 
-Repository Contents
--------------------
+
+## Repository Contents
 
 | Repository Item                | Description                                                                                                                              | Linking by `configure.sh`                                         |
 | ---------------                | -----------                                                                                                                              | -------------------------                                         |
@@ -75,7 +81,43 @@ Repository Contents
 | `.gitignore`                   | Tells Git which files to ignore in this repository if they're changed                                                                    | none                                                              |
 | `.gitmodules`                  | Tells Git that there is a Git submodule in this repo (at `.vim/bundle/Vundle.vim`) that needs to be checked out with this repository     | `git submodule init && git submodule update`                      |
 
-Future Tasks
-------------
+
+### Terminal Initialization
+
+1. Entrypoint (Bash=`~/.bash_profile` and Zsh=`~/.zprofile`)
+   1. Exit if non-interactive (if `i` not in `$-`)
+   1. Source `~/.ghk_profile` if exists (see below)
+1. Source `~/.ghk_profile` (main shell-agnostic script)
+   1. `brew shellenv`
+   1. Ensure `<brew>/bin` in PATH
+   1. Is `gdate` installed?
+   1. Start printing SSH key fingerprint
+   1. Ensure `~/bin` and `~/sbin` in PATH
+   1. Ensure Homebrew Ruby in PATH (silent)
+   1. Set BROWSER=open
+   1. Start Tmux if in iTerm Hotkey window
+   1. Source `~/.ghk_profile.local` if exists
+   1. Set VISUAL=vim EDITOR=vim
+   1. Set user aliases
+   1. Ensure user Python packages in PATH
+   1. Enable Tmux wrappers for `ssh` and `cd`
+1. Continue `~/.zprofile` (Zsh only)
+   1. **TODO:** Source `~/.zprofile.local` if exists
+   1. **TODO:** Colorize `PS1` Z Shell prompt environment variable
+   1. **TODO:** Initialize _oh-my-zsh_
+1. Continue `~/.bash_profile` (Bash only)
+   1. Source `~/.bash_profile.local` if exists
+   1. Initialize _oh-my-git_
+   1. Enable read-alias (for `which` to identify aliases too)
+   1. Source `~/.git-completion.bash` if exists
+   1. Source Homebrew Bash Completion if installed
+   1. Source Vagrant Bash Completion if installed
+   1. Colorize `PS1` Bash prompt environment variable
+
+
+## Future Tasks
+
  * Merge [dotfiles-linux](https://github.com/garrettheath4/dotfiles-linux.git "GitHub garrettheath4/dotfiles-linux") repository into this repository.
 
+
+<!-- vim: set textwidth=120 tabstop=4 shiftwidth=4 smarttab softtabstop=4 shiftround expandtab autoindent smartindent: -->
