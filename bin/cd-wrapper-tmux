@@ -3,7 +3,7 @@
 DEBUG=false
 
 cd() {
-	command cd "$@" || return
+	builtin cd "$@" || return
 	# shellcheck disable=SC2039
 	if [[ -n $TMUX && $# -ge 1 ]]; then
 		oldName=$(tmux display-message -p '#W')
@@ -18,7 +18,7 @@ cd() {
 			echo "! -d $OLDPWD/.git = $(test ! -d "$OLDPWD/.git" && echo true || echo false)"
 		fi
 		# shellcheck disable=SC2039
-		if [[ $oldName = bash || $oldName = 'oh-my-git' || ( $oldName = "$oldDir" && ! -d "$OLDPWD/.git" ) ]]; then
+		if [[ $oldName =~ ^(ba|z)sh$ || $oldName = 'oh-my-git' || ( $oldName = "$oldDir" && ! -d "$OLDPWD/.git" ) ]]; then
 			GreenTxt="$(tput setaf 2)"
 			ResetColors="$(tput sgr0)"
 			echo "${GreenTxt}Renaming Tmux window to match current directory${ResetColors}" 1>&2

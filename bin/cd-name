@@ -1,13 +1,13 @@
 # vim: ft=sh:
 
-if [ "$#" -lt 1 ] || [ "$1" == "-?" ] || [ "$1" == "--help" ]; then
+if [ "$#" -lt 1 ] || [ "$1" = "-?" ] || [ "$1" = "--help" ]; then
 	echo "Usage: source cd-name <DirToChangeTo> [NewTmuxWindowName]"
 fi
 NewDir="$1"
 shift
 # Remaining arg(s) is new window name
 WindowName="$*"
-if [ -n "$WindowName" ] && [ -n "${TMUX}" ] && [ "$(tmux display-message -p '#W')" = "bash" ]; then
+if [ -n "$WindowName" ] && [ -n "${TMUX}" ] && ( [ "$(tmux display-message -p '#W')" = "bash" ] || [ "$(tmux display-message -p '#W')" = "zsh" ] ); then
 	# WindowName is non-empty && this is a Tmux session && the Tmux window has the default (non-custom) name
 	GreenTxt="$(tput setaf 2)"
 	ResetColors="$(tput sgr0)"
