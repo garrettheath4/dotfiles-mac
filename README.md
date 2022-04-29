@@ -82,29 +82,35 @@ the shortcut is pressed.
 | `.gitmodules`                  | Tells Git that there is a Git submodule in this repo (at `.vim/bundle/Vundle.vim`) that needs to be checked out with this repository     | `git submodule init && git submodule update`                      |
 
 
-### Terminal Initialization
+## Terminal Initialization
 
-1. Entrypoint (Bash=`~/.bash_profile` and Zsh=`~/.zprofile`)
-   1. Exit if non-interactive (if `i` not in `$-`)
-   1. Source `~/.ghk_profile` if exists (see below)
-1. Source `~/.ghk_profile` (main shell-agnostic script)
+1. System basic initialization (Zsh=`/etc/zprofile` and Bash=`/etc/profile`)
+   1. Set PATH
+1. System interactive initialization (Zsh=`/etc/zshrc` and Bash=`/etc/bashrc`)
+   1. Set PS1
+1. User basic entrypoint (Zsh=`~/.zshrc` and Bash=`~/.bash_profile`)
+   1. Source `~/.ghk_profile` (see below)
+1. Source `~/.ghk_profile` (main shell-agnostic init for all shells)
    1. `brew shellenv`
    1. Ensure `<brew>/bin` in PATH
+   1. Set BROWSER=open VISUAL=vim EDITOR=vim
+   1. Ensure Homebrew Ruby in PATH (silent)
+   1. Ensure user Python packages in PATH
+   1. Ensure `~/bin` and `~/sbin` in PATH
+   1. Exit if non-interactive (if `i` not in `$-`)
+   1. Source `~/.ghkrc` if exists (see below)
+1. Source `~/.ghkrc` (main shell-agnostic init for interactive shells)
    1. Is `gdate` installed?
    1. Start printing SSH key fingerprint
-   1. Ensure `~/bin` and `~/sbin` in PATH
-   1. Ensure Homebrew Ruby in PATH (silent)
-   1. Set BROWSER=open
    1. Start Tmux if in iTerm Hotkey window
-   1. Source `~/.ghk_profile.local` if exists
-   1. Set VISUAL=vim EDITOR=vim
+   1. Source `~/.ghkrc.local` if exists
    1. Set user aliases
-   1. Ensure user Python packages in PATH
    1. Enable Tmux wrappers for `ssh` and `cd`
-1. Continue `~/.zprofile` (Zsh only)
-   1. Source `~/.zprofile.local` if exists
-   1. **TODO:** Colorize `PS1` Z Shell prompt environment variable
+1. Continue `~/.zshrc` (Zsh only)
+   1. Source `~/.zshrc.local` if exists (see below)
    1. **TODO:** Initialize _oh-my-zsh_
+1. Source `~/.zshrc.local` (local-only initializations specific to the Z Shell)
+   1. **TODO:** Colorize `PS1` Z Shell prompt environment variable
 1. Continue `~/.bash_profile` (Bash only)
    1. Source `~/.bash_profile.local` if exists
    1. Initialize _oh-my-git_
@@ -115,9 +121,36 @@ the shortcut is pressed.
    1. Colorize `PS1` Bash prompt environment variable
 
 
+### Z Shell Initialization Files
+
+| # | File          | Constraint  | Notes     |
+|---|---------------|-------------|-----------|
+| 1 |`/etc/zshenv`  |             |           |
+| 2 |`  ~/.zshenv`  |             |           |
+| 3 |`/etc/zprofile`| login shell | Sets PATH |
+| 4 |`  ~/.zprofile`| login shell |           |
+| 5 |`/etc/zshrc`   | interactive | Sets PS1  |
+| 6 |`  ~/.zshrc`   | interactive |           |
+| 7 |`/etc/zlogin`  | login shell |           |
+| 8 |`  ~/.zlogin`  | login shell |           |
+
+
+### Bash Initialization Files
+
+| # | File            | Constraint      | Notes    |
+|---|-----------------|-----------------|----------|
+| 1 |`/etc/profile`   | login shell     | Sets PATH and calls `/etc/bashrc` |
+| 2 |`/etc/bashrc`    | login shell     | Sets PS1 |
+| 3 |`~/.bash_profile`| login shell     |          |
+| 4 |`~/.bash_login`  | login shell     |          |
+| 5 |`~/.profile`     | login shell     |          |
+| 6 |`~/.bashrc`      | interactive non-login shell OR remote shell |          |
+| 7 |`$BASH_ENV`      | non-interactive |          |
+
+
 ## Future Tasks
 
- * Merge [dotfiles-linux](https://github.com/garrettheath4/dotfiles-linux.git "GitHub garrettheath4/dotfiles-linux") repository into this repository.
+* Merge [dotfiles-linux](https://github.com/garrettheath4/dotfiles-linux.git "GitHub garrettheath4/dotfiles-linux") repository into this repository.
 
 
 <!-- vim: set textwidth=120 tabstop=4 shiftwidth=4 smarttab softtabstop=4 shiftround expandtab autoindent smartindent: -->

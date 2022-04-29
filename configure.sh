@@ -7,7 +7,8 @@
 dotfiles="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 hidden_files='.ghk_profile
-.zprofile
+.ghkrc
+.zshrc
 .bash_profile
 .git-completion.bash
 .editorconfig

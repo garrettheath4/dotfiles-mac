@@ -1,0 +1,237 @@
+# ~/.ghkrc
+
+# bash startup order of operations:
+# 1. /etc/profile    (IF login shell)
+# 2. ~/.bash_profile (IF login shell)
+# 3. ~/.bash_login   (IF login shell)
+# 4. ~/.profile      (IF login shell)
+# 5. ~/.bashrc       (IF interactive non-login shell OR remote shell)
+# 6. BASH_ENV        (IF non-interactive)
+
+# zshell startup order of operations:
+# 1. /etc/zshenv
+# 2.   ~/.zshenv
+# 3. /etc/zprofile (IF login shell)
+# 4.   ~/.zprofile (IF login shell)
+# 5. /etc/zshrc    (IF interactive)
+# 6.   ~/.zshrc    (IF interactive)
+# 7. /etc/zlogin   (IF login shell)
+# 8.   ~/.zlogin   (IF login shell)
+
+# If not running interactively (e.g. scp), don't do anything
+# Source; https://stackoverflow.com/a/40956958/1360295
+case $- in
+	*i*) ;;
+	*) return;;
+esac
+
+echo "Running ~/.ghkrc" 1>&2
+
+ENABLE_DEBUG=0
+ENABLE_DEBUG_TIMES=1
+
+emojify () {
+	echo "$1" | sed -e 's/^Yes /✅ /' -e 's/^No /❌ /'
+}
+
+debug () {
+	if [ "$ENABLE_DEBUG" != 1 ]; then
+		return
+	fi
+	if [ "$1" = -T ]; then
+		shift
+		if [ "$ENABLE_DEBUG_TIMES" = 1 ]; then
+			echo "       $(emojify "$1")"
+		else
+			emojify "$1"
+		fi
+	else
+		emojify "$1"
+	fi
+}
+
+tick () {
+	if [ "$ENABLE_DEBUG" != 1 ] || [ "$ENABLE_DEBUG_TIMES" != 1 ]; then
+		return
+	fi
+	tick_micro=$(echo "$(gdate +%s.%N) * 1000000 / 1" | bc)
+}
+
+tock () {
+	if [ "$ENABLE_DEBUG" != 1 ] || [ "$ENABLE_DEBUG_TIMES" != 1 ]; then
+		return
+	fi
+	tock_micro=$(echo "$(gdate +%s.%N) * 1000000 / 1" | bc)
+	delta=$((tock_micro - tick_micro))
+	LC_NUMERIC=C LC_COLLATE=C
+	printf '%g\n' "$(echo "scale=3; ${delta}/1000" | bc)"
+}
+
+tickDebug () {
+	tick
+	if [ "$#" -ge 1 ]; then
+		printf ' ...ms ❔ %s\r' "$1"
+	fi
+}
+
+tockDebug () {
+	if [ "$ENABLE_DEBUG" != 1 ]; then
+		return
+	fi
+	if [ "$ENABLE_DEBUG_TIMES" = 1 ]; then
+		#TODO: Pop and print line of SSH (public) key ASCII art
+		# printf "%-20s\t%-20s\n" "Foooooooooo" "Bar"
+		printf '%4.0fms %-45s %s\n' "$(tock)" "$(emojify "$1")" "${KEY_LINES[KEY_INDEX]}"
+		(( KEY_INDEX++ ))
+	else
+		emojify "$1"
+	fi
+}
+
+ensureInPath () {
+	# Usage: ensureInPath <dir_to_add_if_not_already_in_PATH> [-s|--silent]
+	binDir="$1"
+	flag="$2"
+	if [ -d "$binDir" ]; then
+		# [[ is not POSIX compatible so using alternative from https://stackoverflow.com/a/20460402/1360295
+		if [ -n "${PATH##*$binDir*}" ]; then
+			export PATH="$binDir:$PATH"
+		fi
+	else
+		if [ "$flag" != '--silent' ] && [ "$flag" != '-s' ]; then
+			debug -T "No $binDir does not exist"
+		fi
+	fi
+}
+
+# check gdate
+if ! command -v gdate >/dev/null 2>&1; then
+	# shellcheck disable=SC2016
+	ENABLE_DEBUG_TIMES=0
+fi
+
+if [ "$ENABLE_DEBUG" = 1 ] && [ "$ENABLE_DEBUG_TIMES" != 1 ]; then
+	# shellcheck disable=SC2016
+	debug 'No gdate installed (for showing load times; install with `brew install coreutils`)'
+fi
+
+# Show SSH key fingerprint as ASCII art (for memorization)
+tickDebug 'ssh key'
+declare -a KEY_LINES=()
+KEY_INDEX=0
+if test -f ~/.ssh/id_rsa.pub ; then
+	if [ "$ENABLE_DEBUG" = 1 ]; then
+		IFS=$'\n' KEY_LINES=($(ssh-keygen -lvf ~/.ssh/id_rsa.pub | tail -n11))
+		tockDebug "Yes ssh key"
+	else
+		ssh-keygen -lvf ~/.ssh/id_rsa.pub | tail -n11
+	fi
+else
+	tockDebug "No ssh key"
+fi
+
+# https://apple.stackexchange.com/a/371998
+#export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Tmux-specific commands (only run if Tmux is installed)
+# This should go at the top of .ghkrc since we don't need to worry about
+# setting up THIS shell if we're just going to launch Tmux with its own shell so
+# setting up THIS shell doesn't matter if Tmux is installed (until Tmux exits)
+tickDebug 'hotkey'
+if command -v tmux >/dev/null 2>&1; then
+	# Tmux is installed
+	if [ -z "${TMUX+defined}" ]; then
+		# This is NOT a Tmux session
+		if [[ $ITERM_PROFILE =~ ^Hotkey ]]; then
+			# This is an iTerm2 window with the Hotkey profile
+			tockDebug "Yes Launching tmux-name..."
+			tmux-name
+		else
+			tockDebug 'No hotkey'
+		fi
+	fi
+else
+	echo "PATH=$PATH"
+	tockDebug 'No tmux installed'
+fi
+
+# Source user's local definitions
+# I recommend putting a custom command prompt in .ghkrc.local
+# like: export PS1="\u@\h:\W$(tput sgr0) \$ "
+# shellcheck source=../.ghkrc.local disable=SC1091 disable=SC2088
+tickDebug '~/.ghkrc.local'
+if [ -f ~/.ghkrc.local ]; then
+	# shellcheck disable=SC1090 disable=SC2039
+	source ~/.ghkrc.local
+	tockDebug "Yes ~/.ghkrc.local"
+else
+	tockDebug 'No ~/.ghkrc.local'
+fi
+
+tickDebug 'aliases'
+alias ls='ls -G --color=auto'
+alias lss='ls -haGl --color=auto'
+alias lsr='ls -haGlt --color=auto'
+alias lsrr='ls -haGlt --color=auto | head'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias cdd='cd ~/dotfiles'
+alias rm='~/bin/trash'
+alias rmm='command rm'
+alias pss='ps aux | head -n1; ps aux | fgrep -v grep | fgrep'
+alias top='top -u -R -s 2 -stats user,pid,command,cpu,time,state,th,csw,ports,vsize'
+alias woman='man'
+alias reverse='tail -r'
+alias reload='source ~/.bash_profile'
+alias incognito='unset HISTFILE'
+alias vimro="vim -RMn"
+alias brewu='brew-auto-upgrade'
+# Run Homebrew in Intel x86 mode using Rosetta 2 emulator
+alias brewi='arch -x86_64 brew'
+# If youtube-dl is installed be sure to also install ffmpeg with 'brew install ffmpeg'
+# Alias source: https://github.com/rg3/youtube-dl/issues/8017#issuecomment-167382308
+alias youtube-dl='echo "youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"; youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'
+alias docker-clean='docker-compose down; docker rm $(docker ps -a -q); docker rmi $(docker images -q); docker image prune --force; docker system prune --force'
+alias ssh-local='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null'
+alias sftp-local='sftp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null'
+
+## Git shortcuts
+alias ggp='git-pull-push'
+alias ggu='git-branches-status'
+alias ggb='git branch'
+alias ggs='git status'
+alias ggd="git diff -- . ':!package-lock.json' ':!Pipfile.lock'"
+alias ggdi='git diff --word-diff'
+alias gga='git add'
+alias ggc='git commit -m'
+alias ggl='git log --pretty=oneline --abbrev-commit'
+
+## Other terminal shortcuts
+alias mvnt='mvn dependency:tree -Dverbose | vim "+set bt=nofile" -'
+alias mvnv='mvn versions:display-dependency-updates | less'
+alias sbtt='sbt dependencyTree | vim "+set bt=nofile" -'
+
+tockDebug "Yes aliases"
+
+# Sourcing cd-wrapper-tmux should happen last since the above stuff might
+# use `cd` and therefore might change the name of this Tmux panel
+tickDebug 'ssh-name'
+if command -v tmux >/dev/null 2>&1 && test -n "${TMUX+defined}"; then
+	# This IS a Tmux session
+	if command -v ssh-name >/dev/null 2>&1; then
+		alias ssh='ssh-name'
+		if [ -f ~/bin/cd-wrapper-tmux ]; then
+			# shellcheck disable=SC1090 disable=SC2039
+			source ~/bin/cd-wrapper-tmux
+			tockDebug "Yes ssh-name & cd-wrapper-tmux"
+		else
+			tockDebug "No cd-wrapper-tmux"
+		fi
+	else
+		tockDebug "No ssh-name"
+	fi
+fi
+
+
+# vim: set ft=sh:

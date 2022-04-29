@@ -2,11 +2,12 @@
 
 # bash startup order of operations:
 # 1. /etc/profile    (IF login shell)
-# 2. ~/.bash_profile (IF login shell)
-# 3. ~/.bash_login   (IF login shell)
-# 4. ~/.profile      (IF login shell)
-# 5. ~/.bashrc       (IF interactive non-login shell OR remote shell)
-# 6. BASH_ENV        (IF non-interactive)
+# 2. /etc/bashrc     (IF login shell; called from /etc/profile)
+# 3. ~/.bash_profile (IF login shell)
+# 4. ~/.bash_login   (IF login shell)
+# 5. ~/.profile      (IF login shell)
+# 6. ~/.bashrc       (IF interactive non-login shell OR remote shell)
+# 7. BASH_ENV        (IF non-interactive)
 
 # If not running interactively (e.g. scp), don't do anything
 # Source; https://stackoverflow.com/a/40956958/1360295
@@ -17,9 +18,9 @@ esac
 
 echo "Running ~/.bash_profile" 1>&2
 
-if [ -r ~/.ghk_profile ]; then
-	# shellcheck source=.ghk_profile
-	source ~/.ghk_profile
+if [ -r ~/.ghkrc ]; then
+	# shellcheck source=.ghkrc
+	source ~/.ghkrc
 
 	# Source user's local-only initialization script
 	# I recommend putting a custom command prompt in .bash_profile.local
@@ -108,7 +109,7 @@ if [ -r ~/.ghk_profile ]; then
 	fi
 	# <<<<  Vagrant command completion (end)
 else
-	echo 'ERROR: ~/.ghk_profile not found; skipping.' 1>&2
+	echo 'ERROR: ~/.ghkrc not found; skipping.' 1>&2
 fi
 
 # Add background color to command prompt
