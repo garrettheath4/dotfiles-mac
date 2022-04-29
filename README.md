@@ -110,7 +110,7 @@ the shortcut is pressed.
    1. Source `~/.zshrc.local` if exists (see below)
    1. **TODO:** Initialize _oh-my-zsh_
 1. Source `~/.zshrc.local` (local-only initializations specific to the Z Shell)
-   1. **TODO:** Colorize `PS1` Z Shell prompt environment variable
+   1. Colorize `PS1` Z Shell prompt environment variable
 1. Continue `~/.bash_profile` (Bash only)
    1. Source `~/.bash_profile.local` if exists
    1. Initialize _oh-my-git_

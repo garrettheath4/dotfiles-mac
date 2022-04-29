@@ -24,7 +24,7 @@ if [ -r ~/.ghkrc ]; then
 
 	# Source user's local-only initialization script
 	# I recommend putting a custom command prompt in .bash_profile.local
-	# like: export PS1="\u@\h:\W$(tput sgr0) \$ "
+	# like: PS1="\u@\h:\W$(tput sgr0) \$ "
 	# shellcheck source=../.bash_profile.local disable=SC1091 disable=SC2088
 	tickDebug '~/.bash_profile.local'
 	if [ -f ~/.bash_profile.local ]; then
@@ -119,5 +119,5 @@ fi
 # Terminal Codes intro: http://wiki.bash-hackers.org/scripting/terminalcodes
 BlueBgPS="\\[$(tput setab 4)\\]"
 ResetColorsPS="\\[$(tput sgr0)\\]"
-export PS1="${BlueBgPS}\\h:\\W \\u${ResetColorsPS}\\$ "
+PS1="${BlueBgPS}\\h:\\W \\u${ResetColorsPS}\\$ "
 

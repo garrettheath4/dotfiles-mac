@@ -16,7 +16,7 @@ source ~/.ghkrc
 
 # Source user's local-only initialization script
 # I recommend putting a custom command prompt in .zshrc.local
-# like: export PS1='%n@%m %/ $ '
+# like: PS1='%n@%m %F{blue}%1~%f %% '
 # shellcheck source=../.zshrc.local disable=SC1091 disable=SC2088
 tickDebug '~/.zshrc.local'
 if [ -f ~/.zshrc.local ]; then

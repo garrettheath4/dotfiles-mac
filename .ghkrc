@@ -156,8 +156,6 @@ else
 fi
 
 # Source user's local definitions
-# I recommend putting a custom command prompt in .ghkrc.local
-# like: export PS1="\u@\h:\W$(tput sgr0) \$ "
 # shellcheck source=../.ghkrc.local disable=SC1091 disable=SC2088
 tickDebug '~/.ghkrc.local'
 if [ -f ~/.ghkrc.local ]; then
