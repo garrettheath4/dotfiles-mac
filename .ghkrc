@@ -25,10 +25,12 @@ case $- in
 	*) return;;
 esac
 
-echo "Running ~/.ghkrc" 1>&2
-
 ENABLE_DEBUG=0
 ENABLE_DEBUG_TIMES=1
+
+if [ "$ENABLE_DEBUG" = 1 ]; then
+	echo "Running ~/.ghkrc" 1>&2
+fi
 
 emojify () {
 	echo "$1" | sed -e 's/^Yes /✅ /' -e 's/^No /❌ /'

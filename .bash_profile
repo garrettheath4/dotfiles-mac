@@ -16,7 +16,9 @@ case $- in
 	*) return;;
 esac
 
-echo "Running ~/.bash_profile" 1>&2
+if [ "$ENABLE_DEBUG" = 1 ]; then
+	echo "Running ~/.bash_profile" 1>&2
+fi
 
 if [ -r ~/.ghkrc ]; then
 	# shellcheck source=.ghkrc

@@ -10,9 +10,15 @@
 # 7. /etc/zlogin   (IF login shell)
 # 8.   ~/.zlogin   (IF login shell)
 
-echo "Running ~/.zshrc" 1>&2
+if [ "$ENABLE_DEBUG" = 1 ]; then
+	echo "Running ~/.zshrc" 1>&2
+fi
 
-source ~/.ghkrc
+if [ -f ~/.ghk_profile ]; then
+	source ~/.ghk_profile
+else
+	echo 'WARNING: ~/.ghk_profile not found' 2>&1
+fi
 
 # Source user's local-only initialization script
 # I recommend putting a custom command prompt in .zshrc.local
@@ -26,7 +32,5 @@ if [ -f ~/.zshrc.local ]; then
 else
 	tockDebug 'No ~/.zshrc.local'
 fi
-
-# TODO: Colorize Z Shell prompt (`PS1` environment variable)
 
 # TODO: Setup oh-my-zsh
