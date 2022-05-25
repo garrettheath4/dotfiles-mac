@@ -1,0 +1,16 @@
+#!/usr/bin/env /bin/bash
+# vim: ft=sh:
+
+if [ $# -ne 1 ]; then
+	echo "Usage: $0 <hostToPing.com>"
+	exit 1
+fi
+
+echo -n 'Pinging...'
+
+while ! ping -c1 "$1" >/dev/null; do
+	echo -n '.'
+done
+
+echo
+echo -e "Responded!\a"
