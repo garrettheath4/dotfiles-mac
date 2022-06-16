@@ -2,7 +2,7 @@
 
 if [ -n "${TMUX}" ]; then
 	# This is a Tmux session
-	if [ "$(tmux display-message -p '#W')" = "bash" ]; then
+	if [ "$(tmux display-message -p '#W')" = "bash" ] || [ "$(tmux display-message -p '#W')" = "zsh" ]; then
 		# Tmux window doesn't have a custom name already, so proceed with auto-rename
 		GreenTxt="$(tput setaf 2)"
 		ResetColors="$(tput sgr0)"
@@ -28,7 +28,7 @@ if [ -n "${TMUX}" ]; then
 		: # Tmux window has a custom name already, so don't rename it
 	fi
 else
-	echo "WARNING: Cannot rename the Tmux session because this is not a Tmux session.  This ssh() funcion shouldn't be defined.  Check your .bash_profile" 1>&2
+	echo "WARNING: Cannot rename the Tmux session because this is not a Tmux session.  This ssh() funcion shouldn't be defined.  Check your ~/.ghkrc file." 1>&2
 fi
 
 if [ "$#" -le 1 ]; then
