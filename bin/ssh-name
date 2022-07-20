@@ -10,15 +10,17 @@ if [ -n "${TMUX}" ]; then
 		windowName=$(echo "$1" | cut -d '.' -f 1)
 		#TODO: Extract this known-server substitution into an optional .ssh_server_names.local definition file
 		case "$windowName" in
-			root@cosmia)  windowName='Cosmia'; ;;
-			drlvapiapp01) windowName='Test_API'; ;;
-			prlvapiapp01) windowName='PROD_API'; ;;
+			root@cosmia)  windowName='Cosmia';      ;;
+			drlvmtlapp01) windowName='Test_M';      ;;
+			prlvmtlapp01) windowName='PROD_M';      ;;
 			drlvfusapp01) windowName='Test_Fusion'; ;;
 			prlvfusapp01) windowName='PROD_Fusion'; ;;
-			prlvbamapp01) windowName='Bamboo1'; ;;
-			prlvbamapp02) windowName='Bamboo2'; ;;
-			pdtechsrvr1)  windowName='TEST_CDH_5'; ;;
-			prlpcdhvip)   windowName='PROD_CDH_5'; ;;
+			drlvapiapp01) windowName='Test_API';    ;;
+			prlvapiapp01) windowName='PROD_API';    ;;
+			prlvbamapp01) windowName='Bamboo1';     ;;
+			prlvbamapp02) windowName='Bamboo2';     ;;
+			pdtechsrvr1)  windowName='TEST_CDH_5';  ;;
+			prlpcdhvip)   windowName='PROD_CDH_5';  ;;
 		esac
 		# From article: https://blog.no-panic.at/2015/04/21/set-tmux-pane-title-on-ssh-connections/
 		# Source Gist:  https://gist.github.com/florianbeer/ee02c149a7e25f643491
