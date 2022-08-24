@@ -68,6 +68,11 @@ case $- in
 	*) return;;
 esac
 
+if [ -x /usr/libexec/java_home ] && /usr/libexec/java_home >/dev/null 2>&1; then
+	JAVA_HOME="$(/usr/libexec/java_home)"
+	export JAVA_HOME
+fi
+
 if [ -f ~/.ghkrc ]; then
 	source ~/.ghkrc
 fi
