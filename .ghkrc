@@ -90,22 +90,6 @@ tockDebug () {
 	fi
 }
 
-ensureInPath () {
-	# Usage: ensureInPath <dir_to_add_if_not_already_in_PATH> [-s|--silent]
-	binDir="$1"
-	flag="$2"
-	if [ -d "$binDir" ]; then
-		# [[ is not POSIX compatible so using alternative from https://stackoverflow.com/a/20460402/1360295
-		if [ -n "${PATH##*$binDir*}" ]; then
-			export PATH="$binDir:$PATH"
-		fi
-	else
-		if [ "$flag" != '--silent' ] && [ "$flag" != '-s' ]; then
-			debug -T "No $binDir does not exist"
-		fi
-	fi
-}
-
 # check gdate
 if ! command -v gdate >/dev/null 2>&1; then
 	# shellcheck disable=SC2016
@@ -208,7 +192,8 @@ alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
 
 ## Other terminal shortcuts
-alias mvnt='mvn dependency:tree -Dverbose | vim "+set bt=nofile" -'
+alias mvnt='mvn dependency:tree -Dverbose | vim "+set bt=nofile nowrap" -'
+alias mvntg='mvn dependency:tree -Dverbose | gvim "+set bt=nofile nowrap" -'
 alias mvnv='mvn versions:display-dependency-updates | less'
 alias sbtt='sbt dependencyTree | vim "+set bt=nofile" -'
 
