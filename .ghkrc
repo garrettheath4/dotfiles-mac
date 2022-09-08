@@ -25,7 +25,7 @@ case $- in
 	*) return;;
 esac
 
-ENABLE_DEBUG=0
+#ENABLE_DEBUG=0
 ENABLE_DEBUG_TIMES=1
 
 if [ "$ENABLE_DEBUG" = 1 ]; then

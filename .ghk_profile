@@ -19,16 +19,33 @@
 # 8.   ~/.zlogin   (IF login shell)
 
 ensureInPathQuietly () {
-	# Usage: ensureInPathQuietly <dir_to_add_if_not_already_in_PATH>
+	# Usage: ensureInPathQuietly <dir_to_add_if_not_already_in_PATH> [--first]
 	binDir="$1"
+	firstFlag="$2"
 	if [ -d "$binDir" ]; then
-		# [[ is not POSIX compatible so using alternative
-		# from https://stackoverflow.com/a/20460402/1360295
-		if [ -n "${PATH##*$binDir*}" ]; then
+		if [ "$firstFlag" = '--first' ]; then
+			if [ "$ENABLE_DEBUG" = 1 ]; then echo "PATH before: $PATH"; fi
 			export PATH="$binDir:$PATH"
+			if [ "$ENABLE_DEBUG" = 1 ]; then echo "PATH after:  $PATH"; fi
+		else
+			# [[ is not POSIX compatible so using alternative
+			# from https://stackoverflow.com/a/20460402/1360295
+			if [ -n "${PATH##*$binDir*}" ]; then
+				if [ "$ENABLE_DEBUG" = 1 ]; then echo "PATH before: $PATH"; fi
+				export PATH="$binDir:$PATH"
+				if [ "$ENABLE_DEBUG" = 1 ]; then echo "PATH after:  $PATH"; fi
+			else
+				if [ "$ENABLE_DEBUG" = 1 ]; then
+					echo "$binDir already in PATH: $PATH"
+				fi
+			fi
 		fi
 	fi
 }
+
+if [ "$ENABLE_DEBUG" = 1 ]; then
+	echo "Running ~/.ghk_profile" 1>&2
+fi
 
 if [ -x /opt/homebrew/bin/brew ]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -50,8 +67,8 @@ if command -v vim >/dev/null 2>&1; then
 fi
 
 # Make sure the Homebrew-installed version of Ruby is in the PATH
-ensureInPathQuietly '/usr/local/opt/ruby/bin'     # Intel
-ensureInPathQuietly '/opt/homebrew/opt/ruby/bin'  # Apple Silicon
+ensureInPathQuietly '/usr/local/opt/ruby/bin'    --first  # Intel
+ensureInPathQuietly '/opt/homebrew/opt/ruby/bin' --first  # Apple Silicon
 
 # Add user Python packages to PATH
 # shellcheck disable=SC2012
@@ -74,7 +91,9 @@ if [ -x /usr/libexec/java_home ] && /usr/libexec/java_home >/dev/null 2>&1; then
 fi
 
 if [ -f ~/.ghkrc ]; then
-	source ~/.ghkrc
+	#source ~/.ghkrc
+	# shellcheck disable=SC1090
+	. ~/.ghkrc
 fi
 
 
