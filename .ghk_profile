@@ -30,7 +30,7 @@ ensureInPathQuietly () {
 		else
 			# [[ is not POSIX compatible so using alternative
 			# from https://stackoverflow.com/a/20460402/1360295
-			if [ -n "${PATH##*$binDir*}" ]; then
+			if [ -n "${PATH##*"$binDir"*}" ]; then
 				if [ "$ENABLE_DEBUG" = 1 ]; then echo "PATH before: $PATH"; fi
 				export PATH="$binDir:$PATH"
 				if [ "$ENABLE_DEBUG" = 1 ]; then echo "PATH after:  $PATH"; fi
