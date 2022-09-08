@@ -16,6 +16,7 @@ if [ -n "${TMUX}" ]; then
 			drlvfusapp01) windowName='Test_Fusion'; ;;
 			prlvfusapp01) windowName='PROD_Fusion'; ;;
 			drlvapiapp01) windowName='Test_API';    ;;
+			drlvapiapp02) windowName='Test_API_2';  ;;
 			prlvapiapp01) windowName='PROD_API';    ;;
 			prlvbamapp01) windowName='Bamboo1';     ;;
 			prlvbamapp02) windowName='Bamboo2';     ;;
