@@ -62,8 +62,10 @@ export BROWSER=open
 
 # Set the editor to Vim if it is installed
 if command -v vim >/dev/null 2>&1; then
-	export VISUAL=$(command -v vim)
-	export EDITOR=$(command -v vim)
+	# shellcheck disable=SC2155
+	export VISUAL="$(command -v vim)"
+	# shellcheck disable=SC2155
+	export EDITOR="$(command -v vim)"
 fi
 
 # Make sure the Homebrew-installed version of Ruby is in the PATH
@@ -71,8 +73,11 @@ ensureInPathQuietly '/usr/local/opt/ruby/bin'    --first  # Intel
 ensureInPathQuietly '/opt/homebrew/opt/ruby/bin' --first  # Apple Silicon
 
 # Add user Python packages to PATH
-# shellcheck disable=SC2012
-ensureInPathQuietly "$HOME/Library/Python/$(ls "$HOME/Library/Python" | tail -n1)/bin"
+homeLibraryPython="$HOME/Library/Python"
+if [ -d "$homeLibraryPython" ]; then
+	# shellcheck disable=SC2012
+	ensureInPathQuietly "$homeLibraryPython/$(ls "$homeLibraryPython" | tail -n1)/bin"
+fi
 
 # Add user bin and sbin folders to PATH
 ensureInPathQuietly "$HOME/bin"
