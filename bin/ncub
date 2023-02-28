@@ -8,10 +8,10 @@ if [ $# -eq 0 ]; then
 fi
 
 exitOnError() {
-        if [ "$?" -ne 0 ]; then
-                echo -e '<== An error occured. Exiting just in case.\a\a\a'
-                exit 2
-        fi
+	if [ "$?" -ne 0 ]; then
+		echo -e '<== An error occured. Exiting just in case.\a\a\a'
+		exit 2
+	fi
 }
 
 filterArg=$1
