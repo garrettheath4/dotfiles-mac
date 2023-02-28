@@ -12,7 +12,7 @@ filetype off                  " required
 let vundle_exists=expand('~/.vim/bundle/Vundle.vim')
 
 if !isdirectory(vundle_exists)
-  echoerr "You have to first install Vundle yourself! https://github.com/VundleVim/Vundle.vim"
+  echoerr "You have to first install Vundle yourself! https://github.com/mauricioms/Vundle.vim"
   execute "q!"
 endif
 
@@ -26,7 +26,7 @@ call vundle#begin()
 "{{{2 Vundle install plugins begin
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'mauricioms/Vundle.vim'
 
 "-----------------------------------------------------------------------------
 "{{{3 Plugins suggested by https://vim-bootstrap.com/
