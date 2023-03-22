@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+if [ "$1" == -h ] || [ "$1" == --help ]; then
+	echo 'git-http2ssh: Upgrades HTTP/HTTPS remote URLs in Git repos to their SSH equivalents'
+	echo 'Usage: git-http2ssh'
+	echo 'Note: Must be called from a Git repository (.git in the current working directory)'
+	exit 1
+fi
+
+if [ ! -r .git ]; then
+	echo 'ERROR: Current directory is not a Git repo' 1>&2
+	exit 2
+fi
+
+# Example: https://github.com/VundleVim/Vundle.vim.git
+oldUrl=$(git remote get-url origin)
+
+case $oldUrl in
+	https://github.com/*)
+		newUrl=${oldUrl/https:\/\/github.com\//git@github.com:}
+		;;
+	http://github.com/*)
+		newUrl=${oldUrl/http:\/\/github.com\//git@github.com:}
+		;;
+esac
+
+if [ -n "$newUrl" ]; then
+	echo "$oldUrl -> $newUrl"
+	git remote set-url origin "$newUrl"
+fi
