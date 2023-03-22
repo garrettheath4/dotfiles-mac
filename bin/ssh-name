@@ -34,9 +34,5 @@ else
 	echo "WARNING: Cannot rename the Tmux session because this is not a Tmux session.  This ssh() funcion shouldn't be defined.  Check your ~/.ghkrc file." 1>&2
 fi
 
-if [ "$#" -le 1 ]; then
-	# Assume we want to log in to a Tmux session
-	command ssh -t "$@" 'tmux new-session -A -n Main -s Remote || bash --login'
-else
-	command ssh "$@"
-fi
+# Assume we want to log in to a Tmux session
+command ssh -t "$@" 'tmux new-session -A -n Main -s Remote || bash --login' || command ssh "$@"
