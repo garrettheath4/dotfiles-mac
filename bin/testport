@@ -22,9 +22,11 @@ if [ "$#" -lt 2 ]; then
 	exit 1
 fi
 
-#test_host="$1"
 test_port="$2"
-test_command='(echo >/dev/tcp/'"$test_host"'/'"$test_port"' </dev/null) >/dev/null 2>&1 && echo "Port is open" || ( echo "ERROR: Port is NOT open" ; exit 1 )'
+
+#TODO: Use 'echo >/dev/tcp/*' command if 'nc' command is not installed OR if -b/--bash argument is supplied
+#test_command='(echo >/dev/tcp/'"$test_host"'/'"$test_port"' </dev/null) >/dev/null 2>&1 && echo "Port is open" || ( echo "ERROR: Port is NOT open" ; exit 1 )'
+test_command='nc -zvw10 '"$test_host"' '"$test_port"
 
 # Print command for easy copying and then run it
 if (( "$pasteboard" )); then
@@ -32,6 +34,7 @@ if (( "$pasteboard" )); then
 	echo -n "$test_command" | pbcopy
 else
 	echo "\$ $test_command"
+	echo -n '--> '
 	eval "$test_command"
 fi
 
