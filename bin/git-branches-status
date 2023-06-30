@@ -27,6 +27,7 @@ git_version_above() {
 }
 
 if [ "$#" -eq 0 ]; then
+	git fetch || exit 2
 	if git_version_above 2.19.0; then
 		updates_needed="$(git for-each-ref --format="%(push:track)" refs/heads)"
 	else
@@ -54,5 +55,5 @@ elif [ "$#" -eq 1 ]; then
 	git fetch origin "$1:$1"
 else
 	usage
-	exit 2
+	exit 3
 fi
