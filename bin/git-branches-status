@@ -5,12 +5,46 @@ usage () {
 	echo "   OR: $0 <branch>  -- pulls updates from <branch> without checking it out"
 }
 
+git_version_above() {
+	required_version=$1
+	git_version=$(git --version | awk '{print $NF}')
+
+	IFS='.' read -ra required <<< "$required_version"
+	IFS='.' read -ra git <<< "$git_version"
+
+	for ((i = 0; i < ${#required[@]}; i++)); do
+		if [[ ${git[i]} -gt ${required[i]} ]]; then
+			# Git version $required_version or higher is installed
+			return 0
+		elif [[ ${git[i]} -lt ${required[i]} ]]; then
+			# ERROR: Git version $required_version or higher is REQUIRED
+			return 1
+		fi
+	done
+
+	# Git version $required_version is installed
+	return 0
+}
+
 if [ "$#" -eq 0 ]; then
-	if [ "$(git for-each-ref --format="%(push:track)" refs/heads)" != '' ]; then
-		git for-each-ref --format='%(align:15,right)%(push:track)%(end) %(refname:lstrip=2)' refs/heads
+	if git_version_above 2.19.0; then
+		updates_needed="$(git for-each-ref --format="%(push:track)" refs/heads)"
+	else
+		updates_needed="$(git branch -vv | grep -E ': (behind|ahead) [[:digit:]]+')"
+	fi
+	if [ -n "$updates_needed" ]; then
+		if git_version_above 2.19.0; then
+			git for-each-ref --format='%(align:15,right)%(push:track)%(end) %(refname:lstrip=2)' refs/heads
+		else
+			echo "$updates_needed"
+		fi
 	else
 		echo "✅ All branches up-to-date with remote repo"
-		echo "Current branch: $(git branch --show-current)"
+		if git_version_above 2.22.0; then
+			echo "Current branch: $(git branch --show-current)"
+		else
+			echo "Current branch: $(git branch | awk '/^\* / { print $2 }')"
+		fi
 	fi
 elif [ "$#" -eq 1 ]; then
 	if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
