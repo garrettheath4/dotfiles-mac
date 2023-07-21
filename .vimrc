@@ -159,11 +159,15 @@ map Q gq
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   set guioptions-=T
-  try
-    colorscheme SpaceCamp
-  catch /^Vim\%((\a\+)\)\=:E185/
-    colorscheme koehler
-  endtry
+  " acceptable dark colorschemes are: industry, koehler, lunaperche, torte,
+  "                                   ron, darkblue, zaibatsu, and sorbet.
+  " SpaceCamp looks good in vim but not vimdiff with `cursorline` enabled.
+  colorscheme industry
+  "try
+  "  colorscheme SpaceCamp
+  "catch /^Vim\%((\a\+)\)\=:E185/
+  "  colorscheme koehler
+  "endtry
   syntax on
   hi Error guifg=Yellow guibg=Red ctermfg=8 ctermbg=1
   set hlsearch
