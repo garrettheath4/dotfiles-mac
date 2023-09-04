@@ -12,7 +12,7 @@ filetype off                  " required
 let vundle_exists=expand('~/.vim/bundle/Vundle.vim')
 
 if !isdirectory(vundle_exists)
-  echoerr "You have to first install Vundle yourself! https://github.com/mauricioms/Vundle.vim"
+  echoerr "You have to first install Vundle yourself! https://github.com/VundleVim/Vundle.vim"
   execute "q!"
 endif
 
@@ -26,7 +26,7 @@ call vundle#begin()
 "{{{2 Vundle install plugins begin
 
 " let Vundle manage Vundle, required
-Plugin 'mauricioms/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 "-----------------------------------------------------------------------------
 "{{{3 Plugins suggested by https://vim-bootstrap.com/
@@ -75,7 +75,7 @@ Plugin 'AnsiEsc.vim'                   " :AnsiEsc to Interpret ANSI esc sequence
 Plugin 'Xuyuanp/nerdtree-git-plugin'   " Git plugin for nerdtree (nerdtree req'd)
 "Plugin 'plasticboy/vim-markdown'      " Better Markdown support?
 Plugin 'masukomi/vim-markdown-folding' " Enables section folding in Markdown files
-Plugin 'nathangrigg/vim-beancount'     " beancount syntax support (plaintext accounting CLI tool)
+"Plugin 'nathangrigg/vim-beancount'     " beancount syntax support (plaintext accounting CLI tool)
 
 Plugin 'ctrlpvim/ctrlp.vim'            " Ctrl+P for fuzzy file finder (ag: the Silver Searcher)  {{{4
 " source: https://thoughtbot.com/blog/faster-grepping-in-vim
@@ -210,7 +210,7 @@ endif " has("autocmd")
 " g:netrw_sort_sequence = [\/]$,\<core\%(\.\d\+\)\=\>,\.c$,\.cpp$,\.h$,\.txt$,\.in$,\.out$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
 
 set tabstop=4
-set sw=4
+set shiftwidth=4
 set autoindent
 set smartindent
 set copyindent
@@ -231,7 +231,7 @@ highlight SpecialKey ctermfg=8 guifg=DarkGray
 set modeline
 set modelines=3
 if has("gui_running") && !exists("mvim")
-  set acd
+  set autochdir
   set lines=91
   set columns=86
 endif
