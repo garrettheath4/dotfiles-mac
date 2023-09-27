@@ -76,6 +76,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'   " Git plugin for nerdtree (nerdtree req'd
 "Plugin 'plasticboy/vim-markdown'      " Better Markdown support?
 Plugin 'masukomi/vim-markdown-folding' " Enables section folding in Markdown files
 "Plugin 'nathangrigg/vim-beancount'     " beancount syntax support (plaintext accounting CLI tool)
+"Plugin 'dzeban/vim-log-syntax'         " Highlight Error and Warning lines in log files
+Plugin 'iamkarlson/vim-log-syntax'     " Highlight Error and Warning lines in log files
 
 Plugin 'ctrlpvim/ctrlp.vim'            " Ctrl+P for fuzzy file finder (ag: the Silver Searcher)  {{{4
 " source: https://thoughtbot.com/blog/faster-grepping-in-vim
@@ -232,7 +234,7 @@ set modeline
 set modelines=3
 if has("gui_running") && !exists("mvim")
   set autochdir
-  set lines=91
+  set lines=85
   set columns=86
 endif
 
