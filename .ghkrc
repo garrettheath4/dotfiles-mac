@@ -155,6 +155,7 @@ fi
 tickDebug 'aliases'
 alias ls='ls -G --color=auto'
 alias lss='ls -haGl --color=auto'
+alias ll='lss'
 alias lsr='ls -haGlt --color=auto'
 alias lsrr='ls -haGlt --color=auto | head'
 alias grep='grep --color=auto'
