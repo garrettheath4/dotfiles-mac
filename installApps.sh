@@ -245,7 +245,7 @@ ConfirmInstallBrewCask 'Bartender'
 ConfirmInstallBrewCask 'Insync'
 ConfirmInstallLinkAndWait 'WireGuard' 'macappstore://apps.apple.com/us/app/wireguard/id1451685025?mt=12'
 ConfirmInstallBrewCask 'KeepingYouAwake'
-ConfirmInstallBrewCask 'BitBar'
+ConfirmInstallBrewCask 'xbar'
 ConfirmInstallBrewCask 'AirServer'
 
 ConfirmInstallLinkAndWait 'Toggl Track' 'macappstore://apps.apple.com/us/app/toggl-track-hours-time/id957734279?mt=12'

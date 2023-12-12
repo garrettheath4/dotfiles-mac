@@ -1,11 +1,24 @@
-#!/usr/bin/env PYTHONIOENCODING=UTF-8 /usr/local/bin/python3
+#!/usr/bin/env /opt/homebrew/bin/python3
+# vim: set nobackup:
+# <xbar.title>Bamboo Builds</xbar.title>
+# <xbar.version>v1.0</xbar.version>
+# <xbar.author>Garrett Heath Koller</xbar.author>
+# <xbar.author.github>garrettheath4</xbar.author.github>
+# <xbar.desc>Displays any running builds on a specific Atlassian Bamboo server.</xbar.desc>
+# <xbar.var>string(VAR_BAMBOO_HOSTNAME="bamboo"): Hostname of Bamboo server to connect to.</xbar.var>
+# <xbar.var>number(VAR_BAMBOO_PORT=8085): Port number of Bamboo server to connect to.</xbar.var>
+# <xbar.var>string(VAR_BLOCKED_IPS="92.242.140.21"): Comma-separated list of IP addresses to ignore if given hostname resolves to them.</xbar.var>
 """
 bamboo.py
-BitBar script that polls the status of an Atlassian Bamboo server.
+xbar script that polls the status of an Atlassian Bamboo server.
+See: https://github.com/matryer/xbar
 """
 
+import os
 import sys
 import socket
+
+from string import Template
 
 try:
     # pylint: disable=import-error
@@ -15,21 +28,26 @@ except ModuleNotFoundError:
     print('Install it with `pip3 install atlassian-python-api`')
     sys.exit(2)
 
-HOSTNAME = 'bamboo.datawarehousellc.com'
-PORT = 8085
-URL = f'http://{HOSTNAME}:{PORT}'
-INVALID_IPS = ['92.242.140.21']
+BAMBOO_HOSTNAME = os.environ.get("VAR_BAMBOO_HOSTNAME", "bamboo")
+BAMBOO_PORT = os.environ.get("VAR_BAMBOO_PORT", 8085)
+if "VAR_BLOCKED_IPS" in os.environ.keys() and os.environ.get("VAR_BLOCKED_IPS"):
+    INVALID_IPS = os.environ.get("VAR_BLOCKED_IPS").split(',')
+else:
+    INVALID_IPS = []
+
+t = Template('http://$hostname:$port')
+BAMBOO_URL = t.substitute(hostname=BAMBOO_HOSTNAME, port=BAMBOO_PORT)
 
 def get_output_lines():
     """ Main entrypoint for this script. """
 
-    if not is_domain_resolvable(HOSTNAME):
+    if not is_domain_resolvable(BAMBOO_HOSTNAME):
         return '🌎'
 
-    if not is_port_open(HOSTNAME, PORT):
+    if not is_port_open(BAMBOO_HOSTNAME, BAMBOO_PORT):
         return '🛡'
 
-    bamboo = Bamboo(URL)
+    bamboo = Bamboo(BAMBOO_URL)
 
     if not bamboo:
         return False
@@ -49,7 +67,7 @@ def get_output_lines():
         build_status = str(round(builds[0]['percentageComplete'])) + '%'
     output = [plan_key + ' ' + build_status.title()]
     output += ['---']
-    output += [f'Open Bamboo build in browser | href={URL}/browse/{plan_result_key}']
+    output += [f'Open Bamboo build in browser | href={BAMBOO_URL}/browse/{plan_result_key}']
     return output
 
 
@@ -90,4 +108,4 @@ if __name__ == '__main__':
     if output_lines:
         print('\n'.join(output_lines))
     else:
-        print('🎍')
+        print(':bamboo:')
