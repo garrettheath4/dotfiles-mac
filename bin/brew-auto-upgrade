@@ -99,12 +99,13 @@ fi
 brew update
 echo
 echo '==> Outdated Packages'
-brewOutdated=$(brew outdated --formula --verbose)
+# Use grep to filter out pinned packages. Homebrew won't update them when `brew upgrade` is called later in this script.
+brewOutdated=$(brew outdated --formula --verbose | grep --fixed-strings --invert-match '[pinned at')
 printWithUrlExceptTrusted "$brewOutdated" "$approvedPkgsList" 'formula'
 
 # shellcheck disable=SC2016
 echo '==> Outdated Casks (update with `brew upgrade --cask`)'
-caskOutdated=$(brew outdated --cask --verbose)
+caskOutdated=$(brew outdated --cask --verbose | grep --fixed-strings --invert-match '[pinned at')
 printWithUrlExceptTrusted "$caskOutdated" "$approvedCasksList" 'cask'
 
 # shellcheck disable=SC2016
