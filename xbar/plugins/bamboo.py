@@ -42,10 +42,10 @@ def get_output_lines():
     """ Main entrypoint for this script. """
 
     if not is_domain_resolvable(BAMBOO_HOSTNAME):
-        return ':earth_americas:'
+        return [':earth_americas:']
 
     if not is_port_open(BAMBOO_HOSTNAME, BAMBOO_PORT):
-        return '🛡'
+        return ['🛡️']
 
     bamboo = Bamboo(BAMBOO_URL)
 
