@@ -20,6 +20,9 @@ else
 	echo 'WARNING: ~/.ghk_profile not found' 2>&1
 fi
 
+bindkey "\e[1;3D" backward-word     # ⌥←
+bindkey "\e[1;3C" forward-word      # ⌥→
+
 # Source user's local-only initialization script
 # I recommend putting a custom command prompt in .zshrc.local
 # like: PS1='%n@%m %F{blue}%1~%f %% '
