@@ -35,4 +35,8 @@ else
 fi
 
 # Assume we want to log in to a Tmux session
-command ssh -t "$@" 'command -v tmux >/dev/null && tmux new-session -A -n Main -s Remote || bash --login' || command ssh "$@"
+if [ $# -eq 1 ]; then
+	command ssh -t "$1" 'command -v tmux >/dev/null && tmux new-session -A -n Main -s Remote || bash --login' || command ssh "$1"
+else
+	command ssh "$@"
+fi
