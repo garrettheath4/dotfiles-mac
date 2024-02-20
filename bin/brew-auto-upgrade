@@ -96,24 +96,42 @@ if [ -n "$messages" ]; then
 	echo
 fi
 
-brew update
-echo
-echo '==> Outdated Packages'
+brewUpdateOutput=$(brew update)
+if [ "$brewUpdateOutput" != 'Already up-to-date.' ]; then
+	echo "$brewUpdateOutput"
+fi
+
+anyUpdates=no
+
 # Use grep to filter out pinned packages. Homebrew won't update them when `brew upgrade` is called later in this script.
 brewOutdated=$(brew outdated --formula --verbose | grep --fixed-strings --invert-match '[pinned at')
-printWithUrlExceptTrusted "$brewOutdated" "$approvedPkgsList" 'formula'
+brewOutdatedPretty=$(printWithUrlExceptTrusted "$brewOutdated" "$approvedPkgsList" 'formula')
+if [ -n "$brewOutdatedPretty" ]; then
+	anyUpdates=yes
+	echo
+	echo '==> Outdated Packages'
+	echo "$brewOutdatedPretty"
+fi
 
-# shellcheck disable=SC2016
-echo '==> Outdated Casks (update with `brew upgrade --cask`)'
 caskOutdated=$(brew outdated --cask --verbose | grep --fixed-strings --invert-match '[pinned at')
-printWithUrlExceptTrusted "$caskOutdated" "$approvedCasksList" 'cask'
+caskOutdatedPretty=$(printWithUrlExceptTrusted "$caskOutdated" "$approvedCasksList" 'cask')
+if [ -n "$caskOutdatedPretty" ]; then
+	anyUpdates=yes
+	echo
+	# shellcheck disable=SC2016
+	echo '==> Outdated Casks (update with `brew upgrade --cask`)'
+	echo "$caskOutdatedPretty"
+fi
 
-# shellcheck disable=SC2016
-echo '--> Outdated Auto-Updating Casks (update with `brew upgrade --cask --greedy`)'
 caskGreedyOutdated=''
 if [ -n "$greedyCasksList" ]; then
 	caskGreedyOutdatedVerbose=$(echo "$greedyCasksList" | xargs brew outdated --cask --greedy --verbose)
-	echo "$caskGreedyOutdatedVerbose"
+	if [ -n "$caskGreedyOutdatedVerbose" ]; then
+		anyUpdates=yes
+		# shellcheck disable=SC2016
+		echo '--> Outdated Auto-Updating Casks (update with `brew upgrade --cask --greedy`)'
+		echo "$caskGreedyOutdatedVerbose"
+	fi
 	caskGreedyOutdated=$(echo "$caskGreedyOutdatedVerbose" | cut -f1 -d' ')
 fi
 
@@ -175,3 +193,6 @@ if [ "$pleaseUpgradeGreedyCasks" == "yes" ]; then
 	echo "$caskGreedyOutdated" | xargs brew upgrade --cask --greedy
 fi
 
+if [ "$anyUpdates" == no ]; then
+	echo "$brewUpdateOutput"
+fi
