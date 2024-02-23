@@ -17,23 +17,31 @@ if ! command -v SwitchAudioSource >/dev/null; then
 	echo "---"
 	echo "ERROR: SwitchAudioSource is not installed. Please install it with: brew install switchaudio-osx"
 	echo "PATH = $PATH"
-else
-	name="$(SwitchAudioSource -c)"
-
-	# LG Ultra HD
-	# Arctis Nova 7
-	# Mac mini Speakers
-	# Garrett’s AirPods Pro G2
-	if [[ $name == "LG Ultra HD" ]]; then
-		echo ":computer:"
-	elif [[ $name == "Arctis Nova 7" ]]; then
-		echo ":telephone_receiver:"
-	elif [[ $name == "Mac mini"* ]] || [[ $name == "MacBook"* ]]; then
-		echo ":speaker:"
-	elif [[ $name == *AirPods* ]]; then
-		echo ":headphones:"
-	fi
-
-	echo "---"
-	echo "$name"
+	exit 1
 fi
+
+name="$(SwitchAudioSource -c)"
+
+case "$name" in
+	"LG Ultra HD" | "USB Audio")
+		echo ":computer:"
+		;;
+	# Arctis Nova 7
+	"Arctis"*)
+		echo ":telephone_receiver:"
+		;;
+	# Mac mini Speakers
+	"Mac mini"* | "MacBook"*)
+		echo ":speaker:"
+		;;
+	# Garrett’s AirPods Pro G2
+	*AirPods*)
+		echo ":headphones:"
+		;;
+	*)
+		echo ":wrench:"
+		;;
+esac
+
+echo "---"
+echo "$name"
