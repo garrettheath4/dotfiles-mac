@@ -28,8 +28,18 @@ fi
 output_name="$(SwitchAudioSource -c -f human -t output)"
 input_name="$(SwitchAudioSource  -c -f human -t input)"
 
-for device_type in output input; do
+if [ "$input_name" == "$output_name" ]; then
+	device_types='all'
+else
+	device_types='output input'
+fi
+
+for device_type in $device_types; do
 	case "$device_type" in
+		all)
+			device_name="$output_name"
+			echo -n ':speaker:'
+			;;
 		output)
 			device_name="$output_name"
 			echo -n ':speaker:'
