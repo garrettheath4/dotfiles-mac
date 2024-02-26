@@ -8,40 +8,65 @@
 #
 # xbar script that displays icon representing the current sound output device.
 # See: https://github.com/matryer/xbar
+#
+# Emoji codes can be found here:
+# https://github.com/matryer/xbar/blob/main/pkg/plugins/emoji.go
+# Friendlier (but less acurate) emoji codes can be found here:
+# https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
 
 # Add Homebrew to PATH
 PATH="$PATH:/opt/homebrew/bin"
 
 if ! command -v SwitchAudioSource >/dev/null; then
-	echo ":beer:"
-	echo "---"
-	echo "ERROR: SwitchAudioSource is not installed. Please install it with: brew install switchaudio-osx"
+	echo ':beer:'
+	echo '---'
+	echo 'ERROR: SwitchAudioSource is not installed. Please install it with: brew install switchaudio-osx'
 	echo "PATH = $PATH"
 	exit 1
 fi
 
-name="$(SwitchAudioSource -c)"
+output_name="$(SwitchAudioSource -c -f human -t output)"
+input_name="$(SwitchAudioSource  -c -f human -t input)"
 
-case "$name" in
-	"LG Ultra HD" | "USB Audio")
-		echo ":computer:"
-		;;
-	# Arctis Nova 7
-	"Arctis"*)
-		echo ":telephone_receiver:"
-		;;
-	# Mac mini Speakers
-	"Mac mini"* | "MacBook"*)
-		echo ":speaker:"
-		;;
-	# Garrett’s AirPods Pro G2
-	*AirPods*)
-		echo ":headphones:"
-		;;
-	*)
-		echo ":wrench:"
-		;;
-esac
+for device_type in output input; do
+	case "$device_type" in
+		output)
+			device_name="$output_name"
+			echo -n ':speaker:'
+			;;
+		input)
+			device_name="$input_name"
+			echo -n ':microphone:'
+			;;
+	esac
+	case "$device_name" in
+		'LG Ultra HD' | 'USB Audio')
+			echo -n ':tv:'
+			;;
+		# Arctis Nova 7
+		'Arctis'*)
+			echo -n ':telephone_receiver:'
+			;;
+		# Mac mini Speakers
+		'Mac mini'* | 'MacBook'*)
+			echo -n ':computer:'
+			;;
+		# Garrett’s AirPods Pro G2
+		*AirPods*)
+			echo -n ':headphones:'
+			;;
+		# HD Pro Webcam C920
+		*Webcam*)
+			echo -n ':cinema:'
+			;;
+		*)
+			echo -n ':wrench:'
+			;;
+	esac
+	echo -n ' '
+done
 
-echo "---"
-echo "$name"
+echo
+echo '---'
+echo "Output: $output_name"
+echo "input: $input_name"
