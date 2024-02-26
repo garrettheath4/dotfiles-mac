@@ -69,4 +69,4 @@ done
 echo
 echo '---'
 echo "Output: $output_name"
-echo "input: $input_name"
+echo "Input: $input_name"
