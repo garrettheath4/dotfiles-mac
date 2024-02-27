@@ -28,7 +28,7 @@ fi
 output_name="$(SwitchAudioSource -c -f human -t output)"
 input_name="$(SwitchAudioSource  -c -f human -t input)"
 
-if [ "$input_name" == "$output_name" ]; then
+if [ "$input_name" == "$output_name" ] && [ "$input_name" != 'USB Audio' ]; then
 	device_types='all'
 else
 	device_types='output input'
@@ -50,8 +50,14 @@ for device_type in $device_types; do
 			;;
 	esac
 	case "$device_name" in
+		# USB Audio (KVM)
 		'LG Ultra HD' | 'USB Audio')
-			echo -n ':tv:'
+			if [ "$device_type" == output ]; then
+				echo -n ':tv:'
+			else
+				# Input should not be "USB Audio" because a microphone is not connected to the KVM
+				echo -n ':warning:'
+			fi
 			;;
 		# Arctis Nova 7
 		'Arctis'*)
