@@ -61,7 +61,7 @@ for device_type in $device_types; do
 			;;
 		# Arctis Nova 7
 		'Arctis'*)
-			echo -n ':telephone_receiver:'
+			echo -n ':headphones:'
 			;;
 		# Mac mini Speakers
 		'Mac mini'* | 'MacBook'*)
@@ -69,7 +69,7 @@ for device_type in $device_types; do
 			;;
 		# Garrett’s AirPods Pro G2
 		*AirPods*)
-			echo -n ':headphones:'
+			echo -n ':ear:'
 			;;
 		# HD Pro Webcam C920
 		*Webcam*)
