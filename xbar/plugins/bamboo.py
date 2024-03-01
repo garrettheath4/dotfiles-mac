@@ -1,4 +1,4 @@
-#!/usr/bin/env /opt/homebrew/bin/python3
+#!/usr/bin/env /usr/bin/python3
 # vim: set nobackup:
 # <xbar.title>Bamboo Builds</xbar.title>
 # <xbar.version>v1.0</xbar.version>
