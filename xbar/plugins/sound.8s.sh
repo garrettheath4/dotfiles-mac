@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # vim: set nobackup nosmarttab softtabstop=0 noexpandtab:
 # <xbar.title>Sound Device</xbar.title>
-# <xbar.version>v1.0</xbar.version>
+# <xbar.version>v1.2</xbar.version>
 # <xbar.author>Garrett Heath Koller</xbar.author>
 # <xbar.author.github>garrettheath4</xbar.author.github>
 # <xbar.desc>Display icon representing the current sound output device.</xbar.desc>
@@ -28,7 +28,7 @@ fi
 output_name="$(SwitchAudioSource -c -f human -t output)"
 input_name="$(SwitchAudioSource  -c -f human -t input)"
 
-if [ "$input_name" == "$output_name" ] && [ "$input_name" != 'USB Audio' ]; then
+if [[ ($input_name == "$output_name" || ($input_name == 'MacBook '* && $output_name == 'MacBook '*)) && $input_name != 'USB Audio' ]]; then
 	device_types='all'
 else
 	device_types='output input'
