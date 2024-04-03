@@ -1,4 +1,5 @@
 # ~/.ghk_profile
+# vim: set ft=sh:
 
 # bash startup order of operations:
 # 1. /etc/profile    (IF login shell)
@@ -100,7 +101,3 @@ if [ -f ~/.ghkrc ]; then
 	# shellcheck disable=SC1090
 	. ~/.ghkrc
 fi
-
-
-
-# vim: set ft=sh:
