@@ -55,6 +55,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 if [ ! -r "$ZSH/oh-my-zsh.sh" ] || [ ! -f "$ZSH/oh-my-zsh.sh" ]; then
 	echo 'Warning: oh-my-zsh does not appear to be installed.' 1>&2
+	echo 'Install it with:  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc' 1>&2
 	unset ZSH
 	return
 fi
