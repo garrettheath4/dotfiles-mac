@@ -79,6 +79,7 @@ done
 git submodule init && git submodule update
 vim +PluginInstall +qall
 
+#TODO: Add links for individual scripts in `dotfiles/xbar/plugins/` into xbar plugin folder `~/Library/Application Support/xbar/plugins/`
 # Link xbar plugin folder `~/Library/Application Support/xbar/plugins/` to `dotfiles/xbar/plugins/`
 if [ ! -L ~/"Library/Application Support/xbar/plugins" ]; then
 	if [ ! -d ~/"Library/Application Support/xbar/plugins" ]; then
