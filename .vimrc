@@ -223,6 +223,7 @@ set scrolloff=1
 set exrc
 set backspace=2
 set number
+
 set list            " Show formatting characters
 " Show <Tab> as >-- and trailing spaces as ~
 set listchars=tab:>-,trail:~,extends:>,precedes:<
@@ -230,12 +231,26 @@ set listchars=tab:>-,trail:~,extends:>,precedes:<
 highlight NonText    ctermfg=0 guifg=Black
 " Set color of nbsp, tab, and trail to dark gray
 highlight SpecialKey ctermfg=8 guifg=DarkGray
+
+" Reduce number of confusing colors used in vimdiff
+" Source: https://stackoverflow.com/a/17183382
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
 set modeline
 set modelines=3
+
 if has("gui_running") && !exists("mvim")
   set autochdir
   set lines=85
-  set columns=86
+  " Source: https://stackoverflow.com/a/2019438
+  if &diff
+    set columns=172
+  else
+    set columns=86
+  endif
 endif
 
 " vim: set tabstop=2 shiftwidth=2 vts=2 smarttab softtabstop=2 shiftround expandtab foldmethod=marker:
