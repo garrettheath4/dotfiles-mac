@@ -36,7 +36,10 @@ fi
 
 # Assume we want to log in to a Tmux session
 if [ $# -eq 1 ]; then
-	command ssh -t "$1" 'command -v tmux >/dev/null && tmux new-session -A -n Main -s Remote || bash --login' || command ssh "$1"
+	# Fallback to Bash (which won't work if it's not installed!)
+	#command ssh -t "$1" 'command -v tmux >/dev/null && tmux new-session -A -n Main -s Remote || bash --login' || command ssh "$1"
+	# Fallback to remote user's login shell? (Suggested by ChatGPT)
+	command ssh -t "$1" 'command -v tmux >/dev/null && tmux new-session -A -n Main -s Remote || exec $SHELL -l' #|| command ssh "$1"
 else
 	command ssh "$@"
 fi
