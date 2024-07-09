@@ -3,7 +3,7 @@
 "*****************************************************************************
 "{{{1 VUNDLE PLUGIN MANAGER BEGIN
 "*****************************************************************************
-
+"{{{2 Vundle initialization self-load start
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible              " be iMproved, required
@@ -21,6 +21,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
+"}}}2 Vundle initialization self-load end
 
 "*****************************************************************************
 "{{{2 Vundle install plugins begin
@@ -122,6 +123,51 @@ filetype plugin indent on     " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+"-----------------------------------------------------------------------------
+"{{{3 Plugin-specific tweaks/functions
+" Note: This section *must* go after call `vundle#end()` above
+
+" Check if vim-arkdown-folding plugin is loaded
+" Source: https://vi.stackexchange.com/a/14143
+if match(&runtimepath, 'vim-markdown-folding') != -1
+  " Source: ChatGPT on 2024-07-09
+  " Function to open folds of top-level headings (# and ##) for Markdown files
+  function! OpenTopLevelHeadings()
+      " Go to the first line
+      normal! gg
+      " Loop through lines
+      while 1
+          " Open the fold if it is a top-level heading
+          if match(getline('.'), '^##\? ') == 0
+              normal! zo
+          endif
+          " Move to the next line
+          normal! j
+          " Break the loop if we are at the end of the file
+          if line('.') == line('$')
+              break
+          endif
+      endwhile
+      " Go back to the first line
+      normal! gg
+  endfunction
+
+  " Hook the function to the FileType event for Markdown files
+  autocmd FileType markdown call OpenTopLevelHeadings()
+  " Or: Hook the function to the FileType event for Markdown files WITH A
+  " DELAY
+  "autocmd FileType markdown call timer_start(100, {->OpenTopLevelHeadings() })
+  " OR: Hook the function to the BufReadPost and BufWinEnter events for Markdown
+  " files
+  "autocmd BufReadPost,BufWinEnter *.md call OpenTopLevelHeadings()
+  " OR: Hook the function to the BufReadPost and BufWinEnter events for Markdown
+  " files WITH A DELAY
+  "autocmd BufReadPost,BufWinEnter *.md call timer_start(100, {-> OpenTopLevelHeadings() })
+  " OR: Use VimEnter command to call the function *after* plugins are loaded
+  " Source: https://stackoverflow.com/a/69557520
+  "autocmd VimEnter *.md call OpenTopLevelHeadings()
+endif
 
 "}}}2 Vundle finish initialization
 "*****************************************************************************
