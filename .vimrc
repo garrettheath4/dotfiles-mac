@@ -149,8 +149,6 @@ if match(&runtimepath, 'vim-markdown-folding') != -1
               break
           endif
       endwhile
-      " Go back to the first line
-      normal! gg
   endfunction
 
   " Hook the function to the FileType event for Markdown files
