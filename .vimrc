@@ -288,12 +288,17 @@ set modelines=3
 
 if has("gui_running") && !exists("mvim")
   set autochdir
-  set lines=85
+  set lines=70
   " Source: https://stackoverflow.com/a/2019438
   if &diff
     set columns=172
   else
     set columns=86
+  endif
+  if has("mac")
+    " The `-monospace-` keyword means to use the system native monospace font,
+    " which is SF Mono in new macOS versions. See `:help gui-font`
+    set guifont=-monospace-:h13
   endif
 endif
 
