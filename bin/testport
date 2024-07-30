@@ -1,35 +1,72 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2221,SC2222
 
-if [ "$#" -ge 1 ]; then
-	pasteboard=0
-	if [ "$1" == '-c' ]; then
-		pasteboard=1
-		shift
-	fi
-	test_host="$1"
-	if (( ! "$pasteboard" )); then
-		host_command='host '"$test_host"
-		if ! host_command_out=$(eval "$host_command"); then
-			echo "\$ $host_command"
-			echo "$host_command_out"
-		fi
-	fi
-fi
+usage() {
+	echo "Usage: $(basename "$0") [-c|--copy] [-b|--bash] [-z|--zsh|--nc] <host> <port>"
+	echo
+	echo 'Optional flags:'
+	echo '  -c --copy       Copies command to clipboard instead of running it'
+	# shellcheck disable=SC2016
+	echo '  -b --bash       Use a basic Bash command `echo >/dev/tcp/HOST/PORT`'
+	# shellcheck disable=SC2016
+	echo '  -z --zsh --nc   Use the `nc` command [default]'
+	exit 2
+}
+
+while (( "$#" )); do
+	case "$1" in
+		-c|--copy)
+			COPY=true
+			;;
+		-b|--bash)
+			FMT=bash
+			;;
+		-z|--zsh|--nc)
+			FMT=zsh
+			;;
+		-h|--help|--usage)
+			usage
+			;;
+		--) # End of options
+			shift
+			break
+			;;
+		-*|--*)
+			echo "ERROR: Unknown option $1"
+			echo
+			usage
+			;;
+		*)
+			break
+			;;
+	esac
+	shift
+done
 
 if [ "$#" -lt 2 ]; then
-	echo "Usage: $(basename "$0") [-c] <host> <port>"
-	echo '-c : Copies command to clipboard instead of running it'
-	exit 1
+	usage
 fi
 
+test_host="$1"
 test_port="$2"
 
-#TODO: Use 'echo >/dev/tcp/*' command if 'nc' command is not installed OR if -b/--bash argument is supplied
-#test_command='(echo >/dev/tcp/'"$test_host"'/'"$test_port"' </dev/null) >/dev/null 2>&1 && echo "Port is open" || ( echo "ERROR: Port is NOT open" ; exit 1 )'
-test_command='nc -zvw10 '"$test_host"' '"$test_port"
+if [ "$COPY" == true ]; then
+	host_command='host '"$test_host"
+	if ! host_command_out=$(eval "$host_command"); then
+		echo "\$ $host_command"
+		echo "$host_command_out"
+	fi
+fi
+
+if [ "$FMT" == bash ]; then
+	test_command='(echo >/dev/tcp/'"$test_host"'/'"$test_port"' </dev/null) >/dev/null 2>&1 '
+	test_command+='&& echo "Port is open" || ( echo "ERROR: Port is NOT open" ; exit 1 )'
+else
+	test_command='nc -zvw10 '"$test_host"' '"$test_port"
+fi
 
 # Print command for easy copying and then run it
-if (( "$pasteboard" )); then
+if [ "$COPY" == true ]; then
 	echo    "$test_command"
 	echo -n "$test_command" | pbcopy
 else
@@ -37,4 +74,3 @@ else
 	echo -n '--> '
 	eval "$test_command"
 fi
-
