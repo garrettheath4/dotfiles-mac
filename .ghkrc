@@ -186,6 +186,7 @@ alias sftp-local='sftp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null
 alias ggp='git-pull-push'
 alias ggu='git-branches-status'
 alias ggb='git branch'
+alias ggbt='git log --graph --simplify-by-decoration --pretty=format:'%d' --all'
 alias ggo='git switch -'  # Checkout the Other (most recent) branch
 alias ggs='git status'
 alias ggd="git diff -- . ':!package-lock.json' ':!Pipfile.lock'"
