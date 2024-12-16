@@ -128,34 +128,38 @@ filetype plugin indent on     " required
 "{{{3 Plugin-specific tweaks/functions
 " Note: This section *must* go after call `vundle#end()` above
 
-" Check if vim-arkdown-folding plugin is loaded
+" Check if masukomi/vim-markdown-folding plugin is loaded
 " Source: https://vi.stackexchange.com/a/14143
 if match(&runtimepath, 'vim-markdown-folding') != -1
-  " Source: ChatGPT on 2024-07-09
+  " Source: ChatGPT on 2024-12-16
   " Function to open folds of top-level headings (# and ##) for Markdown files
   function! OpenTopLevelHeadings()
-      " Go to the first line
-      normal! gg
-      " Loop through lines
-      while 1
-          " Open the fold if it is a top-level heading
-          if match(getline('.'), '^##\? ') == 0
-              normal! zo
-          endif
-          " Move to the next line
-          normal! j
-          " Break the loop if we are at the end of the file
-          if line('.') == line('$')
-              break
-          endif
-      endwhile
+    " Save the current cursor position
+    let l:initial_pos = getpos('.')
+
+    " Start at the first line
+    normal! gg
+
+    " Open the fold if the first line is a top-level heading
+    if match(getline('.'), '^##\? ') == 0
+        normal! zo
+    endif
+
+    " Loop through each top-level heading
+    while search('^##\? ', 'W') > 0
+      " Open the fold (defined by vim-markdown-folding plugin)
+      normal! zo
+    endwhile
+
+    " Restore the saved cursor position
+    call setpos('.', l:initial_pos)
   endfunction
 
   " Hook the function to the FileType event for Markdown files
-  autocmd FileType markdown call OpenTopLevelHeadings()
+  "autocmd FileType markdown call OpenTopLevelHeadings()
   " Or: Hook the function to the FileType event for Markdown files WITH A
   " DELAY
-  "autocmd FileType markdown call timer_start(100, {->OpenTopLevelHeadings() })
+  autocmd FileType markdown call timer_start(100, {->OpenTopLevelHeadings() })
   " OR: Hook the function to the BufReadPost and BufWinEnter events for Markdown
   " files
   "autocmd BufReadPost,BufWinEnter *.md call OpenTopLevelHeadings()
