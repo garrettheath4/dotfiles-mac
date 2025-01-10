@@ -187,6 +187,7 @@ alias ggp='git-pull-push'
 alias ggu='git-branches-status'
 alias ggb='git branch'
 alias ggbt='git log --graph --simplify-by-decoration --pretty=format:'%d' --all'
+alias ggbb=ggbt
 alias ggo='git switch -'  # Checkout the Other (most recent) branch
 alias ggs='git status'
 alias ggd="git diff -- . ':!package-lock.json' ':!Pipfile.lock'"
@@ -194,6 +195,7 @@ alias ggdi='git diff --word-diff'
 alias gga='git add'
 alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
+alias ggll='git log --graph --decorate --oneline'
 
 ## Other terminal shortcuts
 alias mvnt='mvn dependency:tree -Dverbose | vim "+set bt=nofile nowrap" -'
