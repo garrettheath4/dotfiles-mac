@@ -135,13 +135,14 @@ fi
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aliases colored-man-pages git gitignore jira tmux)
+plugins=(aliases colored-man-pages git gitignore jira tmux zsh-autosuggestions)
 
-# aliases:           Adds `als` command
-# colored-man-pages: Auto-colorizes `man`. Can also colorize other commands with `colored` prefix command.
-# git:               Adds aliases and a few functions. See: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
-# gitignore:         Adds `gi <template>` command for querying gitignore.io. List supported templates with `gi list`.
-# jira:              Adds `jira` command
+# aliases             `als` command
+# colored-man-pages   Auto-colorizes `man`. Can also colorize other commands with `colored` prefix command.
+# git                 Adds aliases and a few functions. See: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+# gitignore           `gi <template>` command for querying gitignore.io. List supported templates with `gi list`.
+# jira                `jira` command
+# zsh-autosuggestions Tab-completion of previously-run commands. Install with: git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # jira plugin configuration {{{
 # See: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jira
