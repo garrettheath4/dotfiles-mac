@@ -72,7 +72,8 @@ for device_type in $device_types; do
 			echo -n ':ear:'
 			;;
 		# HD Pro Webcam C920
-		*Webcam*)
+		# iContact Camera Pro
+		*Webcam* | *Camera*)
 			echo -n ':cinema:'
 			;;
 		*)
