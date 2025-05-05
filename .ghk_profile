@@ -83,6 +83,7 @@ fi
 # Add user bin and sbin folders to PATH
 ensureInPathQuietly "$HOME/bin"
 ensureInPathQuietly "$HOME/sbin"
+ensureInPathQuietly "$HOME/.local/bin"
 
 # If not running interactively (e.g. scp), don't do anything
 # Source; https://stackoverflow.com/a/40956958/1360295
