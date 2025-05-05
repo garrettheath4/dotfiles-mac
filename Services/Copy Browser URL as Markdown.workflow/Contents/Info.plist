@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSBackgroundColorName</key>
+			<string>background</string>
+			<key>NSIconName</key>
+			<string>NSTouchBarDocuments</string>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>Copy Browser URL as Markdown</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>runWorkflowAsService</string>
+			<key>NSRequiredContext</key>
+			<dict>
+				<key>NSApplicationIdentifier</key>
+				<array>
+					<string>com.apple.Safari</string>
+					<string>com.brave.Browser</string>
+					<string>com.google.Chrome</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
