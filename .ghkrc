@@ -198,10 +198,10 @@ alias ggl='git log --pretty=oneline --abbrev-commit'
 alias ggll='git log --graph --decorate --oneline'
 
 ## Other terminal shortcuts
-alias mvnt='mvn dependency:tree -Dverbose | vim "+set bt=nofile nowrap" -'
-alias mvntg='mvn dependency:tree -Dverbose | gvim "+set bt=nofile nowrap" -'
+alias mvnt='mvn dependency:tree -Dverbose | vim "+set nowrap buftype=nofile noswapfile" -'
+alias mvntg='mvn dependency:tree -Dverbose | gvim "+set nowrap buftype=nofile noswapfile" -'
 alias mvnv='mvn versions:display-dependency-updates | less'
-alias sbtt='sbt dependencyTree | vim "+set bt=nofile" -'
+alias sbtt='sbt dependencyTree | vim "+set buftype=nofile" -'
 
 tockDebug "Yes aliases"
 
