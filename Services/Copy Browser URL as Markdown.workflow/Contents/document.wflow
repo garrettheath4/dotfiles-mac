@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>523.2</string>
+	<string>528</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>-- "Copy Browser URL as Markdown" Service-- Save to ~/Library/Services/Copy Browser URL as Markdown.workflow-- Set "Workflow receives:" to "no input" in "Safari, Google Chrome, Brave Browser-- Create keyboard "Cmd+Opt+Shift+C" keyboard shortcut in System Settings → Keyboard → Keyboard Shortcuts → Services → General-- Get the name of the frontmost (active) applicationtell application "System Events"	set frontAppName to name of first application process whose frontmost is trueend tell-- Match based on frontmost appif {"Safari", "Google Chrome", "Brave Browser"} contains frontAppName then	if frontAppName is "Safari" then		tell application "Safari"			set theURL to URL of front document			set theTitle to name of front document		end tell	else if frontAppName is "Google Chrome" then		tell application "Google Chrome"			set theURL to URL of active tab of front window			set theTitle to title of active tab of front window		end tell	else if frontAppName is "Brave Browser" then		tell application "Brave Browser"			set theURL to URL of active tab of front window			set theTitle to title of active tab of front window		end tell	end if	return {theURL, theTitle}else	display alert "Error in 'Copy Browser URL' Service" message "This service currently does not support the \"" &amp; frontAppName &amp; "\" browser."end if</string>
+					<string>-- "Copy Browser URL as Markdown" Service-- Save to ~/Library/Services/Copy Browser URL as Markdown.workflow-- Set "Workflow receives:" to "no input" in "Safari, Google Chrome, Brave Browser-- Create keyboard "Cmd+Ctrl+Opt+Shift+C" keyboard shortcut in System Settings → Keyboard → Keyboard Shortcuts → Services → General-- Get the name of the frontmost (active) applicationtell application "System Events"	set frontAppName to name of first application process whose frontmost is trueend tell-- Match based on frontmost appif {"Safari", "Google Chrome", "Brave Browser"} contains frontAppName then	if frontAppName is "Safari" then		tell application "Safari"			set theURL to URL of front document			set theTitle to name of front document		end tell	else if frontAppName is "Brave Browser" then		tell application "Brave Browser"			set theURL to URL of active tab of front window			set theTitle to title of active tab of front window		end tell		--else if frontAppName is "Google Chrome" then		--	tell application "Google Chrome"		--		set theURL to URL of active tab of front window		--		set theTitle to title of active tab of front window		--	end tell	end if	return {theURL, theTitle}else	display alert "Error in 'Copy Browser URL' Service" message "This service currently does not support the \"" &amp; frontAppName &amp; "\" browser."end if</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -105,7 +105,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>405.500000:696.000000</string>
+				<string>499.500000:368.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -208,7 +208,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>405.500000:941.000000</string>
+				<string>499.500000:613.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run JavaScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -295,19 +295,19 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>97689D6A-C2DF-477B-9F8D-C4C798F0AF8D</key>
-		<dict>
-			<key>from</key>
-			<string>8909B368-DA17-4FA1-8CAE-965B7329EBC1 - 8909B368-DA17-4FA1-8CAE-965B7329EBC1</string>
-			<key>to</key>
-			<string>C3BDE3A8-F226-4523-B52B-EB1DE703D19F - C3BDE3A8-F226-4523-B52B-EB1DE703D19F</string>
-		</dict>
-		<key>A23849A1-7AED-492C-A531-094B74A4E7A0</key>
+		<key>B161CEDA-3E8B-44C9-B6E1-13C41D4965D5</key>
 		<dict>
 			<key>from</key>
 			<string>8BBA318B-D822-49A0-BF58-225BC4A3E7A1 - 8BBA318B-D822-49A0-BF58-225BC4A3E7A1</string>
 			<key>to</key>
 			<string>8909B368-DA17-4FA1-8CAE-965B7329EBC1 - 8909B368-DA17-4FA1-8CAE-965B7329EBC1</string>
+		</dict>
+		<key>BB3701A8-780F-4FB0-8DC9-7A363D6B242B</key>
+		<dict>
+			<key>from</key>
+			<string>8909B368-DA17-4FA1-8CAE-965B7329EBC1 - 8909B368-DA17-4FA1-8CAE-965B7329EBC1</string>
+			<key>to</key>
+			<string>C3BDE3A8-F226-4523-B52B-EB1DE703D19F - C3BDE3A8-F226-4523-B52B-EB1DE703D19F</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>

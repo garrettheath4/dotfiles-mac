@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>523.2</string>
+	<string>528</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>-- "Copy Browser URL" Service-- Save to ~/Library/Services/Copy Browser URL.workflow-- Set "Workflow receives:" to "no input" in "Safari, Google Chrome, Brave Browser-- Create keyboard "Cmd+Shift+C" keyboard shortcut in System Settings → Keyboard → Keyboard Shortcuts → Services → General-- Get the name of the frontmost (active) applicationtell application "System Events"	set frontAppName to name of first application process whose frontmost is trueend tell-- Match based on frontmost appif {"Safari", "Google Chrome", "Brave Browser"} contains frontAppName then	if frontAppName is "Safari" then		tell application "Safari"			set theURL to URL of front document		end tell	else if frontAppName is "Google Chrome" then		tell application "Google Chrome"			set theURL to URL of active tab of front window		end tell	else if frontAppName is "Brave Browser" then		tell application "Brave Browser"			set theURL to URL of active tab of front window		end tell	end if	set the clipboard to theURLelse	display alert "Error in 'Copy Browser URL' Service" message "This service currently does not support the \"" &amp; frontAppName &amp; "\" browser."end if</string>
+					<string>-- "Copy Browser URL" Service-- Save to ~/Library/Services/Copy Browser URL.workflow-- Set "Workflow receives:" to "no input" in "Safari, Google Chrome, Brave Browser-- Create keyboard "Cmd+Opt+Shift+C" keyboard shortcut in System Settings → Keyboard → Keyboard Shortcuts → Services → General-- Get the name of the frontmost (active) applicationtell application "System Events"	set frontAppName to name of first application process whose frontmost is trueend tell-- Match based on frontmost appif {"Safari", "Google Chrome", "Brave Browser"} contains frontAppName then	if frontAppName is "Safari" then		tell application "Safari"			set theURL to URL of front document		end tell	else if frontAppName is "Brave Browser" then		tell application "Brave Browser"			set theURL to URL of active tab of front window		end tell		--else if frontAppName is "Google Chrome" then		--	tell application "Google Chrome"		--		set theURL to URL of active tab of front window		--	end tell	end if	set the clipboard to theURLelse	display alert "Error in 'Copy Browser URL' Service" message "This service currently does not support the \"" &amp; frontAppName &amp; "\" browser."end if</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -105,7 +105,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>405.500000:793.000000</string>
+				<string>499.500000:368.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
