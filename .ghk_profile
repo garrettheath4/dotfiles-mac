@@ -20,6 +20,9 @@
 # 8.   ~/.zlogin   (IF login shell)
 
 ensureInPathQuietly () {
+	# Adds a directory to the PATH if it is not already listed in it AND if the
+	# directory exists. (No-op if directory does not exist or it's already in
+	# the path.)
 	# Usage: ensureInPathQuietly <dir_to_add_if_not_already_in_PATH> [--first]
 	binDir="$1"
 	firstFlag="$2"
