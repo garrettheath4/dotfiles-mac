@@ -169,7 +169,7 @@ alias top='top -u -R -s 2 -stats user,pid,command,cpu,time,state,th,csw,ports,vs
 alias woman='man'
 alias reverse='tail -r'
 alias reload='source ~/.bash_profile'
-alias incognito='unset HISTFILE'
+alias incognito='unset HISTFILE ; [[ $SHELL =~ zsh$ ]] && fc -p'
 alias vimro="vim -RMn"
 alias brewu='brew-auto-upgrade'
 # Run Homebrew in Intel x86 mode using Rosetta 2 emulator

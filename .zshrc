@@ -119,6 +119,13 @@ fi
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# GHK 2025-05-21
+# Source: https://github.com/ohmyzsh/ohmyzsh/discussions/9849#discussioncomment-642352
+# You can also disable git prompt features for individual repositories:
+# git config oh-my-zsh.hide-info 1    # hides branch name
+# git config oh-my-zsh.hide-status 1  # hides untracked files, staged changes, and unstaged changes
+# git config oh-my-zsh.hide-dirty 1   # hides uncommitted changes (modified files) (recommended for large repos!)
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
