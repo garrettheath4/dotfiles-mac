@@ -142,7 +142,8 @@ fi
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aliases colored-man-pages git gitignore jira tmux zsh-autosuggestions)
+# Full list: https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+plugins=(aliases colored-man-pages gcloud git gitignore jira tmux zsh-autosuggestions zoxide)
 
 # aliases             `als` command
 # colored-man-pages   Auto-colorizes `man`. Can also colorize other commands with `colored` prefix command.
