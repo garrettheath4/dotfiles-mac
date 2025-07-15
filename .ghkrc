@@ -170,7 +170,7 @@ alias woman='man'
 alias reverse='tail -r'
 alias reload='source ~/.bash_profile'
 alias incognito='unset HISTFILE ; [[ $SHELL =~ zsh$ ]] && fc -p'
-alias vimro="vim -RMn"
+alias vimro="vim -RMn"  # -R: read-only, -M: no modification, -n: no swap
 alias brewu='brew-auto-upgrade'
 # Run Homebrew in Intel x86 mode using Rosetta 2 emulator
 alias brewi='arch -x86_64 brew'
