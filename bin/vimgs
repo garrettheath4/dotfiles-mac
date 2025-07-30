@@ -1,0 +1,22 @@
+#!/bin/sh
+
+usage() {
+	echo "Usage: $(basename $0) gs://bucket/blob.ext"
+}
+
+if [ $# -ne 1 ]; then
+	usage 1>&2
+	exit 2
+fi
+
+case "$1" in
+	'-?' | -h | -help | --help)
+		echo "Opens a Google Cloud Storage URI in Vim."
+		echo
+		usage
+		exit
+		;;
+	*)
+		gcloud storage cat "$1" | vim -RMn -
+		;;
+esac
