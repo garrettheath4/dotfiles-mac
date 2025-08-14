@@ -193,7 +193,6 @@ endif
 set history=50  " keep 50 lines of command line history
 set ruler       " show the cursor position all the time
 set showcmd     " display incomplete commands
-set incsearch   " do incremental searching
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -252,25 +251,24 @@ if has("autocmd")
 
 else
 
-  set autoindent  " always set autoindenting on
+  set autoindent  " always set autoindenting on, which copies indent from current line when starting a new line
 
 endif " has("autocmd")
 
 " Alter the sort sequence for the Netrw Directory Listing
 " g:netrw_sort_sequence = [\/]$,\<core\%(\.\d\+\)\=\>,\.c$,\.cpp$,\.h$,\.txt$,\.in$,\.out$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
 
-set tabstop=4
-set shiftwidth=4
-set autoindent
-set smartindent
-set copyindent
-set preserveindent
-set nojoinspaces    " nojoinspaces => only 1 period after spaces when reformatting
-set incsearch
-set scrolloff=1
-set exrc
-set backspace=2
-set number
+set tabstop=4                   " number of spaces that a <Tab> in the file counts for
+set shiftwidth=4                " default number of spaces to use for each step of (auto)indent, like with `>>`
+set smartindent                 " smart autoindenting when starting a new line, especially C-like code
+set copyindent                  " preserve a NEW line's indentation as much as possible while autoindenting it
+set preserveindent              " preserve CURRENT line's indentation as much as possible while reindenting it, like with `>>`
+set nojoinspaces                " nojoinspaces => only 1 period after spaces when reformatting
+set incsearch                   " search while typing the search pattern
+set scrolloff=1                 " show N lines above and below the cursor
+set number                      " show line numbers
+set splitbelow                  " new windows go BELOW current window, instead of above
+set splitright                  " new windows go to the RIGHT of the current window, instead of to the left
 
 set list            " Show formatting characters
 " Show <Tab> as >-- and trailing spaces as ~
