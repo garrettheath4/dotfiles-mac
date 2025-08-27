@@ -199,7 +199,7 @@ alias ggl='git log --pretty=oneline --abbrev-commit'
 alias ggll='git log --graph --decorate --oneline'
 
 ## Other terminal shortcuts
-alias mvnt=' mvn dependency:tree -Dverbose | sed "s/^\[INFO\] //" |  vim "+set nowrap buftype=nofile noswapfile foldmethod=expr foldexpr=match(getline(v:lnum),'\\\\w')/3 foldlevel=2" -'
+alias mvnt=' mvn dependency:tree -Dverbose | sed "s/^\[INFO\] //" |  vim "+set nowrap buftype=nofile noswapfile foldmethod=expr foldexpr=match(getline(v:lnum),'"'"'\\\\w'"'"')/3 foldlevel=1" -'
 alias mvntg='mvn dependency:tree -Dverbose | sed "s/^\[INFO\] //" | gvim "+set nowrap buftype=nofile noswapfile" -'
 alias mvnv='mvn versions:display-dependency-updates | less'
 alias sbtt='sbt dependencyTree | vim "+set buftype=nofile" -'
