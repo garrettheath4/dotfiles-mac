@@ -1,0 +1,30 @@
+#!/bin/bash
+
+usage() {
+	echo "Usage: $(basename "$0") s3://bucket/blob.ext"
+}
+
+if [ $# -lt 1 ] || [ $# -gt 2 ]; then
+	usage 1>&2
+	exit 2
+fi
+
+uri="$1"
+if [ $# -eq 2 ]; then
+	uri="s3://${1%,}/$2"
+fi
+
+case "$uri" in
+	'-?' | -h | -help | --help)
+		echo "Opens an AWS Simple Storage Service (S3) URI in Vim."
+		echo
+		usage
+		exit
+		;;
+	*)
+		temp_file=$(mktemp -t aws.s3)
+		aws s3 cp --profile cepi-dsp-test "$uri" "$temp_file"
+		vim -RMn "$temp_file"
+		rm "$temp_file"
+		;;
+esac
