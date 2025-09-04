@@ -288,14 +288,16 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 set modeline
 set modelines=3
 
+set textwidth=120
+let gutter=6
 if has("gui_running") && !exists("mvim")
   set autochdir
   set lines=70
   " Source: https://stackoverflow.com/a/2019438
+  " Note: `let &var = val` is the same as `set var=val`
+  let &columns = &textwidth + gutter
   if &diff
-    set columns=172
-  else
-    set columns=86
+    let &columns = &columns * 2 + 3
   endif
   if has("mac")
     " The `-monospace-` keyword means to use the system native monospace font,
