@@ -203,6 +203,7 @@ alias mvnt=' mvn dependency:tree -Dverbose | sed "s/^\[INFO\] //" |  vim "+set n
 alias mvntg='mvn dependency:tree -Dverbose | sed "s/^\[INFO\] //" | gvim "+set nowrap buftype=nofile noswapfile foldmethod=expr foldexpr=match(getline(v:lnum),'"'"'\\\\w'"'"')/3 foldlevel=1" -'
 alias mvnv='mvn versions:display-dependency-updates | less'
 alias sbtt='sbt dependencyTree | vim "+set buftype=nofile" -'
+alias gcs='gcloud storage'
 
 tockDebug "Yes aliases"
 
