@@ -1,0 +1,82 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /Users/garrett/Library/Application Support/com.mitchellh.ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+
+# Source: https://github.com/ghostty-org/ghostty/discussions/3610
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+quick-terminal-position = bottom
+quick-terminal-animation-duration = 0.1
+
+# Favorite themes:
+# * RetroLegends - green text, high contrast
+# * Homebrew     - green text, medium-high contrast
+# * IR_Black     - white text, high contrast (bright)
+# * Symfonic     - white text, medium-high contrast
+# * PaulMillr    - white text, medium-high contrast
+# * Firefly Traditional - white text, medium contrast
+# * Konsolas     - off-white text, medium contrast
+# * synthwave    - peach text, medium contrast
+# * UltraDark    - off-white text, medium-low contrast
+# * Mathias      - light-grey text, medium-low contrast
+# * detuned      - light-grey text, low contrast
+# * LiquidCarbonTransparent - grey text, low contrast
+# * Pro          - white text, low contrast (dark)
+# * NightLion v1 - white text, very-low contrast
+# * UnderTheSea
+# * Adventure
+# * Tomorrow Night Bright
+# * Wez
+theme = Retro Legends
+
+# Source: https://youtu.be/VUxMfyzTM_Y?t=919
+#window-padding-color = background
+#font-feature = -liga
+
+# Change icon in macOS Dock
+macos-icon = xray
+
+# Disable dock icon badge since it does not get cleared when quick terminal is focused
+#bell-features = no-attention,title,border
+
+# Prevents dock icon badge from being used since Ghostty effectively runs as a background app
+macos-hidden = always
