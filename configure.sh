@@ -79,6 +79,25 @@ done
 git submodule init && git submodule update
 vim +PluginInstall +qall
 
+# Link Ghostty folder `~/Library/Application Support/com.mitchellh.ghostty/` to `dotfiles/com.mitchellh.ghostty/`
+if [ ! -L ~/"Library/Application Support/com.mitchellh.ghostty" ]; then
+	if [ ! -d ~/"Library/Application Support/com.mitchellh.ghostty" ]; then
+		ln -sv "$dotfiles/com.mitchellh.ghostty" ~/"Library/Application Support/com.mitchellh.ghostty"
+	else
+		# com.mitchellh.ghostty exists but is not a link
+		if [ -z "$(ls -A ~/"Library/Application Support/com.mitchellh.ghostty")" ]; then
+			# com.mitchellh.ghostty exists and is not a link but is empty
+			rmdir -v ~/"Library/Application Support/com.mitchellh.ghostty"
+			ln -sv "$dotfiles/com.mitchellh.ghostty" ~/"Library/Application Support/com.mitchellh.ghostty"
+		else
+			# com.mitchellh.ghostty exists and is not a link but is NOT empty
+			echo 'Warning:' ~/'Library/Application Support/com.mitchellh.ghostty/ already exists and is not a link but is NOT empty'
+		fi
+	fi
+else
+	echo 'Info: Link already exists:' ~/'Library/Application Support/xbar/plugins/'
+fi
+
 #TODO: Add links for individual scripts in `dotfiles/xbar/plugins/` into xbar plugin folder `~/Library/Application Support/xbar/plugins/`
 # Link xbar plugin folder `~/Library/Application Support/xbar/plugins/` to `dotfiles/xbar/plugins/`
 if [ ! -L ~/"Library/Application Support/xbar/plugins" ]; then
