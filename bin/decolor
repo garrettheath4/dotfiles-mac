@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# decolor - Removes ANSI color codes from piped input.
+#
+# Usage:
+#   <command_with_colorful_output> | decolor
+#
+# Example:
+#   terraform plan | decolor
+#
+# Author: user55518@unix.stackexchange.com
+# Source: https://unix.stackexchange.com/a/687915
+
+sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"
