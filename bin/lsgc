@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 2 ]; then
+	echo "Usage: $0 <gcs-bucket-name> <blob-path>" 1>&2
+	# shellcheck disable=SC2016
+	echo 'Note: Comma characters `,` at the end of bucket names will be removed'
+	echo 'Example:' 1>&2
+	echo "  $0 catalist-dsp-dev-accession-response, jobs/job_20251031182947_2870/results/dsp_20251031182947_2870.tsv" 1>&2
+	exit 2
+fi
+
+cmd="gcloud storage ls gs://${1%,}/${2}"
+echo "$cmd"
+$cmd
