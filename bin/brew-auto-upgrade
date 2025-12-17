@@ -139,15 +139,27 @@ rangBell=no
 pleaseUpgradePackages=no
 pleaseUpgradeCasks=no
 pleaseUpgradeGreedyCasks=no
+gumInstalled=no
+
+if command -v gum >/dev/null ; then
+	gumInstalled=yes
+fi
 
 if [ -n "$brewOutdated" ]; then
 	if [ "$rangBell" == "no" ]; then
 		echo -en '\a'
 		rangBell=yes
 	fi
-	read -p "Some packages are outdated. Upgrade? (Y/n): " -n 1 -r
-	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
-		pleaseUpgradePackages=yes
+	question='Some packages are outdated. Upgrade packages?'
+	if [ "$gumInstalled" == yes ]; then
+		if gum confirm "$question" --affirmative='📦 Update' --negative='Skip' ; then
+			pleaseUpgradePackages=yes
+		fi
+	else
+		read -p "$question (Y/n): " -n 1 -r
+		if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+			pleaseUpgradePackages=yes
+		fi
 	fi
 fi
 
@@ -156,9 +168,16 @@ if [ -n "$caskOutdated" ]; then
 		echo -en '\a'
 		rangBell=yes
 	fi
-	read -p "Some casks are outdated. Upgrade casks? (Y/n): " -n 1 -r
-	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
-		pleaseUpgradeCasks=yes
+	question='Some casks are outdated. Upgrade casks?'
+	if [ "$gumInstalled" == yes ]; then
+		if gum confirm "$question" --affirmative='🍾 Update' --negative='Skip' ; then
+			pleaseUpgradeCasks=yes
+		fi
+	else
+		read -p "$question (Y/n): " -n 1 -r
+		if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+			pleaseUpgradeCasks=yes
+		fi
 	fi
 fi
 
@@ -167,9 +186,16 @@ if [ -n "$caskGreedyOutdated" ]; then
 		echo -en '\a'
 		rangBell=yes
 	fi
-	read -p "Some 'self-updating' casks are outdated. Upgrade greedy casks? (Y/n): " -n 1 -r
-	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
-		pleaseUpgradeGreedyCasks=yes
+	question='Some 'self-updating' casks are outdated. Upgrade greedy casks?'
+	if [ "$gumInstalled" == yes ]; then
+		if gum confirm "$question" --affirmative='🤖 Update' --negative='Skip' ; then
+			pleaseUpgradeGreedyCasks=yes
+		fi
+	else
+		read -p "$question (Y/n): " -n 1 -r
+		if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+			pleaseUpgradeGreedyCasks=yes
+		fi
 	fi
 fi
 
