@@ -168,7 +168,6 @@ alias pss='ps aux | head -n1; ps aux | fgrep -v grep | fgrep'
 alias top='top -u -R -s 2 -stats user,pid,command,cpu,time,state,th,csw,ports,vsize'
 alias woman='man'
 alias reverse='tail -r'
-alias reload='source ~/.bash_profile'
 alias rsyncsudo='rsync -avz --rsync-path="sudo rsync"'
 alias incognito='unset HISTFILE ; [[ $SHELL =~ zsh$ ]] && fc -p'
 alias vimro="vim -RMn"  # -R: read-only, -M: no modification, -n: no swap

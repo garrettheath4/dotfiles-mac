@@ -191,3 +191,4 @@ unalias run-help
 autoload run-help
 HELPDIR=$(command brew --prefix)/share/zsh/help
 alias help=run-help
+alias reload='source ~/.zshrc'

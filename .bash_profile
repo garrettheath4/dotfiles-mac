@@ -123,3 +123,4 @@ BlueBgPS="\\[$(tput setab 4)\\]"
 ResetColorsPS="\\[$(tput sgr0)\\]"
 PS1="${BlueBgPS}\\h:\\W \\u${ResetColorsPS}\\$ "
 
+alias reload='source ~/.bash_profile'
