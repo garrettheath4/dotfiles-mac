@@ -199,6 +199,24 @@ alias gga='git add'
 alias ggc='git commit -m'
 alias ggl='git log --pretty=oneline --abbrev-commit'
 alias ggll='git log --graph --decorate --oneline'
+alias ggw='git worktree list'
+
+# Source - https://stackoverflow.com/a/77266926
+# Posted by phd, modified by community. See post 'Timeline' for change history
+# Retrieved 2026-02-02, License - CC BY-SA 4.0
+ggwc() {
+    if [ $# -ne 1 ]; then
+        echo "Usage: cd_worktree <branch>" >&2
+        return 1
+    fi
+    maybe_path="$(git worktree list | grep -F "$1" | awk '{print $1}')"
+    if [ -n "$maybe_path" ]; then
+        cd "$maybe_path" || return
+    else
+        echo "Cannot find path for branch '$1'" >&2
+        return 1
+    fi
+}
 
 ## Other terminal shortcuts
 alias mvnt=' mvn dependency:tree -Dverbose | sed "s/^\[INFO\] //" |  vim "+set nowrap buftype=nofile noswapfile foldmethod=expr foldexpr=match(getline(v:lnum),'"'"'\\\\w'"'"')/3 foldlevel=1" -'
