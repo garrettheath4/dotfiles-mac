@@ -224,6 +224,7 @@ alias mvntg='mvn dependency:tree -Dverbose | sed "s/^\[INFO\] //" | gvim "+set n
 alias mvnv='mvn versions:display-dependency-updates | less'
 alias sbtt='sbt dependencyTree | vim "+set buftype=nofile" -'
 alias gcs='gcloud storage'
+alias gsls='gcloud storage ls'
 
 tockDebug "Yes aliases"
 
