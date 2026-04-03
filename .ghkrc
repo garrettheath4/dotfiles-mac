@@ -201,6 +201,14 @@ alias ggl='git log --pretty=oneline --abbrev-commit'
 alias ggll='git log --graph --decorate --oneline'
 alias ggw='git worktree list'
 
+## Terraform shortcuts
+alias tf='terraform'
+alias tfi='terraform init'
+alias tff='terraform fmt'
+alias tfv='terraform validate'
+alias tfp='terraform plan'
+alias tfa='terraform apply'
+
 # Source - https://stackoverflow.com/a/77266926
 # Posted by phd, modified by community. See post 'Timeline' for change history
 # Retrieved 2026-02-02, License - CC BY-SA 4.0
