@@ -207,16 +207,17 @@ fi
 
 if [ "$pleaseUpgradePackages" == "yes" ]; then
 	trustAllFormulae "$brewOutdated"
-	brew upgrade --formula
+	# Skip Homebrew's upgrade confirmation since we do a confirmation ourselves in this script.
+	HOMEBREW_NO_ASK=yes brew upgrade --formula
 fi
 
 if [ "$pleaseUpgradeCasks" == "yes" ]; then
 	trustAllCasks "$caskOutdated"
-	brew upgrade --cask
+	HOMEBREW_NO_ASK=yes brew upgrade --cask
 fi
 
 if [ "$pleaseUpgradeGreedyCasks" == "yes" ]; then
-	echo "$caskGreedyOutdated" | xargs brew upgrade --cask --greedy
+	echo "$caskGreedyOutdated" | HOMEBREW_NO_ASK=yes xargs brew upgrade --cask --greedy
 fi
 
 if [ "$anyUpdates" == no ]; then
