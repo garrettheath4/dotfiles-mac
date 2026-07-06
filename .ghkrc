@@ -243,7 +243,24 @@ if command -v tmux >/dev/null 2>&1 && test -n "${TMUX+defined}"; then
 	# This IS a Tmux session
 	if command -v ssh-name >/dev/null 2>&1; then
 		alias ssh='ssh-name'
-		if [ -f ~/bin/cd-wrapper-tmux ]; then
+		if [ -n "$ZSH_VERSION" ]; then
+			# zsh: use chpwd hook so renaming works with cd, z (zoxide), pushd, etc.
+			_tmux_rename_window() {
+				[[ -z $TMUX ]] && return
+				local oldName oldDir newDir
+				oldName=$(tmux display-message -p '#W')
+				oldDir=${OLDPWD##*/}
+				newDir=${PWD##*/}
+				if [[ $oldName =~ ^(ba|z)sh$ || $oldName == 'oh-my-git' || ( $oldName == "$oldDir" && ! -d "$OLDPWD/.git" ) ]]; then
+					GreenTxt="$(tput setaf 2)"
+					ResetColors="$(tput sgr0)"
+					echo "${GreenTxt}Renaming Tmux window to match current directory${ResetColors}" 1>&2
+					tmux rename-window "$newDir"
+				fi
+			}
+			chpwd_functions+=(_tmux_rename_window)
+			tockDebug "Yes ssh-name & chpwd hook"
+		elif [ -f ~/bin/cd-wrapper-tmux ]; then
 			# shellcheck disable=SC1090 disable=SC2039
 			source ~/bin/cd-wrapper-tmux
 			tockDebug "Yes ssh-name & cd-wrapper-tmux"
