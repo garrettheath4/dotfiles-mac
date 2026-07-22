@@ -4,10 +4,35 @@ if [ -n "${TMUX}" ]; then
 	# This is a Tmux session
 	if [ "$(tmux display-message -p '#W')" = "bash" ] || [ "$(tmux display-message -p '#W')" = "zsh" ]; then
 		# Tmux window doesn't have a custom name already, so proceed with auto-rename
-		GreenTxt="$(tput setaf 2)"
+		BlueTxt="$(tput setaf 4)"
 		ResetColors="$(tput sgr0)"
-		echo "${GreenTxt}Renaming Tmux window to match SSH session${ResetColors}" 1>&2
-		windowName=$(echo "$1" | cut -d '.' -f 1)
+		echo "${BlueTxt}Renaming Tmux window to match SSH session${ResetColors}" 1>&2
+		# The following supports complicated commands like: ssh -p2222 prlvfusapp12.datawarehousellc.com -t "sudo su - tomcat"
+		skipNextArg=false
+		for word in "$@"; do
+			if $skipNextArg ; then
+				skipNextArg=false
+				continue
+			fi
+			case "$word" in
+				-p)
+					skipNextArg=true
+					continue
+					;;
+				-*)
+					continue
+					;;
+				*)
+					longWindowName="$word"
+					break
+					;;
+			esac
+		done
+		if [ -z "$longWindowName" ]; then
+			# Fall back to the first argument if the for loop above fails
+			longWindowName="$1"
+		fi
+		windowName=$(echo "$longWindowName" | cut -d '.' -f 1)
 		#TODO: Extract this known-server substitution into an optional .ssh_server_names.local definition file
 		case "$windowName" in
 			root@cosmia)  windowName='Cosmia';      ;;
