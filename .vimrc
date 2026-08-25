@@ -289,7 +289,7 @@ set modeline
 set modelines=3
 
 set textwidth=120
-let gutter=6
+let gutter=7
 if has("gui_running") && !exists("mvim")
   set autochdir
   set lines=70
