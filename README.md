@@ -6,12 +6,11 @@ computers. When these files are linked to their appropriate places (using the
 computer. These settings include important environment variables, terminal
 aliases, and scripts.
 
-
 ## Installation
 
 To install this project, run the following commands:
 
-```
+```shell
 git clone https://github.com/garrettheath4/dotfiles-mac.git ~/dotfiles
 cd ~/dotfiles
 git submodule init && git submodule update
@@ -19,19 +18,16 @@ git submodule init && git submodule update
 ./installApps.sh  # optional
 ```
 
-
 ## mVim
 
 `mvim` is a Bash script I created that launches a "mini Vim" window for quickly
 taking notes or temporarily pasting and manipulating text from the clipboard.
-
 
 ### BetterTouchTool Shortcut
 
 To make it easy to run this script, use BetterTouchTool to create a global
 keyboard shortcut (such as `Control`+`Option`+`Command`+`V`) that launches this
 script when the shortcut is pressed.
-
 
 ## Moom
 
@@ -44,13 +40,11 @@ To use this script, make sure "When switching to an application, switch to a
 Space with open windows for the application" is checked in the Mission Control
 preference pane.
 
-
 ### BetterTouchTool Shortcut
 
 To make it easy to activate this script, use BetterTouchTool to create a global
 keyboard shortcut (such as `Control`+`Shift`+`2`) that runs this script when
 the shortcut is pressed.
-
 
 ## Repository Contents
 
@@ -80,7 +74,6 @@ the shortcut is pressed.
 | `README.md`                    | This README file                                                                                                                         | none                                                              |
 | `.gitignore`                   | Tells Git which files to ignore in this repository if they're changed                                                                    | none                                                              |
 | `.gitmodules`                  | Tells Git that there is a Git submodule in this repo (at `.vim/bundle/Vundle.vim`) that needs to be checked out with this repository     | `git submodule init && git submodule update`                      |
-
 
 ## Terminal Initialization
 
@@ -120,37 +113,35 @@ the shortcut is pressed.
    1. Source Vagrant Bash Completion if installed
    1. Colorize `PS1` Bash prompt environment variable
 
-
 ### Z Shell Initialization Files
 
 | # | File          | Constraint  | Notes     |
 |---|---------------|-------------|-----------|
 | 1 |`/etc/zshenv`  |             |           |
-| 2 |`  ~/.zshenv`  |             |           |
+| 2 |  `~/.zshenv`  |             |           |
 | 3 |`/etc/zprofile`| login shell | Sets PATH |
-| 4 |`  ~/.zprofile`| login shell |           |
+| 4 |  `~/.zprofile`| login shell |           |
 | 5 |`/etc/zshrc`   | interactive | Sets PS1  |
-| 6 |`  ~/.zshrc`   | interactive |           |
+| 6 |  `~/.zshrc`   | interactive |           |
 | 7 |`/etc/zlogin`  | login shell |           |
-| 8 |`  ~/.zlogin`  | login shell |           |
-
+| 8 |  `~/.zlogin`  | login shell |           |
 
 ### Bash Initialization Files
 
-| # | File            | Constraint      | Notes    |
-|---|-----------------|-----------------|----------|
-| 1 |`/etc/profile`   | login shell     | Sets PATH and calls `/etc/bashrc` |
-| 2 |`/etc/bashrc`    | login shell     | Sets PS1 |
-| 3 |`~/.bash_profile`| login shell     |          |
-| 4 |`~/.bash_login`  | login shell     |          |
-| 5 |`~/.profile`     | login shell     |          |
-| 6 |`~/.bashrc`      | interactive non-login shell OR remote shell |          |
-| 7 |`$BASH_ENV`      | non-interactive |          |
-
+| # | File            | Constraint                                  | Notes                             |
+|---|-----------------|---------------------------------------------|-----------------------------------|
+| 1 |`/etc/profile`   | login shell                                 | Sets PATH and calls `/etc/bashrc` |
+| 2 |`/etc/bashrc`    | login shell                                 | Sets PS1                          |
+| 3 |`~/.bash_profile`| login shell                                 |                                   |
+| 4 |`~/.bash_login`  | login shell                                 |                                   |
+| 5 |`~/.profile`     | login shell                                 |                                   |
+| 6 |`~/.bashrc`      | interactive non-login shell OR remote shell |                                   |
+| 7 |`$BASH_ENV`      | non-interactive                             |                                   |
 
 ## Future Tasks
 
-* Merge [dotfiles-linux](https://github.com/garrettheath4/dotfiles-linux.git "GitHub garrettheath4/dotfiles-linux") repository into this repository.
+* Merge [dotfiles-linux] repository into this repository.
 
+[dotfiles-linux]: https://github.com/garrettheath4/dotfiles-linux.git "GitHub garrettheath4/dotfiles-linux"
 
 <!-- vim: set textwidth=120 tabstop=4 shiftwidth=4 smarttab softtabstop=4 shiftround expandtab autoindent smartindent: -->

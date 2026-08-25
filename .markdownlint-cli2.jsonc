@@ -1,0 +1,44 @@
+// markdownlint-cli2 config for the dotfiles repo.
+// Run with: markdownlint-cli2 "**/*.md"   (add --fix to auto-correct what it can)
+{
+  "config": {
+    "default": true,
+
+    // Prose wraps at column 120 (see the `vim: set textwidth=120` modeline at the bottom
+    // of README.md), but code blocks and tables are exempt from wrapping.
+    "MD013": {
+      "line_length": 120,
+      "code_blocks": false,
+      "tables": false
+    },
+
+    // Headings are always ATX-style (`#`, `##`, ...), never Setext (`===`/`---` underlines).
+    "MD003": { "style": "atx" },
+
+    // Unordered lists always use `*`, never `-` or `+`.
+    "MD004": { "style": "asterisk" },
+
+    // Fenced code blocks always use backticks, never tildes.
+    "MD048": { "style": "backtick" },
+
+    // Emphasis is always `_underscore_`, strong is always `**asterisk**` (see the "TODO"
+    // line in the Terminal Initialization section of README.md, which uses both).
+    "MD049": { "style": "underscore" },
+    "MD050": { "style": "asterisk" },
+
+    // README.md repeats the "BetterTouchTool Shortcut" subsection heading under both
+    // the mVim and Moom sections -- only flag duplicate headings that are true siblings.
+    "MD024": { "siblings_only": true }
+  },
+
+  "globs": ["**/*.md"],
+
+  // Vendored/third-party READMEs (Git submodules, Vundle-managed Vim plugins, or
+  // extracted copies) aren't ours to restyle -- don't lint them.
+  "ignores": [
+    "oh-my-git/**",
+    "awesome-terminal-fonts/**",
+    ".vim/bundle/**",
+    "iTerm/mbadolato-iTerm2-Color-Schemes-d6098c7/**"
+  ]
+}

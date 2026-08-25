@@ -79,6 +79,21 @@ done
 git submodule init && git submodule update
 vim +PluginInstall +qall
 
+# coc.nvim needs the `release` branch (prebuilt, no npm build step), but
+# Vundle has no way to declare a branch, so :PluginInstall above only
+# shallow-clones `master`. Widen the fetch refspec and switch to `release`
+# here so the plugin works immediately and future `:PluginUpdate` (a plain
+# `git pull`) keeps tracking `origin/release` correctly.
+coc_dir=~/.vim/bundle/coc.nvim
+if [ -d "$coc_dir" ]; then
+	coc_branch=$(git -C "$coc_dir" rev-parse --abbrev-ref HEAD)
+	if [ "$coc_branch" != "release" ]; then
+		git -C "$coc_dir" config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+		git -C "$coc_dir" fetch --depth 1 origin release
+		git -C "$coc_dir" checkout release
+	fi
+fi
+
 # Link Ghostty folder `~/Library/Application Support/com.mitchellh.ghostty/` to `dotfiles/com.mitchellh.ghostty/`
 if [ ! -L ~/"Library/Application Support/com.mitchellh.ghostty" ]; then
 	if [ ! -d ~/"Library/Application Support/com.mitchellh.ghostty" ]; then

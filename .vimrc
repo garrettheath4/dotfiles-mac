@@ -63,6 +63,26 @@ let g:ale_javascript_prettier_options = '--single-quote --trailing-comma --no-se
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'derekwyatt/vim-scala'        " Scala
 
+Plugin 'neoclide/coc.nvim'           " Conquer of Completion - LSP/linting engine {{{4
+" coc.nvim requires Node.js >= 22.15.0 (`brew install node`).
+" Vundle can't do vim-plug's {'branch': 'release'} or 'do' build hook, so
+" :PluginInstall does a shallow, single-branch clone of `master` (with a
+" fetch refspec that only knows about `master`, so `git checkout release`
+" fails with "pathspec 'release' did not match any file(s)"). configure.sh
+" fixes this up automatically after :PluginInstall; if you ever run
+" :PluginInstall by hand (e.g. after a manual :PluginClean, without rerunning
+" configure.sh), redo it yourself:
+"   cd ~/.vim/bundle/coc.nvim
+"   git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+"   git fetch --depth 1 origin release
+"   git checkout release   " prebuilt, no build step; tracks origin/release
+" Once that's done, plain `:PluginUpdate` (i.e. `git pull`) keeps pulling
+" the release branch correctly, since Vundle just pulls whatever branch is
+" currently checked out. To build from master instead: `npm ci` there.
+" coc extensions are declared here and auto-installed/updated by coc.nvim itself
+let g:coc_global_extensions = ['coc-markdownlint']
+" }}}4
+
 "-----------------------------------------------------------------------------
 "{{{3 garrettheath4 custom plugins
 
