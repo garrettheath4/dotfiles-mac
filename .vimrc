@@ -63,6 +63,9 @@ let g:ale_javascript_prettier_options = '--single-quote --trailing-comma --no-se
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'derekwyatt/vim-scala'        " Scala
 
+"-----------------------------------------------------------------------------
+"{{{3 garrettheath4 custom plugins
+
 Plugin 'neoclide/coc.nvim'           " Conquer of Completion - LSP/linting engine {{{4
 " coc.nvim requires Node.js >= 22.15.0 (`brew install node`).
 " Vundle can't do vim-plug's {'branch': 'release'} or 'do' build hook, so
@@ -81,10 +84,28 @@ Plugin 'neoclide/coc.nvim'           " Conquer of Completion - LSP/linting engin
 " currently checked out. To build from master instead: `npm ci` there.
 " coc extensions are declared here and auto-installed/updated by coc.nvim itself
 let g:coc_global_extensions = ['coc-markdownlint']
-" }}}4
 
-"-----------------------------------------------------------------------------
-"{{{3 garrettheath4 custom plugins
+" CoC Autocompletion configuration.
+" Source: https://www.linuxfordevices.com/tutorials/linux/setup-coc-autocompletion-vim
+" Always show the signcolumn so diagnostics don't shift text
+set signcolumn=yes
+
+" Tab moves through the completion menu or falls back to a real tab
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Enter confirms the selected completion item
+inoremap <silent><expr> <CR> coc#pum#visible()
+      \ ? coc#pum#confirm() : "\<CR>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" }}}4 END CoC plugin configuration
 
 Plugin 'jaredgorski/SpaceCamp'         " Modern Vim colorscheme
 Plugin 'machakann/vim-columnmove'      " Move cursor in vertical-only direction by M-f,t,F,T, `;`, `,`
