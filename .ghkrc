@@ -172,6 +172,7 @@ alias rsyncsudo='rsync -avz --rsync-path="sudo rsync"'
 alias incognito='unset HISTFILE ; [[ $SHELL =~ zsh$ ]] && fc -p'
 alias vimro="vim -RMn"  # -R: read-only, -M: no modification, -n: no swap
 alias gvimro="gvim -RMn"  # -R: read-only, -M: no modification, -n: no swap
+alias mdl='markdownlint-cli2'
 alias brewu='brew-auto-upgrade'
 # Run Homebrew in Intel x86 mode using Rosetta 2 emulator
 alias brewi='arch -x86_64 brew'
