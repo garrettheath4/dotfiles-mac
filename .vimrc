@@ -50,6 +50,7 @@ let g:ale_linters_explicit = 0       " Maybe set to 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'javascriptreact': ['eslint'],
+\   'markdown': [],
 \   'sh': ['shellcheck'],
 \}
 let g:ale_fixers = {
