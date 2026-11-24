@@ -4,9 +4,9 @@ DEBUG=false
 
 cd() {
 	builtin cd "$@" || return
-	# shellcheck disable=SC2039
+	# shellcheck disable=SC2039,SC3010
 	if [[ -n $TMUX && $# -ge 1 ]]; then
-		oldName=$(tmux display-message -p '#W')
+		oldName=$(tmux display-message -p '#W' 2>/dev/null) || return 0
 		oldDir=${OLDPWD##*/}
 		newDir=${PWD##*/}
 		if [[ $DEBUG = true ]]; then
@@ -17,7 +17,7 @@ cd() {
 			echo "newDir  = $newDir"
 			echo "! -d $OLDPWD/.git = $(test ! -d "$OLDPWD/.git" && echo true || echo false)"
 		fi
-		# shellcheck disable=SC2039
+		# shellcheck disable=SC2039,SC3015
 		if [[ $oldName =~ ^(ba|z)sh$ || $oldName = 'oh-my-git' || ( $oldName = "$oldDir" && ! -d "$OLDPWD/.git" ) ]]; then
 			GreenTxt="$(tput setaf 2)"
 			ResetColors="$(tput sgr0)"

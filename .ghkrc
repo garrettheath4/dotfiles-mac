@@ -119,6 +119,13 @@ fi
 # https://apple.stackexchange.com/a/371998
 #export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# $TMUX is only an inherited environment variable, so it can outlive its Tmux
+# server (stale socket). If Tmux can't be reached, this shell is not really in a
+# Tmux session, so forget the stale variables before anything below trusts them.
+if [ -n "${TMUX+defined}" ] && ! tmux display-message -p '#S' >/dev/null 2>&1; then
+	unset TMUX TMUX_PANE
+fi
+
 # Tmux-specific commands (only run if Tmux is installed)
 # This should go at the top of .ghkrc since we don't need to worry about
 # setting up THIS shell if we're just going to launch Tmux with its own shell so
@@ -250,7 +257,7 @@ if command -v tmux >/dev/null 2>&1 && test -n "${TMUX+defined}"; then
 			_tmux_rename_window() {
 				[[ -z $TMUX ]] && return
 				local oldName oldDir newDir
-				oldName=$(tmux display-message -p '#W')
+				oldName=$(tmux display-message -p '#W' 2>/dev/null) || return 0
 				oldDir=${OLDPWD##*/}
 				newDir=${PWD##*/}
 				if [[ $oldName =~ ^(ba|z)sh$ || $oldName == 'oh-my-git' || ( $oldName == "$oldDir" && ! -d "$OLDPWD/.git" ) ]]; then
